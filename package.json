@@ -1,0 +1,11 @@
+{
+  "name": "muse-aegis-kernel",
+  "version": "4.1.0",
+  "description": "MUSE Aegis reference kernel, gate and decision logic (spec V4.1)",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-strip-types --test ts/",
+    "test:py": "python3 -m unittest discover -s python -v"
+  },
+  "license": "UNLICENSED"
+}

@@ -1,0 +1,548 @@
+[
+ {
+  "id": "TV1",
+  "description": "All clear",
+  "input": {
+   "x1": 0,
+   "x2": 0,
+   "x3": 0,
+   "x4": 0,
+   "x5": 0,
+   "x6": 0,
+   "n_applicable": 40,
+   "alert_status": "NONE"
+  },
+  "expected": {
+   "psi": 1.0,
+   "decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+   "triggers": [],
+   "reasons": []
+  }
+ },
+ {
+  "id": "TV2",
+  "description": "Confirmed breach (T1)",
+  "input": {
+   "x1": 0.012,
+   "x2": 0,
+   "x3": 0.05,
+   "x4": 0.02,
+   "x5": 0,
+   "x6": 1,
+   "n_applicable": 40,
+   "alert_status": "NONE"
+  },
+  "expected": {
+   "psi": 0.6972,
+   "decision": "RESTRICTION_RECOMMENDED_PENDING_AUTHORITY",
+   "triggers": [
+    "T1"
+   ],
+   "reasons": []
+  }
+ },
+ {
+  "id": "TV3",
+  "description": "Worst case",
+  "input": {
+   "x1": 1,
+   "x2": 1,
+   "x3": 0,
+   "x4": 1,
+   "x5": 1,
+   "x6": 1,
+   "n_applicable": 40,
+   "alert_status": "NONE"
+  },
+  "expected": {
+   "psi": 0.2856,
+   "decision": "RESTRICTION_RECOMMENDED_PENDING_AUTHORITY",
+   "triggers": [
+    "T1",
+    "T2"
+   ],
+   "reasons": []
+  }
+ },
+ {
+  "id": "TV4",
+  "description": "Unstable extraction withholds a pass",
+  "input": {
+   "x1": 0.5,
+   "x2": 0.2,
+   "x3": 0,
+   "x4": 0.1,
+   "x5": 0.1,
+   "x6": 0,
+   "n_applicable": 40,
+   "alert_status": "NONE"
+  },
+  "expected": {
+   "psi": 0.8881,
+   "decision": "FLAG_FOR_REVIEW",
+   "triggers": [],
+   "reasons": [
+    "UNSTABLE_EXTRACTION"
+   ]
+  }
+ },
+ {
+  "id": "TV5",
+  "description": "Non-compensability: high psi, documentation trigger",
+  "input": {
+   "x1": 0,
+   "x2": 0,
+   "x3": 0,
+   "x4": 0.25,
+   "x5": 0,
+   "x6": 0,
+   "n_applicable": 40,
+   "alert_status": "NONE"
+  },
+  "expected": {
+   "psi": 0.95,
+   "decision": "DOCUMENTATION_HOLD_PENDING_REVIEW",
+   "triggers": [
+    "T2"
+   ],
+   "reasons": [],
+   "flags_include": [
+    "NEAR_THRESHOLD"
+   ]
+  }
+ },
+ {
+  "id": "TV6",
+  "description": "Clean pass",
+  "input": {
+   "x1": 0.1,
+   "x2": 0.1,
+   "x3": 0,
+   "x4": 0.05,
+   "x5": 0,
+   "x6": 0,
+   "n_applicable": 40,
+   "alert_status": "NONE"
+  },
+  "expected": {
+   "psi": 0.9504,
+   "decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+   "triggers": [],
+   "reasons": []
+  }
+ },
+ {
+  "id": "TV7",
+  "description": "Small sample cannot fire T2",
+  "input": {
+   "x1": 0,
+   "x2": 0,
+   "x3": 0,
+   "x4": 0.5,
+   "x5": 0,
+   "x6": 0,
+   "n_applicable": 4,
+   "alert_status": "NONE"
+  },
+  "expected": {
+   "psi": 0.9,
+   "decision": "FLAG_FOR_REVIEW",
+   "triggers": [],
+   "reasons": [
+    "SMALL_SAMPLE"
+   ]
+  }
+ },
+ {
+  "id": "TV8",
+  "description": "Unverified alert (T3)",
+  "input": {
+   "x1": 0,
+   "x2": 0,
+   "x3": 0,
+   "x4": 0,
+   "x5": 0,
+   "x6": 0,
+   "n_applicable": 40,
+   "alert_status": "UNVERIFIED"
+  },
+  "expected": {
+   "psi": 1.0,
+   "decision": "ALERT_VERIFICATION_REQUIRED",
+   "triggers": [
+    "T3"
+   ],
+   "reasons": []
+  }
+ },
+ {
+  "id": "TV9",
+  "description": "Low score",
+  "input": {
+   "x1": 0,
+   "x2": 0.8,
+   "x3": 0,
+   "x4": 0.1,
+   "x5": 0.2,
+   "x6": 0,
+   "n_applicable": 40,
+   "alert_status": "NONE"
+  },
+  "expected": {
+   "psi": 0.6464,
+   "decision": "FLAG_FOR_REVIEW",
+   "triggers": [],
+   "reasons": [
+    "LOW_SCORE"
+   ]
+  }
+ },
+ {
+  "id": "EV1",
+  "description": "T1 takes precedence over INCOMPLETE x2",
+  "input": {
+   "x1": 0,
+   "x2": "INCOMPLETE",
+   "x3": 0,
+   "x4": 0,
+   "x5": 0,
+   "x6": 1,
+   "n_applicable": 40,
+   "alert_status": "NONE"
+  },
+  "expected": {
+   "psi": null,
+   "decision": "RESTRICTION_RECOMMENDED_PENDING_AUTHORITY",
+   "triggers": [
+    "T1"
+   ],
+   "reasons": [],
+   "incomplete_fields": [
+    "x2:INCOMPLETE"
+   ]
+  }
+ },
+ {
+  "id": "EV2",
+  "description": "x4 and x5 not applicable are factors of 1",
+  "input": {
+   "x1": 0,
+   "x2": 0,
+   "x3": 0,
+   "x4": "NA",
+   "x5": "NA",
+   "x6": 0,
+   "n_applicable": 40,
+   "alert_status": "NONE"
+  },
+  "expected": {
+   "psi": 1.0,
+   "decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+   "triggers": [],
+   "reasons": [],
+   "flags_include": [
+    "X4_NOT_APPLICABLE",
+    "X5_NOT_APPLICABLE"
+   ]
+  }
+ },
+ {
+  "id": "EV3",
+  "description": "Invalid string value",
+  "input": {
+   "x1": 0,
+   "x2": "abc",
+   "x3": 0,
+   "x4": 0,
+   "x5": 0,
+   "x6": 0,
+   "n_applicable": 40,
+   "alert_status": "NONE"
+  },
+  "expected": {
+   "psi": null,
+   "decision": "INCOMPLETE_INPUT_MANUAL_REVIEW",
+   "triggers": [],
+   "reasons": [],
+   "incomplete_fields": [
+    "x2:INVALID_VALUE"
+   ]
+  }
+ },
+ {
+  "id": "EV4",
+  "description": "Out-of-range value",
+  "input": {
+   "x1": 0,
+   "x2": 1.2,
+   "x3": 0,
+   "x4": 0,
+   "x5": 0,
+   "x6": 0,
+   "n_applicable": 40,
+   "alert_status": "NONE"
+  },
+  "expected": {
+   "psi": null,
+   "decision": "INCOMPLETE_INPUT_MANUAL_REVIEW",
+   "triggers": [],
+   "reasons": [],
+   "incomplete_fields": [
+    "x2:OUT_OF_RANGE"
+   ]
+  }
+ },
+ {
+  "id": "EV5",
+  "description": "x6 must be 0 or 1",
+  "input": {
+   "x1": 0,
+   "x2": 0,
+   "x3": 0,
+   "x4": 0,
+   "x5": 0,
+   "x6": 0.5,
+   "n_applicable": 40,
+   "alert_status": "NONE"
+  },
+  "expected": {
+   "psi": null,
+   "decision": "INCOMPLETE_INPUT_MANUAL_REVIEW",
+   "triggers": [],
+   "reasons": [],
+   "incomplete_fields": [
+    "x6:NOT_BINARY"
+   ]
+  }
+ },
+ {
+  "id": "EV6",
+  "description": "x4 = theta_doc with N = N_min fires T2",
+  "input": {
+   "x1": 0,
+   "x2": 0,
+   "x3": 0,
+   "x4": 0.25,
+   "x5": 0,
+   "x6": 0,
+   "n_applicable": 10,
+   "alert_status": "NONE"
+  },
+  "expected": {
+   "psi": 0.95,
+   "decision": "DOCUMENTATION_HOLD_PENDING_REVIEW",
+   "triggers": [
+    "T2"
+   ],
+   "reasons": []
+  }
+ },
+ {
+  "id": "EV7",
+  "description": "x4 = theta_doc with N = N_min - 1 is small sample",
+  "input": {
+   "x1": 0,
+   "x2": 0,
+   "x3": 0,
+   "x4": 0.25,
+   "x5": 0,
+   "x6": 0,
+   "n_applicable": 9,
+   "alert_status": "NONE"
+  },
+  "expected": {
+   "psi": 0.95,
+   "decision": "FLAG_FOR_REVIEW",
+   "triggers": [],
+   "reasons": [
+    "SMALL_SAMPLE"
+   ]
+  }
+ },
+ {
+  "id": "EV8",
+  "description": "psi exactly at tau_review passes",
+  "input": {
+   "x1": 0,
+   "x2": 0.625,
+   "x3": 0,
+   "x4": 0,
+   "x5": 0,
+   "x6": 0,
+   "n_applicable": 40,
+   "alert_status": "NONE"
+  },
+  "expected": {
+   "psi": 0.75,
+   "decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+   "triggers": [],
+   "reasons": [],
+   "flags_include": [
+    "NEAR_THRESHOLD"
+   ]
+  }
+ },
+ {
+  "id": "EV9",
+  "description": "x1 exactly at theta_stab withholds a pass",
+  "input": {
+   "x1": 0.2,
+   "x2": 0,
+   "x3": 0,
+   "x4": 0,
+   "x5": 0,
+   "x6": 0,
+   "n_applicable": 40,
+   "alert_status": "NONE"
+  },
+  "expected": {
+   "psi": 1.0,
+   "decision": "FLAG_FOR_REVIEW",
+   "triggers": [],
+   "reasons": [
+    "UNSTABLE_EXTRACTION"
+   ],
+   "flags_include": [
+    "NEAR_THRESHOLD"
+   ]
+  }
+ },
+ {
+  "id": "EV10",
+  "description": "x1 INCOMPLETE blocks a pass",
+  "input": {
+   "x1": "INCOMPLETE",
+   "x2": 0,
+   "x3": 0,
+   "x4": 0,
+   "x5": 0,
+   "x6": 0,
+   "n_applicable": 40,
+   "alert_status": "NONE"
+  },
+  "expected": {
+   "psi": 1.0,
+   "decision": "INCOMPLETE_INPUT_MANUAL_REVIEW",
+   "triggers": [],
+   "reasons": [],
+   "incomplete_fields": [
+    "x1:INCOMPLETE"
+   ]
+  }
+ },
+ {
+  "id": "EV11",
+  "description": "T2 takes precedence over INCOMPLETE x2",
+  "input": {
+   "x1": 0,
+   "x2": "INCOMPLETE",
+   "x3": 0,
+   "x4": 0.5,
+   "x5": 0,
+   "x6": 0,
+   "n_applicable": 40,
+   "alert_status": "NONE"
+  },
+  "expected": {
+   "psi": null,
+   "decision": "DOCUMENTATION_HOLD_PENDING_REVIEW",
+   "triggers": [
+    "T2"
+   ],
+   "reasons": [],
+   "incomplete_fields": [
+    "x2:INCOMPLETE"
+   ]
+  }
+ },
+ {
+  "id": "EV12",
+  "description": "T3 takes precedence over T2",
+  "input": {
+   "x1": 0,
+   "x2": 0,
+   "x3": 0,
+   "x4": 0.5,
+   "x5": 0,
+   "x6": 0,
+   "n_applicable": 40,
+   "alert_status": "CONFLICTING"
+  },
+  "expected": {
+   "psi": 0.9,
+   "decision": "ALERT_VERIFICATION_REQUIRED",
+   "triggers": [
+    "T2",
+    "T3"
+   ],
+   "reasons": []
+  }
+ },
+ {
+  "id": "EV13",
+  "description": "Missing x5 is never treated as 0",
+  "input": {
+   "x1": 0,
+   "x2": 0,
+   "x3": 0,
+   "x4": 0,
+   "x6": 0,
+   "n_applicable": 40,
+   "alert_status": "NONE"
+  },
+  "expected": {
+   "psi": null,
+   "decision": "INCOMPLETE_INPUT_MANUAL_REVIEW",
+   "triggers": [],
+   "reasons": [],
+   "incomplete_fields": [
+    "x5:MISSING"
+   ]
+  }
+ },
+ {
+  "id": "EV14",
+  "description": "Numeric x4 requires n_applicable",
+  "input": {
+   "x1": 0,
+   "x2": 0,
+   "x3": 0,
+   "x4": 0.1,
+   "x5": 0,
+   "x6": 0,
+   "alert_status": "NONE"
+  },
+  "expected": {
+   "psi": 0.98,
+   "decision": "INCOMPLETE_INPUT_MANUAL_REVIEW",
+   "triggers": [],
+   "reasons": [],
+   "incomplete_fields": [
+    "n_applicable:MISSING"
+   ]
+  }
+ },
+ {
+  "id": "EV15",
+  "description": "Invalid x3 is flagged but never blocks",
+  "input": {
+   "x1": 0,
+   "x2": 0,
+   "x3": 7,
+   "x4": 0,
+   "x5": 0,
+   "x6": 0,
+   "n_applicable": 40,
+   "alert_status": "NONE"
+  },
+  "expected": {
+   "psi": 1.0,
+   "decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+   "triggers": [],
+   "reasons": [],
+   "flags_include": [
+    "X3_INVALID"
+   ]
+  }
+ }
+]
