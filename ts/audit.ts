@@ -156,9 +156,9 @@ export async function verifyChain(entries: readonly Entry[], verifier: Verifier,
       errors.push({ index: i, seq: null, code: "BAD_FORMAT", detail: "entry is not an object" });
       continue;
     }
-    const seq = typeof e.seq === "number" ? e.seq : null;
-    const bad = typeof e.seq !== "number" || typeof e.prev_hash !== "string" || typeof e.hash !== "string" ||
-      typeof e.key_id !== "string" || typeof e.signature !== "string" || !isPlainRecord(e.record);
+    const seq = typeof e["seq"] === "number" ? e["seq"] : null;
+    const bad = typeof e["seq"] !== "number" || typeof e["prev_hash"] !== "string" || typeof e["hash"] !== "string" ||
+      typeof e["key_id"] !== "string" || typeof e["signature"] !== "string" || !isPlainRecord(e["record"]);
     if (bad) {
       errors.push({ index: i, seq, code: "BAD_FORMAT" });
       continue;
@@ -222,41 +222,41 @@ const ISO_UTC = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/;
  *  claimed authority: that needs an identity and permissions system outside this module. */
 export function validateOverride(chain: readonly Entry[], record: Record<string, unknown>): string[] {
   const problems: string[] = [];
-  if (record.kind !== "OVERRIDE") problems.push("KIND_NOT_OVERRIDE");
+  if (record["kind"] !== "OVERRIDE") problems.push("KIND_NOT_OVERRIDE");
   for (const f of OVERRIDE_REQUIRED_STRINGS) {
     const v = record[f];
     if (typeof v !== "string" || v.trim() === "") problems.push(`MISSING_FIELD:${f}`);
   }
-  if (typeof record.timestamp === "string" && !ISO_UTC.test(record.timestamp)) problems.push("BAD_TIMESTAMP");
-  if (!Number.isSafeInteger(record.target_seq)) problems.push("MISSING_FIELD:target_seq");
-  if (!Array.isArray(record.consulted_evidence_ids) || !record.consulted_evidence_ids.every((x) => typeof x === "string" && x !== "")) {
+  if (typeof record["timestamp"] === "string" && !ISO_UTC.test(record["timestamp"])) problems.push("BAD_TIMESTAMP");
+  if (!Number.isSafeInteger(record["target_seq"])) problems.push("MISSING_FIELD:target_seq");
+  if (!Array.isArray(record["consulted_evidence_ids"]) || !record["consulted_evidence_ids"].every((x) => typeof x === "string" && x !== "")) {
     problems.push("BAD_EVIDENCE_LIST");
   }
-  if (typeof record.override_decision === "string" && !(record.override_decision in DECISION_RANK)) problems.push("BAD_DECISION");
+  if (typeof record["override_decision"] === "string" && !(record["override_decision"] in DECISION_RANK)) problems.push("BAD_DECISION");
   if (problems.length > 0) return problems;
 
-  const target = chain.find((e) => e.seq === record.target_seq);
+  const target = chain.find((e) => e.seq === record["target_seq"]);
   if (!target) return ["TARGET_NOT_FOUND"];
-  if (target.record.kind !== "SCREENING") return ["TARGET_NOT_SCREENING"];
-  const result = target.record.result as Record<string, unknown> | undefined;
+  if (target.record["kind"] !== "SCREENING") return ["TARGET_NOT_SCREENING"];
+  const result = target.record["result"] as Record<string, unknown> | undefined;
   if (!result) return ["TARGET_NOT_SCREENING"];
 
-  if (record.original_decision !== result.decision) problems.push("ORIGINAL_DECISION_MISMATCH");
-  if (record.original_psi !== result.psi) problems.push("ORIGINAL_PSI_MISMATCH");
+  if (record["original_decision"] !== result["decision"]) problems.push("ORIGINAL_DECISION_MISMATCH");
+  if (record["original_psi"] !== result["psi"]) problems.push("ORIGINAL_PSI_MISMATCH");
 
-  const from = DECISION_RANK[result.decision as string];
-  const to = DECISION_RANK[record.override_decision as string];
-  if (record.override_decision === result.decision) problems.push("NO_CHANGE");
+  const from = DECISION_RANK[result["decision"] as string];
+  const to = DECISION_RANK[record["override_decision"] as string];
+  if (record["override_decision"] === result["decision"]) problems.push("NO_CHANGE");
 
-  const evidence = record.consulted_evidence_ids as string[];
-  if (to < from) {
+  const evidence = record["consulted_evidence_ids"] as string[];
+  if (from !== undefined && to !== undefined && to < from) {
     // Favourable override: evidence is required, and a second approver if the original was a confirmed breach.
     if (evidence.length === 0) problems.push("EVIDENCE_REQUIRED");
-    const triggers = Array.isArray(result.triggers) ? (result.triggers as unknown[]) : [];
-    if (triggers.includes("T1") || result.decision === "RESTRICTION_RECOMMENDED_PENDING_AUTHORITY") {
-      const approver = record.approver_id;
+    const triggers = Array.isArray(result["triggers"]) ? (result["triggers"] as unknown[]) : [];
+    if (triggers.includes("T1") || result["decision"] === "RESTRICTION_RECOMMENDED_PENDING_AUTHORITY") {
+      const approver = record["approver_id"];
       if (typeof approver !== "string" || approver.trim() === "") problems.push("SECOND_APPROVER_REQUIRED");
-      else if (approver === record.reviewer_id) problems.push("APPROVER_SAME_AS_REVIEWER");
+      else if (approver === record["reviewer_id"]) problems.push("APPROVER_SAME_AS_REVIEWER");
     }
   }
   return problems;
@@ -266,12 +266,12 @@ export function validateOverride(chain: readonly Entry[], record: Record<string,
  *  The original entry is never changed; this only reads the chain. */
 export function effectiveDecision(chain: readonly Entry[], seq: number): { decision: string; overridden: boolean; override_seq: number | null } {
   const target = chain.find((e) => e.seq === seq);
-  if (!target || target.record.kind !== "SCREENING") throw new RangeError("no SCREENING entry with that seq");
-  const original = (target.record.result as Record<string, unknown>).decision as string;
+  if (!target || target.record["kind"] !== "SCREENING") throw new RangeError("no SCREENING entry with that seq");
+  const original = (target.record["result"] as Record<string, unknown>)["decision"] as string;
   let latest: Entry | null = null;
   for (const e of chain) {
-    if (e.record.kind === "OVERRIDE" && e.record.target_seq === seq) latest = e;
+    if (e.record["kind"] === "OVERRIDE" && e.record["target_seq"] === seq) latest = e;
   }
   if (!latest) return { decision: original, overridden: false, override_seq: null };
-  return { decision: latest.record.override_decision as string, overridden: true, override_seq: latest.seq };
+  return { decision: latest.record["override_decision"] as string, overridden: true, override_seq: latest.seq };
 }
