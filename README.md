@@ -59,5 +59,4 @@ Change them only together with the paper, the vectors and a new spec version.
 
 ## Not done yet
 
-Hash-chained signed audit log (Phase 2), extraction and evidence pipeline (Phase 3), reviewer
-workflow (Phase 4), tagged release and LICENSE. Choose a license before publishing.
+Hash-chained signed audit log (Phase 2), extraction and evidence pipeline (Phase 3), reviewer workflow (Phase 4).
