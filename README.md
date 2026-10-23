@@ -13,7 +13,7 @@ compliance or misconduct.
 
 | Path | Purpose |
 |---|---|
-| `ts/kernel.ts` | TypeScript kernel (Node 22+, Deno, Supabase Edge Functions). No dependencies. |
+| `ts/kernel.ts` | TypeScript kernel. Tested on Node 22; written to be portable to Deno and similar runtimes (not yet tested there). No dependencies. |
 | `python/aegis_kernel.py` | Independent Python implementation used for cross-checking |
 | `spec/vectors.json` | 24 test vectors: TV1-TV9 from paper Section 9.2, EV1-EV15 edge cases |
 | `tools/make_vectors.py` | Writes `vectors.json` (expected values typed from the spec, not computed by the kernel) |
@@ -33,8 +33,7 @@ bit for bit between the two implementations.
 
 ## What the kernel does
 
-Psi = f_ground(x2) * (1 - 0.20*x4) * (1 - 0.15*x5) * (1 - 0.30*x6), with f_ground = 1 - 0.40*x2.
-Range [0.2856, 1]. x1 (extractor instability) and x3 (boilerplate similarity) never enter Psi.
+Psi = f_ground(x2) * (1 - 0.20 * x4) * (1 - 0.15 * x5) * (1 - 0.30 * x6) with f_ground = 1 - 0.40 * x2. Range [0.2856, 1]. x1 (extractor instability) and x3 (boilerplate similarity) never enter Psi.
 
 Gate triggers (they never read Psi): T1 confirmed breach (x6 = 1); T2 documentation deficit
 (x4 >= 0.25 and n_applicable >= 10); T3 unverified or conflicting alert while x6 = 0.
