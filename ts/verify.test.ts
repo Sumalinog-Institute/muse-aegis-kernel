@@ -145,6 +145,17 @@ test("paging loads every row in order, however small the pages", async () => {
   }
 });
 
+test("a server that returns fewer rows than requested does not cause a silent partial load", async () => {
+  const store = await filled(7);
+  const capped: AuditReader = { getPage: async (after, limit) => store.getPage(after, Math.min(limit, 3)) };
+  const { rows } = await loadAll(capped, { pageSize: 500 });
+  assert.deepEqual(rows.map((r) => r.seq), [1, 2, 3, 4, 5, 6, 7]);
+  const r = await verifyLog(capped, verifier);
+  assert.equal(r.ok, true);
+  assert.equal(r.length, 7);
+  assert.deepEqual(r.head, { seq: 7, hash: store.rows[6]?.hash });
+});
+
 test("a reader that does not advance, or an oversized log, ends safely", async () => {
   const stuck: AuditReader = { getPage: async () => [{ seq: 1, prev_hash: "", record_json: "{}", hash: "", key_id: "", signature: "" }] };
   assert.equal((await loadAll(stuck, { pageSize: 1 })).stalled, true);

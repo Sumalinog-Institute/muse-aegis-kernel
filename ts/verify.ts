@@ -62,7 +62,8 @@ export async function loadAll(
     rows.push(...page);
     after = last.seq;
     if (rows.length >= maxEntries) return { rows, tooMany: true, stalled: false };
-    if (page.length < pageSize) break;
+    // Keep going until an EMPTY page: a server may return fewer rows than asked (for example because of a
+    // row cap), and a short page must never be mistaken for the end of the log.
   }
   return { rows, tooMany: false, stalled: false };
 }
