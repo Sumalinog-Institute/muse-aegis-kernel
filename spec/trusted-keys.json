@@ -1,0 +1,17 @@
+{
+  "format": "muse-aegis-trusted-keys-v1",
+  "keys": [
+    {
+      "key_id": "aegis-audit-2026-10",
+      "fingerprint": "5c9390c7a5eb9687",
+      "public_jwk": {
+        "crv": "P-256",
+        "ext": true,
+        "key_ops": ["verify"],
+        "kty": "EC",
+        "x": "4LRmQ8jxhaQW1WP0qkJlqZ_VhW2b9M283rtvG7Xrb9A",
+        "y": "7mIIilJjuqLtbEOU9aY7jPInI_j-M8oj-bxHwDHOmPQ"
+      }
+    }
+  ]
+}
