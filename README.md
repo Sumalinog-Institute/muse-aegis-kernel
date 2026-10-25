@@ -57,6 +57,14 @@ for x4 and x5, counts as a factor of 1, and is flagged.
 W_GROUND 0.40, W4 0.20, W5 0.15, W6 0.30, THETA_DOC 0.25, THETA_STAB 0.20, N_MIN 10, TAU_REVIEW 0.75.
 Change them only together with the paper, the vectors and a new spec version.
 
-## Not done yet
+## Audit log (Phase 2)
+Canonical JSON, hash-chained signed entries, append logic, log verifier and override
+validation: see spec/AUDIT.md. Tested in CI, including tamper detection and a
+cross-check against an independent Python implementation. The database table,
+signing endpoint and verification page live in the separate app repository and are
+not part of this repository.
 
-Hash-chained signed audit log (Phase 2), extraction and evidence pipeline (Phase 3), reviewer workflow (Phase 4).
+## Not done yet
+Extraction and evidence pipeline (Phase 3), reviewer workflow and override screens (Phase 4).
+The log's ordering and tamper-evidence are tested, but nothing here is validated on
+real cases.
