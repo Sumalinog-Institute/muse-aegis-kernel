@@ -50,6 +50,13 @@ For each party and each watch-list entry (name or alias):
 
 Overall: any CONFIRMED gives `x6 = 1`; otherwise CONFLICTING, then UNVERIFIED, then NONE. Alerts need a person to resolve them.
 
+## Input checks (all three calculators)
+
+Inputs are validated at run time. A value that cannot be used gives `INCOMPLETE` with a reason code, never 0:
+`INVALID_INPUT`, `INVALID_TRANSACTION`, `INVALID_REPORT`, `REGISTER_INVALID`, `INVALID_AMOUNT` (an amount that is negative, not a number,
+or has more than two decimals, so nothing is silently rounded), `UNKNOWN_CATEGORY` (a category with no documentation rule),
+`DUPLICATE_ID_CONFLICT`, `MIXED_CURRENCY`, `LEDGER_INCOMPLETE`, `REPOSITORY_INCOMPLETE`. Dates must be real calendar dates (YYYY-MM-DD).
+
 ## Limits
 
 Name matching is a coarse deterministic rule, not entity resolution: it will miss transliterations and aliases not on the
