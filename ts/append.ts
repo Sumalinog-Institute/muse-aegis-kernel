@@ -174,6 +174,11 @@ export async function appendScreening(
     actor_id: req.userId,
   };
 
+  return writeRecord(deps, record, MAX_RECORD_JSON_CHARS);
+}
+
+/** Signs and stores one record, retrying when another writer got the position first. */
+async function writeRecord(deps: AppendDeps, record: Record<string, unknown>, maxChars: number): Promise<AppendOutcome> {
   for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
     let head: { seq: number; hash: string } | null;
     try {
@@ -191,7 +196,7 @@ export async function appendScreening(
     } catch {
       return fail(400, "BAD_REQUEST", "the request contains values that cannot be recorded");
     }
-    if (recordJson.length > MAX_RECORD_JSON_CHARS) return fail(400, "BAD_REQUEST", "the record is too large");
+    if (recordJson.length > maxChars) return fail(400, "BAD_REQUEST", "the record is too large");
 
     // Never write an entry that does not verify under the trusted public key.
     const sig = await deps.verifier(entry.key_id, hexToBytes(entry.hash), entry.signature);
@@ -212,6 +217,7 @@ export async function appendScreening(
       return fail(500, "STORE_ERROR", "the entry could not be saved");
     }
 
+    const result = record["result"];
     const res = (typeof result === "object" && result !== null ? result : {}) as Record<string, unknown>;
     return {
       ok: true,
@@ -219,6 +225,38 @@ export async function appendScreening(
     };
   }
   return fail(503, "CONFLICT", "the log is busy, please try again");
+}
+
+// ---------------------------------------------------------------- appending a prepared record
+
+export const MAX_DETAILED_RECORD_CHARS = 200000;
+
+/** Appends a SCREENING record that was prepared elsewhere (for example a reviewed draft with full details).
+ *  The caller must already have checked that the content is genuine; this checks who may write and the record's shape. */
+export async function appendRecord(
+  deps: AppendDeps,
+  req: { userId: string; allowedUserIds: string | undefined },
+  record: Record<string, unknown>,
+  opts: { maxChars?: number } = {},
+): Promise<AppendOutcome> {
+  if (typeof req.userId !== "string" || req.userId === "" || req.userId.length > 100) {
+    return fail(401, "UNAUTHORIZED", "sign-in required");
+  }
+  const allowed = isAllowed(req.userId, req.allowedUserIds);
+  if (allowed === "unset") return fail(500, "SERVER_MISCONFIGURED", "the server is not configured");
+  if (!allowed) return fail(403, "FORBIDDEN", "this account may not write to the audit log");
+  const result = record["result"];
+  const ok =
+    record["kind"] === "SCREENING" &&
+    typeof record["doc_hash"] === "string" && DOC_HASH.test(record["doc_hash"]) &&
+    typeof result === "object" && result !== null && !Array.isArray(result) &&
+    typeof (result as Record<string, unknown>)["decision"] === "string" &&
+    record["actor_id"] === req.userId &&
+    typeof record["timestamp"] === "string" &&
+    typeof record["extractor_version"] === "string" && typeof record["ledger_id"] === "string" && typeof record["policy_version"] === "string";
+  if (!ok) return fail(400, "BAD_REQUEST", "the record is not a valid screening record for this account");
+  const maxChars = Math.min(opts.maxChars ?? MAX_DETAILED_RECORD_CHARS, 500000);
+  return writeRecord(deps, record, maxChars);
 }
 
 // ---------------------------------------------------------------- reading rows back
