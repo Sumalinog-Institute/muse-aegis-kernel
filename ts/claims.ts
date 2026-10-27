@@ -3,8 +3,8 @@
 // after that is plain code, so the result for a given document, claim list and ledger is always the same.
 //
 // Trust model: a proposed claim is accepted only if (1) its quote really occurs in the document, (2) its stated
-// value really occurs inside that quote, and (3) the value can be read unambiguously. This stops invented claims
-// and makes the evidence for every claim traceable to a place in the document.
+// value and its subject really occur inside that quote, and (3) the value can be read unambiguously. This stops invented claims
+// and makes the evidence for every claim traceable to a place in the document. The subject must be named in the quote too.
 
 export type EvidenceStatus = "SUPPORTED" | "CONTRADICTED" | "INSUFFICIENT_EVIDENCE" | "AMBIGUOUS_CONFLICT";
 
@@ -28,7 +28,7 @@ export interface Claim {
 }
 
 export type RejectReason =
-  | "NOT_AN_OBJECT" | "EMPTY_FIELD" | "TOO_LONG" | "QUOTE_NOT_IN_DOCUMENT" | "VALUE_NOT_IN_QUOTE" | "TOO_MANY_CLAIMS";
+  | "NOT_AN_OBJECT" | "EMPTY_FIELD" | "TOO_LONG" | "QUOTE_NOT_IN_DOCUMENT" | "VALUE_NOT_IN_QUOTE" | "SUBJECT_NOT_IN_QUOTE" | "TOO_MANY_CLAIMS";
 
 export interface Rejected {
   index: number;
@@ -151,6 +151,12 @@ export function anchorClaims(documentText: string, proposed: unknown[]): { claim
     const v = valueText.normalize("NFKC").replace(/\s+/g, " ").toLowerCase();
     if (!q.includes(v)) {
       rejected.push({ index, reason: "VALUE_NOT_IN_QUOTE" });
+      return;
+    }
+    // The subject must be named in the quote, so a label cannot be attached to a figure that belongs to someone else.
+    const sub = subject.normalize("NFKC").replace(/\s+/g, " ").toLowerCase();
+    if (!q.includes(sub)) {
+      rejected.push({ index, reason: "SUBJECT_NOT_IN_QUOTE" });
       return;
     }
     claims.push({

@@ -54,7 +54,7 @@ test("a claim whose quote and value appear in the document is accepted and its v
 });
 
 test("quote matching tolerates line breaks and extra spaces", () => {
-  const { claims } = anchorClaims("Total:\n   12,000   USD\npaid.", [raw({ quote: "Total: 12,000 USD paid." })]);
+  const { claims } = anchorClaims("Total:\n   12,000   USD\npaid.", [raw({ subject: "Total", quote: "Total: 12,000 USD paid." })]);
   assert.equal(claims.length, 1);
 });
 
@@ -62,6 +62,13 @@ test("invented claims are rejected: quote not in the document", () => {
   const r = anchorClaims(DOC, [raw({ quote: "we disbursed 99,999 USD to Vendor Z" })]);
   assert.deepEqual(r.claims, []);
   assert.deepEqual(r.rejected, [{ index: 0, reason: "QUOTE_NOT_IN_DOCUMENT" }]);
+});
+
+test("a subject that is not named in the quote is rejected", () => {
+  const r = anchorClaims(DOC, [raw({ subject: "Vendor B" })]);
+  assert.deepEqual(r.rejected, [{ index: 0, reason: "SUBJECT_NOT_IN_QUOTE" }]);
+  const ok = anchorClaims(DOC, [raw({ subject: "  VENDOR   a " })]);
+  assert.equal(ok.claims.length, 1);
 });
 
 test("a value that is not inside its own quote is rejected", () => {

@@ -18,10 +18,10 @@ A model (or a person) only PROPOSES claims; every later step is plain code.
 A proposed claim is accepted only if all of these hold, otherwise it is rejected with a reason and reported:
 1. Every field is present and within the length limits (200 characters; quote 500). At most 200 claims per document.
 2. The `quote` occurs in the document (compared after Unicode NFKC normalization, collapsed whitespace and lower-casing).
-3. The `value_text` occurs inside the quote.
+3. The `value_text` occurs inside the quote, and so does the `subject` (so a label cannot be attached to a figure that belongs to someone else).
 4. The value is read as a number only if it is plain digits with optional thousands commas, a decimal part, a leading currency symbol or a trailing `%`. Anything else ("12 thousand") stays text and is never silently converted.
 
-Rejected reasons: `NOT_AN_OBJECT`, `EMPTY_FIELD`, `TOO_LONG`, `QUOTE_NOT_IN_DOCUMENT`, `VALUE_NOT_IN_QUOTE`, `TOO_MANY_CLAIMS`.
+Rejected reasons: `NOT_AN_OBJECT`, `EMPTY_FIELD`, `TOO_LONG`, `QUOTE_NOT_IN_DOCUMENT`, `VALUE_NOT_IN_QUOTE`, `SUBJECT_NOT_IN_QUOTE`, `TOO_MANY_CLAIMS`.
 
 ## The reference ledger
 
