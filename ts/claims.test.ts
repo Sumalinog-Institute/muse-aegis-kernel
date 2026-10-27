@@ -210,3 +210,38 @@ test("x2 flows into the kernel: a coverage failure forces manual review, a clean
   const bad = computeX2([item("CONTRADICTED", 1), item("CONTRADICTED", 2)], 5000);
   assert.equal(evaluate({ ...profile, x2: bad.x2 }).decision, "FLAG_FOR_REVIEW"); // psi = 0.6
 });
+
+// ---------------------------------------------------------------- picking a ledger label by number
+
+const LABELS = [
+  { subject: "Vendor A", attribute: "disbursed amount", period: "2026-Q2" },
+  { subject: "Equipment", attribute: "amount spent", period: "2026-Q2" },
+];
+
+test("label_id: a valid pick replaces the model's wording with the ledger's own, and the claim then matches its fact", () => {
+  const r = anchorClaims(DOC, [raw({ attribute: "payment to supplier", period: "Q2 2026", label_id: 0 })], LABELS);
+  const c = r.claims[0] as Claim;
+  assert.deepEqual([c.subject, c.attribute, c.period, c.label], ["Vendor A", "disbursed amount", "2026-Q2", 0]);
+  assert.equal(c.key, claimKey("Vendor A", "disbursed amount", "2026-Q2"));
+  assert.equal(verifyClaims([c], ledger([fact()])).items[0]?.status, "SUPPORTED");
+  const unpicked = anchorClaims(DOC, [raw({ attribute: "payment to supplier", period: "Q2 2026" })], LABELS).claims[0] as Claim;
+  assert.equal(verifyClaims([unpicked], ledger([fact()])).items[0]?.status, "INSUFFICIENT_EVIDENCE"); // wording alone does not match
+  assert.equal(unpicked.label, null);
+});
+
+test("label_id: invalid picks, or a label whose subject is not in the quote, are ignored (the model's own wording is kept)", () => {
+  for (const pick of [-1, 2, 1.5, "0", null, undefined, NaN, true]) {
+    const c = anchorClaims(DOC, [raw({ attribute: "payment", label_id: pick })], LABELS).claims[0] as Claim;
+    assert.deepEqual([c.attribute, c.label], ["payment", null], String(pick));
+  }
+  // label 1 is "Equipment", which this quote does not mention: the pick is not honoured
+  const wrong = anchorClaims(DOC, [raw({ attribute: "payment", label_id: 1 })], LABELS).claims[0] as Claim;
+  assert.deepEqual([wrong.subject, wrong.attribute, wrong.label], ["Vendor A", "payment", null]);
+  // without a label list the field is ignored
+  assert.equal((anchorClaims(DOC, [raw({ label_id: 0 })]).claims[0] as Claim).label, null);
+});
+
+test("label_id does not relax the other checks: the model's own subject must still be in the quote, and the quote in the document", () => {
+  assert.deepEqual(anchorClaims(DOC, [raw({ subject: "Vendor Z", label_id: 0 })], LABELS).rejected, [{ index: 0, reason: "SUBJECT_NOT_IN_QUOTE" }]);
+  assert.deepEqual(anchorClaims(DOC, [raw({ quote: "we disbursed 99,999 USD to Vendor A", label_id: 0 })], LABELS).rejected, [{ index: 0, reason: "QUOTE_NOT_IN_DOCUMENT" }]);
+});

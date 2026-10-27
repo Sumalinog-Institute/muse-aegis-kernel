@@ -24,7 +24,7 @@ Top level: `doc_hash` (SHA-256 of the document text), `input` (the profile given
   The inputs themselves are not stored, so the exact inputs can be proved later by re-hashing them.
 - `features`: the full results for x4 (values, undocumented and pending records), x5 (late and missing reports) and the watch-list screening (hits).
 - `claims`: every consensus claim with its status, exact quote and matching ledger fact ids; x2 with its counts; ledger flags.
-- `stability`: x1 with its mode and parts, the model, k, temperature, a summary of each run, and token usage.
+- `stability`: x1 with its mode and parts, the model, k, temperature, token usage, and for each run what it found (position, status, wording and label of each figure, plus the reasons any proposals were rejected), so a disagreement between runs can be traced.
 - `review`: decision (APPROVED), reviewer, review time, note, the draft's creation time and its MAC.
 
 Records of this kind may be up to 200,000 characters; older plain records are limited to 20,000.

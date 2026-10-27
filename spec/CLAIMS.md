@@ -12,6 +12,7 @@ A model (or a person) only PROPOSES claims; every later step is plain code.
 | `value_text` | The value exactly as written in the document |
 | `unit` | For example `USD`, `KRW`, `%`, `count`, `date`, or empty |
 | `quote` | An exact passage from the document that states the claim |
+| `label_id` | Optional: the number of a preferred ledger label the claim is about, or null |
 
 ## Acceptance (anchoring)
 
@@ -21,7 +22,9 @@ A proposed claim is accepted only if all of these hold, otherwise it is rejected
 3. The `value_text` occurs inside the quote, and so does the `subject` (so a label cannot be attached to a figure that belongs to someone else).
 4. The value is read as a number only if it is plain digits with optional thousands commas, a decimal part, a leading currency symbol or a trailing `%`. Anything else ("12 thousand") stays text and is never silently converted.
 
-Each accepted claim also records `at`: the position of its value in the normalized document, used to align the same figure across runs.
+**Picking a ledger label.** When preferred labels are offered (numbered, from the claims ledger) and a claim gives a valid `label_id` (an integer in range) whose subject is named in the claim's quote, the ledger's own subject, attribute and period replace the model's wording, so wording drift cannot stop a claim from matching its ledger fact. Otherwise the pick is ignored and the model's own wording is used (which usually will not match, giving INSUFFICIENT_EVIDENCE). A pick never relaxes the other checks.
+
+Each accepted claim also records `label` (the number that was used, or null) and `at`: the position of its value in the normalized document, used to align the same figure across runs.
 
 Rejected reasons: `NOT_AN_OBJECT`, `EMPTY_FIELD`, `TOO_LONG`, `QUOTE_NOT_IN_DOCUMENT`, `VALUE_NOT_IN_QUOTE`, `SUBJECT_NOT_IN_QUOTE`, `TOO_MANY_CLAIMS`.
 

@@ -150,7 +150,12 @@ test("the draft records inputs by hash, the claims with their quotes, the featur
   });
   assert.equal(d.details.inputs.award_id, "XX-NMF-0001-2026-014");
   assert.equal(d.details.inputs.as_of, "2026-10-26");
-  assert.equal(d.extractor_version, "gemini:gemini-test:prompt-v1:stab-k3-t0.7");
+  assert.equal(d.extractor_version, "gemini:gemini-test:prompt-v2:stab-k3-t0.7");
+  const runs = d.details.stability.runs;
+  assert.equal(runs.length, 3);
+  const exp = json("s0-as-delivered", "expected.json").claims.claims.map((c: { status: string }) => c.status).sort();
+  for (const run of runs) assert.deepEqual(run.figures?.map((f) => f.status).sort(), exp); // each run's findings are kept, run by run
+  assert.deepEqual(runs[0]?.rejected_reasons, {});
   assert.deepEqual([d.details.stability.k, d.details.stability.valid_runs, d.details.stability.usage], [3, 3, { prompt_tokens: 300, output_tokens: 150 }]);
   assert.equal(d.details.stability.result.x1, 0);
   const training = d.details.claims.items.find((i) => i.subject === "Training and workshops");

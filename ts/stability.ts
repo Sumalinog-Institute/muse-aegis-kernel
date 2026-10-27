@@ -135,11 +135,15 @@ export function consensusItems(runs: readonly (readonly VerifiedClaim[])[]): Ver
 
 // ---------------------------------------------------------------- the orchestration
 
+export interface RunFigure { at: number; status: string; subject: string; attribute: string; period: string; label: number | null }
+
 export interface RunSummary {
   ok: boolean;
   code?: ExtractError;
   claims: number;
   rejected: number;
+  rejected_reasons?: Record<string, number>;
+  figures?: RunFigure[]; // what this run found, so a disagreement between runs can be traced (at most 60 per run)
 }
 
 export type StabilityAnalysis =
@@ -185,7 +189,11 @@ export async function analyzeWithStability(
     const v = verifyClaims(e.claims, p.ledger);
     if (itemRuns.length === 0) ledgerFlags = v.ledgerFlags;
     itemRuns.push(v.items);
-    summaries.push({ ok: true, claims: e.claims.length, rejected: e.rejected.length });
+    const reasons: Record<string, number> = {};
+    for (const r of e.rejected) reasons[r.reason] = (reasons[r.reason] ?? 0) + 1;
+    const figures: RunFigure[] = [...byPosition(v.items).values()].sort((x, y) => x.claim.at - y.claim.at).slice(0, 60)
+      .map((it) => ({ at: it.claim.at, status: it.status, subject: it.claim.subject, attribute: it.claim.attribute, period: it.claim.period, label: it.claim.label }));
+    summaries.push({ ok: true, claims: e.claims.length, rejected: e.rejected.length, rejected_reasons: reasons, figures });
     usage.prompt_tokens += e.usage.prompt_tokens ?? 0;
     usage.output_tokens += e.usage.output_tokens ?? 0;
   }

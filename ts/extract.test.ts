@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { analyzeDocument, buildPrompt, extractClaims, generate, listModels, parseModelReply, PROMPT_VERSION, SYSTEM_PROMPT } from "./extract.ts";
+import { analyzeDocument, buildPrompt, dedupeLabels, extractClaims, generate, listModels, parseModelReply, PROMPT_VERSION, SYSTEM_PROMPT } from "./extract.ts";
 import type { GeminiDeps } from "./extract.ts";
 import type { Ledger } from "./claims.ts";
 
@@ -58,14 +58,18 @@ test("the markers cannot be forged from inside the document", () => {
   assert.equal(evil.includes("=====BEGIN-DOCUMENT-1====="), false);
 });
 
-test("preferred labels from the ledger are offered to the model, outside the document markers, and capped", () => {
-  const p = buildPrompt(DOC, [{ subject: "Vendor A", attribute: "disbursed amount", period: "2026-Q2" }, { subject: "Vendor A", attribute: "disbursed amount", period: "2026-Q2" }]);
+test("preferred labels from the ledger are offered as a numbered list, outside the document markers, and capped", () => {
+  const p = buildPrompt(DOC, [{ subject: "Vendor A", attribute: "disbursed amount", period: "2026-Q2" }, { subject: "Vendor A", attribute: "disbursed amount", period: "2026-Q2" }, { subject: "Vendor B", attribute: "disbursed amount", period: "2026-Q2" }]);
   assert.match(p.user, /Preferred labels/);
-  assert.equal(p.user.split('["Vendor A","disbursed amount","2026-Q2"]').length - 1, 1); // duplicates removed
+  assert.match(p.user, /\[0\] \["Vendor A","disbursed amount","2026-Q2"\]/);
+  assert.match(p.user, /\[1\] \["Vendor B","disbursed amount","2026-Q2"\]/); // the repeat was removed, so Vendor B is number 1
+  assert.equal(p.user.split("Vendor A\",").length - 1, 1);
   assert.ok(p.user.indexOf("Preferred labels") < p.user.indexOf("=====BEGIN-DOCUMENT-0====="));
+  assert.match(p.system, /label_id/);
   const many = buildPrompt(DOC, Array.from({ length: 500 }, (_, i) => ({ subject: "s" + i, attribute: "a", period: "p" })));
-  assert.equal(many.user.split("\n").filter((l) => l.startsWith('["s')).length, 200);
+  assert.equal(many.user.split("\n").filter((l) => /^\[\d+\] \["s/.test(l)).length, 200);
   assert.equal(buildPrompt(DOC).user.includes("Preferred labels"), false);
+  assert.equal(dedupeLabels(undefined).length, 0);
 });
 
 test("analyzeDocument sends the ledger's labels to the model", async () => {
@@ -228,7 +232,7 @@ test("analyzeDocument: claims are verified against the ledger and x2 is computed
   const r = await analyzeDocument(fake([ok(GOOD)]).deps, { ...params, ledger });
   assert.equal(r.ok, true);
   if (!r.ok) return;
-  assert.equal(r.extractor_version, "gemini:gemini-test-model:prompt-v1");
+  assert.equal(r.extractor_version, "gemini:gemini-test-model:prompt-v2");
   const by = Object.fromEntries(r.verification.items.map((i) => [i.claim.subject, i.status]));
   assert.deepEqual(by, { "Vendor A": "SUPPORTED", "Audit report": "CONTRADICTED" }); // submitted 2026-03-15 vs ledger 2026-03-20
   assert.equal(r.x2.x2, 0.5); // 1 of 2 contradicted
@@ -249,4 +253,22 @@ test("a document that tries to hijack the model cannot change verification: only
   if (!r.ok) return;
   // The sentence is in the document, so it is a claim ABOUT the document; it is judged against the real ledger.
   assert.equal(r.verification.items[0]?.status, "CONTRADICTED");
+});
+
+test("a claim that picks a ledger label by number keeps working when the model words it differently", async () => {
+  // Preferred labels, in ledger order: 0 Vendor A, 1 audit report, 2 Vendor B. The model words the Vendor A claim its own way
+  // but picks label 0; it also words the audit-report claim its own way and picks nothing.
+  const drifted = { claims: [
+    { subject: "Vendor A", attribute: "payment to supplier", period: "Q2 2026", value_text: "12,000", unit: "USD", quote: "we disbursed 12,000 USD to Vendor A", label_id: 0 },
+    { subject: "audit report", attribute: "date handed in", period: "this year", value_text: "2026-03-15", unit: "date", quote: "The audit report was submitted on 2026-03-15", label_id: null },
+  ] };
+  const r = await analyzeDocument(fake([ok(drifted)]).deps, { ...params, ledger });
+  assert.equal(r.ok, true);
+  if (!r.ok) return;
+  const a = r.verification.items.find((i) => i.claim.subject === "Vendor A");
+  assert.equal(a?.status, "SUPPORTED"); // the ledger's own wording was used
+  assert.deepEqual([a?.claim.attribute, a?.claim.period, a?.claim.label], ["disbursed amount", "2026-Q2", 0]);
+  const b = r.verification.items.find((i) => i.claim.subject === "audit report");
+  assert.equal(b?.status, "INSUFFICIENT_EVIDENCE"); // no label picked and the model's wording does not match: reported, not guessed
+  assert.equal(b?.claim.label, null);
 });

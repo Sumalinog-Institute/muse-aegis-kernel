@@ -155,7 +155,7 @@ test("three identical runs: x1 is 0, the consensus is the full claim set, and x2
   const by = Object.fromEntries(r.consensus.items.map((i) => [i.claim.subject, i.status]));
   assert.deepEqual(by, { "Vendor A": "SUPPORTED", "audit report": "CONTRADICTED", "Vendor B": "AMBIGUOUS_CONFLICT", beneficiaries: "INSUFFICIENT_EVIDENCE" });
   assert.deepEqual(r.usage, { prompt_tokens: 300, output_tokens: 150 });
-  assert.equal(r.extractor_version, "gemini:gemini-test:prompt-v1:stab-k3-t0.7");
+  assert.equal(r.extractor_version, "gemini:gemini-test:prompt-v2:stab-k3-t0.7");
   assert.equal(f.count(), 3);
 });
 
@@ -292,4 +292,38 @@ test("wording that changes the verdict is real instability: one run labels the f
   // Vendor A's figure is SUPPORTED in two runs and INSUFFICIENT_EVIDENCE in one: 2 of 3 pairs, over 4 figures x 3 pairs
   assert.equal(r.stability.x1, 2 / 12);
   assert.equal(r.consensus.items.find((i) => i.claim.subject === "Vendor A")?.status, "SUPPORTED");
+});
+
+test("each run's findings are kept, so a disagreement between runs can be traced afterwards", async () => {
+  const r = await analyzeWithStability(fake([ok(CLAIMS), ok(CLAIMS.slice(0, 3)), ok(CLAIMS)]).deps, params());
+  assert.equal(r.ok, true);
+  if (!r.ok) return;
+  assert.deepEqual(r.runs.map((x) => x.figures?.length), [4, 3, 4]);
+  const f = r.runs[0]?.figures as { at: number; status: string; subject: string; label: number | null }[];
+  assert.deepEqual(f.map((x) => x.subject), ["Vendor A", "audit report", "Vendor B", "beneficiaries"]);
+  assert.deepEqual(f.map((x) => x.status), ["SUPPORTED", "CONTRADICTED", "AMBIGUOUS_CONFLICT", "INSUFFICIENT_EVIDENCE"]);
+  assert.ok(f.every((x, i) => i === 0 || (f[i - 1] as { at: number }).at < x.at)); // in document order
+  assert.deepEqual(r.runs[1]?.rejected_reasons, {});
+});
+
+test("picking ledger labels by number removes the label-drift instability seen live; without the pick, the drift shows in x1", async () => {
+  // labels in ledger order: 0 Vendor A, 1 audit report, 2 Vendor B (deduplicated), 3 not used.
+  const drift = (claim: Record<string, unknown>, pick: number | null) => ({ ...claim, attribute: "reported item", period: "this period", label_id: pick });
+  const stableRuns = [
+    CLAIMS.map((c, i) => ({ ...c, label_id: i < 3 ? i : null })), // run 1 uses the ledger's own words through the label numbers
+    CLAIMS.map((c, i) => drift(c, i < 3 ? i : null)), // runs 2 and 3 word attribute and period freely but still pick the numbers
+    CLAIMS.map((c, i) => drift(c, i < 3 ? i : null)),
+  ];
+  const withPicks = await analyzeWithStability(fake(stableRuns.map(ok)).deps, params());
+  assert.equal(withPicks.ok, true);
+  if (!withPicks.ok) return;
+  assert.equal(withPicks.stability.x1, 0);
+  assert.deepEqual(withPicks.consensus.items.map((i) => i.status).sort(), ["AMBIGUOUS_CONFLICT", "CONTRADICTED", "INSUFFICIENT_EVIDENCE", "SUPPORTED"]);
+  // the same freely worded runs WITHOUT the picks: the figures that have ledger facts stop matching in those runs
+  const noPicks = [CLAIMS, CLAIMS.map((c) => drift(c, null)), CLAIMS.map((c) => drift(c, null))];
+  const without = await analyzeWithStability(fake(noPicks.map(ok)).deps, params());
+  assert.equal(without.ok, true);
+  if (!without.ok || without.stability.x1 === "INCOMPLETE") return assert.fail("expected a number");
+  assert.ok(without.stability.x1 > 0.2, `x1 ${without.stability.x1}`); // 3 figures with ledger facts differ in 2 of 3 runs
+  assert.equal(without.consensus.items.filter((i) => i.status === "INSUFFICIENT_EVIDENCE").length, 4); // the majority of runs no longer match the ledger
 });

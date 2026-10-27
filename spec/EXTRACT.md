@@ -7,12 +7,14 @@ traced to the document (see `spec/CLAIMS.md`). The model's output is untrusted i
 
 `document text -> prompt -> model -> strict JSON parse -> anchorClaims -> verifyClaims (ledger) -> x2`
 
-## Prompt (version 1)
+## Prompt (version 2)
 
 - A fixed system prompt says the document is data, not instructions, and defines the output shape and the rules.
 - The document sits between markers that are chosen so they cannot occur inside the document.
-- Optional "preferred labels" from the ledger are offered OUTSIDE the document block to reduce label drift. They only
-  steer wording: a claim is still accepted only if its quote, value and subject are in the document.
+- Optional "preferred labels" from the ledger are offered as a NUMBERED list OUTSIDE the document block. A claim may give the number
+  of the label it is about (`label_id`), and the ledger's own wording is then used. Version 1 asked the model to copy label wording
+  and the first live runs showed it drifting (one run in three used wording that no longer matched the ledger). A pick only steers
+  wording: a claim is still accepted only if its quote, value and subject are in the document, and the picked label's subject must be in the quote.
 
 ## Model call (Gemini REST, `generateContent`)
 

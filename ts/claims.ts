@@ -15,6 +15,7 @@ export interface RawClaim {
   value_text: string; // the value exactly as written in the document
   unit: string; // e.g. "USD", "KRW", "%", "count", "date", or ""
   quote: string; // an exact passage from the document that states the claim
+  label_id?: number | null; // optional: the number of a preferred ledger label this claim is about
 }
 
 export interface Claim {
@@ -26,6 +27,7 @@ export interface Claim {
   quote: string;
   key: string; // normalized subject|attribute|period
   at: number; // position of the value in the normalized document: the same figure keeps the same position across runs
+  label: number | null; // the preferred ledger label that was used for subject, attribute and period, if any
 }
 
 export type RejectReason =
@@ -108,7 +110,11 @@ function field(v: unknown, max: number): FieldResult {
 }
 
 /** Keeps only claims that can be traced to the document. `proposed` is untrusted input (for example model output). */
-export function anchorClaims(documentText: string, proposed: unknown[]): { claims: Claim[]; rejected: Rejected[] } {
+export function anchorClaims(
+  documentText: string,
+  proposed: unknown[],
+  labels?: readonly { subject: string; attribute: string; period: string }[],
+): { claims: Claim[]; rejected: Rejected[] } {
   const claims: Claim[] = [];
   const rejected: Rejected[] = [];
   const doc = documentText.normalize("NFKC").replace(/\s+/g, " ").toLowerCase();
@@ -160,13 +166,25 @@ export function anchorClaims(documentText: string, proposed: unknown[]): { claim
       rejected.push({ index, reason: "SUBJECT_NOT_IN_QUOTE" });
       return;
     }
+    // A claim may pick one of the preferred ledger labels by number. The labels are then used exactly as the ledger writes them, so
+    // wording drift cannot stop a claim from matching its ledger fact. The label's subject must still be named in the quote;
+    // otherwise the pick is ignored and the model's own wording is used.
+    let useLabel: number | null = null;
+    const pick = r["label_id"];
+    if (labels && typeof pick === "number" && Number.isInteger(pick) && pick >= 0 && pick < labels.length) {
+      const lab = labels[pick] as { subject: string; attribute: string; period: string };
+      if (q.includes(normalizeText(lab.subject))) useLabel = pick;
+    }
+    const lab = useLabel === null ? null : (labels as readonly { subject: string; attribute: string; period: string }[])[useLabel];
+    const fs = lab ? lab.subject : subject, fa = lab ? lab.attribute : attribute, fp = lab ? lab.period : period;
     claims.push({
-      subject, attribute, period,
+      subject: fs, attribute: fa, period: fp,
       value: parseValue(valueText),
       unit: normalizeText(unitRaw),
       quote,
-      key: claimKey(subject, attribute, period),
+      key: claimKey(fs, fa, fp),
       at: doc.indexOf(q) + q.indexOf(v),
+      label: useLabel,
     });
   });
   return { claims, rejected };
