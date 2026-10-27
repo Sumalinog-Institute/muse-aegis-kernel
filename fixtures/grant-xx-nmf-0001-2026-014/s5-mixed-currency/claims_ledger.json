@@ -1,0 +1,158 @@
+{
+ "snapshot_id": "FX-014-CLAIMS-LEDGER",
+ "snapshot_date": "2026-10-26",
+ "facts": [
+  {
+   "id": "CF1",
+   "subject": "Equipment",
+   "attribute": "amount spent",
+   "period": "2026-Q1",
+   "value": 12000.0,
+   "unit": "USD"
+  },
+  {
+   "id": "CF2",
+   "subject": "Equipment",
+   "attribute": "amount spent",
+   "period": "2026-Q2",
+   "value": 9800.0,
+   "unit": "USD"
+  },
+  {
+   "id": "CF3",
+   "subject": "Personnel",
+   "attribute": "amount spent",
+   "period": "2026-Q1",
+   "value": 27000.0,
+   "unit": "USD"
+  },
+  {
+   "id": "CF4",
+   "subject": "Personnel",
+   "attribute": "amount spent",
+   "period": "2026-Q2",
+   "value": 27000.0,
+   "unit": "USD"
+  },
+  {
+   "id": "CF5",
+   "subject": "Personnel",
+   "attribute": "amount spent",
+   "period": "2026-Q3",
+   "value": 27000.0,
+   "unit": "USD"
+  },
+  {
+   "id": "CF6",
+   "subject": "Personnel",
+   "attribute": "amount spent",
+   "period": "2026-Q4",
+   "value": 9000.0,
+   "unit": "USD"
+  },
+  {
+   "id": "CF7",
+   "subject": "Rent and utilities",
+   "attribute": "amount spent",
+   "period": "2026-Q1",
+   "value": 4800.0,
+   "unit": "USD"
+  },
+  {
+   "id": "CF8",
+   "subject": "Rent and utilities",
+   "attribute": "amount spent",
+   "period": "2026-Q2",
+   "value": 4800.0,
+   "unit": "USD"
+  },
+  {
+   "id": "CF9",
+   "subject": "Rent and utilities",
+   "attribute": "amount spent",
+   "period": "2026-Q3",
+   "value": 4800.0,
+   "unit": "USD"
+  },
+  {
+   "id": "CF10",
+   "subject": "Rent and utilities",
+   "attribute": "amount spent",
+   "period": "2026-Q4",
+   "value": 1600.0,
+   "unit": "USD"
+  },
+  {
+   "id": "CF11",
+   "subject": "Subcontracts",
+   "attribute": "amount spent",
+   "period": "2026-Q2",
+   "value": 6500.0,
+   "unit": "USD"
+  },
+  {
+   "id": "CF12",
+   "subject": "Subcontracts",
+   "attribute": "amount spent",
+   "period": "2026-Q3",
+   "value": 10200.0,
+   "unit": "USD"
+  },
+  {
+   "id": "CF13",
+   "subject": "Training and workshops",
+   "attribute": "amount spent",
+   "period": "2026-Q1",
+   "value": 4500.0,
+   "unit": "USD"
+  },
+  {
+   "id": "CF14",
+   "subject": "Training and workshops",
+   "attribute": "amount spent",
+   "period": "2026-Q2",
+   "value": 6200.0,
+   "unit": "USD"
+  },
+  {
+   "id": "CF15",
+   "subject": "Training and workshops",
+   "attribute": "amount spent",
+   "period": "2026-Q3",
+   "value": 2300.0,
+   "unit": "USD"
+  },
+  {
+   "id": "CF16",
+   "subject": "Training and workshops",
+   "attribute": "amount spent",
+   "period": "2026-Q4",
+   "value": 4500.0,
+   "unit": "USD"
+  },
+  {
+   "id": "CF17",
+   "subject": "Travel",
+   "attribute": "amount spent",
+   "period": "2026-Q3",
+   "value": 960.0,
+   "unit": "USD"
+  },
+  {
+   "id": "CF18",
+   "subject": "Q1 financial and narrative report",
+   "attribute": "submitted on",
+   "period": "2026",
+   "value": "2026-04-28",
+   "unit": "date"
+  },
+  {
+   "id": "CF19",
+   "subject": "Q2 financial and narrative report",
+   "attribute": "submitted on",
+   "period": "2026",
+   "value": "2026-08-06",
+   "unit": "date"
+  }
+ ]
+}

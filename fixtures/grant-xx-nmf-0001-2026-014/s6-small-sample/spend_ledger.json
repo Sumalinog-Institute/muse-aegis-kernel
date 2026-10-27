@@ -1,0 +1,107 @@
+{
+ "snapshot_id": "FX-014-SPEND-s6-small-sample",
+ "as_of": "2026-10-26",
+ "currency": "USD",
+ "complete": true,
+ "transactions": [
+  {
+   "id": "TX-2026-001",
+   "type": "expenditure",
+   "date": "2026-01-28",
+   "category": "personnel",
+   "description": "Staff salaries, month 1",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Brightwater payroll account",
+    "identifiers": []
+   },
+   "value": 9000,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "payroll_record",
+     "ref": "PAY-001",
+     "date": "2026-01-28"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-002",
+   "type": "expenditure",
+   "date": "2026-02-28",
+   "category": "personnel",
+   "description": "Staff salaries, month 2",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Brightwater payroll account",
+    "identifiers": []
+   },
+   "value": 9000,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "payroll_record",
+     "ref": "PAY-002",
+     "date": "2026-02-28"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-011",
+   "type": "expenditure",
+   "date": "2026-02-12",
+   "category": "equipment",
+   "description": "Laptop set (12 units)",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Halden Office Supplies Ltd",
+    "identifiers": [
+     {
+      "scheme": "XX-REG",
+      "value": "HOS-1130"
+     }
+    ]
+   },
+   "value": 7800,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "invoice",
+     "ref": "INV-011",
+     "date": "2026-02-12"
+    },
+    {
+     "type": "receipt",
+     "ref": "REC-011",
+     "date": "2026-02-12"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-013",
+   "type": "expenditure",
+   "date": "2026-05-18",
+   "category": "equipment",
+   "description": "Tablets for workshops (8 units)",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Corvane Electronics Inc",
+    "identifiers": [
+     {
+      "scheme": "XX-REG",
+      "value": "CE-9051"
+     }
+    ]
+   },
+   "value": 9800,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "receipt",
+     "ref": "REC-013",
+     "date": "2026-05-18"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,34 @@
+[
+ {
+  "scenario": "s0-as-delivered",
+  "description": "Typical messy file: two missing documents, one report late, one missing, a near-name watch-list hit, two wrong statements."
+ },
+ {
+  "scenario": "s1-clean",
+  "description": "Everything resolved: documents complete, reports on time, no name hit, statements correct."
+ },
+ {
+  "scenario": "s2-documentation-gaps",
+  "description": "Payroll records missing from May onward: documentation deficit above the gate threshold (the two most recent are still inside the 30-day grace window and are not counted)."
+ },
+ {
+  "scenario": "s3-confirmed-match",
+  "description": "A payee matches a watch-list entry by identifier AND by name: confirmed."
+ },
+ {
+  "scenario": "s4-conflicting-match",
+  "description": "A payee matches a watch-list identifier but with a different name: conflicting."
+ },
+ {
+  "scenario": "s5-mixed-currency",
+  "description": "One expense recorded in another currency: documentation measure cannot be computed."
+ },
+ {
+  "scenario": "s6-small-sample",
+  "description": "Only four transactions, with a high ratio: small-sample case."
+ },
+ {
+  "scenario": "s7-ledger-incomplete",
+  "description": "The ledger is not attested complete."
+ }
+]

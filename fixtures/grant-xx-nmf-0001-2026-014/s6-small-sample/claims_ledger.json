@@ -1,0 +1,46 @@
+{
+ "snapshot_id": "FX-014-CLAIMS-LEDGER",
+ "snapshot_date": "2026-10-26",
+ "facts": [
+  {
+   "id": "CF1",
+   "subject": "Equipment",
+   "attribute": "amount spent",
+   "period": "2026-Q1",
+   "value": 7800.0,
+   "unit": "USD"
+  },
+  {
+   "id": "CF2",
+   "subject": "Equipment",
+   "attribute": "amount spent",
+   "period": "2026-Q2",
+   "value": 9800.0,
+   "unit": "USD"
+  },
+  {
+   "id": "CF3",
+   "subject": "Personnel",
+   "attribute": "amount spent",
+   "period": "2026-Q1",
+   "value": 18000.0,
+   "unit": "USD"
+  },
+  {
+   "id": "CF4",
+   "subject": "Q1 financial and narrative report",
+   "attribute": "submitted on",
+   "period": "2026",
+   "value": "2026-04-28",
+   "unit": "date"
+  },
+  {
+   "id": "CF5",
+   "subject": "Q2 financial and narrative report",
+   "attribute": "submitted on",
+   "period": "2026",
+   "value": "2026-08-06",
+   "unit": "date"
+  }
+ ]
+}

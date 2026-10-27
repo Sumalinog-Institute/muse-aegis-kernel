@@ -1,0 +1,96 @@
+{
+ "scenario": "s0-as-delivered",
+ "as_of": "2026-10-26",
+ "x4": {
+  "x4": 0.10314908075966264,
+  "undocumented_value": 17000.0,
+  "applicable_value": 164810.0,
+  "n_applicable": 33,
+  "undocumented_ids": [
+   "TX-2026-013",
+   "TX-2026-033"
+  ],
+  "pending_ids": [
+   "TX-2026-018"
+  ],
+  "flags": [
+   "DUPLICATE_ID:TX-2026-016"
+  ]
+ },
+ "x5": {
+  "x5": 0.3333333333333333,
+  "n_due": 3,
+  "n_submitted": 2,
+  "late": [
+   "R2"
+  ],
+  "missing": [
+   "R3"
+  ]
+ },
+ "screening": {
+  "x6": 0,
+  "alert_status": "UNVERIFIED",
+  "confirmed": [],
+  "conflicting": [],
+  "unverified": [
+   [
+    "Northgate Supply Company",
+    "W-1001"
+   ]
+  ]
+ },
+ "claims": {
+  "claims": [
+   {
+    "subject": "Personnel",
+    "attribute": "amount spent",
+    "period": "2026-Q2",
+    "value": 27000,
+    "unit": "usd",
+    "status": "SUPPORTED"
+   },
+   {
+    "subject": "Equipment",
+    "attribute": "amount spent",
+    "period": "2026-Q2",
+    "value": 9800,
+    "unit": "usd",
+    "status": "SUPPORTED"
+   },
+   {
+    "subject": "Training and workshops",
+    "attribute": "amount spent",
+    "period": "2026-Q2",
+    "value": 6500,
+    "unit": "usd",
+    "status": "CONTRADICTED"
+   },
+   {
+    "subject": "Rent and utilities",
+    "attribute": "amount spent",
+    "period": "2026-Q2",
+    "value": 4800,
+    "unit": "usd",
+    "status": "SUPPORTED"
+   },
+   {
+    "subject": "Q2 financial and narrative report",
+    "attribute": "submitted on",
+    "period": "2026",
+    "value": "2026-07-30",
+    "unit": "date",
+    "status": "CONTRADICTED"
+   },
+   {
+    "subject": "beneficiaries",
+    "attribute": "number reached",
+    "period": "2026",
+    "value": 250,
+    "unit": "count",
+    "status": "INSUFFICIENT_EVIDENCE"
+   }
+  ],
+  "x2": 0.4166666666666667
+ }
+}

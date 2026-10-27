@@ -1,0 +1,82 @@
+{
+ "scenario": "s1-clean",
+ "as_of": "2026-10-26",
+ "x4": {
+  "x4": 0.0,
+  "undocumented_value": 0.0,
+  "applicable_value": 164810.0,
+  "n_applicable": 33,
+  "undocumented_ids": [],
+  "pending_ids": [],
+  "flags": [
+   "DUPLICATE_ID:TX-2026-016"
+  ]
+ },
+ "x5": {
+  "x5": 0.0,
+  "n_due": 3,
+  "n_submitted": 3,
+  "late": [],
+  "missing": []
+ },
+ "screening": {
+  "x6": 0,
+  "alert_status": "NONE",
+  "confirmed": [],
+  "conflicting": [],
+  "unverified": []
+ },
+ "claims": {
+  "claims": [
+   {
+    "subject": "Personnel",
+    "attribute": "amount spent",
+    "period": "2026-Q2",
+    "value": 27000,
+    "unit": "usd",
+    "status": "SUPPORTED"
+   },
+   {
+    "subject": "Equipment",
+    "attribute": "amount spent",
+    "period": "2026-Q2",
+    "value": 9800,
+    "unit": "usd",
+    "status": "SUPPORTED"
+   },
+   {
+    "subject": "Training and workshops",
+    "attribute": "amount spent",
+    "period": "2026-Q2",
+    "value": 6200,
+    "unit": "usd",
+    "status": "SUPPORTED"
+   },
+   {
+    "subject": "Rent and utilities",
+    "attribute": "amount spent",
+    "period": "2026-Q2",
+    "value": 4800,
+    "unit": "usd",
+    "status": "SUPPORTED"
+   },
+   {
+    "subject": "Q2 financial and narrative report",
+    "attribute": "submitted on",
+    "period": "2026",
+    "value": "2026-07-30",
+    "unit": "date",
+    "status": "SUPPORTED"
+   },
+   {
+    "subject": "beneficiaries",
+    "attribute": "number reached",
+    "period": "2026",
+    "value": 250,
+    "unit": "count",
+    "status": "INSUFFICIENT_EVIDENCE"
+   }
+  ],
+  "x2": 0.08333333333333333
+ }
+}

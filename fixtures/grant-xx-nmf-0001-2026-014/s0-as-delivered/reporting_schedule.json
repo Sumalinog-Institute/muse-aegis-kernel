@@ -1,0 +1,36 @@
+{
+ "as_of": "2026-10-26",
+ "repository_complete": true,
+ "reports": [
+  {
+   "id": "R1",
+   "name": "Q1 financial and narrative report",
+   "due_date": "2026-04-30",
+   "submitted_date": "2026-04-28"
+  },
+  {
+   "id": "R2",
+   "name": "Q2 financial and narrative report",
+   "due_date": "2026-07-31",
+   "submitted_date": "2026-08-06"
+  },
+  {
+   "id": "R3",
+   "name": "Mid-term evaluation report",
+   "due_date": "2026-09-15",
+   "submitted_date": null
+  },
+  {
+   "id": "R4",
+   "name": "Q3 financial and narrative report",
+   "due_date": "2026-10-31",
+   "submitted_date": null
+  },
+  {
+   "id": "R5",
+   "name": "Annual audit report",
+   "due_date": "2027-03-31",
+   "submitted_date": null
+  }
+ ]
+}

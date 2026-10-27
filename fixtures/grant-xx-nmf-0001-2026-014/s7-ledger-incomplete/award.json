@@ -1,0 +1,105 @@
+{
+ "fictional": true,
+ "identifier": "XX-NMF-0001-2026-014",
+ "title": "Neighbourhood Digital Skills and Safe Spaces",
+ "description": "Fictional grant: digital skills workshops and safe community spaces for young people (all names and numbers are invented).",
+ "currency": "USD",
+ "amount_awarded": 240000,
+ "award_date": "2025-12-10",
+ "funding_org": {
+  "identifier": "XX-NMF-0001",
+  "name": "Northern Meridian Fund"
+ },
+ "recipient_org": {
+  "identifier": "XX-BWA-0420",
+  "name": "Brightwater Neighbourhood Alliance",
+  "identifiers": [
+   {
+    "scheme": "XX-REG",
+    "value": "BW-20418"
+   }
+  ]
+ },
+ "planned_dates": {
+  "start": "2026-01-01",
+  "end": "2026-12-31"
+ },
+ "planned_disbursements": [
+  {
+   "date": "2026-01-15",
+   "value": 96000,
+   "note": "on signing"
+  },
+  {
+   "date": "2026-07-15",
+   "value": 72000,
+   "note": "after Q1 report approved"
+  },
+  {
+   "date": "2026-10-15",
+   "value": 72000,
+   "note": "after Q2 report and mid-term evaluation approved"
+  }
+ ],
+ "amount_disbursed_to_date": 168000,
+ "budget_lines": [
+  {
+   "category": "personnel",
+   "label": "Personnel",
+   "amount": 120000
+  },
+  {
+   "category": "equipment",
+   "label": "Equipment",
+   "amount": 30000
+  },
+  {
+   "category": "training",
+   "label": "Training and workshops",
+   "amount": 36000
+  },
+  {
+   "category": "travel",
+   "label": "Travel",
+   "amount": 10000
+  },
+  {
+   "category": "rent_utilities",
+   "label": "Rent and utilities",
+   "amount": 24000
+  },
+  {
+   "category": "subcontract",
+   "label": "Subcontracts",
+   "amount": 20000
+  }
+ ],
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "bank_charges"
+  ],
+  "required_documents": {
+   "personnel": [
+    "payroll_record"
+   ],
+   "equipment": [
+    "invoice",
+    "receipt"
+   ],
+   "training": [
+    "invoice"
+   ],
+   "travel": [
+    "receipt"
+   ],
+   "rent_utilities": [
+    "invoice"
+   ],
+   "subcontract": [
+    "contract",
+    "invoice"
+   ]
+  }
+ }
+}

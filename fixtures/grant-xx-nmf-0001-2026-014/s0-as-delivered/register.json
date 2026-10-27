@@ -1,0 +1,90 @@
+{
+ "fictional": true,
+ "name": "Consolidated Watchlist (fictional)",
+ "entries": [
+  {
+   "uid": "W-1001",
+   "type": "entity",
+   "name": "Northgate Supply Co.",
+   "aliases": [
+    "Northgate Supplies"
+   ],
+   "identifiers": [
+    {
+     "scheme": "XX-REG",
+     "value": "NS-44021"
+    }
+   ],
+   "programme": "FICTIONAL-PROGRAMME-A",
+   "listed_date": "2025-06-02"
+  },
+  {
+   "uid": "W-1002",
+   "type": "entity",
+   "name": "Delta Harbour Logistics Co.",
+   "aliases": [],
+   "identifiers": [
+    {
+     "scheme": "XX-REG",
+     "value": "DH-77120"
+    }
+   ],
+   "programme": "FICTIONAL-PROGRAMME-A",
+   "listed_date": "2025-09-18"
+  },
+  {
+   "uid": "W-1003",
+   "type": "entity",
+   "name": "Corvane Trading FZE",
+   "aliases": [],
+   "identifiers": [
+    {
+     "scheme": "XX-REG",
+     "value": "CT-2207"
+    }
+   ],
+   "programme": "FICTIONAL-PROGRAMME-B",
+   "listed_date": "2024-11-21"
+  },
+  {
+   "uid": "W-1004",
+   "type": "individual",
+   "name": "Marta Oyelaran-Quist",
+   "aliases": [
+    "M. Oyelaran Quist"
+   ],
+   "birth_year": 1971,
+   "identifiers": [],
+   "programme": "FICTIONAL-PROGRAMME-B",
+   "listed_date": "2025-02-11"
+  },
+  {
+   "uid": "W-1005",
+   "type": "entity",
+   "name": "Lindqvist Capital Holdings",
+   "aliases": [],
+   "identifiers": [
+    {
+     "scheme": "XX-REG",
+     "value": "LC-8810"
+    }
+   ],
+   "programme": "FICTIONAL-PROGRAMME-A",
+   "listed_date": "2025-03-30"
+  },
+  {
+   "uid": "W-1006",
+   "type": "entity",
+   "name": "Meridian Fieldworks Trading Co.",
+   "aliases": [],
+   "identifiers": [
+    {
+     "scheme": "XX-REG",
+     "value": "MF-3090"
+    }
+   ],
+   "programme": "FICTIONAL-PROGRAMME-B",
+   "listed_date": "2025-07-07"
+  }
+ ]
+}

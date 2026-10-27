@@ -1,0 +1,776 @@
+{
+ "snapshot_id": "FX-014-SPEND-s0-as-delivered",
+ "as_of": "2026-10-26",
+ "currency": "USD",
+ "complete": true,
+ "transactions": [
+  {
+   "id": "TX-2026-001",
+   "type": "expenditure",
+   "date": "2026-01-28",
+   "category": "personnel",
+   "description": "Staff salaries, month 1",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Brightwater payroll account",
+    "identifiers": []
+   },
+   "value": 9000,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "payroll_record",
+     "ref": "PAY-001",
+     "date": "2026-01-28"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-002",
+   "type": "expenditure",
+   "date": "2026-02-28",
+   "category": "personnel",
+   "description": "Staff salaries, month 2",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Brightwater payroll account",
+    "identifiers": []
+   },
+   "value": 9000,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "payroll_record",
+     "ref": "PAY-002",
+     "date": "2026-02-28"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-003",
+   "type": "expenditure",
+   "date": "2026-03-28",
+   "category": "personnel",
+   "description": "Staff salaries, month 3",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Brightwater payroll account",
+    "identifiers": []
+   },
+   "value": 9000,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "payroll_record",
+     "ref": "PAY-003",
+     "date": "2026-03-28"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-004",
+   "type": "expenditure",
+   "date": "2026-04-28",
+   "category": "personnel",
+   "description": "Staff salaries, month 4",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Brightwater payroll account",
+    "identifiers": []
+   },
+   "value": 9000,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "payroll_record",
+     "ref": "PAY-004",
+     "date": "2026-04-28"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-005",
+   "type": "expenditure",
+   "date": "2026-05-28",
+   "category": "personnel",
+   "description": "Staff salaries, month 5",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Brightwater payroll account",
+    "identifiers": []
+   },
+   "value": 9000,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "payroll_record",
+     "ref": "PAY-005",
+     "date": "2026-05-28"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-006",
+   "type": "expenditure",
+   "date": "2026-06-28",
+   "category": "personnel",
+   "description": "Staff salaries, month 6",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Brightwater payroll account",
+    "identifiers": []
+   },
+   "value": 9000,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "payroll_record",
+     "ref": "PAY-006",
+     "date": "2026-06-28"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-007",
+   "type": "expenditure",
+   "date": "2026-07-28",
+   "category": "personnel",
+   "description": "Staff salaries, month 7",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Brightwater payroll account",
+    "identifiers": []
+   },
+   "value": 9000,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "payroll_record",
+     "ref": "PAY-007",
+     "date": "2026-07-28"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-008",
+   "type": "expenditure",
+   "date": "2026-08-28",
+   "category": "personnel",
+   "description": "Staff salaries, month 8",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Brightwater payroll account",
+    "identifiers": []
+   },
+   "value": 9000,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "payroll_record",
+     "ref": "PAY-008",
+     "date": "2026-08-28"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-009",
+   "type": "expenditure",
+   "date": "2026-09-28",
+   "category": "personnel",
+   "description": "Staff salaries, month 9",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Brightwater payroll account",
+    "identifiers": []
+   },
+   "value": 9000,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "payroll_record",
+     "ref": "PAY-009",
+     "date": "2026-09-28"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-010",
+   "type": "expenditure",
+   "date": "2026-10-25",
+   "category": "personnel",
+   "description": "Staff salaries, month 10",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Brightwater payroll account",
+    "identifiers": []
+   },
+   "value": 9000,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "payroll_record",
+     "ref": "PAY-010",
+     "date": "2026-10-25"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-011",
+   "type": "expenditure",
+   "date": "2026-02-12",
+   "category": "equipment",
+   "description": "Laptop set (12 units)",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Halden Office Supplies Ltd",
+    "identifiers": [
+     {
+      "scheme": "XX-REG",
+      "value": "HOS-1130"
+     }
+    ]
+   },
+   "value": 7800,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "invoice",
+     "ref": "INV-011",
+     "date": "2026-02-12"
+    },
+    {
+     "type": "receipt",
+     "ref": "REC-011",
+     "date": "2026-02-12"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-012",
+   "type": "expenditure",
+   "date": "2026-03-20",
+   "category": "equipment",
+   "description": "Projector and audio kit",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Halden Office Supplies Ltd",
+    "identifiers": [
+     {
+      "scheme": "XX-REG",
+      "value": "HOS-1130"
+     }
+    ]
+   },
+   "value": 4200,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "invoice",
+     "ref": "INV-012",
+     "date": "2026-03-20"
+    },
+    {
+     "type": "receipt",
+     "ref": "REC-012",
+     "date": "2026-03-20"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-013",
+   "type": "expenditure",
+   "date": "2026-05-18",
+   "category": "equipment",
+   "description": "Tablets for workshops (8 units)",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Corvane Electronics Inc",
+    "identifiers": [
+     {
+      "scheme": "XX-REG",
+      "value": "CE-9051"
+     }
+    ]
+   },
+   "value": 9800,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "receipt",
+     "ref": "REC-013",
+     "date": "2026-05-18"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-014",
+   "type": "expenditure",
+   "date": "2026-03-05",
+   "category": "training",
+   "description": "Facilitator fees, Q1 workshop series",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Lindqvist Training Partners",
+    "identifiers": []
+   },
+   "value": 4500,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "invoice",
+     "ref": "INV-014",
+     "date": "2026-03-05"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-015",
+   "type": "expenditure",
+   "date": "2026-06-10",
+   "category": "training",
+   "description": "Workshop materials, Q2",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Pinewood Print & Copy",
+    "identifiers": []
+   },
+   "value": 1700,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "invoice",
+     "ref": "INV-015",
+     "date": "2026-06-10"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-016",
+   "type": "expenditure",
+   "date": "2026-06-25",
+   "category": "training",
+   "description": "Facilitator fees, Q2 workshop series",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Lindqvist Training Partners",
+    "identifiers": []
+   },
+   "value": 4500,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "invoice",
+     "ref": "INV-016",
+     "date": "2026-06-25"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-016",
+   "type": "expenditure",
+   "date": "2026-06-25",
+   "category": "training",
+   "description": "Facilitator fees, Q2 workshop series",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Lindqvist Training Partners",
+    "identifiers": []
+   },
+   "value": 4500,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "invoice",
+     "ref": "INV-016",
+     "date": "2026-06-25"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-018",
+   "type": "expenditure",
+   "date": "2026-10-14",
+   "category": "training",
+   "description": "Facilitator fees, Q3 workshop series",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Lindqvist Training Partners",
+    "identifiers": []
+   },
+   "value": 4500,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "TX-2026-019",
+   "type": "expenditure",
+   "date": "2026-08-18",
+   "category": "training",
+   "description": "Printed community guides",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Northgate Supply Company",
+    "identifiers": []
+   },
+   "value": 2300,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "invoice",
+     "ref": "INV-019",
+     "date": "2026-08-18"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-020",
+   "type": "expenditure",
+   "date": "2026-04-22",
+   "category": "travel",
+   "description": "Regional coordination meeting travel",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Various staff reimbursements",
+    "identifiers": []
+   },
+   "value": 1850,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "receipt",
+     "ref": "REC-020",
+     "date": "2026-04-22"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-021",
+   "type": "expenditure",
+   "date": "2026-08-09",
+   "category": "travel",
+   "description": "Site visit transport",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Various staff reimbursements",
+    "identifiers": []
+   },
+   "value": 960,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "receipt",
+     "ref": "REC-021",
+     "date": "2026-08-09"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-022",
+   "type": "expenditure",
+   "date": "2026-01-03",
+   "category": "rent_utilities",
+   "description": "Premises rent, month 1",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Dockside Property Management",
+    "identifiers": []
+   },
+   "value": 1600,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "invoice",
+     "ref": "INV-022",
+     "date": "2026-01-03"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-023",
+   "type": "expenditure",
+   "date": "2026-02-03",
+   "category": "rent_utilities",
+   "description": "Premises rent, month 2",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Dockside Property Management",
+    "identifiers": []
+   },
+   "value": 1600,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "invoice",
+     "ref": "INV-023",
+     "date": "2026-02-03"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-024",
+   "type": "expenditure",
+   "date": "2026-03-03",
+   "category": "rent_utilities",
+   "description": "Premises rent, month 3",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Dockside Property Management",
+    "identifiers": []
+   },
+   "value": 1600,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "invoice",
+     "ref": "INV-024",
+     "date": "2026-03-03"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-025",
+   "type": "expenditure",
+   "date": "2026-04-03",
+   "category": "rent_utilities",
+   "description": "Premises rent, month 4",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Dockside Property Management",
+    "identifiers": []
+   },
+   "value": 1600,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "invoice",
+     "ref": "INV-025",
+     "date": "2026-04-03"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-026",
+   "type": "expenditure",
+   "date": "2026-05-03",
+   "category": "rent_utilities",
+   "description": "Premises rent, month 5",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Dockside Property Management",
+    "identifiers": []
+   },
+   "value": 1600,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "invoice",
+     "ref": "INV-026",
+     "date": "2026-05-03"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-027",
+   "type": "expenditure",
+   "date": "2026-06-03",
+   "category": "rent_utilities",
+   "description": "Premises rent, month 6",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Dockside Property Management",
+    "identifiers": []
+   },
+   "value": 1600,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "invoice",
+     "ref": "INV-027",
+     "date": "2026-06-03"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-028",
+   "type": "expenditure",
+   "date": "2026-07-03",
+   "category": "rent_utilities",
+   "description": "Premises rent, month 7",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Dockside Property Management",
+    "identifiers": []
+   },
+   "value": 1600,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "invoice",
+     "ref": "INV-028",
+     "date": "2026-07-03"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-029",
+   "type": "expenditure",
+   "date": "2026-08-03",
+   "category": "rent_utilities",
+   "description": "Premises rent, month 8",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Dockside Property Management",
+    "identifiers": []
+   },
+   "value": 1600,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "invoice",
+     "ref": "INV-029",
+     "date": "2026-08-03"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-030",
+   "type": "expenditure",
+   "date": "2026-09-03",
+   "category": "rent_utilities",
+   "description": "Premises rent, month 9",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Dockside Property Management",
+    "identifiers": []
+   },
+   "value": 1600,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "invoice",
+     "ref": "INV-030",
+     "date": "2026-09-03"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-031",
+   "type": "expenditure",
+   "date": "2026-10-03",
+   "category": "rent_utilities",
+   "description": "Premises rent, month 10",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Dockside Property Management",
+    "identifiers": []
+   },
+   "value": 1600,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "invoice",
+     "ref": "INV-031",
+     "date": "2026-10-03"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-032",
+   "type": "expenditure",
+   "date": "2026-04-02",
+   "category": "subcontract",
+   "description": "Community mapping survey",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Meridian Field Services Ltd",
+    "identifiers": [
+     {
+      "scheme": "XX-REG",
+      "value": "MFS-5521"
+     }
+    ]
+   },
+   "value": 6500,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "contract",
+     "ref": "CON-032",
+     "date": "2026-04-02"
+    },
+    {
+     "type": "invoice",
+     "ref": "INV-032",
+     "date": "2026-04-02"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-033",
+   "type": "expenditure",
+   "date": "2026-07-20",
+   "category": "subcontract",
+   "description": "Safe-space audit and volunteer training",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Meridian Field Services Ltd",
+    "identifiers": [
+     {
+      "scheme": "XX-REG",
+      "value": "MFS-5521"
+     }
+    ]
+   },
+   "value": 7200,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "contract",
+     "ref": "CON-033",
+     "date": "2026-07-20"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-034",
+   "type": "expenditure",
+   "date": "2026-09-04",
+   "category": "subcontract",
+   "description": "Evaluation design support",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Coastal Evaluation Partners",
+    "identifiers": []
+   },
+   "value": 3000,
+   "currency": "USD",
+   "documents": [
+    {
+     "type": "contract",
+     "ref": "CON-034",
+     "date": "2026-09-04"
+    },
+    {
+     "type": "invoice",
+     "ref": "INV-034",
+     "date": "2026-09-04"
+    }
+   ]
+  },
+  {
+   "id": "TX-2026-035",
+   "type": "expenditure",
+   "date": "2026-03-31",
+   "category": "bank_charges",
+   "description": "Bank charges, Q1",
+   "provider_org": "XX-BWA-0420",
+   "receiver_org": {
+    "name": "Harbour Savings Bank",
+    "identifiers": []
+   },
+   "value": 45,
+   "currency": "USD",
+   "documents": []
+  }
+ ]
+}
