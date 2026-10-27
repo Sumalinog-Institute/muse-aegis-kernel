@@ -21,6 +21,8 @@ A proposed claim is accepted only if all of these hold, otherwise it is rejected
 3. The `value_text` occurs inside the quote, and so does the `subject` (so a label cannot be attached to a figure that belongs to someone else).
 4. The value is read as a number only if it is plain digits with optional thousands commas, a decimal part, a leading currency symbol or a trailing `%`. Anything else ("12 thousand") stays text and is never silently converted.
 
+Each accepted claim also records `at`: the position of its value in the normalized document, used to align the same figure across runs.
+
 Rejected reasons: `NOT_AN_OBJECT`, `EMPTY_FIELD`, `TOO_LONG`, `QUOTE_NOT_IN_DOCUMENT`, `VALUE_NOT_IN_QUOTE`, `SUBJECT_NOT_IN_QUOTE`, `TOO_MANY_CLAIMS`.
 
 ## The reference ledger

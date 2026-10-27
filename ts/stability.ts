@@ -1,11 +1,11 @@
 // MUSE Aegis: output instability x1 and consensus claims (Phase 3, step 4).
-// The extractor is run k times at a declared temperature. Claims are aligned across runs, and x1 measures how much
-// the runs disagree. The same k runs also give the consensus claim set used for x2.
+// The extractor is run k times at a declared temperature. Runs are aligned and compared, and x1 measures how much they
+// disagree. The same k runs also give the consensus claim set used for x2.
 //
-// Alignment: a claim's identity is (subject|attribute|period, value, unit). A claim that is missing from a run is
-// labelled ABSENT in that run; a claim whose value changes between runs counts as two claims, each absent in some
-// runs. Because the verifier is deterministic, a present claim always has the same status, so the only possible
-// disagreement between two runs about a claim is present versus ABSENT.
+// Alignment: a claim is identified by WHERE its value sits in the document (claim.at). The same figure found in two runs is the
+// same claim even if the model words its subject, attribute or period differently, because wording drift is not unreliability.
+// For each claim and run the label is its evidence status, or ABSENT if that run did not find it (the five labels of the paper).
+// If a run proposes several claims for one figure, the most severe status is used (ties broken by key).
 //
 //   sigma_jsd = (disagreeing run pairs, summed over all claims) / (number of claims x number of run pairs)
 //   (the Jensen-Shannon divergence in base 2 between two one-hot labels is 0 if equal and 1 if different)
@@ -15,7 +15,7 @@
 
 import { canonicalize } from "./jcs.ts";
 import { computeX2, verifyClaims } from "./claims.ts";
-import type { Claim, Ledger, VerifiedClaim, X2Result } from "./claims.ts";
+import type { EvidenceStatus, Ledger, VerifiedClaim, X2Result } from "./claims.ts";
 import { extractClaims, PROMPT_VERSION } from "./extract.ts";
 import type { ExtractError, ExtractParams, GeminiDeps } from "./extract.ts";
 
@@ -27,25 +27,36 @@ export type StabilityResult =
   | { x1: number; mode: "jsd_only" | "jsd_sem"; sigma_jsd: number; sigma_sem: number | null; k: number; claims_in_union: number; disagreeing_pairs: number }
   | { x1: "INCOMPLETE"; reason: string; k: number };
 
-export function claimId(c: Claim): string {
-  return JSON.stringify([c.key, c.value, c.unit]);
+const SEVERITY: Record<EvidenceStatus, number> = { CONTRADICTED: 3, AMBIGUOUS_CONFLICT: 2, INSUFFICIENT_EVIDENCE: 1, SUPPORTED: 0 };
+
+/** One claim per figure in a run: the most severe status wins; ties go to the smaller key, then the smaller value. */
+export function byPosition(run: readonly VerifiedClaim[]): Map<number, VerifiedClaim> {
+  const out = new Map<number, VerifiedClaim>();
+  for (const it of run) {
+    const cur = out.get(it.claim.at);
+    if (!cur) { out.set(it.claim.at, it); continue; }
+    const a = SEVERITY[it.status], b = SEVERITY[cur.status];
+    const better = a !== b ? a > b : it.claim.key !== cur.claim.key ? it.claim.key < cur.claim.key : String(it.claim.value) < String(cur.claim.value);
+    if (better) out.set(it.claim.at, it);
+  }
+  return out;
 }
 
 // ---------------------------------------------------------------- sigma_jsd
 
 export function sigmaJsd(runs: readonly (readonly VerifiedClaim[])[]): { sigma: number; union: number; disagreements: number; pairs: number } {
   const k = runs.length;
-  const sets = runs.map((r) => new Set(r.map((it) => claimId(it.claim))));
-  const union = new Set<string>();
-  for (const s of sets) for (const id of s) union.add(id);
+  const maps = runs.map(byPosition);
+  const union = new Set<number>();
+  for (const m of maps) for (const at of m.keys()) union.add(at);
   const pairs = (k * (k - 1)) / 2;
   let disagreements = 0;
-  for (const id of union) {
+  for (const at of union) {
     for (let a = 0; a < k; a++) {
       for (let b = a + 1; b < k; b++) {
-        const inA = (sets[a] as Set<string>).has(id);
-        const inB = (sets[b] as Set<string>).has(id);
-        if (inA !== inB) disagreements++; // one-hot labels differ: JSD (base 2) = 1
+        const la = (maps[a] as Map<number, VerifiedClaim>).get(at)?.status ?? "ABSENT";
+        const lb = (maps[b] as Map<number, VerifiedClaim>).get(at)?.status ?? "ABSENT";
+        if (la !== lb) disagreements++; // one-hot labels differ: JSD (base 2) = 1
       }
     }
   }
@@ -55,9 +66,9 @@ export function sigmaJsd(runs: readonly (readonly VerifiedClaim[])[]): { sigma: 
 
 // ---------------------------------------------------------------- sigma_sem
 
-/** The text that represents one run for embedding: its sorted claim identities as canonical JSON. */
+/** The text that represents one run for embedding: its figures and their statuses, sorted, as canonical JSON. */
 export function runText(run: readonly VerifiedClaim[]): string {
-  return canonicalize(run.map((it) => claimId(it.claim)).sort());
+  return canonicalize([...byPosition(run).entries()].sort((x, y) => x[0] - y[0]).map(([at, it]) => [at, it.status]));
 }
 
 export function sigmaSem(vectors: readonly number[][]): { sigma: number } | { error: string } {
@@ -94,26 +105,30 @@ export function combineX1(sj: number, ss: number | null): { x1: number; mode: "j
 
 // ---------------------------------------------------------------- consensus
 
-/** Claims present in more runs than they are absent from, in order of first appearance. An exact tie (for example
- *  1 of 2 runs) is kept as AMBIGUOUS_CONFLICT; a claim present in fewer runs than it is absent from is dropped. */
+/** For each figure, the label (status or ABSENT) that most runs agree on. A clear winner that is a status keeps the claim with
+ *  that status; a clear winner of ABSENT drops it; any tie keeps it as AMBIGUOUS_CONFLICT (flag RUN_TIE). */
 export function consensusItems(runs: readonly (readonly VerifiedClaim[])[]): VerifiedClaim[] {
-  const n = runs.length;
-  const order: string[] = [];
-  const first = new Map<string, VerifiedClaim>();
-  const count = new Map<string, number>();
-  for (const run of runs) {
-    for (const it of run) {
-      const id = claimId(it.claim);
-      if (!first.has(id)) { first.set(id, it); order.push(id); }
-      count.set(id, (count.get(id) ?? 0) + 1);
-    }
-  }
+  const maps = runs.map(byPosition);
+  const order: number[] = [];
+  const seen = new Set<number>();
+  for (const m of maps) for (const at of m.keys()) if (!seen.has(at)) { seen.add(at); order.push(at); }
   const out: VerifiedClaim[] = [];
-  for (const id of order) {
-    const p = count.get(id) as number;
-    const base = first.get(id) as VerifiedClaim;
-    if (p > n - p) out.push({ ...base, occurrences: 1 });
-    else if (p === n - p) out.push({ ...base, occurrences: 1, status: "AMBIGUOUS_CONFLICT", flags: [...base.flags, "RUN_TIE"] });
+  for (const at of order) {
+    const labels = maps.map((m) => m.get(at)?.status ?? "ABSENT");
+    const counts = new Map<string, number>();
+    for (const l of labels) counts.set(l, (counts.get(l) ?? 0) + 1);
+    const best = Math.max(...counts.values());
+    const winners = [...counts.entries()].filter(([, c]) => c === best).map(([l]) => l);
+    if (winners.length === 1) {
+      const w = winners[0] as string;
+      if (w === "ABSENT") continue;
+      const run = labels.indexOf(w as EvidenceStatus | "ABSENT");
+      out.push({ ...(maps[run] as Map<number, VerifiedClaim>).get(at) as VerifiedClaim, occurrences: 1 });
+    } else {
+      const run = labels.findIndex((l) => l !== "ABSENT");
+      const base = (maps[run] as Map<number, VerifiedClaim>).get(at) as VerifiedClaim;
+      out.push({ ...base, occurrences: 1, status: "AMBIGUOUS_CONFLICT", flags: [...base.flags, "RUN_TIE"] });
+    }
   }
   return out;
 }

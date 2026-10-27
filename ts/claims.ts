@@ -25,6 +25,7 @@ export interface Claim {
   unit: string;
   quote: string;
   key: string; // normalized subject|attribute|period
+  at: number; // position of the value in the normalized document: the same figure keeps the same position across runs
 }
 
 export type RejectReason =
@@ -165,6 +166,7 @@ export function anchorClaims(documentText: string, proposed: unknown[]): { claim
       unit: normalizeText(unitRaw),
       quote,
       key: claimKey(subject, attribute, period),
+      at: doc.indexOf(q) + q.indexOf(v),
     });
   });
   return { claims, rejected };

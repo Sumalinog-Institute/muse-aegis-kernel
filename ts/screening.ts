@@ -34,7 +34,7 @@ const isRec = (v: unknown): v is Rec => typeof v === "object" && v !== null && !
 
 export interface ClaimDetail {
   subject: string; attribute: string; period: string; value: number | string; unit: string;
-  status: string; quote: string; fact_ids: string[]; flags: string[];
+  status: string; quote: string; at: number; fact_ids: string[]; flags: string[];
 }
 
 export interface Draft {
@@ -187,7 +187,7 @@ export async function prepareScreening(
       claims: {
         items: analysis.consensus.items.map((it) => ({
           subject: it.claim.subject, attribute: it.claim.attribute, period: it.claim.period, value: it.claim.value, unit: it.claim.unit,
-          status: it.status, quote: it.claim.quote, fact_ids: it.fact_ids, flags: it.flags,
+          status: it.status, quote: it.claim.quote, at: it.claim.at, fact_ids: it.fact_ids, flags: it.flags,
         })),
         x2: analysis.consensus.x2,
         ledger_flags: analysis.consensus.ledger_flags,

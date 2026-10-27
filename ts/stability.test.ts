@@ -2,9 +2,9 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { evaluate } from "./kernel.ts";
 import { anchorClaims, verifyClaims } from "./claims.ts";
-import type { Claim, Ledger, VerifiedClaim } from "./claims.ts";
+import type { Claim, EvidenceStatus, Ledger, VerifiedClaim } from "./claims.ts";
 import type { GeminiDeps } from "./extract.ts";
-import { analyzeWithStability, claimId, combineX1, consensusItems, runText, sigmaJsd, sigmaSem, STABILITY } from "./stability.ts";
+import { analyzeWithStability, byPosition, combineX1, consensusItems, runText, sigmaJsd, sigmaSem, STABILITY } from "./stability.ts";
 import type { Embed } from "./stability.ts";
 
 const KEY = "AIzaSyTEST_KEY_DO_NOT_LEAK_0123456789";
@@ -45,39 +45,52 @@ const ok = (claims: unknown[]) =>
 const http = (status: number) => new Response("{}", { status });
 const params = (over: Record<string, unknown> = {}) => ({ apiKey: KEY, model: "gemini-test", documentText: DOC, ledger, maxRetries: 2, ...over });
 
-// items for the pure functions
-const claimOf = (i: number, value: number | string = i): Claim => ({ subject: "s" + i, attribute: "a", period: "p", value, unit: "usd", quote: "q", key: `s${i}|a|p` });
-const item = (i: number, value: number | string = i): VerifiedClaim => ({ claim: claimOf(i, value), occurrences: 1, status: "SUPPORTED", fact_ids: [], flags: [] });
+// items for the pure functions: figure i sits at position i x 100 in the document
+const claimOf = (i: number, value: number | string = i, label = "s" + i): Claim => ({ subject: label, attribute: "a", period: "p", value, unit: "usd", quote: "q", key: `${label}|a|p`, at: i * 100 });
+const item = (i: number, status: EvidenceStatus = "SUPPORTED", label = "s" + i): VerifiedClaim => ({ claim: claimOf(i, i, label), occurrences: 1, status, fact_ids: [], flags: [] });
 
 // ---------------------------------------------------------------- sigma_jsd
 
 test("sigma_jsd: identical runs give 0, and the closed forms hold", () => {
   const all = [item(1), item(2)];
   assert.deepEqual(sigmaJsd([all, all, all]), { sigma: 0, union: 2, disagreements: 0, pairs: 3 });
-  // one claim present in 2 of 3 runs: 2 disagreeing pairs of 3
+  // one figure found in 2 of 3 runs: 2 disagreeing pairs of 3
   assert.equal(sigmaJsd([[item(1)], [item(1)], []]).sigma, 2 / 3);
-  // plus a claim present in every run: union 2, still 2 disagreeing pairs, 2 / (2 x 3)
+  // plus a figure found in every run: union 2, still 2 disagreeing pairs, 2 / (2 x 3)
   assert.equal(sigmaJsd([[item(1), item(2)], [item(1), item(2)], [item(2)]]).sigma, 1 / 3);
   // nothing found in any run: stable, so 0 (x2 will report the coverage failure separately)
   assert.equal(sigmaJsd([[], [], []]).sigma, 0);
-  // a changed value is two claims, each absent in some runs: 2 x (1 x 2) + ... = 4 disagreements of 2 x 3
-  const r = sigmaJsd([[item(1, 12000)], [item(1, 12000)], [item(1, 13000)]]);
-  assert.deepEqual([r.union, r.disagreements, r.sigma], [2, 4, 4 / 6]);
 });
 
-test("sigma_jsd: equals the closed form p(k-p) for random runs, and stays in [0,1]", () => {
+test("sigma_jsd: different wording for the same figure is NOT disagreement; a different status is", () => {
+  const worded = [[item(1, "SUPPORTED", "Vendor A")], [item(1, "SUPPORTED", "the vendor")], [item(1, "SUPPORTED", "Project")]];
+  assert.deepEqual(sigmaJsd(worded), { sigma: 0, union: 1, disagreements: 0, pairs: 3 });
+  // the same figure judged SUPPORTED, SUPPORTED, INSUFFICIENT_EVIDENCE: 2 of 3 pairs differ
+  const flipped = [[item(1, "SUPPORTED")], [item(1, "SUPPORTED")], [item(1, "INSUFFICIENT_EVIDENCE")]];
+  assert.equal(sigmaJsd(flipped).sigma, 2 / 3);
+  // three different statuses: all 3 pairs differ
+  assert.equal(sigmaJsd([[item(1, "SUPPORTED")], [item(1, "CONTRADICTED")], [item(1, "INSUFFICIENT_EVIDENCE")]]).sigma, 1);
+});
+
+test("one claim per figure in a run: the most severe status wins, ties by key", () => {
+  const m = byPosition([item(1, "SUPPORTED", "b"), item(1, "CONTRADICTED", "z"), item(2, "SUPPORTED", "x"), item(2, "SUPPORTED", "a")]);
+  assert.deepEqual([...m.entries()].map(([at, it]) => [at, it.status, it.claim.subject]), [[100, "CONTRADICTED", "z"], [200, "SUPPORTED", "a"]]);
+});
+
+test("sigma_jsd: equals the closed form for random runs, and stays in [0,1]", () => {
   let seed = 11;
   const rnd = () => ((seed = (seed * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff);
+  const statuses: EvidenceStatus[] = ["SUPPORTED", "CONTRADICTED", "INSUFFICIENT_EVIDENCE", "AMBIGUOUS_CONFLICT"];
   for (let t = 0; t < 2000; t++) {
     const k = 2 + Math.floor(rnd() * 8);
-    const nClaims = 1 + Math.floor(rnd() * 6);
-    const runs = Array.from({ length: k }, () => Array.from({ length: nClaims }, (_, i) => i).filter(() => rnd() < 0.6).map((i) => item(i)));
+    const nFigures = 1 + Math.floor(rnd() * 6);
+    const runs = Array.from({ length: k }, () => Array.from({ length: nFigures }, (_, i) => i).filter(() => rnd() < 0.6).map((i) => item(i, statuses[Math.floor(rnd() * 4)] as EvidenceStatus)));
     const r = sigmaJsd(runs);
-    const union = new Set(runs.flat().map((x) => claimId(x.claim)));
     let d = 0;
-    for (const id of union) {
-      const p = runs.filter((run) => run.some((x) => claimId(x.claim) === id)).length;
-      d += p * (k - p);
+    const figures = new Set(runs.flat().map((x) => x.claim.at));
+    for (const at of figures) {
+      const labels = runs.map((run) => run.find((x) => x.claim.at === at)?.status ?? "ABSENT");
+      for (let a = 0; a < k; a++) for (let b = a + 1; b < k; b++) if (labels[a] !== labels[b]) d++;
     }
     assert.equal(r.disagreements, d);
     assert.ok(r.sigma >= 0 && r.sigma <= 1);
@@ -95,6 +108,17 @@ test("consensus: majority present is kept, minority is dropped, a tie becomes AM
   assert.deepEqual(ids(consensusItems([[item(1)], [], [], []])), []);
   assert.deepEqual(consensusItems([[], [], []]), []);
   assert.ok(consensusItems([[item(1)], []])[0]?.flags.includes("RUN_TIE"));
+});
+
+test("consensus: runs that word a figure differently still agree; runs that judge it differently follow the majority", () => {
+  const worded = consensusItems([[item(1, "SUPPORTED", "Vendor A")], [item(1, "SUPPORTED", "the vendor")], [item(1, "SUPPORTED", "Project")]]);
+  assert.deepEqual(worded.map((x) => [x.claim.subject, x.status]), [["Vendor A", "SUPPORTED"]]); // first run's wording
+  const majority = consensusItems([[item(1, "SUPPORTED")], [item(1, "SUPPORTED")], [item(1, "CONTRADICTED")]]);
+  assert.deepEqual(majority.map((x) => x.status), ["SUPPORTED"]);
+  const tie = consensusItems([[item(1, "SUPPORTED")], [item(1, "CONTRADICTED")], []]);
+  assert.deepEqual(tie.map((x) => [x.status, x.flags.includes("RUN_TIE")]), [["AMBIGUOUS_CONFLICT", true]]);
+  const absentWins = consensusItems([[item(1, "SUPPORTED")], [item(1, "CONTRADICTED")], [], []]);
+  assert.deepEqual(absentWins, []);
 });
 
 // ---------------------------------------------------------------- sigma_sem and the combined x1
@@ -227,10 +251,45 @@ test("x1 reaches the kernel: a clearly unstable extraction withholds a pass", as
   assert.deepEqual(res.reasons, ["UNSTABLE_EXTRACTION"]);
 });
 
-test("claim identity and run text are stable and order-independent", () => {
+test("run text is stable and order-independent, and ignores wording", () => {
   const a = item(1), b = item(2);
   assert.equal(runText([a, b]), runText([b, a]));
-  const { claims } = anchorClaims(DOC, [CLAIMS[0]]);
-  const v1 = verifyClaims(claims, ledger).items;
-  assert.equal(claimId((claims[0] as Claim)), claimId((v1[0] as VerifiedClaim).claim));
+  assert.equal(runText([item(1, "SUPPORTED", "x")]), runText([item(1, "SUPPORTED", "totally different words")]));
+  assert.notEqual(runText([item(1, "SUPPORTED")]), runText([item(1, "CONTRADICTED")]));
+});
+
+test("every claim that anchorClaims accepts carries the position of its value, the same across runs", () => {
+  const first = anchorClaims(DOC, [CLAIMS[0]]).claims[0] as Claim;
+  const reworded = anchorClaims(DOC, [{ ...CLAIMS[0], subject: "Vendor A", attribute: "payment", period: "Q2 2026", quote: "disbursed 12,000 USD to Vendor A" }]).claims[0] as Claim;
+  assert.equal(first.at, reworded.at); // different quote span and labels, same figure, same position
+  assert.equal(DOC.toLowerCase().replace(/\s+/g, " ").slice(first.at, first.at + 6), "12,000");
+  const other = anchorClaims(DOC, [CLAIMS[2]]).claims[0] as Claim;
+  assert.notEqual(first.at, other.at);
+  void verifyClaims;
+});
+
+test("the live finding: runs that word a claim differently but reach the same verdict give x1 = 0", async () => {
+  // The beneficiaries figure has no ledger counterpart, so any wording gives INSUFFICIENT_EVIDENCE. The live run showed the model
+  // using different subjects and attributes for it from run to run; that must not count as instability.
+  const reword = (i: number) => CLAIMS.map((c) => (c.subject !== "beneficiaries" ? c : [
+    c,
+    { ...c, subject: "project", attribute: "number of beneficiaries", period: "2026", quote: "The project reached 250 beneficiaries in 2026" },
+    { ...c, attribute: "people reached", period: "year 2026", unit: "persons" },
+  ][i]));
+  const r = await analyzeWithStability(fake([ok(reword(0)), ok(reword(1)), ok(reword(2))]).deps, params());
+  assert.equal(r.ok, true);
+  if (!r.ok) return;
+  assert.equal(r.stability.x1, 0);
+  assert.equal(r.consensus.items.length, 4);
+  assert.equal(r.consensus.items.find((i) => i.claim.at === (r.consensus.items.find((x) => x.status === "INSUFFICIENT_EVIDENCE") as { claim: { at: number } }).claim.at)?.status, "INSUFFICIENT_EVIDENCE");
+});
+
+test("wording that changes the verdict is real instability: one run labels the figure so it no longer matches the ledger", async () => {
+  const other = CLAIMS.map((c, i) => (i === 0 ? { ...c, subject: "the project", quote: "the project disbursed 12,000 USD to Vendor A" } : c));
+  const r = await analyzeWithStability(fake([ok(CLAIMS), ok(CLAIMS), ok(other)]).deps, params());
+  assert.equal(r.ok, true);
+  if (!r.ok || r.stability.x1 === "INCOMPLETE") return assert.fail("expected a number");
+  // Vendor A's figure is SUPPORTED in two runs and INSUFFICIENT_EVIDENCE in one: 2 of 3 pairs, over 4 figures x 3 pairs
+  assert.equal(r.stability.x1, 2 / 12);
+  assert.equal(r.consensus.items.find((i) => i.claim.subject === "Vendor A")?.status, "SUPPORTED");
 });
