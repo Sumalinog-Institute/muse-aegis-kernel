@@ -9,7 +9,7 @@ jobs:
         with: { node-version: 22 }
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
-      - run: node --experimental-strip-types --test ts/kernel.test.ts ts/audit.test.ts ts/append.test.ts ts/verify.test.ts ts/claims.test.ts
+      - run: node --experimental-strip-types --test ts/kernel.test.ts ts/audit.test.ts ts/append.test.ts ts/verify.test.ts ts/claims.test.ts ts/extract.test.ts
       - run: python3 -m unittest discover -s python -v
       - run: python3 tools/gen_crosscheck.py 50000
       - run: python3 tools/gen_audit_crosscheck.py 20000
