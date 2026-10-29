@@ -78,5 +78,18 @@
    }
   ],
   "x2": 0.08333333333333333
+ },
+ "planted_issues": {
+  "expected": [],
+  "tolerated": [
+   {
+    "category": "DUPLICATE_RECORD",
+    "ref": "TX-2026-016"
+   },
+   {
+    "category": "*",
+    "ref": "beneficiaries"
+   }
+  ]
  }
 }

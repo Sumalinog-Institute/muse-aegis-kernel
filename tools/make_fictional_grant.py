@@ -325,6 +325,52 @@ def oracle_claims(facts, narrative):
     return {"claims": out, "x2": halves / (2 * n)}
 
 
+def planted_issues(award, ledger, sched, register, claims):
+    """The problems a careful screener should find in a scenario, listed from the DATA (so they do not depend on the
+    completeness or currency checks that make the pipeline refuse to compute). Used by the AI-judge comparison.
+    'tolerated' items are not problems and not errors if mentioned (for example an invoice still inside the grace period)."""
+    pol = award["documentation_policy"]
+    seen, dupes = {}, []
+    for t in ledger["transactions"]:
+        if t["id"] in seen:
+            if seen[t["id"]] == t and t["id"] not in dupes:
+                dupes.append(t["id"])
+            continue
+        seen[t["id"]] = t
+    expected, tolerated = [], []
+    for t in seen.values():
+        if t["category"] in pol["excluded_categories"] or not (award["planned_dates"]["start"] <= t["date"] <= award["planned_dates"]["end"]):
+            continue
+        need = set(pol["required_documents"][t["category"]])
+        have = {d["type"] for d in t["documents"]}
+        if need <= have:
+            continue
+        item = {"category": "MISSING_DOCUMENT", "ref": t["id"]}
+        (tolerated if days_between(t["date"], ledger["as_of"]) <= pol["cure_days"] else expected).append(item)
+    for d in dupes:  # a repeated export row is a data note, not a problem: mentioning it is fine, missing it costs nothing
+        tolerated.append({"category": "DUPLICATE_RECORD", "ref": d})
+    due = [r for r in sched["reports"] if r["due_date"] < sched["as_of"]]
+    for r in due:
+        if not r["submitted_date"] or r["submitted_date"] > sched["as_of"]:
+            expected.append({"category": "REPORT_MISSING", "ref": r["id"]})
+        elif r["submitted_date"] > r["due_date"]:
+            expected.append({"category": "REPORT_LATE", "ref": r["id"]})
+    sc = oracle_screen(award, ledger, register)
+    parties = []
+    for group in ("confirmed", "conflicting", "unverified"):
+        for party, _uid in sc[group]:
+            if party not in parties:
+                parties.append(party)
+    for party in parties:
+        expected.append({"category": "WATCHLIST_MATCH", "ref": party})
+    for c in claims["claims"]:
+        if c["status"] == "CONTRADICTED":
+            expected.append({"category": "NARRATIVE_MISMATCH", "ref": c["subject"]})
+        elif c["status"] in ("INSUFFICIENT_EVIDENCE", "AMBIGUOUS_CONFLICT"):
+            tolerated.append({"category": "*", "ref": c["subject"]})
+    return {"expected": expected, "tolerated": tolerated}
+
+
 # ---------------------------------------------------------------- scenarios
 
 
@@ -412,6 +458,7 @@ def build(name, patch):
         "scenario": name, "as_of": AS_OF,
         "x4": oracle_x4(award, ledger), "x5": oracle_x5(sched), "screening": oracle_screen(award, ledger, REGISTER),
         "claims": claims,
+        "planted_issues": planted_issues(award, ledger, sched, REGISTER, claims),
     }
     return award, ledger, sched, facts, narrative, expected
 

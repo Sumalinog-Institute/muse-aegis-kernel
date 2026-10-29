@@ -84,5 +84,39 @@ class TestFixtures(unittest.TestCase):
         self.assertIn("roughly twelve thousand dollars", text)
 
 
+class TestBundle(unittest.TestCase):
+    def test_bundle_matches_the_scenario_files(self):
+        with open(os.path.join(BASE, "benchmark-bundle.json")) as f:
+            bundle = json.load(f)
+        self.assertEqual([s["id"] for s in bundle["scenarios"]], SCEN)
+        for s in bundle["scenarios"]:
+            sc = s["id"]
+            self.assertEqual(s["inputs"]["award"], load(sc, "award.json"))
+            self.assertEqual(s["inputs"]["spendLedger"], load(sc, "spend_ledger.json"))
+            self.assertEqual(s["inputs"]["schedule"], load(sc, "reporting_schedule.json"))
+            self.assertEqual(s["inputs"]["register"], load(sc, "register.json"))
+            self.assertEqual(s["inputs"]["claimsLedger"], load(sc, "claims_ledger.json"))
+            self.assertEqual(s["inputs"]["documentText"], open(os.path.join(BASE, sc, "report.txt")).read())
+            self.assertEqual(s["planted"], load(sc, "expected.json")["planted_issues"])
+
+    def test_planted_problems_for_the_baseline_and_the_clean_case(self):
+        e = load("s0-as-delivered", "expected.json")["planted_issues"]
+        self.assertEqual([(i["category"], i["ref"]) for i in e["expected"]], [
+            ("MISSING_DOCUMENT", "TX-2026-013"), ("MISSING_DOCUMENT", "TX-2026-033"), ("REPORT_LATE", "R2"), ("REPORT_MISSING", "R3"),
+            ("WATCHLIST_MATCH", "Northgate Supply Company"), ("NARRATIVE_MISMATCH", "Training and workshops"),
+            ("NARRATIVE_MISMATCH", "Q2 financial and narrative report")])
+        self.assertIn({"category": "MISSING_DOCUMENT", "ref": "TX-2026-018"}, e["tolerated"])  # still inside the grace period
+        self.assertIn({"category": "DUPLICATE_RECORD", "ref": "TX-2026-016"}, e["tolerated"])  # a repeated export row is a data note
+        self.assertEqual(load("s1-clean", "expected.json")["planted_issues"]["expected"], [])
+        self.assertIn("WATCHLIST_MATCH", [i["category"] for i in load("s3-confirmed-match", "expected.json")["planted_issues"]["expected"]])
+
+    def test_the_answer_key_is_not_in_the_inputs(self):
+        with open(os.path.join(BASE, "benchmark-bundle.json")) as f:
+            text = f.read()
+        self.assertNotIn("planted_issues", text)
+        for s in json.loads(text)["scenarios"]:
+            self.assertNotIn("planted", json.dumps(s["inputs"]).lower())
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -98,5 +98,75 @@
    }
   ],
   "x2": 0.4166666666666667
+ },
+ "planted_issues": {
+  "expected": [
+   {
+    "category": "MISSING_DOCUMENT",
+    "ref": "TX-2026-005"
+   },
+   {
+    "category": "MISSING_DOCUMENT",
+    "ref": "TX-2026-006"
+   },
+   {
+    "category": "MISSING_DOCUMENT",
+    "ref": "TX-2026-007"
+   },
+   {
+    "category": "MISSING_DOCUMENT",
+    "ref": "TX-2026-008"
+   },
+   {
+    "category": "MISSING_DOCUMENT",
+    "ref": "TX-2026-013"
+   },
+   {
+    "category": "MISSING_DOCUMENT",
+    "ref": "TX-2026-033"
+   },
+   {
+    "category": "REPORT_LATE",
+    "ref": "R2"
+   },
+   {
+    "category": "REPORT_MISSING",
+    "ref": "R3"
+   },
+   {
+    "category": "WATCHLIST_MATCH",
+    "ref": "Northgate Supply Company"
+   },
+   {
+    "category": "NARRATIVE_MISMATCH",
+    "ref": "Training and workshops"
+   },
+   {
+    "category": "NARRATIVE_MISMATCH",
+    "ref": "Q2 financial and narrative report"
+   }
+  ],
+  "tolerated": [
+   {
+    "category": "MISSING_DOCUMENT",
+    "ref": "TX-2026-009"
+   },
+   {
+    "category": "MISSING_DOCUMENT",
+    "ref": "TX-2026-010"
+   },
+   {
+    "category": "MISSING_DOCUMENT",
+    "ref": "TX-2026-018"
+   },
+   {
+    "category": "DUPLICATE_RECORD",
+    "ref": "TX-2026-016"
+   },
+   {
+    "category": "*",
+    "ref": "beneficiaries"
+   }
+  ]
  }
 }

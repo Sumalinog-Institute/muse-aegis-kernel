@@ -82,5 +82,43 @@
    }
   ],
   "x2": 0.5
+ },
+ "planted_issues": {
+  "expected": [
+   {
+    "category": "MISSING_DOCUMENT",
+    "ref": "TX-2026-013"
+   },
+   {
+    "category": "REPORT_LATE",
+    "ref": "R2"
+   },
+   {
+    "category": "REPORT_MISSING",
+    "ref": "R3"
+   },
+   {
+    "category": "NARRATIVE_MISMATCH",
+    "ref": "Q2 financial and narrative report"
+   }
+  ],
+  "tolerated": [
+   {
+    "category": "*",
+    "ref": "Personnel"
+   },
+   {
+    "category": "*",
+    "ref": "Training and workshops"
+   },
+   {
+    "category": "*",
+    "ref": "Rent and utilities"
+   },
+   {
+    "category": "*",
+    "ref": "beneficiaries"
+   }
+  ]
  }
 }
