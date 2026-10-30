@@ -187,3 +187,32 @@ test("failed runs are excluded from the statistics and counted", () => {
   const s = summarizeRuns(runs);
   assert.deepEqual([s.overall.judge.runs, s.overall.judge.failed, s.groups[0]?.score?.sd], [1, 1, 0]);
 });
+
+// ---------------------------------------------------------------- the real pilot judge output (one repeat, 2026-10-29)
+
+const pilot = (rows: [Issue["category"], string][]): Issue[] => rows.map(([category, ref]) => ({ category, ref }));
+const PILOT: Record<string, { found: Issue[]; recall: number }> = {
+  "s0-as-delivered": { recall: 6 / 7, found: pilot([["MISSING_DOCUMENT", "TX-2026-013"], ["MISSING_DOCUMENT", "TX-2026-018"], ["MISSING_DOCUMENT", "TX-2026-033"], ["REPORT_LATE", "R2"], ["REPORT_MISSING", "R3"], ["NARRATIVE_MISMATCH", "Q2 financial and narrative report"], ["NARRATIVE_MISMATCH", "Training and workshops"]]) },
+  "s2-documentation-gaps": { recall: 9 / 11, found: pilot([["MISSING_DOCUMENT", "TX-2026-005"], ["MISSING_DOCUMENT", "TX-2026-006"], ["MISSING_DOCUMENT", "TX-2026-007"], ["MISSING_DOCUMENT", "TX-2026-008"], ["MISSING_DOCUMENT", "TX-2026-009"], ["MISSING_DOCUMENT", "TX-2026-018"], ["MISSING_DOCUMENT", "TX-2026-033"], ["REPORT_LATE", "R2"], ["REPORT_MISSING", "R3"], ["NARRATIVE_MISMATCH", "R2"], ["NARRATIVE_MISMATCH", "Training and workshops"], ["DUPLICATE_RECORD", "TX-2026-016"]]) },
+  "s6-small-sample": { recall: 1, found: pilot([["MISSING_DOCUMENT", "TX-2026-013"], ["REPORT_LATE", "R2"], ["REPORT_MISSING", "R3"], ["NARRATIVE_MISMATCH", "Personnel"], ["NARRATIVE_MISMATCH", "R2"]]) },
+  "s7-ledger-incomplete": { recall: 6 / 7, found: pilot([["MISSING_DOCUMENT", "TX-2026-013"], ["MISSING_DOCUMENT", "TX-2026-018"], ["MISSING_DOCUMENT", "TX-2026-033"], ["REPORT_LATE", "R2"], ["REPORT_MISSING", "R3"], ["NARRATIVE_MISMATCH", "R2"], ["NARRATIVE_MISMATCH", "Training and workshops"]]) },
+};
+
+for (const [id, p] of Object.entries(PILOT)) {
+  test(`pilot judge output on ${id}: scored against the planted problems`, () => {
+    const r = scoreIssues(p.found, sc(id).planted);
+    assert.equal(r.recall, p.recall);
+    // In the pilot, "NARRATIVE_MISMATCH R2" (the Q2 report, named by its schedule id) was wrongly scored as a false alarm; it is the planted mismatch.
+    assert.deepEqual(r.false_alarms, [], `false alarms ${id}`);
+  });
+}
+
+test("a statement about a report may be referred to by the report's schedule id, but only with the right category", () => {
+  const t: PlantedIssues = { expected: [{ category: "NARRATIVE_MISMATCH", ref: "Q2 financial and narrative report", aliases: ["R2"] }], tolerated: [] };
+  assert.equal(scoreIssues([is("NARRATIVE_MISMATCH", "R2")], t).recall, 1);
+  assert.equal(scoreIssues([is("OTHER", "report R2")], t).recall, 1);
+  const wrong = scoreIssues([is("REPORT_LATE", "R2")], t);
+  assert.deepEqual([wrong.recall, wrong.false_alarms.length], [0, 1]);
+  assert.equal(scoreIssues([is("NARRATIVE_MISMATCH", "R25")], t).recall, 0); // identifiers still match whole
+  assert.deepEqual(sc("s0-as-delivered").planted.expected.find((e: Issue) => e.ref.startsWith("Q2")).aliases, ["R2"]);
+});

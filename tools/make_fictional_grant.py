@@ -365,7 +365,12 @@ def planted_issues(award, ledger, sched, register, claims):
         expected.append({"category": "WATCHLIST_MATCH", "ref": party})
     for c in claims["claims"]:
         if c["status"] == "CONTRADICTED":
-            expected.append({"category": "NARRATIVE_MISMATCH", "ref": c["subject"]})
+            item = {"category": "NARRATIVE_MISMATCH", "ref": c["subject"]}
+            # a statement about a report may be referred to by the report's id in the schedule (found in the pilot run)
+            aliases = [r["id"] for r in sched["reports"] if r["name"].lower() == c["subject"].lower()]
+            if aliases:
+                item["aliases"] = aliases
+            expected.append(item)
         elif c["status"] in ("INSUFFICIENT_EVIDENCE", "AMBIGUOUS_CONFLICT"):
             tolerated.append({"category": "*", "ref": c["subject"]})
     return {"expected": expected, "tolerated": tolerated}

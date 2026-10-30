@@ -33,3 +33,15 @@ Both use the same model and the same temperature (default 0.7).
 - In `s5-mixed-currency` and `s7-ledger-incomplete` the pipeline refuses to compute the documentation measure and sends the case to a person, so it does not list the missing documents (recall 5 of 7). This is intended behaviour and counts against it here.
 - The free tier of the model service is unreliable; failed runs are counted and excluded from the statistics.
 - The raw findings of every run are kept so any match can be checked by a person.
+
+## Change made after the pilot run, before the full run
+
+A one-repeat pilot (16 runs, 29 October 2026) showed that the judge sometimes referred to the Q2 report by its schedule id (R2) when reporting that
+the report's stated submission date disagreed with the schedule. That is the planted mismatch, but the answer key named the report by its title and the
+matcher counted the judge's finding as a false alarm in three scenarios. The key now carries the schedule id as an alias of that planted problem, and the
+test suite includes the pilot's real judge output as a regression case. The pilot results are not part of any reported result. Changing the key or the
+matcher after seeing results from a full run would not be acceptable; any further change requires a new full run.
+
+Other pilot observations, recorded here as they are (single runs, so only indicative): the judge missed the name-only watch-list match in three of the four
+scenarios where it was planted; it flagged an invoice still inside the grace period as missing although its prompt says such records are not yet overdue (not
+counted as an error); and it gave level RESTRICT in four scenarios although its prompt reserves that level for a confirmed breach and only one scenario has one.

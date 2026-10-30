@@ -105,6 +105,8 @@ class TestBundle(unittest.TestCase):
             ("MISSING_DOCUMENT", "TX-2026-013"), ("MISSING_DOCUMENT", "TX-2026-033"), ("REPORT_LATE", "R2"), ("REPORT_MISSING", "R3"),
             ("WATCHLIST_MATCH", "Northgate Supply Company"), ("NARRATIVE_MISMATCH", "Training and workshops"),
             ("NARRATIVE_MISMATCH", "Q2 financial and narrative report")])
+        q2 = [i for i in e["expected"] if i["ref"].startswith("Q2")][0]
+        self.assertEqual(q2.get("aliases"), ["R2"])  # the report may be referred to by its schedule id
         self.assertIn({"category": "MISSING_DOCUMENT", "ref": "TX-2026-018"}, e["tolerated"])  # still inside the grace period
         self.assertIn({"category": "DUPLICATE_RECORD", "ref": "TX-2026-016"}, e["tolerated"])  # a repeated export row is a data note
         self.assertEqual(load("s1-clean", "expected.json")["planted_issues"]["expected"], [])

@@ -109,7 +109,10 @@
    },
    {
     "category": "NARRATIVE_MISMATCH",
-    "ref": "Q2 financial and narrative report"
+    "ref": "Q2 financial and narrative report",
+    "aliases": [
+     "R2"
+    ]
    }
   ],
   "tolerated": [

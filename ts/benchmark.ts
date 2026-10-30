@@ -7,7 +7,7 @@ import { nameTokens } from "./features.ts";
 import type { IssueCategory, Level } from "./judge.ts";
 import type { Draft } from "./screening.ts";
 
-export interface Issue { category: IssueCategory; ref: string }
+export interface Issue { category: IssueCategory; ref: string; aliases?: string[] }
 export interface ToleratedIssue { category: IssueCategory | "*"; ref: string }
 export interface PlantedIssues { expected: Issue[]; tolerated: ToleratedIssue[] }
 
@@ -72,7 +72,7 @@ export function scoreIssues(found: readonly Issue[], truth: PlantedIssues): RunS
     const key = `${f.category}|${f.ref.trim().toLowerCase()}`;
     if (seen.has(key)) continue;
     seen.add(key);
-    const hit = truth.expected.findIndex((e) => categoryOk(f.category, e.category) && refMatches(f.ref, e.ref));
+    const hit = truth.expected.findIndex((e) => categoryOk(f.category, e.category) && (refMatches(f.ref, e.ref) || (e.aliases ?? []).some((a) => refMatches(f.ref, a))));
     if (hit >= 0) { matchedIdx.add(hit); continue; }
     if (truth.tolerated.some((t) => categoryOk(f.category, t.category) && refMatches(f.ref, t.ref))) continue;
     falseAlarms.push(f);
