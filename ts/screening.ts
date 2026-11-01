@@ -65,7 +65,7 @@ export interface ScreeningInputs {
 }
 
 export type PrepareError = ExtractError | "BAD_PARAMS" | "BAD_INPUT" | "DRAFT_TOO_LARGE" | "KERNEL_ERROR";
-export type PrepareResult = { ok: true; draft: Draft } | { ok: false; code: PrepareError; status: number | null };
+export type PrepareResult = { ok: true; draft: Draft } | { ok: false; code: PrepareError; status: number | null; detail?: string };
 
 export interface PrepareDeps extends GeminiDeps {
   embed?: Embed;
@@ -144,7 +144,7 @@ export async function prepareScreening(
     apiKey: p.apiKey, model: p.model, documentText: inp.documentText, ledger: claimsLedger,
     ...(p.k !== undefined ? { k: p.k } : {}), ...(p.temperature !== undefined ? { temperature: p.temperature } : {}),
   });
-  if (!analysis.ok) return { ok: false, code: analysis.code, status: analysis.status };
+  if (!analysis.ok) return { ok: false, code: analysis.code, status: analysis.status, ...(analysis.detail !== undefined ? { detail: analysis.detail } : {}) };
 
   const profile: Rec = {
     x1: analysis.stability.x1,

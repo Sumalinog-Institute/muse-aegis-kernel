@@ -158,7 +158,7 @@ export type StabilityAnalysis =
       consensus: { items: VerifiedClaim[]; ledger_flags: string[]; x2: X2Result };
       stability: StabilityResult;
     }
-  | { ok: false; code: ExtractError | "BAD_PARAMS"; status: number | null };
+  | { ok: false; code: ExtractError | "BAD_PARAMS"; status: number | null; detail?: string };
 
 export async function analyzeWithStability(
   deps: GeminiDeps & { embed?: Embed },
@@ -175,14 +175,14 @@ export async function analyzeWithStability(
   const summaries: RunSummary[] = [];
   const itemRuns: VerifiedClaim[][] = [];
   let ledgerFlags: string[] = [];
-  let firstFailure: { code: ExtractError; status: number | null } | null = null;
+  let firstFailure: { code: ExtractError; status: number | null; detail?: string } | null = null;
   const usage = { prompt_tokens: 0, output_tokens: 0 };
 
   for (let i = 0; i < k; i++) {
     const e = await extractClaims(deps, { ...p, temperature, labels });
     if (!e.ok) {
       summaries.push({ ok: false, code: e.code, claims: 0, rejected: 0 });
-      firstFailure ??= { code: e.code, status: e.status };
+      firstFailure ??= { code: e.code, status: e.status, ...(e.detail !== undefined ? { detail: e.detail } : {}) };
       if (e.code === "EMPTY_DOCUMENT" || e.code === "DOCUMENT_TOO_LARGE" || e.code === "AUTH_FAILED" || e.code === "MODEL_NOT_FOUND" || e.code === "BAD_REQUEST") break; // repeating cannot help
       continue;
     }
@@ -200,7 +200,7 @@ export async function analyzeWithStability(
 
   if (itemRuns.length === 0) {
     const f = firstFailure ?? { code: "EMPTY_RESPONSE" as ExtractError, status: null };
-    return { ok: false, code: f.code, status: f.status };
+    return { ok: false, code: f.code, status: f.status, ...("detail" in f && f.detail !== undefined ? { detail: f.detail } : {}) };
   }
 
   const consensus = consensusItems(itemRuns);

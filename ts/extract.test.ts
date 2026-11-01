@@ -164,7 +164,9 @@ test("network failures are retried; a timeout is reported without retrying", asy
   const b = fake([new Error("down")]);
   const r = await generate(b.deps, { apiKey: KEY, model: "m", system: "S", user: "U", temperature: 0, maxOutputTokens: 10, timeoutMs: 1000, maxRetries: 1 });
   assert.deepEqual([!r.ok && r.code, b.seen.length], ["NETWORK_ERROR", 2]);
-  assert.equal(JSON.stringify(r).includes("down"), false);
+  // the reason is now reported (for diagnosis), but never the key
+  assert.equal(JSON.stringify(r).includes("down"), true);
+  assert.equal(JSON.stringify(r).includes(KEY), false);
   const abort = Object.assign(new Error("aborted"), { name: "AbortError" });
   const c = fake([abort, ok(GOOD)]);
   const r2 = await generate(c.deps, { apiKey: KEY, model: "m", system: "S", user: "U", temperature: 0, maxOutputTokens: 10, timeoutMs: 1000 });
@@ -271,4 +273,37 @@ test("a claim that picks a ledger label by number keeps working when the model w
   const b = r.verification.items.find((i) => i.claim.subject === "audit report");
   assert.equal(b?.status, "INSUFFICIENT_EVIDENCE"); // no label picked and the model's wording does not match: reported, not guessed
   assert.equal(b?.claim.label, null);
+});
+
+// ---- network failure visibility (v4.3.1) ----
+test("fetch is called without a receiver (no illegal invocation)", async () => {
+  const holder = {
+    fetchFn: async function (this: unknown): Promise<Response> {
+      if (this !== undefined) throw new TypeError("Illegal invocation");
+      return new Response(JSON.stringify({ models: [] }), { status: 200 });
+    },
+    sleep: async () => {}, now: () => new Date(0),
+  };
+  const r = await listModels(holder as unknown as GeminiDeps, { apiKey: KEY, timeoutMs: 1000, maxRetries: 0 });
+  assert.equal(r.ok, true);
+});
+
+test("a thrown network error is reported as detail, with the key removed", async () => {
+  const deps: GeminiDeps = {
+    fetchFn: (async () => { throw Object.assign(new TypeError("fetch failed " + KEY), { cause: Object.assign(new Error("connect ECONNRESET"), { code: "ECONNRESET" }) }); }) as unknown as typeof fetch,
+    sleep: async () => {}, now: () => new Date(0),
+  };
+  const r = await listModels(deps, { apiKey: KEY, timeoutMs: 1000, maxRetries: 0 });
+  assert.equal(r.ok, false);
+  if (r.ok) return;
+  assert.equal(r.code, "NETWORK_ERROR");
+  assert.ok(r.detail && r.detail.includes("ECONNRESET") && r.detail.includes("TypeError"));
+  assert.ok(!r.detail.includes(KEY));
+  assert.ok(r.detail.length <= 200);
+});
+
+test("detail also passes through generate", async () => {
+  const deps: GeminiDeps = { fetchFn: (async () => { throw new Error("boom"); }) as unknown as typeof fetch, sleep: async () => {}, now: () => new Date(0) };
+  const r = await generate(deps, { apiKey: KEY, model: "m", system: "s", user: "u", temperature: 0, maxOutputTokens: 10, timeoutMs: 1000, maxRetries: 0 });
+  assert.equal(!r.ok && r.detail, "Error | boom");
 });

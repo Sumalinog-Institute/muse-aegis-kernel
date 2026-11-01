@@ -121,7 +121,7 @@ export interface GenerateParams {
 
 export type GenerateResult =
   | { ok: true; text: string; usage: { prompt_tokens: number | null; output_tokens: number | null } }
-  | { ok: false; code: GeminiErrorCode; status: number | null };
+  | { ok: false; code: GeminiErrorCode; status: number | null; detail?: string };
 
 const MODEL_NAME = /^[A-Za-z0-9._-]{1,80}$/;
 
@@ -141,15 +141,29 @@ function retryable(code: GeminiErrorCode): boolean {
   return code === "RATE_LIMITED" || code === "SERVER_ERROR" || code === "NETWORK_ERROR";
 }
 
-async function call(deps: GeminiDeps, url: string, init: RequestInit, timeoutMs: number, maxRetries: number):
-  Promise<{ ok: true; body: unknown } | { ok: false; code: GeminiErrorCode; status: number | null }> {
-  let last: { ok: false; code: GeminiErrorCode; status: number | null } = { ok: false, code: "NETWORK_ERROR", status: null };
+/** Short, key-free description of a thrown error (name, message, cause), so a network failure can be diagnosed. */
+export function describeThrown(e: unknown, secret: string): string {
+  const part = (v: unknown): string => (typeof v === "string" || typeof v === "number" ? String(v) : "");
+  const o = (typeof e === "object" && e !== null ? e : {}) as { name?: unknown; message?: unknown; code?: unknown; cause?: unknown };
+  const c = (typeof o.cause === "object" && o.cause !== null ? o.cause : {}) as { name?: unknown; message?: unknown; code?: unknown };
+  const bits = [part(o.name), part(o.code), part(o.message), c !== o && o.cause !== undefined ? "cause:" + [part(c.name), part(c.code), part(c.message)].filter(Boolean).join("/") : ""].filter(Boolean);
+  let text = bits.length ? bits.join(" | ") : typeof e === "string" ? e : "unknown error";
+  if (secret.length >= 8) text = text.split(secret).join("[redacted]");
+  return text.slice(0, 200);
+}
+
+type CallFail = { ok: false; code: GeminiErrorCode; status: number | null; detail?: string };
+
+async function call(deps: GeminiDeps, url: string, init: RequestInit, timeoutMs: number, maxRetries: number, secret = ""):
+  Promise<{ ok: true; body: unknown } | CallFail> {
+  let last: CallFail = { ok: false, code: "NETWORK_ERROR", status: null };
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
     if (attempt > 0) await deps.sleep(1000 * 2 ** (attempt - 1));
     const ctrl = new AbortController();
     const timer = setTimeout(() => ctrl.abort(), timeoutMs);
     try {
-      const res = await deps.fetchFn(url, { ...init, signal: ctrl.signal });
+      // Called without a receiver: some runtimes throw "illegal invocation" when fetch is called as a method of another object.
+      const res = (await Reflect.apply(deps.fetchFn, undefined, [url, { ...init, signal: ctrl.signal }])) as Response;
       if (!res.ok) {
         last = { ok: false, code: httpCode(res.status), status: res.status };
         if (retryable(last.code)) continue;
@@ -162,7 +176,7 @@ async function call(deps: GeminiDeps, url: string, init: RequestInit, timeoutMs:
       }
     } catch (e) {
       const aborted = typeof e === "object" && e !== null && (e as { name?: string }).name === "AbortError";
-      last = { ok: false, code: aborted ? "TIMEOUT" : "NETWORK_ERROR", status: null };
+      last = { ok: false, code: aborted ? "TIMEOUT" : "NETWORK_ERROR", status: null, detail: describeThrown(e, secret) };
       if (aborted) return last;
     } finally {
       clearTimeout(timer);
@@ -183,7 +197,7 @@ export async function generate(deps: GeminiDeps, p: GenerateParams): Promise<Gen
   const r = await call(
     deps, url,
     { method: "POST", headers: { "Content-Type": "application/json", "x-goog-api-key": p.apiKey }, body: JSON.stringify(body) },
-    p.timeoutMs, p.maxRetries ?? EXTRACT_LIMITS.MAX_RETRIES,
+    p.timeoutMs, p.maxRetries ?? EXTRACT_LIMITS.MAX_RETRIES, p.apiKey,
   );
   if (!r.ok) return r;
   const b = r.body as Record<string, unknown> | null;
@@ -208,7 +222,7 @@ export async function generate(deps: GeminiDeps, p: GenerateParams): Promise<Gen
 
 export type ListModelsResult =
   | { ok: true; models: string[]; truncated: boolean }
-  | { ok: false; code: GeminiErrorCode; status: number | null };
+  | { ok: false; code: GeminiErrorCode; status: number | null; detail?: string };
 
 /** Lists model names that support generateContent, so a wrong model name can be fixed without guessing. */
 export async function listModels(deps: GeminiDeps, p: { apiKey: string; timeoutMs: number; maxRetries?: number }): Promise<ListModelsResult> {
@@ -216,7 +230,7 @@ export async function listModels(deps: GeminiDeps, p: { apiKey: string; timeoutM
   const r = await call(
     deps, `${ENDPOINT}/models?pageSize=1000`,
     { method: "GET", headers: { "x-goog-api-key": p.apiKey } },
-    p.timeoutMs, p.maxRetries ?? EXTRACT_LIMITS.MAX_RETRIES,
+    p.timeoutMs, p.maxRetries ?? EXTRACT_LIMITS.MAX_RETRIES, p.apiKey,
   );
   if (!r.ok) return r;
   const b = r.body as Record<string, unknown> | null;
@@ -255,7 +269,7 @@ export type ExtractResult =
       prompt_version: string;
       usage: { prompt_tokens: number | null; output_tokens: number | null };
     }
-  | { ok: false; code: ExtractError; status: number | null };
+  | { ok: false; code: ExtractError; status: number | null; detail?: string };
 
 export async function extractClaims(deps: GeminiDeps, p: ExtractParams): Promise<ExtractResult> {
   const text = p.documentText;
@@ -284,7 +298,7 @@ export type AnalyzeResult =
       verification: { items: VerifiedClaim[]; ledger_flags: string[] };
       x2: X2Result;
     }
-  | { ok: false; code: ExtractError; status: number | null };
+  | { ok: false; code: ExtractError; status: number | null; detail?: string };
 
 /** Extract claims, verify them against the ledger, and compute x2. Writes nothing. */
 export async function analyzeDocument(deps: GeminiDeps, p: ExtractParams & { ledger: Ledger }): Promise<AnalyzeResult> {

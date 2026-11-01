@@ -143,7 +143,7 @@ export function parseJudgeReply(raw: string): ParseJudge {
 
 export type JudgeRun =
   | { ok: true; result: JudgeResult; usage: { prompt_tokens: number | null; output_tokens: number | null }; prompt_version: string }
-  | { ok: false; code: GeminiErrorCode | "BAD_INPUT" | "BAD_MODEL_OUTPUT"; status: number | null };
+  | { ok: false; code: GeminiErrorCode | "BAD_INPUT" | "BAD_MODEL_OUTPUT"; status: number | null; detail?: string };
 
 export async function runJudge(
   deps: GeminiDeps,
