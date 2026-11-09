@@ -8,7 +8,7 @@ import { appendRecord, rowsToEntries, StoreConflictError } from "./append.ts";
 import type { AuditStore, StoreRow } from "./append.ts";
 import { verifyLog } from "./verify.ts";
 import type { AuditReader } from "./verify.ts";
-import { buildRecord, checkDraft, commitScreening, macDraft, parseClaimsLedger, prepareScreening, sha256Hex } from "./screening.ts";
+import { buildRecord, checkDraft, commitScreening, DRAFT_QUEUE_MAX_AGE_MS, macDraft, parseClaimsLedger, prepareScreening, sha256Hex } from "./screening.ts";
 import type { Draft, PrepareDeps } from "./screening.ts";
 
 const BASE = new URL("../fixtures/grant-xx-nmf-0001-2026-014/", import.meta.url);
@@ -284,6 +284,24 @@ test("a draft is refused if it is too old, from the future, or belongs to anothe
   clock = saved;
   const other = await commitScreening(appendDeps(new MemStore()), { userId: "someone-else", allowedUserIds: "someone-else", macKey: MAC_KEY, draft: d, mac, note: "" });
   assert.deepEqual([other.ok, !other.ok && other.status, !other.ok && other.code], [false, 403, "FORBIDDEN"]);
+});
+
+test("a queue can keep drafts longer by passing maxAgeMs, up to 14 days; bad values fall back to 30 minutes", async () => {
+  const { d, mac } = await draftAndMac();
+  const saved = clock;
+  const DAY = 24 * 60 * 60 * 1000;
+  const at = (ms: number) => { clock = Date.parse(d.created_at) + ms; };
+  at(13 * DAY);
+  assert.equal(((await commit(d, mac)) as { code: string }).code, "EXPIRED"); // default stays 30 minutes
+  assert.equal((await commit(d, mac, { maxAgeMs: DRAFT_QUEUE_MAX_AGE_MS })).ok, true);
+  at(15 * DAY);
+  assert.equal(((await commit(d, mac, { maxAgeMs: DRAFT_QUEUE_MAX_AGE_MS })) as { code: string }).code, "EXPIRED");
+  assert.equal(((await commit(d, mac, { maxAgeMs: 365 * DAY })) as { code: string }).code, "EXPIRED"); // capped at 14 days
+  at(45 * 60 * 1000);
+  for (const bad of [Number.NaN, -1, 0, Infinity, "9999999999", null]) {
+    assert.equal(((await commit(d, mac, { maxAgeMs: bad })) as { code: string }).code, "EXPIRED", String(bad));
+  }
+  clock = saved;
 });
 
 test("a draft that no longer matches the scoring rules is refused as stale", async () => {

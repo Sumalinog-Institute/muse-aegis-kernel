@@ -8,8 +8,8 @@ Reference code: `ts/screening.ts` (and `appendRecord` in `ts/append.ts`).
    x4, x5, x6 and the alert status (structured data), runs the kernel, and returns a **draft** with full details. Nothing is written.
    The server adds a MAC (HMAC-SHA256 with a server secret of at least 32 characters) over the draft's canonical JSON.
 2. **Commit** (`commitScreening`): the reviewer approves, with an optional note (at most 500 characters). The server checks that the
-   draft's MAC is valid (so it is exactly what the server produced), that it belongs to the same account, that it is under 30 minutes
-   old (and not from the future), and that the kernel still gives the same decision and score for its profile. It then appends a signed
+   draft's MAC is valid (so it is exactly what the server produced), that it belongs to the same account, that it is not older than the maximum draft age
+   (default 30 minutes; at most 14 days for a deployment that keeps drafts in a queue; a missing or invalid value means 30 minutes) and not from the future (up to 5 minutes of clock skew allowed), and that the kernel still gives the same decision and score for its profile. It then appends a signed
    entry. Rejecting a draft needs no call: it is simply not committed.
 
 Model output is not repeatable, so the draft that was reviewed must be the one stored; the MAC guarantees it.
@@ -31,7 +31,19 @@ Records of this kind may be up to 200,000 characters; older plain records are li
 
 ## Limits
 
-- The MAC proves the server made the draft, not that it is committed once. Within its 30-minute life the same approved draft could be
-  committed twice; both entries carry the same draft MAC, so a repeat is visible.
+- The MAC proves the server made the draft, not that it is committed once. This module alone would allow the same approved draft to be
+  committed twice within its life; both entries would carry the same draft MAC, so a repeat is visible. A deployment that saves drafts
+  must make approval single-use (an atomic status change from pending to approved in the same transaction as the signed append).
+
+## Saved drafts (from v4.5.0-spec, for deployments with a review queue)
+
+1. The maximum draft age is a parameter (`maxAgeMs` on `commitScreening` and `checkDraft`): default 30 minutes, upper bound 14 days.
+2. A draft can be committed once. Enforcing this is the deployment's job (see Limits).
+3. At approval the draft's `policy_version`, `extractor_version` and snapshot identifiers (`award_id`, `spend_snapshot_id`,
+   `claims_snapshot_id`, `as_of`) are compared with the latest prepared screening for the same award; a missing or different value
+   refuses the approval. This shows the draft is not older than another prepared screening; it does not prove the snapshots are the
+   authoritative current ones, because no such source exists yet.
+4. Only the account that prepared a draft can approve it (unchanged).
+5. Rejecting a draft is a workflow status with a reason, not a signed record. No audit entry kind exists for it.
 - A reviewer can approve or discard, not edit claims. A wrong claim means discard and prepare again.
 - The reviewer's approval means "I reviewed the claims, features and decision", not that the underlying facts are true.

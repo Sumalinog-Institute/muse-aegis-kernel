@@ -212,10 +212,28 @@ export const DECISION_RANK: Readonly<Record<string, number>> = {
   RESTRICTION_RECOMMENDED_PENDING_AUTHORITY: 4,
 };
 
+export const JUSTIFICATION_CODES: readonly string[] = [
+  "FALSE_MATCH_CONFIRMED", "SUPPORTING_DOCUMENTATION_VERIFIED", "EXTRACTION_ERROR_CORRECTED", "SOURCE_DATA_ERROR",
+  "AUTHORIZED_POLICY_EXCEPTION", "ESCALATED_ON_NEW_INFORMATION", "MATCH_CONFIRMED_ON_NEW_EVIDENCE",
+];
+export const AUTHORITY_BASES: readonly string[] = ["DESIGNATED_REVIEWER", "COMPLIANCE_OFFICER", "COMMITTEE_DECISION"];
+export const OVERRIDE_FIELDS: readonly string[] = [
+  "kind", "target_seq", "original_decision", "original_psi", "override_decision", "justification_code", "authority_basis",
+  "consulted_evidence_ids", "note", "reviewer_id", "approver_id", "policy_version", "timestamp",
+];
+export const MAX_OVERRIDE_NOTE_CHARS = 500;
+export const MAX_EVIDENCE_IDS = 20;
+
 const OVERRIDE_REQUIRED_STRINGS = [
   "reviewer_id", "authority_basis", "justification_code", "original_decision", "override_decision", "policy_version", "timestamp",
 ];
 const ISO_UTC = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/;
+// Typed evidence references: a watch-list entry, a document hash, a claim, a ledger fact, or an earlier log entry.
+const EVIDENCE_ID = /^(watch:[A-Za-z0-9._-]{1,64}|doc:sha256:[0-9a-f]{64}|claim:[A-Za-z0-9._-]{1,64}|ledger:[A-Za-z0-9._-]{1,64}|entry:[1-9][0-9]*)$/;
+// A light screen for obvious personal data in the note (an email address, or a run of 9 or more digits). It is a
+// guard against slips, not a privacy guarantee: the reviewer remains responsible for the note's content.
+const NOTE_EMAIL = /[^\s@]+@[^\s@]+\.[^\s@]+/;
+const NOTE_LONG_NUMBER = /[0-9](?:[ -]?[0-9]){8,}/;
 
 /** Returns a list of problem codes; an empty list means the override record is acceptable to append.
  *  This checks the record's content against the log. It cannot check that the person really holds the
@@ -223,16 +241,29 @@ const ISO_UTC = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/;
 export function validateOverride(chain: readonly Entry[], record: Record<string, unknown>): string[] {
   const problems: string[] = [];
   if (record["kind"] !== "OVERRIDE") problems.push("KIND_NOT_OVERRIDE");
+  for (const k of Object.keys(record)) {
+    if (!OVERRIDE_FIELDS.includes(k)) problems.push(`UNKNOWN_FIELD:${k.slice(0, 40)}`);
+  }
   for (const f of OVERRIDE_REQUIRED_STRINGS) {
     const v = record[f];
     if (typeof v !== "string" || v.trim() === "") problems.push(`MISSING_FIELD:${f}`);
   }
   if (typeof record["timestamp"] === "string" && !ISO_UTC.test(record["timestamp"])) problems.push("BAD_TIMESTAMP");
+  if (typeof record["justification_code"] === "string" && !JUSTIFICATION_CODES.includes(record["justification_code"])) problems.push("BAD_JUSTIFICATION_CODE");
+  if (typeof record["authority_basis"] === "string" && !AUTHORITY_BASES.includes(record["authority_basis"])) problems.push("BAD_AUTHORITY_BASIS");
+  const note = record["note"];
+  if (typeof note !== "string" || note.trim() === "") problems.push("MISSING_FIELD:note");
+  else if ([...note].length > MAX_OVERRIDE_NOTE_CHARS) problems.push("NOTE_TOO_LONG");
+  else if (NOTE_EMAIL.test(note) || NOTE_LONG_NUMBER.test(note)) problems.push("NOTE_PERSONAL_DATA");
+  if (record["approver_id"] !== undefined && (typeof record["approver_id"] !== "string" || record["approver_id"].trim() === "")) {
+    problems.push("MISSING_FIELD:approver_id");
+  }
   if (!Number.isSafeInteger(record["target_seq"])) problems.push("MISSING_FIELD:target_seq");
-  if (!Array.isArray(record["consulted_evidence_ids"]) || !record["consulted_evidence_ids"].every((x) => typeof x === "string" && x !== "")) {
+  const ev = record["consulted_evidence_ids"];
+  if (!Array.isArray(ev) || ev.length > MAX_EVIDENCE_IDS || !ev.every((x) => typeof x === "string" && EVIDENCE_ID.test(x)) || new Set(ev).size !== ev.length) {
     problems.push("BAD_EVIDENCE_LIST");
   }
-  if (typeof record["override_decision"] === "string" && !(record["override_decision"] in DECISION_RANK)) problems.push("BAD_DECISION");
+  if (typeof record["override_decision"] === "string" && !Object.hasOwn(DECISION_RANK, record["override_decision"])) problems.push("BAD_DECISION");
   if (problems.length > 0) return problems;
 
   const target = chain.find((e) => e.seq === record["target_seq"]);
@@ -241,6 +272,7 @@ export function validateOverride(chain: readonly Entry[], record: Record<string,
   const result = target.record["result"] as Record<string, unknown> | undefined;
   if (!result) return ["TARGET_NOT_SCREENING"];
 
+  if (chain.some((e) => e.record["kind"] === "OVERRIDE" && e.record["target_seq"] === record["target_seq"])) problems.push("ALREADY_OVERRIDDEN");
   if (record["original_decision"] !== result["decision"]) problems.push("ORIGINAL_DECISION_MISMATCH");
   if (record["original_psi"] !== result["psi"]) problems.push("ORIGINAL_PSI_MISMATCH");
 
