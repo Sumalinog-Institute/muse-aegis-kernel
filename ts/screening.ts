@@ -298,7 +298,7 @@ export async function commitScreening(
   const c = await checkDraft(req.draft, req.mac, req.macKey, {
     now: deps.now(), actorId: req.userId,
     evaluate: deps.evaluate as (profile: Rec) => unknown,
-    maxAgeMs: req.maxAgeMs,
+    ...(req.maxAgeMs !== undefined ? { maxAgeMs: req.maxAgeMs } : {}),
   });
   if (!c.ok) {
     if (c.code === "SERVER_MISCONFIGURED") return fail(500, "SERVER_MISCONFIGURED", "the server is not configured");
