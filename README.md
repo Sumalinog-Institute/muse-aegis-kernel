@@ -34,7 +34,7 @@ python3 tools/gen_override_crosscheck.py 20000
 node --experimental-strip-types --test ts/crosscheck.test.ts ts/audit_crosscheck.test.ts ts/features_crosscheck.test.ts ts/override_crosscheck.test.ts
 ```
 
-Last verified run (GitHub Actions, one Linux platform): 205 TypeScript tests and 19 Python tests pass, plus three cross-check tests: 50,000 kernel cases agree bit for bit between TypeScript and Python; 20,000 canonical-JSON cases and 20,000 entry hashes agree; 15,000 random feature and name-matching cases equal an independent Python oracle. These figures are from before the v4.5.0-spec change below; update them after the next green run. The application repository has its own tests, which are not counted here.
+Last verified run (GitHub Actions, one Linux platform, 10 November 2026): 254 TypeScript tests and 29 Python tests pass, plus four cross-check tests: 50,000 kernel cases agree bit for bit between TypeScript and Python; 20,000 canonical-JSON cases and 20,000 entry hashes agree; 15,000 random feature and name-matching cases equal an independent Python oracle; 20,000 random override cases give the same problem codes in TypeScript and in an independent Python implementation. The application repository has its own tests, which are not counted here.
 
 ## What the kernel does
 
