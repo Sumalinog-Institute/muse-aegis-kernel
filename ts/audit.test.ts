@@ -197,9 +197,10 @@ function override(target: Entry, extra: Record<string, unknown> = {}): Record<st
     original_decision: result.decision,
     original_psi: result.psi,
     reviewer_id: "USR-REVIEW-1",
-    authority_basis: "Compliance reviewer, grants unit",
-    justification_code: "MANUAL_DOCUMENT_VERIFIED",
-    consulted_evidence_ids: ["EV-100"],
+    authority_basis: "COMPLIANCE_OFFICER",
+    justification_code: "SUPPORTING_DOCUMENTATION_VERIFIED",
+    consulted_evidence_ids: ["doc:sha256:" + "cd".repeat(32)],
+    note: "Registration documents reviewed; the entity differs from the listed one.",
     override_decision: PASS,
     policy_version: "4.1",
     timestamp: "2026-10-23T12:00:00Z",
@@ -254,4 +255,48 @@ test("override: appended as a new entry; the original stays in the log and the c
   assert.deepEqual(effectiveDecision(extended, 5), { decision: PASS, overridden: true, override_seq: 7 });
   // an override cannot itself be overridden by pointing at it
   assert.deepEqual(validateOverride(extended, override(chain[4], { target_seq: 7 })), ["TARGET_NOT_SCREENING"]);
+});
+
+test("override: only the approved justification codes and authority bases are accepted", () => {
+  for (const c of ["FALSE_MATCH_CONFIRMED", "SUPPORTING_DOCUMENTATION_VERIFIED", "EXTRACTION_ERROR_CORRECTED", "SOURCE_DATA_ERROR",
+    "AUTHORIZED_POLICY_EXCEPTION", "ESCALATED_ON_NEW_INFORMATION", "MATCH_CONFIRMED_ON_NEW_EVIDENCE"]) {
+    assert.deepEqual(validateOverride(chain, override(chain[4], { justification_code: c })), [], c);
+  }
+  for (const a of ["DESIGNATED_REVIEWER", "COMPLIANCE_OFFICER", "COMMITTEE_DECISION"]) {
+    assert.deepEqual(validateOverride(chain, override(chain[4], { authority_basis: a })), [], a);
+  }
+  assert.deepEqual(validateOverride(chain, override(chain[4], { justification_code: "MANUAL_DOCUMENT_VERIFIED" })), ["BAD_JUSTIFICATION_CODE"]);
+  assert.deepEqual(validateOverride(chain, override(chain[4], { authority_basis: "Compliance reviewer" })), ["BAD_AUTHORITY_BASIS"]);
+});
+
+test("override: extra fields are refused", () => {
+  assert.deepEqual(validateOverride(chain, override(chain[4], { status: "done" })), ["UNKNOWN_FIELD:status"]);
+});
+
+test("override: the note is required, at most 500 characters, and free of obvious personal data", () => {
+  assert.ok(validateOverride(chain, override(chain[4], { note: "" })).includes("MISSING_FIELD:note"));
+  assert.ok(validateOverride(chain, override(chain[4], { note: undefined })).includes("MISSING_FIELD:note"));
+  assert.deepEqual(validateOverride(chain, override(chain[4], { note: "a".repeat(500) })), []);
+  assert.deepEqual(validateOverride(chain, override(chain[4], { note: "\u{1F600}".repeat(500) })), []); // counted in characters
+  assert.deepEqual(validateOverride(chain, override(chain[4], { note: "a".repeat(501) })), ["NOTE_TOO_LONG"]);
+  assert.deepEqual(validateOverride(chain, override(chain[4], { note: "call a.b@example.org" })), ["NOTE_PERSONAL_DATA"]);
+  assert.deepEqual(validateOverride(chain, override(chain[4], { note: "passport 123 456 789" })), ["NOTE_PERSONAL_DATA"]);
+});
+
+test("override: evidence ids must be typed, unique and at most 20", () => {
+  const ok = ["watch:W-1001", "doc:sha256:" + "ab".repeat(32), "claim:C-7", "ledger:L.2", "entry:3"];
+  assert.deepEqual(validateOverride(chain, override(chain[4], { consulted_evidence_ids: ok })), []);
+  for (const bad of [["EV-100"], ["watch:"], ["doc:sha256:xyz"], ["entry:0"], ["watch:W-1", "watch:W-1"], [5], "watch:W-1",
+    Array.from({ length: 21 }, (_, i) => `watch:W-${i}`)]) {
+    assert.deepEqual(validateOverride(chain, override(chain[4], { consulted_evidence_ids: bad })), ["BAD_EVIDENCE_LIST"], JSON.stringify(bad).slice(0, 40));
+  }
+});
+
+test("override: a screening can be overridden once", async () => {
+  const extended = [...chain, await nextEntry(chain, override(chain[4]), signer)];
+  assert.deepEqual(validateOverride(extended, override(chain[4], { override_decision: "ALERT_VERIFICATION_REQUIRED" })), ["ALREADY_OVERRIDDEN"]);
+});
+
+test("override: decision names that are only inherited object properties are refused", () => {
+  assert.ok(validateOverride(chain, override(chain[4], { override_decision: "constructor" })).includes("BAD_DECISION"));
 });

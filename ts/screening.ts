@@ -8,8 +8,11 @@
 //      and the review.
 // The model's output is not repeatable, so the draft that was reviewed must be the one that is stored; the MAC guarantees that.
 //
-// Known limit: the MAC proves the server made the draft, not that it is used once. Within its lifetime (30 minutes) the same
-// approved draft could be committed twice; both entries would carry the same draft MAC, so the repeat is visible in the log.
+// Draft lifetime: 30 minutes by default (DRAFT_MAX_AGE_MS). A caller that keeps drafts in a review queue passes a longer
+// maxAgeMs, never more than DRAFT_QUEUE_MAX_AGE_MS (14 days).
+// Known limit: the MAC proves the server made the draft, not that it is used once. Within its lifetime the same approved
+// draft could be committed twice by this module alone; both entries would carry the same draft MAC, so the repeat is visible
+// in the log. A caller with a queue must make approval single-use (see spec/SCREENING.md).
 
 import { canonicalize } from "./jcs.ts";
 import { appendRecord, POLICY_VERSION } from "./append.ts";
@@ -23,6 +26,7 @@ import type { Ledger, LedgerFact, X2Result } from "./claims.ts";
 
 export const DRAFT_FORMAT_VERSION = 2;
 export const DRAFT_MAX_AGE_MS = 30 * 60 * 1000;
+export const DRAFT_QUEUE_MAX_AGE_MS = 14 * 24 * 60 * 60 * 1000;
 const MAX_DRAFT_CHARS = 190000;
 const MAX_NOTE_CHARS = 500;
 const MIN_MAC_KEY_CHARS = 32;
@@ -248,9 +252,11 @@ export async function checkDraft(
   }
   if (!sameText(expected, macU)) return { ok: false, code: "BAD_MAC" };
   if (draft.actor_id !== ctx.actorId) return { ok: false, code: "WRONG_ACTOR" };
+  const requested = ctx.maxAgeMs;
+  const maxAge = typeof requested === "number" && Number.isFinite(requested) && requested > 0 ? Math.min(requested, DRAFT_QUEUE_MAX_AGE_MS) : DRAFT_MAX_AGE_MS;
   const created = Date.parse(draft.created_at);
   const age = ctx.now.getTime() - created;
-  if (!Number.isFinite(created) || age < -5 * 60 * 1000 || age > (ctx.maxAgeMs ?? DRAFT_MAX_AGE_MS)) return { ok: false, code: "EXPIRED" };
+  if (!Number.isFinite(created) || age < -5 * 60 * 1000 || age > maxAge) return { ok: false, code: "EXPIRED" };
   // The deterministic part must still agree with the kernel (guards against a code change between preparing and committing).
   let again: unknown;
   try {
@@ -285,13 +291,14 @@ export function buildRecord(draft: Draft, review: { note: string; reviewedAt: st
 
 export async function commitScreening(
   deps: AppendDeps,
-  req: { userId: string; allowedUserIds: string | undefined; macKey: string; draft: unknown; mac: unknown; note: unknown },
+  req: { userId: string; allowedUserIds: string | undefined; macKey: string; draft: unknown; mac: unknown; note: unknown; maxAgeMs?: number },
 ): Promise<AppendOutcome> {
   const fail = (status: number, code: string, message: string): AppendOutcome => ({ ok: false, status, code, message });
   if (typeof req.note !== "string" || req.note.length > MAX_NOTE_CHARS) return fail(400, "BAD_REQUEST", `the review note must be text of at most ${MAX_NOTE_CHARS} characters`);
   const c = await checkDraft(req.draft, req.mac, req.macKey, {
     now: deps.now(), actorId: req.userId,
     evaluate: deps.evaluate as (profile: Rec) => unknown,
+    maxAgeMs: req.maxAgeMs,
   });
   if (!c.ok) {
     if (c.code === "SERVER_MISCONFIGURED") return fail(500, "SERVER_MISCONFIGURED", "the server is not configured");

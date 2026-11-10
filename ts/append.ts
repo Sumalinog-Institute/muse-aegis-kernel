@@ -8,7 +8,7 @@
 // write it. A write that loses a race with another writer is retried against the new head.
 
 import { canonicalize } from "./jcs.ts";
-import { makeSigner, nextEntry } from "./audit.ts";
+import { makeSigner, nextEntry, validateOverride, verifyChain } from "./audit.ts";
 import type { Entry, Signer, Verifier } from "./audit.ts";
 
 export const POLICY_VERSION = "4.1";
@@ -178,8 +178,8 @@ export async function appendScreening(
 }
 
 /** Signs and stores one record, retrying when another writer got the position first. */
-async function writeRecord(deps: AppendDeps, record: Record<string, unknown>, maxChars: number): Promise<AppendOutcome> {
-  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+async function writeRecord(deps: AppendDeps, record: Record<string, unknown>, maxChars: number, maxAttempts: number = MAX_ATTEMPTS): Promise<AppendOutcome> {
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     let head: { seq: number; hash: string } | null;
     try {
       head = await deps.store.getHead();
@@ -212,7 +212,7 @@ async function writeRecord(deps: AppendDeps, record: Record<string, unknown>, ma
         signature: entry.signature,
       });
     } catch (err) {
-      if (err instanceof StoreConflictError && attempt < MAX_ATTEMPTS) continue; // lost a race: re-read the head and retry
+      if (err instanceof StoreConflictError && attempt < maxAttempts) continue; // lost a race: re-read the head and retry
       if (err instanceof StoreConflictError) return fail(503, "CONFLICT", "the log is busy, please try again");
       return fail(500, "STORE_ERROR", "the entry could not be saved");
     }
@@ -221,7 +221,7 @@ async function writeRecord(deps: AppendDeps, record: Record<string, unknown>, ma
     const res = (typeof result === "object" && result !== null ? result : {}) as Record<string, unknown>;
     return {
       ok: true,
-      entry: { seq: entry.seq, hash: entry.hash, key_id: entry.key_id, decision: res["decision"], psi: res["psi"], timestamp: String(record["timestamp"]) },
+      entry: { seq: entry.seq, hash: entry.hash, key_id: entry.key_id, decision: res["decision"] ?? record["override_decision"], psi: res["psi"] ?? record["original_psi"], timestamp: String(record["timestamp"]) },
     };
   }
   return fail(503, "CONFLICT", "the log is busy, please try again");
@@ -257,6 +257,79 @@ export async function appendRecord(
   if (!ok) return fail(400, "BAD_REQUEST", "the record is not a valid screening record for this account");
   const maxChars = Math.min(opts.maxChars ?? MAX_DETAILED_RECORD_CHARS, 500000);
   return writeRecord(deps, record, maxChars);
+}
+
+// ---------------------------------------------------------------- appending an override
+
+export interface OverrideStore extends AuditStore {
+  /** Every row of the log, in order. */
+  readAll(): Promise<StoreRow[]>;
+}
+
+export const OVERRIDE_BODY_KEYS = ["target_seq", "override_decision", "justification_code", "authority_basis", "consulted_evidence_ids", "note"];
+
+/** Appends an OVERRIDE entry for a reviewer. The caller supplies only the decision and its reasons; the server fills in
+ *  the reviewer (the signed-in account), the policy version, the time, and the original decision and score copied from the
+ *  target entry. A second approver cannot be supplied through this route, so an override that needs one is refused until
+ *  an approval step exists. The whole check is repeated if another writer takes the position first. */
+export async function appendOverride(
+  deps: AppendDeps & { store: OverrideStore },
+  req: { userId: string; allowedUserIds: string | undefined; body: unknown },
+): Promise<AppendOutcome> {
+  if (typeof req.userId !== "string" || req.userId === "" || req.userId.length > 100) {
+    return fail(401, "UNAUTHORIZED", "sign-in required");
+  }
+  const allowed = isAllowed(req.userId, req.allowedUserIds);
+  if (allowed === "unset") return fail(500, "SERVER_MISCONFIGURED", "the server is not configured");
+  if (!allowed) return fail(403, "FORBIDDEN", "this account may not write to the audit log");
+
+  const b = req.body;
+  if (typeof b !== "object" || b === null || Array.isArray(b)) return fail(400, "BAD_REQUEST", "body must be a JSON object");
+  const body = b as Record<string, unknown>;
+  for (const k of Object.keys(body)) {
+    if (!OVERRIDE_BODY_KEYS.includes(k)) return fail(400, "BAD_REQUEST", `unknown field: ${k.slice(0, 40)}`);
+  }
+
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    let entries: Entry[];
+    try {
+      entries = rowsToEntries(await deps.store.readAll());
+    } catch {
+      return fail(500, "STORE_ERROR", "the log could not be read");
+    }
+    const check = await verifyChain(entries, deps.verifier);
+    if (!check.ok) return fail(500, "CHAIN_INVALID", "the log does not verify, so nothing was written");
+
+    const target = entries.find((e) => e.seq === body["target_seq"]);
+    if (!target) return fail(404, "OVERRIDE_REJECTED", "TARGET_NOT_FOUND");
+    if (target.record["kind"] !== "SCREENING") return fail(400, "OVERRIDE_REJECTED", "TARGET_NOT_SCREENING");
+    const result = target.record["result"];
+    const res = (typeof result === "object" && result !== null ? result : {}) as Record<string, unknown>;
+    const record: Record<string, unknown> = {
+      kind: "OVERRIDE",
+      target_seq: body["target_seq"],
+      original_decision: res["decision"],
+      original_psi: res["psi"],
+      override_decision: body["override_decision"],
+      justification_code: body["justification_code"],
+      authority_basis: body["authority_basis"],
+      consulted_evidence_ids: body["consulted_evidence_ids"],
+      note: body["note"],
+      reviewer_id: req.userId,
+      policy_version: POLICY_VERSION,
+      timestamp: deps.now().toISOString(),
+    };
+    for (const k of Object.keys(record)) if (record[k] === undefined) delete record[k];
+
+    const problems = validateOverride(entries, record);
+    if (problems.length > 0) {
+      const status = problems.includes("ALREADY_OVERRIDDEN") ? 409 : 400;
+      return fail(status, "OVERRIDE_REJECTED", problems.join(", "));
+    }
+    const out = await writeRecord(deps, record, MAX_RECORD_JSON_CHARS, 1);
+    if (out.ok || out.code !== "CONFLICT") return out;
+  }
+  return fail(503, "CONFLICT", "the log is busy, please try again");
 }
 
 // ---------------------------------------------------------------- reading rows back
