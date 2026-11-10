@@ -65,11 +65,11 @@ W_GROUND 0.40, W4 0.20, W5 0.15, W6 0.30, THETA_DOC 0.25, THETA_STAB 0.20, N_MIN
 | 1 | Scoring kernel and gate | Done (v4.1.0-spec) |
 | 2 | Signed, hash-chained audit log | Done (v4.2.0-spec) |
 | 3 | Document screening | Done (v4.3.0-spec) |
-| 4 | Reviewer workflow and override screens | In progress: review queue and saved drafts built and tested in the application; override rules and write route in this repository (v4.5.0-spec); override screens not yet built |
+| 4 | Reviewer workflow and override screens | Mostly done: review queue with saved drafts, override rules and write route (v4.5.0-spec, type fix in v4.5.1-spec), and override screens, with one live test on synthetic data. Open: second-approver step, rejections in the signed log, small screen fixes |
 | 5 | Comparison against a plain AI judge | Done on synthetic data, 112 runs (v4.4.0-spec); a version on real documents is planned |
 | 6 | Hardening and deployment | Not done |
 | 7 | Pilot with independently labeled real cases | Not done |
 
 ## Not done yet
 
-Override screens (Phase 4), second-approver step for overrides of restrictions, the real-document version of the Phase 5 comparison, hardening and deployment (Phase 6), and a pilot with independently labeled real cases (Phase 7). Rejections are not yet recorded in the signed log. Nothing here is validated on real cases.
+Second-approver step for overrides of restriction recommendations (an override of a restriction is currently refused), recording rejections in the signed log, the real-document version of the Phase 5 comparison, hardening and deployment (Phase 6), and a pilot with independently labeled real cases (Phase 7). Nothing here is validated on real cases.
