@@ -9,10 +9,11 @@ jobs:
         with: { node-version: 22 }
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
-      - run: node --experimental-strip-types --test ts/kernel.test.ts ts/audit.test.ts ts/append.test.ts ts/verify.test.ts ts/claims.test.ts ts/extract.test.ts ts/features.test.ts ts/stability.test.ts ts/screening.test.ts ts/override.test.ts ts/judge.test.ts ts/benchmark.test.ts
+      - run: node --experimental-strip-types --test ts/kernel.test.ts ts/audit.test.ts ts/append.test.ts ts/verify.test.ts ts/claims.test.ts ts/extract.test.ts ts/features.test.ts ts/stability.test.ts ts/screening.test.ts ts/override.test.ts ts/approval.test.ts ts/judge.test.ts ts/benchmark.test.ts
       - run: python3 -m unittest discover -s python -v
       - run: python3 tools/gen_crosscheck.py 50000
       - run: python3 tools/gen_audit_crosscheck.py 20000
       - run: python3 tools/gen_features_crosscheck.py 3000
       - run: python3 tools/gen_override_crosscheck.py 20000
-      - run: node --experimental-strip-types --test ts/crosscheck.test.ts ts/audit_crosscheck.test.ts ts/features_crosscheck.test.ts ts/override_crosscheck.test.ts
+      - run: python3 tools/gen_v460_crosscheck.py 20000
+      - run: node --experimental-strip-types --test ts/crosscheck.test.ts ts/audit_crosscheck.test.ts ts/features_crosscheck.test.ts ts/override_crosscheck.test.ts ts/v460_crosscheck.test.ts

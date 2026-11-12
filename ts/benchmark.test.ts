@@ -92,7 +92,7 @@ async function prepare(id: string) {
   const claims = claimsFor(s.inputs.documentText);
   const fetchFn = (async () => okReply(claims)) as unknown as typeof fetch;
   const deps = { fetchFn, sleep: async () => {}, now: () => new Date(Date.UTC(2026, 9, 27)), evaluate: evaluate as unknown as PrepareDeps["evaluate"] } as PrepareDeps;
-  const r = await prepareScreening(deps, { apiKey: "AIzaSyTEST_KEY_DO_NOT_LEAK_0123456789", model: "m", actorId: "u", inputs: s.inputs });
+  const r = await prepareScreening(deps, { apiKey: "AIzaSyTEST_KEY_DO_NOT_LEAK_0123456789", model: "m", actorId: "u", projectId: "FP001", docRef: "gcf:FP001:funding-proposal", inputs: s.inputs });
   if (!r.ok) throw new Error("prepare failed " + r.code);
   return r.draft;
 }

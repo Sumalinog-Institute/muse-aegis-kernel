@@ -15,6 +15,7 @@
 // in the log. A caller with a queue must make approval single-use (see spec/SCREENING.md).
 
 import { canonicalize } from "./jcs.ts";
+import { LEGACY_MAX_SEQ, validateScreeningFields } from "./audit.ts";
 import { appendRecord, POLICY_VERSION } from "./append.ts";
 import type { AppendDeps, AppendOutcome } from "./append.ts";
 import { structuredFeatures } from "./features.ts";
@@ -46,6 +47,8 @@ export interface Draft {
   created_at: string;
   actor_id: string;
   doc_hash: string;
+  project_id: string;
+  doc_ref: string;
   ledger_id: string;
   extractor_version: string;
   policy_version: string;
@@ -122,11 +125,13 @@ function strOrNull(v: unknown, max = 100): string | null {
 
 export async function prepareScreening(
   deps: PrepareDeps,
-  p: { apiKey: string; model: string; actorId: string; inputs: ScreeningInputs; k?: number; temperature?: number; maxDraftChars?: number },
+  p: { apiKey: string; model: string; actorId: string; projectId: string; docRef: string; inputs: ScreeningInputs; k?: number; temperature?: number; maxDraftChars?: number },
 ): Promise<PrepareResult> {
   const bad = (code: PrepareError): PrepareResult => ({ ok: false, code, status: null });
   const inp = p.inputs;
   if (typeof p.actorId !== "string" || p.actorId === "" || p.actorId.length > 100) return bad("BAD_PARAMS");
+  // New entries always carry both references (the legacy exemption applies only to entries written before v4.6.0).
+  if (validateScreeningFields({ project_id: p.projectId, doc_ref: p.docRef }, LEGACY_MAX_SEQ + 1).length > 0) return bad("BAD_PARAMS");
   if (typeof inp.documentText !== "string" || inp.documentText.trim() === "" || inp.documentText.length > MAX_DOCUMENT_CHARS) return bad("BAD_INPUT");
   const claimsLedger = parseClaimsLedger(inp.claimsLedger);
   if (!claimsLedger) return bad("BAD_INPUT");
@@ -174,6 +179,8 @@ export async function prepareScreening(
     created_at: deps.now().toISOString(),
     actor_id: p.actorId,
     doc_hash: "sha256:" + (await sha256Hex(inp.documentText)),
+    project_id: p.projectId,
+    doc_ref: p.docRef,
     ledger_id: strOrNull(spend["snapshot_id"]) ?? "unknown",
     extractor_version: analysis.extractor_version,
     policy_version: POLICY_VERSION,
@@ -275,6 +282,8 @@ export function buildRecord(draft: Draft, review: { note: string; reviewedAt: st
     kind: "SCREENING",
     format_version: DRAFT_FORMAT_VERSION,
     doc_hash: draft.doc_hash,
+    project_id: draft.project_id,
+    doc_ref: draft.doc_ref,
     input: draft.profile,
     result: draft.result,
     extractor_version: draft.extractor_version,

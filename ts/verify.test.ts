@@ -29,7 +29,7 @@ const kernel = evaluate as unknown as (p: Record<string, unknown>) => unknown;
 async function filled(n: number): Promise<MemStore> {
   const store = new MemStore();
   for (let i = 0; i < n; i++) {
-    const body = { profile: { x1: 0.1, x2: i / 10, x4: 0, x5: 0, x6: i % 3 === 0 ? 1 : 0, n_applicable: 40 }, doc_hash: DOC, ledger_id: "TEST" };
+    const body = { profile: { x1: 0.1, x2: i / 10, x4: 0, x5: 0, x6: i % 3 === 0 ? 1 : 0, n_applicable: 40 }, doc_hash: DOC, project_id: "FP001", doc_ref: "gcf:FP001:funding-proposal", ledger_id: "TEST" };
     const r = await appendScreening({ store, signer, verifier, evaluate: kernel, now: () => new Date(Date.UTC(2026, 9, 24, 8, 0, i)) }, { userId: USER, allowedUserIds: USER, body });
     assert.equal(r.ok, true);
   }

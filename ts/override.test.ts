@@ -40,7 +40,7 @@ const deps = (store: MemStore): AppendDeps & { store: OverrideStore } => ({
 async function seeded() {
   const store = new MemStore();
   for (const id of ["TV1", "TV2", "TV5", "TV8"]) {
-    const out = await appendScreening(deps(store), { userId: USER, allowedUserIds: USER, body: { profile: profile(id), doc_hash: DOC } });
+    const out = await appendScreening(deps(store), { userId: USER, allowedUserIds: USER, body: { profile: profile(id), doc_hash: DOC, project_id: "FP001", doc_ref: "gcf:FP001:funding-proposal" } });
     assert.equal(out.ok, true);
   }
   return store;
@@ -148,7 +148,7 @@ test("losing the race to another writer is retried against the new log; a compet
   const plain = await seeded();
   plain.beforeInsert = async () => {
     // another writer appends an unrelated screening first
-    await appendScreening(deps(plain), { userId: USER, allowedUserIds: USER, body: { profile: profile("TV1"), doc_hash: DOC } });
+    await appendScreening(deps(plain), { userId: USER, allowedUserIds: USER, body: { profile: profile("TV1"), doc_hash: DOC, project_id: "FP001", doc_ref: "gcf:FP001:funding-proposal" } });
   };
   const retried = await call(plain, body());
   assert.equal(retried.ok && retried.entry.seq, 6);

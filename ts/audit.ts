@@ -7,13 +7,15 @@
 // with H_0 = 64 zeros (hex). Each entry is signed: signature = ECDSA-P256-SHA256 over the 32 raw
 // bytes of H_t, encoded as base64 (IEEE P1363 r||s format).
 //
+// Format version 2 (spec v4.6.0): SCREENING records carry project_id and doc_ref; a REJECTION record kind exists.
+//
 // What this module does NOT do: authenticate people, store keys safely, or stop someone with write
 // access from deleting the TAIL of the log. Tail deletion is detectable only against an external
 // checkpoint (see VerifyOptions.expectedHead). See spec/AUDIT.md.
 
 import { canonicalize } from "./jcs.ts";
 
-export const AUDIT_FORMAT_VERSION = "1";
+export const AUDIT_FORMAT_VERSION = "2";
 export const GENESIS_HASH = "0".repeat(64);
 
 export interface Entry {
@@ -291,6 +293,98 @@ export function validateOverride(chain: readonly Entry[], record: Record<string,
       else if (approver === record["reviewer_id"]) problems.push("APPROVER_SAME_AS_REVIEWER");
     }
   }
+  return problems;
+}
+
+// ---------------------------------------------------------------- project and document references (spec v4.6.0)
+
+/** Entries with seq up to this value were written before v4.6.0 and may lack project_id and doc_ref.
+ *  From the next position on both are required. Set to the head seq of the live log at the time of the bump. */
+export const LEGACY_MAX_SEQ = 5;
+const PROJECT_ID = /^[A-Za-z0-9._-]{1,64}$/;
+const DOC_REF = /^[A-Za-z0-9._:-]{1,128}$/;
+// Project identifiers and IATI codes use hyphens, so only an unbroken run of digits counts as a possible personal number here.
+const FIELD_LONG_NUMBER = /[0-9]{9,}/;
+
+/** Problem codes for the project_id and doc_ref of a SCREENING record at position `seq`.
+ *  The fields may be absent only for legacy entries (seq <= LEGACY_MAX_SEQ). An empty list means acceptable. */
+export function validateScreeningFields(record: Record<string, unknown>, seq: number): string[] {
+  const problems: string[] = [];
+  const legacy = seq <= LEGACY_MAX_SEQ;
+  const pid = record["project_id"];
+  const dref = record["doc_ref"];
+  let pidOk = false;
+  if (pid === undefined) {
+    if (!legacy) problems.push("MISSING_PROJECT_ID");
+  } else if (typeof pid !== "string" || !PROJECT_ID.test(pid)) {
+    problems.push("BAD_PROJECT_ID");
+  } else {
+    pidOk = true;
+  }
+  if (dref === undefined) {
+    if (!legacy) problems.push("MISSING_DOC_REF");
+  } else if (typeof dref !== "string" || !DOC_REF.test(dref)) {
+    problems.push("BAD_DOC_REF");
+  } else {
+    const parts = dref.split(":");
+    if (parts.length < 3 || parts[0] === "" || parts[1] === "" || parts[2] === "") problems.push("BAD_DOC_REF");
+    else if (pidOk && parts[1] !== pid) problems.push("DOC_REF_PROJECT_MISMATCH");
+  }
+  if ((typeof pid === "string" && FIELD_LONG_NUMBER.test(pid)) || (typeof dref === "string" && FIELD_LONG_NUMBER.test(dref))) {
+    problems.push("FIELD_PERSONAL_DATA");
+  }
+  return problems;
+}
+
+/** Checks project_id and doc_ref across a whole chain. Kept separate from verifyChain, which stays purely cryptographic. */
+export function checkScreeningFields(chain: readonly Entry[]): { seq: number; code: string }[] {
+  const out: { seq: number; code: string }[] = [];
+  for (const e of chain) {
+    if (e.record["kind"] !== "SCREENING") continue;
+    for (const code of validateScreeningFields(e.record, e.seq)) out.push({ seq: e.seq, code });
+  }
+  return out;
+}
+
+// ---------------------------------------------------------------- rejections (spec v4.6.0)
+
+export const REJECTION_REASON_CODES: readonly string[] = ["EVIDENCE_INSUFFICIENT", "AUTHORITY_NOT_SHOWN", "JUSTIFICATION_UNCLEAR", "OTHER"];
+export const REJECTION_FIELDS: readonly string[] = [
+  "kind", "target_seq", "rejected_decision", "reason_code", "note", "reviewer_id", "approver_id", "policy_version", "timestamp",
+];
+const REJECTION_REQUIRED_STRINGS = ["reviewer_id", "approver_id", "reason_code", "rejected_decision", "policy_version", "timestamp"];
+
+/** Problem codes for a REJECTION record: an approver's refusal of a pending override request.
+ *  A rejection never changes the decision in force and does not use up the one-override-per-screening rule. */
+export function validateRejection(chain: readonly Entry[], record: Record<string, unknown>): string[] {
+  const problems: string[] = [];
+  if (record["kind"] !== "REJECTION") problems.push("KIND_NOT_REJECTION");
+  for (const k of Object.keys(record)) {
+    if (!REJECTION_FIELDS.includes(k)) problems.push(`UNKNOWN_FIELD:${k.slice(0, 40)}`);
+  }
+  for (const f of REJECTION_REQUIRED_STRINGS) {
+    const v = record[f];
+    if (typeof v !== "string" || v.trim() === "") problems.push(`MISSING_FIELD:${f}`);
+  }
+  if (typeof record["timestamp"] === "string" && !ISO_UTC.test(record["timestamp"])) problems.push("BAD_TIMESTAMP");
+  if (typeof record["reason_code"] === "string" && !REJECTION_REASON_CODES.includes(record["reason_code"])) problems.push("BAD_REASON_CODE");
+  const note = record["note"];
+  if (typeof note !== "string" || note.trim() === "") problems.push("MISSING_FIELD:note");
+  else if ([...note].length > MAX_OVERRIDE_NOTE_CHARS) problems.push("NOTE_TOO_LONG");
+  else if (NOTE_EMAIL.test(note) || NOTE_LONG_NUMBER.test(note)) problems.push("NOTE_PERSONAL_DATA");
+  if (!Number.isSafeInteger(record["target_seq"])) problems.push("MISSING_FIELD:target_seq");
+  if (typeof record["rejected_decision"] === "string" && !Object.hasOwn(DECISION_RANK, record["rejected_decision"])) problems.push("BAD_DECISION");
+  if (problems.length > 0) return problems;
+
+  const target = chain.find((e) => e.seq === record["target_seq"]);
+  if (!target) return ["TARGET_NOT_FOUND"];
+  if (target.record["kind"] !== "SCREENING") return ["TARGET_NOT_SCREENING"];
+  const result = target.record["result"] as Record<string, unknown> | undefined;
+  if (!result) return ["TARGET_NOT_SCREENING"];
+
+  if (chain.some((e) => e.record["kind"] === "OVERRIDE" && e.record["target_seq"] === record["target_seq"])) problems.push("ALREADY_OVERRIDDEN");
+  if (record["rejected_decision"] === result["decision"]) problems.push("NO_CHANGE");
+  if (record["approver_id"] === record["reviewer_id"]) problems.push("APPROVER_SAME_AS_REVIEWER");
   return problems;
 }
 

@@ -59,7 +59,7 @@ function inputs(sc: string) {
 }
 const prep = (sc: string, over: Record<string, unknown> = {}, replies?: Response[]) => {
   const { d, calls } = deps(replies ?? same3(modelClaims(text(sc))));
-  return prepareScreening(d, { apiKey: KEY, model: "gemini-test", actorId: USER, inputs: inputs(sc), ...over }).then((r) => ({ r, calls }));
+  return prepareScreening(d, { apiKey: KEY, model: "gemini-test", actorId: USER, projectId: "FP001", docRef: "gcf:FP001:funding-proposal", inputs: inputs(sc), ...over }).then((r) => ({ r, calls }));
 };
 
 class MemStore implements AuditStore, AuditReader {
@@ -184,12 +184,12 @@ test("bad inputs are refused before any model call", async () => {
   ];
   for (const over of cases) {
     const { d, calls } = deps(same3(modelClaims(text("s0-as-delivered"))));
-    const r = await prepareScreening(d, { apiKey: KEY, model: "m", actorId: USER, inputs: { ...inputs("s0-as-delivered"), ...over } });
+    const r = await prepareScreening(d, { apiKey: KEY, model: "m", actorId: USER, projectId: "FP001", docRef: "gcf:FP001:funding-proposal", inputs: { ...inputs("s0-as-delivered"), ...over } });
     assert.deepEqual([r.ok, !r.ok && r.code], [false, "BAD_INPUT"], JSON.stringify(Object.keys(over)));
     assert.equal(calls(), 0);
   }
   const { d } = deps([]);
-  assert.deepEqual(await prepareScreening(d, { apiKey: KEY, model: "m", actorId: "", inputs: inputs("s0-as-delivered") }), { ok: false, code: "BAD_PARAMS", status: null });
+  assert.deepEqual(await prepareScreening(d, { apiKey: KEY, model: "m", actorId: "", projectId: "FP001", docRef: "gcf:FP001:funding-proposal", inputs: inputs("s0-as-delivered") }), { ok: false, code: "BAD_PARAMS", status: null });
 });
 
 test("model failures are reported, and nothing is drafted", async () => {

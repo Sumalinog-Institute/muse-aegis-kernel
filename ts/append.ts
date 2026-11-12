@@ -8,14 +8,14 @@
 // write it. A write that loses a race with another writer is retried against the new head.
 
 import { canonicalize } from "./jcs.ts";
-import { makeSigner, nextEntry, validateOverride, verifyChain } from "./audit.ts";
+import { LEGACY_MAX_SEQ, makeSigner, nextEntry, validateOverride, validateRejection, validateScreeningFields, verifyChain } from "./audit.ts";
 import type { Entry, Signer, Verifier } from "./audit.ts";
 
 export const POLICY_VERSION = "4.1";
 const MAX_ATTEMPTS = 3;
 const MAX_RECORD_JSON_CHARS = 20000;
 const PROFILE_KEYS = ["x1", "x2", "x3", "x4", "x5", "x6", "n_applicable", "alert_status"] as const;
-const BODY_KEYS = ["profile", "doc_hash", "ledger_id", "extractor_version"];
+const BODY_KEYS = ["profile", "doc_hash", "project_id", "doc_ref", "ledger_id", "extractor_version"];
 const DOC_HASH = /^sha256:[0-9a-f]{64}$/;
 
 // ---------------------------------------------------------------- store contract
@@ -97,7 +97,7 @@ function isAllowed(userId: string, allowedCsv: string | undefined): boolean | "u
 // ---------------------------------------------------------------- request validation
 
 function validateBody(body: unknown):
-  | { ok: true; profile: Record<string, unknown>; docHash: string; ledgerId: string; extractorVersion: string }
+  | { ok: true; profile: Record<string, unknown>; docHash: string; projectId: string; docRef: string; ledgerId: string; extractorVersion: string }
   | { ok: false; message: string } {
   if (typeof body !== "object" || body === null || Array.isArray(body)) return { ok: false, message: "body must be a JSON object" };
   const b = body as Record<string, unknown>;
@@ -108,6 +108,9 @@ function validateBody(body: unknown):
   if (typeof docHash !== "string" || !DOC_HASH.test(docHash)) {
     return { ok: false, message: "doc_hash must look like sha256:<64 lowercase hex characters>" };
   }
+  // New entries always carry both references (the legacy exemption applies only to entries written before v4.6.0).
+  const refProblems = validateScreeningFields({ project_id: b["project_id"], doc_ref: b["doc_ref"] }, LEGACY_MAX_SEQ + 1);
+  if (refProblems.length > 0) return { ok: false, message: `project_id and doc_ref are required and must be valid (${refProblems.join(", ")})` };
   const ledgerId = b["ledger_id"] === undefined ? "none" : b["ledger_id"];
   const extractorVersion = b["extractor_version"] === undefined ? "manual-entry" : b["extractor_version"];
   for (const [name, v] of [["ledger_id", ledgerId], ["extractor_version", extractorVersion]] as const) {
@@ -130,7 +133,7 @@ function validateBody(body: unknown):
     }
     profile[k] = v;
   }
-  return { ok: true, profile, docHash, ledgerId: ledgerId as string, extractorVersion: extractorVersion as string };
+  return { ok: true, profile, docHash, projectId: b["project_id"] as string, docRef: b["doc_ref"] as string, ledgerId: ledgerId as string, extractorVersion: extractorVersion as string };
 }
 
 function hexToBytes(hex: string) {
@@ -165,6 +168,8 @@ export async function appendScreening(
   const record: Record<string, unknown> = {
     kind: "SCREENING",
     doc_hash: v.docHash,
+    project_id: v.projectId,
+    doc_ref: v.docRef,
     input: v.profile,
     result,
     extractor_version: v.extractorVersion,
@@ -221,7 +226,7 @@ async function writeRecord(deps: AppendDeps, record: Record<string, unknown>, ma
     const res = (typeof result === "object" && result !== null ? result : {}) as Record<string, unknown>;
     return {
       ok: true,
-      entry: { seq: entry.seq, hash: entry.hash, key_id: entry.key_id, decision: res["decision"] ?? record["override_decision"], psi: res["psi"] ?? record["original_psi"], timestamp: String(record["timestamp"]) },
+      entry: { seq: entry.seq, hash: entry.hash, key_id: entry.key_id, decision: res["decision"] ?? record["override_decision"] ?? record["rejected_decision"], psi: res["psi"] ?? record["original_psi"], timestamp: String(record["timestamp"]) },
     };
   }
   return fail(503, "CONFLICT", "the log is busy, please try again");
@@ -253,7 +258,8 @@ export async function appendRecord(
     typeof (result as Record<string, unknown>)["decision"] === "string" &&
     record["actor_id"] === req.userId &&
     typeof record["timestamp"] === "string" &&
-    typeof record["extractor_version"] === "string" && typeof record["ledger_id"] === "string" && typeof record["policy_version"] === "string";
+    typeof record["extractor_version"] === "string" && typeof record["ledger_id"] === "string" && typeof record["policy_version"] === "string" &&
+    validateScreeningFields(record, LEGACY_MAX_SEQ + 1).length === 0;
   if (!ok) return fail(400, "BAD_REQUEST", "the record is not a valid screening record for this account");
   const maxChars = Math.min(opts.maxChars ?? MAX_DETAILED_RECORD_CHARS, 500000);
   return writeRecord(deps, record, maxChars);
@@ -270,8 +276,8 @@ export const OVERRIDE_BODY_KEYS = ["target_seq", "override_decision", "justifica
 
 /** Appends an OVERRIDE entry for a reviewer. The caller supplies only the decision and its reasons; the server fills in
  *  the reviewer (the signed-in account), the policy version, the time, and the original decision and score copied from the
- *  target entry. A second approver cannot be supplied through this route, so an override that needs one is refused until
- *  an approval step exists. The whole check is repeated if another writer takes the position first. */
+ *  target entry. A second approver cannot be supplied through this route: an override that needs one goes through
+ *  requestOverride and approveOverride (below). The whole check is repeated if another writer takes the position first. */
 export async function appendOverride(
   deps: AppendDeps & { store: OverrideStore },
   req: { userId: string; allowedUserIds: string | undefined; body: unknown },
@@ -330,6 +336,222 @@ export async function appendOverride(
     if (out.ok || out.code !== "CONFLICT") return out;
   }
   return fail(503, "CONFLICT", "the log is busy, please try again");
+}
+
+// ---------------------------------------------------------------- second approver: requests, approval, rejection (spec v4.6.0)
+
+export const PENDING_MAX_AGE_MS = 14 * 24 * 60 * 60 * 1000;
+export type PendingStatus = "PENDING" | "APPROVED" | "REJECTED" | "EXPIRED";
+
+/** An override request waiting for a second account. It lives OUTSIDE the signed log: it is not an override until approved. */
+export interface PendingRequest {
+  id: string;
+  target_seq: number;
+  override_decision: string;
+  justification_code: string;
+  authority_basis: string;
+  consulted_evidence_ids: string[];
+  note: string;
+  reviewer_id: string;
+  created_at: string;
+  status: PendingStatus;
+}
+
+export interface PendingStore {
+  create(req: PendingRequest): Promise<void>;
+  get(id: string): Promise<PendingRequest | null>;
+  /** Changes the status only if it is currently `from`; returns whether it changed. This is what stops two approvers
+   *  (or an approver and a rejecter) from both acting on one request. */
+  setStatus(id: string, from: PendingStatus, to: PendingStatus): Promise<boolean>;
+}
+
+type ApprovalDeps = AppendDeps & { store: OverrideStore; pending: PendingStore; newId: () => string };
+
+export type RequestOutcome =
+  | { ok: true; request_id: string; expires_at: string }
+  | { ok: false; status: number; code: string; message: string };
+
+function gate(userId: unknown, allowedUserIds: string | undefined): AppendOutcome | null {
+  if (typeof userId !== "string" || userId === "" || userId.length > 100) return fail(401, "UNAUTHORIZED", "sign-in required");
+  const allowed = isAllowed(userId, allowedUserIds);
+  if (allowed === "unset") return fail(500, "SERVER_MISCONFIGURED", "the server is not configured");
+  if (!allowed) return fail(403, "FORBIDDEN", "this account may not write to the audit log");
+  return null;
+}
+
+async function readVerifiedChain(deps: AppendDeps & { store: OverrideStore }): Promise<{ ok: true; entries: Entry[] } | { ok: false; out: AppendOutcome }> {
+  let entries: Entry[];
+  try {
+    entries = rowsToEntries(await deps.store.readAll());
+  } catch {
+    return { ok: false, out: fail(500, "STORE_ERROR", "the log could not be read") };
+  }
+  const check = await verifyChain(entries, deps.verifier);
+  if (!check.ok) return { ok: false, out: fail(500, "CHAIN_INVALID", "the log does not verify, so nothing was written") };
+  return { ok: true, entries };
+}
+
+function overrideRecordFrom(entries: Entry[], target_seq: unknown, f: {
+  override_decision: unknown; justification_code: unknown; authority_basis: unknown; consulted_evidence_ids: unknown; note: unknown;
+}, reviewerId: string, approverId: string | null, now: Date): Record<string, unknown> | AppendOutcome {
+  const target = entries.find((e) => e.seq === target_seq);
+  if (!target) return fail(404, "OVERRIDE_REJECTED", "TARGET_NOT_FOUND");
+  if (target.record["kind"] !== "SCREENING") return fail(400, "OVERRIDE_REJECTED", "TARGET_NOT_SCREENING");
+  const result = target.record["result"];
+  const res = (typeof result === "object" && result !== null ? result : {}) as Record<string, unknown>;
+  const record: Record<string, unknown> = {
+    kind: "OVERRIDE",
+    target_seq,
+    original_decision: res["decision"],
+    original_psi: res["psi"],
+    override_decision: f.override_decision,
+    justification_code: f.justification_code,
+    authority_basis: f.authority_basis,
+    consulted_evidence_ids: f.consulted_evidence_ids,
+    note: f.note,
+    reviewer_id: reviewerId,
+    ...(approverId !== null ? { approver_id: approverId } : {}),
+    policy_version: POLICY_VERSION,
+    timestamp: now.toISOString(),
+  };
+  for (const k of Object.keys(record)) if (record[k] === undefined) delete record[k];
+  return record;
+}
+
+const isOutcome = (x: Record<string, unknown> | AppendOutcome): x is AppendOutcome => "ok" in x && typeof x["ok"] === "boolean";
+
+/** A reviewer asks for an override that needs a second approver (a favourable override of a confirmed breach or of a restriction
+ *  pending authority). Nothing is written to the signed log. Overrides that need no approver go through appendOverride. */
+export async function requestOverride(
+  deps: ApprovalDeps,
+  req: { userId: string; allowedUserIds: string | undefined; body: unknown },
+): Promise<RequestOutcome> {
+  const g = gate(req.userId, req.allowedUserIds);
+  if (g && !g.ok) return g;
+  const b = req.body;
+  if (typeof b !== "object" || b === null || Array.isArray(b)) return fail(400, "BAD_REQUEST", "body must be a JSON object") as RequestOutcome;
+  const body = b as Record<string, unknown>;
+  for (const k of Object.keys(body)) {
+    if (!OVERRIDE_BODY_KEYS.includes(k)) return fail(400, "BAD_REQUEST", `unknown field: ${k.slice(0, 40)}`) as RequestOutcome;
+  }
+  const chain = await readVerifiedChain(deps);
+  if (!chain.ok) return chain.out as RequestOutcome;
+  const rec = overrideRecordFrom(chain.entries, body["target_seq"], body as never, req.userId, null, deps.now());
+  if (isOutcome(rec)) return rec as RequestOutcome;
+  const problems = validateOverride(chain.entries, rec);
+  if (!problems.includes("SECOND_APPROVER_REQUIRED")) {
+    if (problems.length > 0) return fail(problems.includes("ALREADY_OVERRIDDEN") ? 409 : 400, "OVERRIDE_REJECTED", problems.join(", ")) as RequestOutcome;
+    return fail(400, "NO_APPROVER_NEEDED", "this override needs no second approver; use the direct override route") as RequestOutcome;
+  }
+  const others = problems.filter((p) => p !== "SECOND_APPROVER_REQUIRED");
+  if (others.length > 0) return fail(others.includes("ALREADY_OVERRIDDEN") ? 409 : 400, "OVERRIDE_REJECTED", others.join(", ")) as RequestOutcome;
+
+  const created = deps.now();
+  const id = deps.newId();
+  try {
+    await deps.pending.create({
+      id,
+      target_seq: body["target_seq"] as number,
+      override_decision: body["override_decision"] as string,
+      justification_code: body["justification_code"] as string,
+      authority_basis: body["authority_basis"] as string,
+      consulted_evidence_ids: body["consulted_evidence_ids"] as string[],
+      note: body["note"] as string,
+      reviewer_id: req.userId,
+      created_at: created.toISOString(),
+      status: "PENDING",
+    });
+  } catch {
+    return fail(500, "STORE_ERROR", "the request could not be saved") as RequestOutcome;
+  }
+  return { ok: true, request_id: id, expires_at: new Date(created.getTime() + PENDING_MAX_AGE_MS).toISOString() };
+}
+
+/** Looks up a request for an approver and claims it (PENDING -> `to`). Returns the request, or an outcome to send back. */
+async function claimRequest(deps: ApprovalDeps, userId: string, requestId: unknown, to: "APPROVED" | "REJECTED"): Promise<PendingRequest | AppendOutcome> {
+  if (typeof requestId !== "string" || requestId === "" || requestId.length > 100) return fail(400, "BAD_REQUEST", "request_id is required");
+  let r: PendingRequest | null;
+  try {
+    r = await deps.pending.get(requestId);
+  } catch {
+    return fail(500, "STORE_ERROR", "the request could not be read");
+  }
+  if (!r) return fail(404, "REQUEST_NOT_FOUND", "no such request");
+  if (r.status !== "PENDING") return fail(409, "REQUEST_CLOSED", `the request is already ${r.status}`);
+  if (deps.now().getTime() - Date.parse(r.created_at) > PENDING_MAX_AGE_MS) {
+    await deps.pending.setStatus(r.id, "PENDING", "EXPIRED");
+    return fail(410, "REQUEST_EXPIRED", "the request is too old");
+  }
+  if (userId === r.reviewer_id) return fail(403, "APPROVER_SAME_AS_REVIEWER", "the approver must be a different account");
+  let claimed: boolean;
+  try {
+    claimed = await deps.pending.setStatus(r.id, "PENDING", to);
+  } catch {
+    return fail(500, "STORE_ERROR", "the request could not be updated");
+  }
+  if (!claimed) return fail(409, "REQUEST_CLOSED", "the request was just handled by someone else");
+  return r;
+}
+
+const isRequest = (x: PendingRequest | AppendOutcome): x is PendingRequest => "reviewer_id" in x;
+
+/** A second account approves a pending request. The server sets approver_id from the signed-in account, repeats every check
+ *  against the log as it is now, and only then writes the OVERRIDE entry. If the write fails the request is reopened. */
+export async function approveOverride(
+  deps: ApprovalDeps,
+  req: { userId: string; allowedUserIds: string | undefined; requestId: unknown },
+): Promise<AppendOutcome> {
+  const g = gate(req.userId, req.allowedUserIds);
+  if (g) return g;
+  const r = await claimRequest(deps, req.userId, req.requestId, "APPROVED");
+  if (!isRequest(r)) return r;
+  let out: AppendOutcome = fail(503, "CONFLICT", "the log is busy, please try again");
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    const chain = await readVerifiedChain(deps);
+    if (!chain.ok) { out = chain.out; break; }
+    const rec = overrideRecordFrom(chain.entries, r.target_seq, r, r.reviewer_id, req.userId, deps.now());
+    if (isOutcome(rec)) { out = rec; break; }
+    const problems = validateOverride(chain.entries, rec);
+    if (problems.length > 0) { out = fail(problems.includes("ALREADY_OVERRIDDEN") ? 409 : 400, "OVERRIDE_REJECTED", problems.join(", ")); break; }
+    out = await writeRecord(deps, rec, MAX_RECORD_JSON_CHARS, 1);
+    if (out.ok || out.code !== "CONFLICT") break;
+  }
+  if (!out.ok) await deps.pending.setStatus(r.id, "APPROVED", "PENDING");
+  return out;
+}
+
+/** A second account refuses a pending request; the refusal is written to the signed log as a REJECTION entry. */
+export async function rejectOverride(
+  deps: ApprovalDeps,
+  req: { userId: string; allowedUserIds: string | undefined; requestId: unknown; reasonCode: unknown; note: unknown },
+): Promise<AppendOutcome> {
+  const g = gate(req.userId, req.allowedUserIds);
+  if (g) return g;
+  const r = await claimRequest(deps, req.userId, req.requestId, "REJECTED");
+  if (!isRequest(r)) return r;
+  let out: AppendOutcome = fail(503, "CONFLICT", "the log is busy, please try again");
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    const chain = await readVerifiedChain(deps);
+    if (!chain.ok) { out = chain.out; break; }
+    const rec: Record<string, unknown> = {
+      kind: "REJECTION",
+      target_seq: r.target_seq,
+      rejected_decision: r.override_decision,
+      reason_code: req.reasonCode,
+      note: req.note,
+      reviewer_id: r.reviewer_id,
+      approver_id: req.userId,
+      policy_version: POLICY_VERSION,
+      timestamp: deps.now().toISOString(),
+    };
+    for (const k of Object.keys(rec)) if (rec[k] === undefined) delete rec[k];
+    const problems = validateRejection(chain.entries, rec);
+    if (problems.length > 0) { out = fail(problems.includes("ALREADY_OVERRIDDEN") ? 409 : 400, "REJECTION_REFUSED", problems.join(", ")); break; }
+    out = await writeRecord(deps, rec, MAX_RECORD_JSON_CHARS, 1);
+    if (out.ok || out.code !== "CONFLICT") break;
+  }
+  if (!out.ok) await deps.pending.setStatus(r.id, "REJECTED", "PENDING");
+  return out;
 }
 
 // ---------------------------------------------------------------- reading rows back
