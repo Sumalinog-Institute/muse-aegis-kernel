@@ -17,7 +17,7 @@ Status: reference code for a design proposal. The weights, thresholds and decisi
 | `ts/screening.ts` | Prepare a screening draft, protect it with a MAC, commit it after review (maximum draft age is a parameter, see below) |
 | `ts/trusted-keys.ts` | Public keys trusted to sign audit entries |
 | `python/` | Independent Python implementations (audit hashing, override, rejection and reference rules) used for cross-checking, and fixture checks |
-| `spec/` | Specs: `AUDIT.md`, `CLAIMS.md`, `EXTRACT.md`, `FEATURES.md`, `STABILITY.md`, `SCREENING.md`; test vectors; trusted keys |
+| `spec/` | Specs: `AUDIT.md`, `CLAIMS.md`, `EXTRACT.md`, `FEATURES.md`, `STABILITY.md`, `SCREENING.md`; test vectors (`vectors.json` for the kernel, `vectors-v460.json` for the v4.6.0 rules); trusted keys |
 | `fixtures/` | A fictional grant (all invented) in eight scenarios, with expected values from an independent oracle |
 | `tools/` | Generators for the vectors, the fixtures and the random cross-check cases |
 | `checkpoints.md` | Heads of the audit log, recorded outside the database |
@@ -25,7 +25,7 @@ Status: reference code for a design proposal. The weights, thresholds and decisi
 ## Run the tests
 
 ```
-node --experimental-strip-types --test ts/kernel.test.ts ts/audit.test.ts ts/append.test.ts ts/verify.test.ts ts/claims.test.ts ts/extract.test.ts ts/features.test.ts ts/stability.test.ts ts/screening.test.ts ts/override.test.ts ts/approval.test.ts ts/judge.test.ts ts/benchmark.test.ts
+node --experimental-strip-types --test ts/kernel.test.ts ts/audit.test.ts ts/append.test.ts ts/verify.test.ts ts/claims.test.ts ts/extract.test.ts ts/features.test.ts ts/stability.test.ts ts/screening.test.ts ts/override.test.ts ts/approval.test.ts ts/vectors_v460.test.ts ts/judge.test.ts ts/benchmark.test.ts
 python3 -m unittest discover -s python -v
 python3 tools/gen_crosscheck.py 50000
 python3 tools/gen_audit_crosscheck.py 20000
