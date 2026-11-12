@@ -35,7 +35,7 @@ python3 tools/gen_v460_crosscheck.py 20000
 node --experimental-strip-types --test ts/crosscheck.test.ts ts/audit_crosscheck.test.ts ts/features_crosscheck.test.ts ts/override_crosscheck.test.ts ts/v460_crosscheck.test.ts
 ```
 
-Last verified run on GitHub Actions for a released tag (one Linux platform, 10 November 2026, v4.5.1-spec; the counts for v4.6.0-spec are added after the first Actions run on that tag): 254 TypeScript tests and 29 Python tests pass, plus four cross-check tests: 50,000 kernel cases agree bit for bit between TypeScript and Python; 20,000 canonical-JSON cases and 20,000 entry hashes agree; 15,000 random feature and name-matching cases equal an independent Python oracle; 20,000 random override cases give the same problem codes in TypeScript and in an independent Python implementation. The application repository has its own tests, which are not counted here.
+Last verified run (GitHub Actions, one Linux platform, 12 November 2026, branch v4.6.0-spec-dev, commit e76ae45): 296 TypeScript tests and 35 Python tests pass, plus five cross-check tests: 50,000 kernel cases agree bit for bit between TypeScript and Python; 20,000 canonical-JSON cases and 20,000 entry hashes agree; 15,000 random feature and name-matching cases equal an independent Python oracle; 20,000 random override cases and 20,000 random project/document-field and rejection cases give the same problem codes in TypeScript and in an independent Python implementation. The 27 fixed vectors of `spec/vectors-v460.json` pass in both languages. The application repository has its own tests, which are not counted here. The previous run, for v4.5.1-spec on 10 November 2026, had 254 TypeScript tests and 29 Python tests.
 
 ## What the kernel does
 
