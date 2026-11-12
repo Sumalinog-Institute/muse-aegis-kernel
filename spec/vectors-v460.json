@@ -1,0 +1,927 @@
+[
+ {
+  "id": "V1",
+  "description": "Valid project_id and doc_ref at seq 6",
+  "type": "fields",
+  "seq": 6,
+  "record": {
+   "project_id": "FP127",
+   "doc_ref": "gcf:FP127:funding-proposal"
+  },
+  "expected": []
+ },
+ {
+  "id": "V2",
+  "description": "No project_id at seq 6",
+  "type": "fields",
+  "seq": 6,
+  "record": {
+   "doc_ref": "gcf:FP127:funding-proposal"
+  },
+  "expected": [
+   "MISSING_PROJECT_ID"
+  ]
+ },
+ {
+  "id": "V3",
+  "description": "No doc_ref at seq 6",
+  "type": "fields",
+  "seq": 6,
+  "record": {
+   "project_id": "FP127"
+  },
+  "expected": [
+   "MISSING_DOC_REF"
+  ]
+ },
+ {
+  "id": "V4",
+  "description": "doc_ref names another project",
+  "type": "fields",
+  "seq": 6,
+  "record": {
+   "project_id": "FP127",
+   "doc_ref": "gcf:FP999:funding-proposal"
+  },
+  "expected": [
+   "DOC_REF_PROJECT_MISMATCH"
+  ]
+ },
+ {
+  "id": "V5a",
+  "description": "Space in project_id",
+  "type": "fields",
+  "seq": 6,
+  "record": {
+   "project_id": "FP 127",
+   "doc_ref": "gcf:FP127:x"
+  },
+  "expected": [
+   "BAD_PROJECT_ID"
+  ]
+ },
+ {
+  "id": "V5b",
+  "description": "project_id of 65 characters",
+  "type": "fields",
+  "seq": 6,
+  "record": {
+   "project_id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+   "doc_ref": "gcf:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx:d"
+  },
+  "expected": [
+   "BAD_PROJECT_ID"
+  ]
+ },
+ {
+  "id": "V5c",
+  "description": "doc_ref with only two parts",
+  "type": "fields",
+  "seq": 6,
+  "record": {
+   "project_id": "FP127",
+   "doc_ref": "gcf:FP127"
+  },
+  "expected": [
+   "BAD_DOC_REF"
+  ]
+ },
+ {
+  "id": "V5d",
+  "description": "doc_ref of 129 characters",
+  "type": "fields",
+  "seq": 6,
+  "record": {
+   "project_id": "FP127",
+   "doc_ref": "gcf:FP127:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  },
+  "expected": [
+   "BAD_DOC_REF"
+  ]
+ },
+ {
+  "id": "V6",
+  "description": "Nine unbroken digits in project_id",
+  "type": "fields",
+  "seq": 6,
+  "record": {
+   "project_id": "123456789",
+   "doc_ref": "gcf:123456789:funding-proposal"
+  },
+  "expected": [
+   "FIELD_PERSONAL_DATA"
+  ]
+ },
+ {
+  "id": "V6b",
+  "description": "Hyphenated IATI code in doc_ref is fine",
+  "type": "fields",
+  "seq": 6,
+  "record": {
+   "project_id": "FP127",
+   "doc_ref": "iati:FP127:feed:XM-DAC-1-2-3"
+  },
+  "expected": []
+ },
+ {
+  "id": "V7a",
+  "description": "Legacy entry (seq 5) without the fields",
+  "type": "fields",
+  "seq": 5,
+  "record": {},
+  "expected": []
+ },
+ {
+  "id": "V7b",
+  "description": "Legacy entry that carries an invalid project_id",
+  "type": "fields",
+  "seq": 1,
+  "record": {
+   "project_id": "bad id"
+  },
+  "expected": [
+   "BAD_PROJECT_ID"
+  ]
+ },
+ {
+  "id": "V7c",
+  "description": "First position after the legacy range needs both fields",
+  "type": "fields",
+  "seq": 6,
+  "record": {},
+  "expected": [
+   "MISSING_PROJECT_ID",
+   "MISSING_DOC_REF"
+  ]
+ },
+ {
+  "id": "V8a",
+  "description": "Valid rejection",
+  "type": "rejection",
+  "chain": [
+   {
+    "seq": 1,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+      "psi": 1.0
+     }
+    }
+   },
+   {
+    "seq": 2,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "RESTRICTION_RECOMMENDED_PENDING_AUTHORITY",
+      "psi": 0.9,
+      "triggers": [
+       "T1"
+      ]
+     }
+    }
+   },
+   {
+    "seq": 3,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "DOCUMENTATION_HOLD_PENDING_REVIEW",
+      "psi": 0.95
+     }
+    }
+   }
+  ],
+  "record": {
+   "kind": "REJECTION",
+   "target_seq": 2,
+   "rejected_decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+   "reason_code": "EVIDENCE_INSUFFICIENT",
+   "note": "The cited document does not show the claimed change.",
+   "reviewer_id": "USR-1",
+   "approver_id": "USR-2",
+   "policy_version": "4.1",
+   "timestamp": "2026-11-13T01:00:00Z"
+  },
+  "expected": []
+ },
+ {
+  "id": "V8b",
+  "description": "Approver equals reviewer",
+  "type": "rejection",
+  "chain": [
+   {
+    "seq": 1,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+      "psi": 1.0
+     }
+    }
+   },
+   {
+    "seq": 2,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "RESTRICTION_RECOMMENDED_PENDING_AUTHORITY",
+      "psi": 0.9,
+      "triggers": [
+       "T1"
+      ]
+     }
+    }
+   },
+   {
+    "seq": 3,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "DOCUMENTATION_HOLD_PENDING_REVIEW",
+      "psi": 0.95
+     }
+    }
+   }
+  ],
+  "record": {
+   "kind": "REJECTION",
+   "target_seq": 2,
+   "rejected_decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+   "reason_code": "EVIDENCE_INSUFFICIENT",
+   "note": "The cited document does not show the claimed change.",
+   "reviewer_id": "USR-1",
+   "approver_id": "USR-1",
+   "policy_version": "4.1",
+   "timestamp": "2026-11-13T01:00:00Z"
+  },
+  "expected": [
+   "APPROVER_SAME_AS_REVIEWER"
+  ]
+ },
+ {
+  "id": "V8c",
+  "description": "Unknown reason code",
+  "type": "rejection",
+  "chain": [
+   {
+    "seq": 1,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+      "psi": 1.0
+     }
+    }
+   },
+   {
+    "seq": 2,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "RESTRICTION_RECOMMENDED_PENDING_AUTHORITY",
+      "psi": 0.9,
+      "triggers": [
+       "T1"
+      ]
+     }
+    }
+   },
+   {
+    "seq": 3,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "DOCUMENTATION_HOLD_PENDING_REVIEW",
+      "psi": 0.95
+     }
+    }
+   }
+  ],
+  "record": {
+   "kind": "REJECTION",
+   "target_seq": 2,
+   "rejected_decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+   "reason_code": "BECAUSE",
+   "note": "The cited document does not show the claimed change.",
+   "reviewer_id": "USR-1",
+   "approver_id": "USR-2",
+   "policy_version": "4.1",
+   "timestamp": "2026-11-13T01:00:00Z"
+  },
+  "expected": [
+   "BAD_REASON_CODE"
+  ]
+ },
+ {
+  "id": "V8d",
+  "description": "Rejection targeting an OVERRIDE entry",
+  "type": "rejection",
+  "chain": [
+   {
+    "seq": 1,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+      "psi": 1.0
+     }
+    }
+   },
+   {
+    "seq": 2,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "RESTRICTION_RECOMMENDED_PENDING_AUTHORITY",
+      "psi": 0.9,
+      "triggers": [
+       "T1"
+      ]
+     }
+    }
+   },
+   {
+    "seq": 3,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "DOCUMENTATION_HOLD_PENDING_REVIEW",
+      "psi": 0.95
+     }
+    }
+   },
+   {
+    "seq": 4,
+    "record": {
+     "kind": "OVERRIDE",
+     "target_seq": 3,
+     "original_decision": "DOCUMENTATION_HOLD_PENDING_REVIEW",
+     "original_psi": 0.95,
+     "override_decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+     "justification_code": "FALSE_MATCH_CONFIRMED",
+     "authority_basis": "COMPLIANCE_OFFICER",
+     "consulted_evidence_ids": [
+      "watch:W-1001",
+      "doc:sha256:cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+     ],
+     "note": "Registration number differs from the listed entity.",
+     "reviewer_id": "USR-1",
+     "policy_version": "4.1",
+     "timestamp": "2026-11-13T01:00:00Z"
+    }
+   }
+  ],
+  "record": {
+   "kind": "REJECTION",
+   "target_seq": 4,
+   "rejected_decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+   "reason_code": "EVIDENCE_INSUFFICIENT",
+   "note": "The cited document does not show the claimed change.",
+   "reviewer_id": "USR-1",
+   "approver_id": "USR-2",
+   "policy_version": "4.1",
+   "timestamp": "2026-11-13T01:00:00Z"
+  },
+  "expected": [
+   "TARGET_NOT_SCREENING"
+  ]
+ },
+ {
+  "id": "V8e",
+  "description": "Extra field",
+  "type": "rejection",
+  "chain": [
+   {
+    "seq": 1,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+      "psi": 1.0
+     }
+    }
+   },
+   {
+    "seq": 2,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "RESTRICTION_RECOMMENDED_PENDING_AUTHORITY",
+      "psi": 0.9,
+      "triggers": [
+       "T1"
+      ]
+     }
+    }
+   },
+   {
+    "seq": 3,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "DOCUMENTATION_HOLD_PENDING_REVIEW",
+      "psi": 0.95
+     }
+    }
+   }
+  ],
+  "record": {
+   "kind": "REJECTION",
+   "target_seq": 2,
+   "rejected_decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+   "reason_code": "EVIDENCE_INSUFFICIENT",
+   "note": "The cited document does not show the claimed change.",
+   "reviewer_id": "USR-1",
+   "approver_id": "USR-2",
+   "policy_version": "4.1",
+   "timestamp": "2026-11-13T01:00:00Z",
+   "status": "x"
+  },
+  "expected": [
+   "UNKNOWN_FIELD:status"
+  ]
+ },
+ {
+  "id": "V9a",
+  "description": "New override after a rejection is accepted (second approver supplied)",
+  "type": "override",
+  "chain": [
+   {
+    "seq": 1,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+      "psi": 1.0
+     }
+    }
+   },
+   {
+    "seq": 2,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "RESTRICTION_RECOMMENDED_PENDING_AUTHORITY",
+      "psi": 0.9,
+      "triggers": [
+       "T1"
+      ]
+     }
+    }
+   },
+   {
+    "seq": 3,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "DOCUMENTATION_HOLD_PENDING_REVIEW",
+      "psi": 0.95
+     }
+    }
+   },
+   {
+    "seq": 4,
+    "record": {
+     "kind": "REJECTION",
+     "target_seq": 2,
+     "rejected_decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+     "reason_code": "EVIDENCE_INSUFFICIENT",
+     "note": "The cited document does not show the claimed change.",
+     "reviewer_id": "USR-1",
+     "approver_id": "USR-2",
+     "policy_version": "4.1",
+     "timestamp": "2026-11-13T01:00:00Z"
+    }
+   }
+  ],
+  "record": {
+   "kind": "OVERRIDE",
+   "target_seq": 2,
+   "original_decision": "RESTRICTION_RECOMMENDED_PENDING_AUTHORITY",
+   "original_psi": 0.9,
+   "override_decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+   "justification_code": "FALSE_MATCH_CONFIRMED",
+   "authority_basis": "COMPLIANCE_OFFICER",
+   "consulted_evidence_ids": [
+    "watch:W-1001",
+    "doc:sha256:cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+   ],
+   "note": "Registration number differs from the listed entity.",
+   "reviewer_id": "USR-1",
+   "policy_version": "4.1",
+   "timestamp": "2026-11-13T01:00:00Z",
+   "approver_id": "USR-2"
+  },
+  "expected": []
+ },
+ {
+  "id": "V9b",
+  "description": "Second override of the same screening is still refused",
+  "type": "override",
+  "chain": [
+   {
+    "seq": 1,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+      "psi": 1.0
+     }
+    }
+   },
+   {
+    "seq": 2,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "RESTRICTION_RECOMMENDED_PENDING_AUTHORITY",
+      "psi": 0.9,
+      "triggers": [
+       "T1"
+      ]
+     }
+    }
+   },
+   {
+    "seq": 3,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "DOCUMENTATION_HOLD_PENDING_REVIEW",
+      "psi": 0.95
+     }
+    }
+   },
+   {
+    "seq": 4,
+    "record": {
+     "kind": "OVERRIDE",
+     "target_seq": 2,
+     "original_decision": "RESTRICTION_RECOMMENDED_PENDING_AUTHORITY",
+     "original_psi": 0.9,
+     "override_decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+     "justification_code": "FALSE_MATCH_CONFIRMED",
+     "authority_basis": "COMPLIANCE_OFFICER",
+     "consulted_evidence_ids": [
+      "watch:W-1001",
+      "doc:sha256:cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+     ],
+     "note": "Registration number differs from the listed entity.",
+     "reviewer_id": "USR-1",
+     "policy_version": "4.1",
+     "timestamp": "2026-11-13T01:00:00Z",
+     "approver_id": "USR-2"
+    }
+   }
+  ],
+  "record": {
+   "kind": "OVERRIDE",
+   "target_seq": 2,
+   "original_decision": "RESTRICTION_RECOMMENDED_PENDING_AUTHORITY",
+   "original_psi": 0.9,
+   "override_decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+   "justification_code": "FALSE_MATCH_CONFIRMED",
+   "authority_basis": "COMPLIANCE_OFFICER",
+   "consulted_evidence_ids": [
+    "watch:W-1001",
+    "doc:sha256:cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+   ],
+   "note": "Registration number differs from the listed entity.",
+   "reviewer_id": "USR-1",
+   "policy_version": "4.1",
+   "timestamp": "2026-11-13T01:00:00Z",
+   "approver_id": "USR-2"
+  },
+  "expected": [
+   "ALREADY_OVERRIDDEN"
+  ]
+ },
+ {
+  "id": "V9c",
+  "description": "A rejection of an already overridden screening is refused",
+  "type": "rejection",
+  "chain": [
+   {
+    "seq": 1,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+      "psi": 1.0
+     }
+    }
+   },
+   {
+    "seq": 2,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "RESTRICTION_RECOMMENDED_PENDING_AUTHORITY",
+      "psi": 0.9,
+      "triggers": [
+       "T1"
+      ]
+     }
+    }
+   },
+   {
+    "seq": 3,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "DOCUMENTATION_HOLD_PENDING_REVIEW",
+      "psi": 0.95
+     }
+    }
+   },
+   {
+    "seq": 4,
+    "record": {
+     "kind": "OVERRIDE",
+     "target_seq": 2,
+     "original_decision": "RESTRICTION_RECOMMENDED_PENDING_AUTHORITY",
+     "original_psi": 0.9,
+     "override_decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+     "justification_code": "FALSE_MATCH_CONFIRMED",
+     "authority_basis": "COMPLIANCE_OFFICER",
+     "consulted_evidence_ids": [
+      "watch:W-1001",
+      "doc:sha256:cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+     ],
+     "note": "Registration number differs from the listed entity.",
+     "reviewer_id": "USR-1",
+     "policy_version": "4.1",
+     "timestamp": "2026-11-13T01:00:00Z",
+     "approver_id": "USR-2"
+    }
+   }
+  ],
+  "record": {
+   "kind": "REJECTION",
+   "target_seq": 2,
+   "rejected_decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+   "reason_code": "EVIDENCE_INSUFFICIENT",
+   "note": "The cited document does not show the claimed change.",
+   "reviewer_id": "USR-1",
+   "approver_id": "USR-2",
+   "policy_version": "4.1",
+   "timestamp": "2026-11-13T01:00:00Z"
+  },
+  "expected": [
+   "ALREADY_OVERRIDDEN"
+  ]
+ },
+ {
+  "id": "V11a",
+  "description": "Favourable override of a T1 case without approver",
+  "type": "override",
+  "chain": [
+   {
+    "seq": 1,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+      "psi": 1.0
+     }
+    }
+   },
+   {
+    "seq": 2,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "RESTRICTION_RECOMMENDED_PENDING_AUTHORITY",
+      "psi": 0.9,
+      "triggers": [
+       "T1"
+      ]
+     }
+    }
+   },
+   {
+    "seq": 3,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "DOCUMENTATION_HOLD_PENDING_REVIEW",
+      "psi": 0.95
+     }
+    }
+   }
+  ],
+  "record": {
+   "kind": "OVERRIDE",
+   "target_seq": 2,
+   "original_decision": "RESTRICTION_RECOMMENDED_PENDING_AUTHORITY",
+   "original_psi": 0.9,
+   "override_decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+   "justification_code": "FALSE_MATCH_CONFIRMED",
+   "authority_basis": "COMPLIANCE_OFFICER",
+   "consulted_evidence_ids": [
+    "watch:W-1001",
+    "doc:sha256:cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+   ],
+   "note": "Registration number differs from the listed entity.",
+   "reviewer_id": "USR-1",
+   "policy_version": "4.1",
+   "timestamp": "2026-11-13T01:00:00Z"
+  },
+  "expected": [
+   "SECOND_APPROVER_REQUIRED"
+  ]
+ },
+ {
+  "id": "V11b",
+  "description": "Same with a different approver",
+  "type": "override",
+  "chain": [
+   {
+    "seq": 1,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+      "psi": 1.0
+     }
+    }
+   },
+   {
+    "seq": 2,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "RESTRICTION_RECOMMENDED_PENDING_AUTHORITY",
+      "psi": 0.9,
+      "triggers": [
+       "T1"
+      ]
+     }
+    }
+   },
+   {
+    "seq": 3,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "DOCUMENTATION_HOLD_PENDING_REVIEW",
+      "psi": 0.95
+     }
+    }
+   }
+  ],
+  "record": {
+   "kind": "OVERRIDE",
+   "target_seq": 2,
+   "original_decision": "RESTRICTION_RECOMMENDED_PENDING_AUTHORITY",
+   "original_psi": 0.9,
+   "override_decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+   "justification_code": "FALSE_MATCH_CONFIRMED",
+   "authority_basis": "COMPLIANCE_OFFICER",
+   "consulted_evidence_ids": [
+    "watch:W-1001",
+    "doc:sha256:cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+   ],
+   "note": "Registration number differs from the listed entity.",
+   "reviewer_id": "USR-1",
+   "policy_version": "4.1",
+   "timestamp": "2026-11-13T01:00:00Z",
+   "approver_id": "USR-2"
+  },
+  "expected": []
+ },
+ {
+  "id": "V11c",
+  "description": "Same with approver equal to reviewer",
+  "type": "override",
+  "chain": [
+   {
+    "seq": 1,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+      "psi": 1.0
+     }
+    }
+   },
+   {
+    "seq": 2,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "RESTRICTION_RECOMMENDED_PENDING_AUTHORITY",
+      "psi": 0.9,
+      "triggers": [
+       "T1"
+      ]
+     }
+    }
+   },
+   {
+    "seq": 3,
+    "record": {
+     "kind": "SCREENING",
+     "result": {
+      "decision": "DOCUMENTATION_HOLD_PENDING_REVIEW",
+      "psi": 0.95
+     }
+    }
+   }
+  ],
+  "record": {
+   "kind": "OVERRIDE",
+   "target_seq": 2,
+   "original_decision": "RESTRICTION_RECOMMENDED_PENDING_AUTHORITY",
+   "original_psi": 0.9,
+   "override_decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+   "justification_code": "FALSE_MATCH_CONFIRMED",
+   "authority_basis": "COMPLIANCE_OFFICER",
+   "consulted_evidence_ids": [
+    "watch:W-1001",
+    "doc:sha256:cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+   ],
+   "note": "Registration number differs from the listed entity.",
+   "reviewer_id": "USR-1",
+   "policy_version": "4.1",
+   "timestamp": "2026-11-13T01:00:00Z",
+   "approver_id": "USR-1"
+  },
+  "expected": [
+   "APPROVER_SAME_AS_REVIEWER"
+  ]
+ },
+ {
+  "id": "V12-1",
+  "description": "Entry hash of a SCREENING record (format version 2)",
+  "type": "hash",
+  "seq": 1,
+  "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "record": {
+   "kind": "SCREENING",
+   "doc_hash": "sha256:abababababababababababababababababababababababababababababababab",
+   "project_id": "FP127",
+   "doc_ref": "gcf:FP127:funding-proposal",
+   "input": {
+    "x1": 0
+   },
+   "result": {
+    "decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+    "psi": 1.0
+   },
+   "extractor_version": "manual-entry",
+   "ledger_id": "none",
+   "policy_version": "4.1",
+   "timestamp": "2026-11-13T01:00:00Z",
+   "actor_id": "USR-1"
+  },
+  "expected": "daf30ca69ff463756091f3d3dc1f915fcbc51e5385ed6c1b6cf5c3a4d5b31502"
+ },
+ {
+  "id": "V12-2",
+  "description": "Entry hash of a REJECTION record (format version 2)",
+  "type": "hash",
+  "seq": 2,
+  "prev_hash": "daf30ca69ff463756091f3d3dc1f915fcbc51e5385ed6c1b6cf5c3a4d5b31502",
+  "record": {
+   "kind": "REJECTION",
+   "target_seq": 2,
+   "rejected_decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+   "reason_code": "EVIDENCE_INSUFFICIENT",
+   "note": "The cited document does not show the claimed change.",
+   "reviewer_id": "USR-1",
+   "approver_id": "USR-2",
+   "policy_version": "4.1",
+   "timestamp": "2026-11-13T01:00:00Z"
+  },
+  "expected": "0c3b9736cdcaf0d06625983d053c59b4215ef10825ae193f42dd6b0709946981"
+ },
+ {
+  "id": "V12-3",
+  "description": "Entry hash of a OVERRIDE record (format version 2)",
+  "type": "hash",
+  "seq": 3,
+  "prev_hash": "0c3b9736cdcaf0d06625983d053c59b4215ef10825ae193f42dd6b0709946981",
+  "record": {
+   "kind": "OVERRIDE",
+   "target_seq": 2,
+   "original_decision": "RESTRICTION_RECOMMENDED_PENDING_AUTHORITY",
+   "original_psi": 0.9,
+   "override_decision": "SCREENING_PASS_PENDING_STANDARD_CONTROLS",
+   "justification_code": "FALSE_MATCH_CONFIRMED",
+   "authority_basis": "COMPLIANCE_OFFICER",
+   "consulted_evidence_ids": [
+    "watch:W-1001",
+    "doc:sha256:cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd"
+   ],
+   "note": "Registration number differs from the listed entity.",
+   "reviewer_id": "USR-1",
+   "policy_version": "4.1",
+   "timestamp": "2026-11-13T01:00:00Z",
+   "approver_id": "USR-2"
+  },
+  "expected": "5bd1efd04e3301005f9fbe7766f911c28420c7fcd84a8b4e2d32c173eb071a8e"
+ }
+]

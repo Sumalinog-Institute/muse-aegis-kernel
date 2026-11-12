@@ -80,7 +80,7 @@ function summarize(e: Entry): EntrySummary {
     seq: e.seq,
     timestamp: str(rec["timestamp"]),
     kind,
-    decision: kind === "OVERRIDE" ? str(rec["override_decision"]) : str(result["decision"]),
+    decision: kind === "OVERRIDE" ? str(rec["override_decision"]) : kind === "REJECTION" ? str(rec["rejected_decision"]) : str(result["decision"]),
     psi: typeof result["psi"] === "number" ? result["psi"] : null,
     ledger_id: str(rec["ledger_id"]),
     actor_id: str(rec["actor_id"]),

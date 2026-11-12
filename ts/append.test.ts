@@ -11,7 +11,7 @@ import type { AppendDeps, AuditStore, StoreRow } from "./append.ts";
 
 const DOC = "sha256:" + "ab".repeat(32);
 const USER = "11111111-2222-3333-4444-555555555555";
-const goodBody = () => ({ profile: { x1: 0.012, x2: 0, x3: 0.05, x4: 0.02, x5: 0, x6: 1, n_applicable: 40, alert_status: "NONE" }, doc_hash: DOC });
+const goodBody = () => ({ profile: { x1: 0.012, x2: 0, x3: 0.05, x4: 0.02, x5: 0, x6: 1, n_applicable: 40, alert_status: "NONE" }, doc_hash: DOC, project_id: "FP001", doc_ref: "gcf:FP001:funding-proposal" });
 
 // In-memory store that applies the same rules as the database triggers.
 class MemStore implements AuditStore {
@@ -120,7 +120,7 @@ test("bad requests are rejected and nothing is stored", async () => {
 
 test("an incomplete profile is still recorded, as an incomplete-input decision", async () => {
   const store = new MemStore();
-  const r = await appendScreening(deps(store), req({ profile: { x1: 0, x2: "INCOMPLETE", x4: 0, x5: 0, x6: 0, n_applicable: 40 }, doc_hash: DOC }));
+  const r = await appendScreening(deps(store), req({ profile: { x1: 0, x2: "INCOMPLETE", x4: 0, x5: 0, x6: 0, n_applicable: 40 }, doc_hash: DOC, project_id: "FP001", doc_ref: "gcf:FP001:funding-proposal" }));
   assert.equal(r.ok && r.entry.decision, "INCOMPLETE_INPUT_MANUAL_REVIEW");
   assert.equal(store.rows.length, 1);
 });

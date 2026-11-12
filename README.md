@@ -9,15 +9,15 @@ Status: reference code for a design proposal. The weights, thresholds and decisi
 | Path | Purpose |
 |---|---|
 | `ts/kernel.ts` | Scoring kernel, gate and decisions. No dependencies. |
-| `ts/jcs.ts`, `ts/audit.ts` | RFC 8785 canonical JSON; hash-chained signed entries, verifier, override rules and validation |
-| `ts/append.ts`, `ts/verify.ts` | Appending screening and override entries to the log; reading back and verifying the whole log |
+| `ts/jcs.ts`, `ts/audit.ts` | RFC 8785 canonical JSON; hash-chained signed entries, verifier, override and rejection rules, project and document reference checks |
+| `ts/append.ts`, `ts/verify.ts` | Appending screening and override entries to the log, the second-approver step (request, approve, reject); reading back and verifying the whole log |
 | `ts/claims.ts`, `ts/extract.ts` | Typed claims anchored to the document and checked against a ledger; the model prompt and Gemini client |
 | `ts/features.ts` | Structured features x4, x5 and watch-list screening (x6, alert status) |
 | `ts/stability.ts` | Instability x1 and consensus claims from repeated runs |
 | `ts/screening.ts` | Prepare a screening draft, protect it with a MAC, commit it after review (maximum draft age is a parameter, see below) |
 | `ts/trusted-keys.ts` | Public keys trusted to sign audit entries |
-| `python/` | Independent Python implementations (audit hashing, override rules) used for cross-checking, and fixture checks |
-| `spec/` | Specs: `AUDIT.md`, `CLAIMS.md`, `EXTRACT.md`, `FEATURES.md`, `STABILITY.md`, `SCREENING.md`; test vectors; trusted keys |
+| `python/` | Independent Python implementations (audit hashing, override, rejection and reference rules) used for cross-checking, and fixture checks |
+| `spec/` | Specs: `AUDIT.md`, `CLAIMS.md`, `EXTRACT.md`, `FEATURES.md`, `STABILITY.md`, `SCREENING.md`; test vectors (`vectors.json` for the kernel, `vectors-v460.json` for the v4.6.0 rules); trusted keys |
 | `fixtures/` | A fictional grant (all invented) in eight scenarios, with expected values from an independent oracle |
 | `tools/` | Generators for the vectors, the fixtures and the random cross-check cases |
 | `checkpoints.md` | Heads of the audit log, recorded outside the database |
@@ -25,16 +25,17 @@ Status: reference code for a design proposal. The weights, thresholds and decisi
 ## Run the tests
 
 ```
-node --experimental-strip-types --test ts/kernel.test.ts ts/audit.test.ts ts/append.test.ts ts/verify.test.ts ts/claims.test.ts ts/extract.test.ts ts/features.test.ts ts/stability.test.ts ts/screening.test.ts ts/override.test.ts ts/judge.test.ts ts/benchmark.test.ts
+node --experimental-strip-types --test ts/kernel.test.ts ts/audit.test.ts ts/append.test.ts ts/verify.test.ts ts/claims.test.ts ts/extract.test.ts ts/features.test.ts ts/stability.test.ts ts/screening.test.ts ts/override.test.ts ts/approval.test.ts ts/vectors_v460.test.ts ts/judge.test.ts ts/benchmark.test.ts
 python3 -m unittest discover -s python -v
 python3 tools/gen_crosscheck.py 50000
 python3 tools/gen_audit_crosscheck.py 20000
 python3 tools/gen_features_crosscheck.py 3000
 python3 tools/gen_override_crosscheck.py 20000
-node --experimental-strip-types --test ts/crosscheck.test.ts ts/audit_crosscheck.test.ts ts/features_crosscheck.test.ts ts/override_crosscheck.test.ts
+python3 tools/gen_v460_crosscheck.py 20000
+node --experimental-strip-types --test ts/crosscheck.test.ts ts/audit_crosscheck.test.ts ts/features_crosscheck.test.ts ts/override_crosscheck.test.ts ts/v460_crosscheck.test.ts
 ```
 
-Last verified run (GitHub Actions, one Linux platform, 10 November 2026): 254 TypeScript tests and 29 Python tests pass, plus four cross-check tests: 50,000 kernel cases agree bit for bit between TypeScript and Python; 20,000 canonical-JSON cases and 20,000 entry hashes agree; 15,000 random feature and name-matching cases equal an independent Python oracle; 20,000 random override cases give the same problem codes in TypeScript and in an independent Python implementation. The application repository has its own tests, which are not counted here.
+Last verified run (GitHub Actions, one Linux platform, 12 November 2026, branch v4.6.0-spec-dev, commit e76ae45): 296 TypeScript tests and 35 Python tests pass, plus five cross-check tests: 50,000 kernel cases agree bit for bit between TypeScript and Python; 20,000 canonical-JSON cases and 20,000 entry hashes agree; 15,000 random feature and name-matching cases equal an independent Python oracle; 20,000 random override cases and 20,000 random project/document-field and rejection cases give the same problem codes in TypeScript and in an independent Python implementation. The 27 fixed vectors of `spec/vectors-v460.json` pass in both languages. The application repository has its own tests, which are not counted here. The previous run, for v4.5.1-spec on 10 November 2026, had 254 TypeScript tests and 29 Python tests.
 
 ## What the kernel does
 
@@ -52,7 +53,7 @@ A model proposes typed claims; plain code keeps only those traceable to the docu
 
 ## Saved drafts and review queue (Phase 4, from v4.5.0-spec)
 
-A deployment may save prepared drafts server-side so that a person can review and approve them later. The rules in `spec/SCREENING.md` are: the maximum draft age at approval is a parameter (default 30 minutes, the original behaviour; a deployment that queues drafts may set up to 14 days); a draft can be committed only once; at approval the draft's policy version, extractor version and snapshot identifiers are compared with the latest prepared screening for the same award, and a missing or different value refuses the approval; only the preparer can approve; a rejection is a workflow status on the draft and is not part of the signed record. The stored format of audit entries did not change. The queue itself, with its screens and database table, is in the private application repository.
+A deployment may save prepared drafts server-side so that a person can review and approve them later. The rules in `spec/SCREENING.md` are: the maximum draft age at approval is a parameter (default 30 minutes, the original behaviour; a deployment that queues drafts may set up to 14 days); a draft can be committed only once; at approval the draft's policy version, extractor version and snapshot identifiers are compared with the latest prepared screening for the same award, and a missing or different value refuses the approval; only the preparer can approve; a rejection is a workflow status on the draft and is not part of the signed record. From v4.6.0-spec the signed format changed in three ways (see `spec/AUDIT.md`): SCREENING entries carry `project_id` and `doc_ref`; a `REJECTION` entry records an approver's refusal of an override request; and overrides of restrictions go through a second-approver step. Rejecting a saved draft remains a workflow status and is not part of the signed record. The queue itself, with its screens and database table, is in the private application repository.
 
 ## Provisional parameters
 
@@ -65,11 +66,11 @@ W_GROUND 0.40, W4 0.20, W5 0.15, W6 0.30, THETA_DOC 0.25, THETA_STAB 0.20, N_MIN
 | 1 | Scoring kernel and gate | Done (v4.1.0-spec) |
 | 2 | Signed, hash-chained audit log | Done (v4.2.0-spec) |
 | 3 | Document screening | Done (v4.3.0-spec) |
-| 4 | Reviewer workflow and override screens | Mostly done: review queue with saved drafts, override rules and write route (v4.5.0-spec, type fix in v4.5.1-spec), and override screens, with one live test on synthetic data. Open: second-approver step, rejections in the signed log, small screen fixes |
+| 4 | Reviewer workflow and override screens | Mostly done: review queue with saved drafts, override rules and write route (v4.5.0-spec, type fix in v4.5.1-spec), and override screens, with one live test on synthetic data. Second-approver step, rejections in the signed log, and the project and document references are specified and implemented in the kernel from v4.6.0-spec; the application screens for them are the open part |
 | 5 | Comparison against a plain AI judge | Done on synthetic data, 112 runs (v4.4.0-spec); a version on real documents is planned |
 | 6 | Hardening and deployment | Not done |
 | 7 | Pilot with independently labeled real cases | Not done |
 
 ## Not done yet
 
-Second-approver step for overrides of restriction recommendations (an override of a restriction is currently refused), recording rejections in the signed log, the real-document version of the Phase 5 comparison, hardening and deployment (Phase 6), and a pilot with independently labeled real cases (Phase 7). Nothing here is validated on real cases.
+Application screens for the second-approver step and for rejections (the kernel side is in v4.6.0-spec), the real-document version of the Phase 5 comparison, hardening and deployment (Phase 6), and a pilot with independently labeled real cases (Phase 7). Nothing here is validated on real cases.
