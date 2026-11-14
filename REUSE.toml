@@ -1,0 +1,21 @@
+version = 1
+SPDX-PackageName = "muse-aegis-kernel"
+SPDX-PackageSupplier = "Abraham Sumalinog (Sumalinog Institute)"
+
+# Licences are declared here, not in file headers, so that the source files
+# stay byte-for-byte identical to the versions the application copies and
+# fingerprints.
+
+# Code, tools and everything not listed below.
+[[annotations]]
+path = "**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Abraham Sumalinog (Sumalinog Institute)"
+SPDX-License-Identifier = "AGPL-3.0-or-later"
+
+# Specification, test vectors and the fictional test grant.
+[[annotations]]
+path = ["spec/**", "fixtures/**"]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Abraham Sumalinog (Sumalinog Institute)"
+SPDX-License-Identifier = "CC-BY-4.0"

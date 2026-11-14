@@ -7,5 +7,5 @@
     "test": "node --experimental-strip-types --test ts/",
     "test:py": "python3 -m unittest discover -s python -v"
   },
-  "license": "Apache-2.0"
+  "license": "AGPL-3.0-or-later"
 }

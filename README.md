@@ -73,4 +73,19 @@ W_GROUND 0.40, W4 0.20, W5 0.15, W6 0.30, THETA_DOC 0.25, THETA_STAB 0.20, N_MIN
 
 ## Not done yet
 
-Application screens for the second-approver step and for rejections (the kernel side is in v4.6.0-spec), the real-document version of the Phase 5 comparison, hardening and deployment (Phase 6), and a pilot with independently labeled real cases (Phase 7). Nothing here is validated on real cases.
+The real-document version of the Phase 5 comparison, hardening and deployment (Phase 6), and a pilot with independently labeled real cases (Phase 7). Nothing here is validated on real cases.
+
+## Licence
+
+- Code, tools and tests: GNU Affero General Public License v3.0 or later
+  (AGPL-3.0-or-later). See `LICENSE`.
+- Specification (`spec/`), test vectors and the fictional test grant
+  (`fixtures/`): Creative Commons Attribution 4.0 (CC-BY-4.0), so that anyone
+  may implement and cite the format. See `LICENSES/CC-BY-4.0.txt`.
+- A commercial licence is available; see `COMMERCIAL.md`.
+- Licences are declared per path in `REUSE.toml`. Source files carry no
+  licence headers on purpose, so that they stay identical to the copies the
+  application uses.
+- Outside contributions are not accepted yet; see `CONTRIBUTING.md`.
+- The names "MUSE" and "MUSE Aegis" and the Sumalinog Institute name are not
+  covered by these licences. A fork must not present itself as the original.
