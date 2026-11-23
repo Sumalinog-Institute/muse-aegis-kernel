@@ -1,0 +1,485 @@
+{
+ "S001": {
+  "key": "K047",
+  "origin": "judge",
+  "n_members": 7,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S002": {
+  "key": "K033",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S003": {
+  "key": "K003",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S004": {
+  "key": "K017",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S005": {
+  "key": "K030",
+  "origin": "judge",
+  "n_members": 4,
+  "n_runs": 4,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S006": {
+  "key": "K066",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S007": {
+  "key": "K056",
+  "origin": "judge",
+  "n_members": 7,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S008": {
+  "key": "K043",
+  "origin": "judge",
+  "n_members": 7,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S009": {
+  "key": "K018",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S010": {
+  "key": "K049",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S011": {
+  "key": "K038",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S012": {
+  "key": "K042",
+  "origin": "pipeline",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "CONTRADICTED_CLAIM"
+ },
+ "S013": {
+  "key": "K004",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S014": {
+  "key": "K037",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S015": {
+  "key": "K048",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S016": {
+  "key": "K053",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S017": {
+  "key": "K019",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S018": {
+  "key": "K040",
+  "origin": "judge",
+  "n_members": 15,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S019": {
+  "key": "K032",
+  "origin": "judge",
+  "n_members": 2,
+  "n_runs": 2,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S020": {
+  "key": "K013",
+  "origin": "judge",
+  "n_members": 6,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S021": {
+  "key": "K022",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S022": {
+  "key": "K061",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S023": {
+  "key": "K025",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S024": {
+  "key": "K067",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S025": {
+  "key": "K029",
+  "origin": "judge",
+  "n_members": 4,
+  "n_runs": 4,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S026": {
+  "key": "K009",
+  "origin": "judge",
+  "n_members": 10,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S027": {
+  "key": "K046",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S028": {
+  "key": "K041",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S029": {
+  "key": "K020",
+  "origin": "judge",
+  "n_members": 4,
+  "n_runs": 4,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S030": {
+  "key": "K035",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S031": {
+  "key": "K007",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S032": {
+  "key": "K050",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S033": {
+  "key": "K002",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S034": {
+  "key": "K028",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S035": {
+  "key": "K034",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S036": {
+  "key": "K051",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S037": {
+  "key": "K062",
+  "origin": "judge",
+  "n_members": 8,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S038": {
+  "key": "K054",
+  "origin": "judge",
+  "n_members": 4,
+  "n_runs": 4,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S039": {
+  "key": "K014",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S040": {
+  "key": "K015",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S041": {
+  "key": "K064",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 4,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S042": {
+  "key": "K010",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "DUPLICATE_RECORD"
+ },
+ "S043": {
+  "key": "K021",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S044": {
+  "key": "K006",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S045": {
+  "key": "K031",
+  "origin": "judge",
+  "n_members": 4,
+  "n_runs": 4,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S046": {
+  "key": "K063",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S047": {
+  "key": "K027",
+  "origin": "judge",
+  "n_members": 4,
+  "n_runs": 4,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S048": {
+  "key": "K016",
+  "origin": "judge",
+  "n_members": 11,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S049": {
+  "key": "K008",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S050": {
+  "key": "K055",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S051": {
+  "key": "K052",
+  "origin": "judge",
+  "n_members": 3,
+  "n_runs": 3,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S052": {
+  "key": "K058",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S053": {
+  "key": "K026",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S054": {
+  "key": "K059",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S055": {
+  "key": "K039",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S056": {
+  "key": "K057",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S057": {
+  "key": "K060",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S058": {
+  "key": "K069",
+  "origin": "judge",
+  "n_members": 8,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S059": {
+  "key": "K024",
+  "origin": "judge",
+  "n_members": 2,
+  "n_runs": 2,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S060": {
+  "key": "K065",
+  "origin": "judge",
+  "n_members": 2,
+  "n_runs": 2,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S061": {
+  "key": "K012",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S062": {
+  "key": "K001",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S063": {
+  "key": "K005",
+  "origin": "judge",
+  "n_members": 2,
+  "n_runs": 2,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S064": {
+  "key": "K044",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S065": {
+  "key": "K011",
+  "origin": "judge",
+  "n_members": 2,
+  "n_runs": 2,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S066": {
+  "key": "K045",
+  "origin": "judge",
+  "n_members": 2,
+  "n_runs": 2,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S067": {
+  "key": "K036",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S068": {
+  "key": "K023",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH"
+ },
+ "S069": {
+  "key": "K068",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH"
+ }
+}

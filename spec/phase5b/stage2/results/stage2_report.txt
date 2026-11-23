@@ -1,0 +1,68 @@
+ISSUES BY ORIGIN x LABEL
+judge {'supported': 57, 'not supported': 7, 'unclear': 4} 68
+pipeline {'not supported': 1} 1
+judge distinct issues supported 57/68 = 0.838 Wilson95 (0.7330975154420465, 0.9072000280425085)
+excluding unclear: 57/64 = 0.891 Wilson (0.7910113670806147, 0.9459995524731695)
+run-weighted: 183/213 = 0.859
+issues in 1-1 runs: n=25 supported=20
+issues in 2-2 runs: n=6 supported=5
+issues in 3-5 runs: n=37 supported=32
+per project judge issues/supported:
+FP014 [2, 2]
+FP022 [6, 6]
+FP046 [3, 3]
+FP069 [2, 1]
+FP092 [4, 4]
+FP095 [3, 3]
+FP116 [9, 8]
+FP125 [9, 4]
+FP179 [3, 2]
+FP183 [7, 6]
+FP236 [5, 3]
+FP248 [5, 5]
+SAP005 [6, 6]
+SAP043 [4, 4]
+pipeline-origin: [('S012', 'pipeline', 'FP179', 'not supported', 1, 1)]
+
+SCORE SPREAD per project (judge | pipeline): scores, sd(n-1), range, modal-level share
+judge
+ FP014 [60, 75, 75, 85, 85] sd=10.2 range=25 modal-level=1.0
+ FP022 [0, 0, 0, 0, 0] sd=0.0 range=0 modal-level=1.0
+ FP046 [40, 40, 40, 40, 40] sd=0.0 range=0 modal-level=1.0
+ FP052 [100, 100, 100, 100, 100] sd=0.0 range=0 modal-level=1.0
+ FP069 [40, 40, 60, 40, 40] sd=8.9 range=20 modal-level=0.8
+ FP092 [40, 40, 30, 30, 45] sd=6.7 range=15 modal-level=0.6
+ FP095 [40, 20, 20, 40, 20] sd=11.0 range=20 modal-level=0.8
+ FP116 [20, 20, 20, 20, 20] sd=0.0 range=0 modal-level=1.0
+ FP125 [20, 20, 20, 20, 20] sd=0.0 range=0 modal-level=1.0
+ FP179 [0, 0, 0, 20, 0] sd=8.9 range=20 modal-level=0.8
+ FP183 [20, 20, 20, 20, 20] sd=0.0 range=0 modal-level=0.6
+ FP236 [0, 0, 60, 0, 85] sd=40.7 range=85 modal-level=0.6
+ FP248 [0, 0, 0, 0, 0] sd=0.0 range=0 modal-level=1.0
+ SAP005 [20, 40, 20, 20, 40] sd=11.0 range=20 modal-level=0.6
+ SAP043 [20, 0, 20, 20, 0] sd=11.0 range=20 modal-level=1.0
+ MEAN sd=7.2 median sd=6.7 mean range=15.0 mean modal-level share=0.85
+pipeline
+ FP014 [80, 80, 80, 80, 80] sd=0.0 range=0 modal-level=0.8
+
+PIPELINE per project: decisions, scores, levels
+FP014 [('FLAG_FOR_REVIEW', 4), ('SCREENING_PASS_PENDING_STANDARD_CONTROLS', 1)] [80, 80, 80, 80, 80] [('REVIEW', 4), ('PASS', 1)]
+FP022 [('INCOMPLETE_INPUT_MANUAL_REVIEW', 5)] [None, None, None, None, None] [('REVIEW', 5)]
+FP046 [('INCOMPLETE_INPUT_MANUAL_REVIEW', 5)] [None, None, None, None, None] [('REVIEW', 5)]
+FP052 [('SCREENING_PASS_PENDING_STANDARD_CONTROLS', 3), ('FLAG_FOR_REVIEW', 2)] [80, 80, 80, 80, 80] [('PASS', 3), ('REVIEW', 2)]
+FP069 [('INCOMPLETE_INPUT_MANUAL_REVIEW', 5)] [None, None, None, None, None] [('REVIEW', 5)]
+FP092 [('FLAG_FOR_REVIEW', 4), ('SCREENING_PASS_PENDING_STANDARD_CONTROLS', 1)] [80, 80, 80, 80, 80] [('REVIEW', 4), ('PASS', 1)]
+FP095 [('INCOMPLETE_INPUT_MANUAL_REVIEW', 5)] [None, None, None, None, None] [('REVIEW', 5)]
+FP116 [('INCOMPLETE_INPUT_MANUAL_REVIEW', 5)] [None, None, None, None, None] [('REVIEW', 5)]
+FP125 [('INCOMPLETE_INPUT_MANUAL_REVIEW', 5)] [None, None, None, None, None] [('REVIEW', 5)]
+FP179 [('INCOMPLETE_INPUT_MANUAL_REVIEW', 5)] [None, None, None, None, None] [('REVIEW', 5)]
+FP183 [('INCOMPLETE_INPUT_MANUAL_REVIEW', 5)] [None, None, None, None, None] [('REVIEW', 5)]
+FP236 [('FLAG_FOR_REVIEW', 4), ('SCREENING_PASS_PENDING_STANDARD_CONTROLS', 1)] [90, 90, 90, 90, 90] [('REVIEW', 4), ('PASS', 1)]
+FP248 [('FLAG_FOR_REVIEW', 5)] [80, 80, 80, 80, 80] [('REVIEW', 5)]
+SAP005 [('FLAG_FOR_REVIEW', 5)] [93.33333333333333, 100, 93.33333333333333, 93.33333333333333, 100] [('REVIEW', 5)]
+SAP043 [('FLAG_FOR_REVIEW', 4), ('SCREENING_PASS_PENDING_STANDARD_CONTROLS', 1)] [80, 80, 80, 80, 80] [('REVIEW', 4), ('PASS', 1)]
+pipeline decisions Counter({'INCOMPLETE_INPUT_MANUAL_REVIEW': 40, 'FLAG_FOR_REVIEW': 28, 'SCREENING_PASS_PENDING_STANDARD_CONTROLS': 7})
+scored runs per project [('FP014', 5), ('FP022', 0), ('FP046', 0), ('FP052', 5), ('FP069', 0), ('FP092', 5), ('FP095', 0), ('FP116', 0), ('FP125', 0), ('FP179', 0), ('FP183', 0), ('FP236', 5), ('FP248', 5), ('SAP005', 5), ('SAP043', 5)]
+pipeline sd over projects with >=2 scored runs: 7 mean 0.5
+judge level vs score: [(0, 'RESTRICT'), (20, 'ALERT'), (20, 'RESTRICT'), (20, 'REVIEW'), (30, 'ALERT'), (30, 'REVIEW'), (40, 'ALERT'), (40, 'REVIEW'), (45, 'REVIEW'), (60, 'REVIEW'), (75, 'REVIEW'), (85, 'REVIEW'), (100, 'PASS')]
+failed 0 mismatch 0 judge flags 248

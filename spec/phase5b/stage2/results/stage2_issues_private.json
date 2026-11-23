@@ -1,0 +1,1010 @@
+[
+ {
+  "project": "FP014",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Co-financing total: The proposal states total co-financing as 49.78 million USD, but the sum of listed co-financing components (14+9+15+11.78) equals 49.78 million USD, while the lead financing institution note mentions 38.00 million USD.",
+  "members": [
+   "Co-financing total: The proposal states co-financing as 49.78 million USD (14.00 + 9.00 + 15.00 + 11.78), but the lead financing institution note on page 7 states 38.00 million USD.",
+   "Co-financing total: The proposal lists co-financing components as 14.00, 9.00, 15.00, and 11.78 million USD, which sum to 49.78 million USD, but incorrectly states the lead financing institution contribution as 38.00 million USD.",
+   "Co-financing total: The proposal states total co-financing as 49.78 million USD, but the sum of listed co-financing components (14+9+15+11.78) equals 49.78 million USD, while the lead financing institution note mentions 38.00 million USD.",
+   "Co-financing total: The proposal states co-financing components sum to 49.78 million USD, but the individual line items (14+9+15+11.78) total 49.78 million USD, which is consistent; however, the note on page 7 explicitly lists the lead financing institution as 38.00 million USD, which conflicts with the sum of the IDA components (14+9+15 = 38 million USD) excluding the beneficiary contribution, creating ambiguity regarding the total co-financing structure.",
+   "Co-financing: The project proposal cites a co-financing total of 49.78 million USD, but the individual components listed total 49.78 million USD, while the document footer explicitly states a lead financing institution total of 38.00 million USD, creating an internal inconsistency."
+  ],
+  "key": "K001"
+ },
+ {
+  "project": "FP014",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "IATI-008: The IATI record IATI-008 shows a commitment of 0 USD, which contradicts the GCF financing commitment of 19 million USD confirmed in the records and proposal.",
+  "members": [
+   "IATI-008: The IATI record IATI-008 shows a commitment of 0 USD, which contradicts the GCF financing commitment of 19 million USD confirmed in the records and proposal.",
+   "IATI-008: The IATI record IATI-008 shows a commitment of 0 USD, which conflicts with the GCF financing commitment of 19 million USD stated in the proposal and funder records.",
+   "IATI-008: Transaction record IATI-008 lists a commitment of 0 USD for GCF financing which conflicts with the proposal and reference figures stating a commitment of 19 million USD.",
+   "IATI-008: The IATI records contain a commitment record of 0 USD (IATI-008), which does not align with the GCF financing commitment of 19 million USD confirmed in the proposal and reference figures.",
+   "IATI-008: The transaction record IATI-008 lists a GCF commitment of 0 USD, which conflicts with the award reference figure of 19 million USD."
+  ],
+  "key": "K002"
+ },
+ {
+  "project": "FP022",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Co-financing amounts: The individual co-financing commitments for ANDZOA, DRASM, and ABHSM in the annual performance report do not match the amounts listed in the funding proposal.",
+  "members": [
+   "Co-financing amounts: The individual co-financing commitments for ANDZOA, DRASM, and ABHSM in the annual performance report do not match the amounts listed in the funding proposal."
+  ],
+  "key": "K003"
+ },
+ {
+  "project": "FP022",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Co-financing committed amount: The Annual Performance Report lists total co-financing commitments of 9,386,065.17 USD, which differs from the fund's record of 9,895,400 USD.",
+  "members": [
+   "Co-financing committed amount: The Annual Performance Report states a total co-financing commitment of 9,386,065.17 USD, which conflicts with the fund's official record of 9,895,400 USD.",
+   "Co-financing committed amount: The Annual Performance Report lists total co-financing commitments of 9,386,065.17 USD, which conflicts with the fund's reference figure of 9,895,400 USD.",
+   "Co-financing committed amount: The Annual Performance Report lists total co-financing commitments of 9,386,065.17 USD, which differs from the fund's record of 9,895,400 USD.",
+   "Co-financing committed amount: The annual performance report lists total co-financing commitments of 9,386,065.17 USD, which conflicts with the fund's records of 9,895,400 USD.",
+   "Co-financing: The Annual Performance Report reports total committed co-financing of 9,386,065.17 USD, which conflicts with the fund's records of 9,895,400 USD."
+  ],
+  "key": "K004"
+ },
+ {
+  "project": "FP022",
+  "origin": "judge",
+  "n_members": 2,
+  "n_runs": 2,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Co-financing individual commitments: The Annual Performance Report lists commitments for ANDZOA (2,071,643.51 USD), DRASM (6,572,406.11 USD), and ABHSM (742,015.55 USD) that do not align with the individual commitments recorded in the fund's documentation.",
+  "members": [
+   "Co-financing breakdown: Individual co-financing commitments in the Annual Performance Report (ANDZOA: 2,071,643.51; DRASM: 6,572,406.11; ABHSM: 742,015.55) do not match the proposal excerpt figures (4.10M, 5.0M, 0.80M USD respectively).",
+   "Co-financing individual commitments: The Annual Performance Report lists commitments for ANDZOA (2,071,643.51 USD), DRASM (6,572,406.11 USD), and ABHSM (742,015.55 USD) that do not align with the individual commitments recorded in the fund's documentation."
+  ],
+  "key": "K005"
+ },
+ {
+  "project": "FP022",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "GCF financing: The internal totals in the Annual Performance Report for GCF financing are inconsistent, as the reported cumulative expenditure (25,596,990.11 USD) does not align with the reported disbursement (30,001,600 USD).",
+  "members": [
+   "GCF financing: The internal totals in the Annual Performance Report for GCF financing are inconsistent, as the reported cumulative expenditure (25,596,990.11 USD) does not align with the reported disbursement (30,001,600 USD)."
+  ],
+  "key": "K006"
+ },
+ {
+  "project": "FP022",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "GCF funding committed amount: The Annual Performance Report states a committed GCF amount of 26,964,532.92 USD, which conflicts with the fund's records of 39,292,600 USD.",
+  "members": [
+   "GCF funding committed amount: The Annual Performance Report states a committed amount of 26,964,532.92 USD, which conflicts with the fund's official record of 39,292,600 USD.",
+   "GCF funding committed amount: The Annual Performance Report states a committed GCF amount of 26,964,532.92 USD, which conflicts with the award record of 39,292,600 USD.",
+   "GCF funding committed amount: The Annual Performance Report states a committed GCF amount of 26,964,532.92 USD, which conflicts with the fund's records of 39,292,600 USD.",
+   "GCF funding committed amount: The annual performance report states a committed amount of 26,964,532.92 USD, which conflicts with the fund's records of 39,292,600 USD.",
+   "GCF financing: The Annual Performance Report reports a total committed amount of 26,964,532.92 USD, which conflicts with the fund's records of 39,292,600 USD."
+  ],
+  "key": "K007"
+ },
+ {
+  "project": "FP022",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "GCF funding disbursed amount: The Annual Performance Report states a disbursed amount of 30,001,600 USD, which conflicts with the fund's official cumulative disbursement record of 39,292,600 USD.",
+  "members": [
+   "GCF funding disbursed amount: The Annual Performance Report states a disbursed amount of 30,001,600 USD, which conflicts with the fund's official cumulative disbursement record of 39,292,600 USD.",
+   "GCF funding cumulative disbursement: The Annual Performance Report states a cumulative disbursement of 30,001,600 USD, which conflicts with the fund's ledger total of 39,292,600 USD.",
+   "GCF funding cumulative disbursement: The Annual Performance Report states a cumulative disbursement of 30,001,600 USD, while the fund's records indicate a total cumulative disbursement of 39,292,600 USD.",
+   "GCF funding disbursed amount: The annual performance report states a disbursed amount of 30,001,600 USD, which conflicts with the fund's records showing cumulative disbursements of 39,292,600 USD.",
+   "GCF financing: The Annual Performance Report reports a disbursed amount of 30,001,600 USD, which conflicts with the fund's records showing cumulative disbursements of 39,292,600 USD."
+  ],
+  "key": "K008"
+ },
+ {
+  "project": "FP046",
+  "origin": "judge",
+  "n_members": 10,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "GCF grant component: The proposal includes a grant component of 877,846 USD which is not reflected in the fund's commitment records.",
+  "members": [
+   "GCF financing: The proposal states a total GCF requested amount of 9,527,896 USD, which conflicts with the fund's records of 8,650,050 USD.",
+   "GCF grant component: The proposal includes a grant component of 877,846 USD which is not reflected in the fund's commitment records.",
+   "GCF financing: The proposal states a total GCF requested amount of 9,527,896 USD, which conflicts with the fund's records of 8,650,050 USD.",
+   "GCF grant component: The proposal lists a grant component of 877,846 USD which is not reflected in the fund's commitment records.",
+   "GCF financing: The total GCF requested amount in the proposal (9,527,896 USD) contradicts the committed GCF amount in the records (8,650,050 USD).",
+   "GCF financing: The proposal lists a grant component of 877,846 USD which is not reflected in the GCF funding records.",
+   "GCF financing: The proposal lists a grant of 877,846 USD and a total GCF request of 9,527,896 USD, which contradicts the official GCF commitment record of 8,650,050 USD.",
+   "Total project financing: The proposal states total project financing of 18,434,766 USD, which does not match the sum of the listed GCF financing (9,527,896 USD) and co-financing (8,906,870 USD).",
+   "GCF financing: The proposal lists a grant amount of 877,846 USD which is not reflected in the fund's commitment records of 8,650,050 USD.",
+   "Total project financing: The proposal states a total project financing of 18,434,766 USD, which does not match the sum of the listed components (8,650,050 + 877,846 + 8,906,870 = 18,434,766 is mathematically correct, but the internal GCF total requested is listed as 9,527,896 USD)."
+  ],
+  "key": "K009"
+ },
+ {
+  "project": "FP046",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "DUPLICATE_RECORD",
+  "text": "IATI-003, IATI-004, IATI-005: Multiple commitment records exist for the same GCF financing amount, including zero-value entries.",
+  "members": [
+   "IATI-003, IATI-004, IATI-005: Multiple commitment records exist for the same GCF financing amount on the same date.",
+   "IATI-003, IATI-004, IATI-005: Multiple commitment records exist for GCF financing with the same date and recipient, including zero-value entries.",
+   "IATI-003, IATI-004, IATI-005: Multiple commitment records for the same GCF financing exist, with some showing zero values.",
+   "IATI-003, IATI-004, IATI-005: Multiple commitment records exist for the same GCF financing amount, including zero-value entries.",
+   "IATI-003, IATI-004, IATI-005: Multiple commitment records exist for the same GCF financing with conflicting or zero values."
+  ],
+  "key": "K010"
+ },
+ {
+  "project": "FP046",
+  "origin": "judge",
+  "n_members": 2,
+  "n_runs": 2,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Total project financing: The proposal states total project financing of 18,434,766 USD, which does not match the sum of the GCF and co-financing amounts provided in the records.",
+  "members": [
+   "Total project financing: The proposal states a total project financing of 18,434,766 USD, which is inconsistent with the sum of the GCF and co-financing figures provided in the proposal.",
+   "Total project financing: The proposal states total project financing of 18,434,766 USD, which does not match the sum of the GCF and co-financing amounts provided in the records."
+  ],
+  "key": "K011"
+ },
+ {
+  "project": "FP069",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Co-financing Disbursed Amount: The Annual Performance Report states a cumulative co-financing disbursement of 4,695,207.09 USD, which contradicts the total co-financing commitment of 8,000,000 USD recorded in the proposal and IATI-001.",
+  "members": [
+   "Co-financing: The Annual Performance Report states cumulative co-financing disbursement of 4,695,207.09 USD, which contradicts the committed amount of 8,000,000 USD and the lack of transaction records confirming the realization of this co-financing.",
+   "Co-financing: The Annual Performance Report states cumulative co-financing of 4,695,207.09 USD, which is significantly lower than the 8,000,000 USD commitment stated in the proposal and reference figures.",
+   "Co-financing disbursement: The annual report claims 4,695,207.09 USD in cumulative co-financing disbursement, but there are no transaction records provided to substantiate this figure.",
+   "Co-financing Disbursed Amount: The Annual Performance Report states a cumulative co-financing disbursement of 4,695,207.09 USD, which contradicts the total co-financing commitment of 8,000,000 USD recorded in the proposal and IATI-001.",
+   "Co-financing: The Annual Performance Report states a cumulative co-financing disbursement of 4,695,207.09 USD, which is not supported by any of the provided IATI transaction records."
+  ],
+  "key": "K012"
+ },
+ {
+  "project": "FP069",
+  "origin": "judge",
+  "n_members": 6,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Cumulative disbursement: The Annual Performance Report claims a cumulative disbursement of 24,980,000 USD, while the sum of the provided IATI transaction records (IATI-002 through IATI-010) totals 24,228,819 USD.",
+  "members": [
+   "Cumulative Disbursement: The cumulative disbursement of 24,980,000 USD reported in the Annual Performance Report conflicts with the sum of the IATI transaction records (IATI-002 through IATI-010), which totals 24,980,000 USD, but the reference figures provided by the fund indicate that the total disbursements are 24,980,000 USD, while the proposal and records suggest these have been fully disbursed despite the project end date being in 2026.",
+   "Cumulative Disbursement: The Annual Performance Report claims a cumulative disbursement of 24,980,000 USD, while the sum of the provided IATI transaction records (IATI-002 through IATI-009) is 24,980,000 USD, but the reference figures and records confirm all funds have been disbursed, contradicting the expenditure reporting in the APR.",
+   "Internal consistency: The Annual Performance Report E.1 section lists Cumulative Expenditure as 20,827,857.42 USD, which does not reconcile with the total disbursed amount of 24,980,000 USD.",
+   "Cumulative Disbursement: The annual report states cumulative disbursement of 24,980,000 USD, while the sum of the provided transaction records (IATI-002 through IATI-009) equals 24,204,413 USD.",
+   "Cumulative Disbursement: The Annual Performance Report claims a cumulative disbursement of 24,980,000 USD, while the sum of the provided IATI transaction records (IATI-002 through IATI-009) equals 24,199,411 USD.",
+   "Cumulative disbursement: The Annual Performance Report claims a cumulative disbursement of 24,980,000 USD, while the sum of the provided IATI transaction records (IATI-002 through IATI-010) totals 24,228,819 USD."
+  ],
+  "key": "K013"
+ },
+ {
+  "project": "FP092",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Co-financing committed amount: The total co-financing committed amount of 118,156,000.02 USD in the fund's records conflicts with the 76,038,273.46 USD reported in the annual performance report.",
+  "members": [
+   "Co-financing committed amount: The Annual Performance Report states a total co-financing commitment of 76,038,273.46 USD, which conflicts with the reference figure of 118,156,000.02 USD.",
+   "Co-financing committed amount: The Annual Performance Report states total co-financing commitments of 76,038,273.46 USD, which significantly conflicts with the funder's recorded commitment of 118,156,000.02 USD.",
+   "Co-financing committed amount: The Annual Performance Report states a total co-financing commitment of 76,038,273.46 USD, which significantly conflicts with the fund's reference figure of 118,156,000.02 USD.",
+   "Co-financing committed amount: The Annual Performance Report states total co-financing committed as 76,038,273.46 USD, while the fund's reference figure is 118,156,000.02 USD.",
+   "Co-financing committed amount: The total co-financing committed amount of 118,156,000.02 USD in the fund's records conflicts with the 76,038,273.46 USD reported in the annual performance report."
+  ],
+  "key": "K014"
+ },
+ {
+  "project": "FP092",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "GCF disbursement total: The Annual Performance Report table total for GCF disbursed amount (35,672,790.52 USD) disagrees slightly with the fund's reference figure of 35,672,786.52 USD.",
+  "members": [
+   "Total GCF disbursement: The Annual Performance Report total disbursement of 35,672,790.52 USD slightly exceeds the reference figure of 35,672,786.52 USD.",
+   "GCF cumulative disbursement: The total cumulative disbursement reported in the APR (35,672,790.52 USD) contains a minor discrepancy compared to the funder's records (35,672,786.52 USD).",
+   "GCF disbursement total: The Annual Performance Report table total for GCF disbursed amount (35,672,790.52 USD) disagrees slightly with the fund's reference figure of 35,672,786.52 USD.",
+   "GCF total disbursement: The total disbursed amount in the Annual Performance Report (35,672,790.52 USD) deviates from the fund's reference figure (35,672,786.52 USD).",
+   "Annual Performance Report totals: The total disbursed amount for GCF financing in the annual performance report (35,672,790.52 USD) contains a minor discrepancy compared to the fund's records (35,672,786.52 USD)."
+  ],
+  "key": "K015"
+ },
+ {
+  "project": "FP092",
+  "origin": "judge",
+  "n_members": 11,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Global Environment Facility (GEF) contribution: The GEF contribution is reported as 12,980,000 USD in the funding proposal but as 12,010,000 USD in the annual performance report.",
+  "members": [
+   "GEF committed amount: The Annual Performance Report lists GEF commitment as 12,010,000 USD, while the proposal excerpt states it as 12,980,000 USD.",
+   "FIP committed amount: The Annual Performance Report lists Forestry Investment Program commitment as 2,640,000 USD, while the proposal excerpt states it as 9,000,000 USD.",
+   "African Development Fund committed amount: The Annual Performance Report lists ADF commitment as 43,306,950 USD, while the proposal excerpt states 42,171,000 USD.",
+   "Co-financing commitment breakdown: The individual co-financing commitments for the Forestry Investment Program (2,640,000 USD in APR vs 9,000,000 USD in proposal) and African Development Fund (43,306,950 USD in APR vs 42,171,000 USD in proposal) do not match the original proposal figures.",
+   "Forestry Investment Program co-financing: The Annual Performance Report lists a committed amount of 2,640,000 USD for the Forestry Investment Program, whereas the proposal document states 9,000,000 USD.",
+   "African Development Fund co-financing: The Annual Performance Report lists a committed amount of 43,306,950 USD for the African Development Fund, which conflicts with the proposal document figure of 42,171,000 USD.",
+   "Global Environment Facility co-financing: The Annual Performance Report lists a committed amount of 12,010,000 USD for the GEF, which conflicts with the proposal document figure of 12,980,000 USD.",
+   "Co-financing commitments: Individual co-financing commitments in the Annual Performance Report (GEF 12,010,000; FIP 2,640,000; AfDB 43,306,950) differ from the original funding proposal figures (GEF 12,980,000; FIP 9,000,000; AfDB 78,095,000).",
+   "Global Environment Facility (GEF) contribution: The GEF contribution is reported as 12,980,000 USD in the funding proposal but as 12,010,000 USD in the annual performance report.",
+   "Forestry Investment Program (FIP) contribution: The FIP contribution is reported as 9,000,000 USD in the funding proposal but as 2,640,000 USD in the annual performance report.",
+   "African Development Fund (ADF) contribution: The ADF grant contribution is reported as 42,171,000 USD in the funding proposal but as 43,306,950 USD in the annual performance report."
+  ],
+  "key": "K016"
+ },
+ {
+  "project": "FP092",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Total GCF financing: The sum of committed amounts in the APR table (67,774,000 USD) differs slightly from the funder's recorded commitment of 67,774,000.01 USD.",
+  "members": [
+   "Total GCF financing: The sum of committed amounts in the APR table (67,774,000 USD) differs slightly from the funder's recorded commitment of 67,774,000.01 USD."
+  ],
+  "key": "K017"
+ },
+ {
+  "project": "FP095",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Co-financing commitment: The total co-financing commitment of 413 million USD (406 million loan + 7 million grant) stated in the proposal differs from the fund records of 470,737,399.98 USD.",
+  "members": [
+   "Co-financing: The proposal states total co-financing of 413 million USD (406+7), whereas the fund's records reflect a commitment of 470,737,399.98 USD.",
+   "Co-financing commitment: The total co-financing commitment of 413 million USD (406 million loan + 7 million grant) stated in the proposal differs from the fund records of 470,737,399.98 USD.",
+   "Co-financing amount: The proposal states a total co-financing amount of 413 million, which conflicts with the IATI commitment records totaling 470,737,399.98 USD.",
+   "Co-financing total: The proposal states total co-financing of 413 million units (406+7), which differs from the recorded co-financing commitment of 470,737,399.98 USD.",
+   "Proposal Financing: The co-financing amount of 413 million USD (406m + 7m) in the proposal contradicts the total co-financing commitment of 470,737,399.98 USD recorded in the IATI records."
+  ],
+  "key": "K018"
+ },
+ {
+  "project": "FP095",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "GCF financing amount: The proposal states a total GCF financing request of 240 million, which conflicts with the IATI commitment records totaling 273,551,999.99 USD.",
+  "members": [
+   "GCF financing: The proposal states total GCF financing of 240 million USD, whereas the fund's records reflect a commitment of 273,551,999.99 USD.",
+   "GCF funding commitment: The total GCF financing commitment of 240 million USD stated in the proposal differs from the fund records of 273,551,999.99 USD.",
+   "GCF financing amount: The proposal states a total GCF financing request of 240 million, which conflicts with the IATI commitment records totaling 273,551,999.99 USD.",
+   "GCF funding total: The proposal states total GCF financing of 240 million units, which significantly deviates from the recorded committed amount of 273,551,999.99 USD.",
+   "Proposal Financing: The GCF financing amount of 240 million USD in the proposal contradicts the total GCF commitment of 273,551,999.99 USD recorded in the IATI records."
+  ],
+  "key": "K019"
+ },
+ {
+  "project": "FP095",
+  "origin": "judge",
+  "n_members": 4,
+  "n_runs": 4,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Total project financing: The proposal states total project financing of 653 million units, whereas the sum of the recorded GCF and co-financing commitments is 744,289,399.97 USD.",
+  "members": [
+   "Total project financing: The proposal states total project financing of 653 million USD, whereas the sum of the records (GCF + Co-financing) indicates a total of 744,289,399.97 USD.",
+   "Total project financing: The proposal states a total project financing of 653 million, which does not reconcile with the sum of the IATI commitment records for GCF and co-financing.",
+   "Total project financing: The proposal states total project financing of 653 million units, whereas the sum of the recorded GCF and co-financing commitments is 744,289,399.97 USD.",
+   "Proposal Financing: The total project financing of 653 million USD stated in the proposal conflicts with the GCF and co-financing commitments totaling approximately 744 million USD in the IATI records."
+  ],
+  "key": "K020"
+ },
+ {
+  "project": "FP116",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Annual Report E.2: The annual report lists co-financiers and amounts (e.g., MAFIM, Gov of Kyrgyzstan) that do not align with the committed co-financing sources or values identified in the funding proposal.",
+  "members": [
+   "Annual Report E.2: The annual report lists co-financiers and amounts (e.g., MAFIM, Gov of Kyrgyzstan) that do not align with the committed co-financing sources or values identified in the funding proposal."
+  ],
+  "key": "K021"
+ },
+ {
+  "project": "FP116",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Co-financing commitments: The annual performance report lists total co-financing commitments as 20,001,480 USD, which conflicts with the fund's reference figure of 15,400,000 USD.",
+  "members": [
+   "Co-financing total: The annual report lists co-financing totals of 20,001,480 USD, which conflicts with the fund's reference figure of 15,400,000 USD.",
+   "Co-financing commitments: The annual performance report lists total co-financing commitments as 20,001,480 USD, which conflicts with the fund's reference figure of 15,400,000 USD.",
+   "Co-financing total: The Annual Performance Report reports a total co-financing commitment of 20,001,480 USD, whereas the proposal and reference records state 15,400,000 USD.",
+   "Co-financing commitment total: The fund's record shows a total co-financing commitment of 15,400,000 USD, whereas the Annual Performance Report lists a total of 20,001,480 USD.",
+   "Co-financing total commitment: The Annual Performance Report lists a total co-financing commitment of 20,001,480 USD, which contradicts the fund's records and the proposal figure of 15,400,000 USD."
+  ],
+  "key": "K022"
+ },
+ {
+  "project": "FP116",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Co-financing commitments: The proposal lists several co-financing entities (SAEPF, MAFIM, ARIS, FAO, Beneficiaries) with specific in-kind amounts that do not align with the category totals reported in the Annual Performance Report.",
+  "members": [
+   "Co-financing commitments: The proposal lists several co-financing entities (SAEPF, MAFIM, ARIS, FAO, Beneficiaries) with specific in-kind amounts that do not align with the category totals reported in the Annual Performance Report."
+  ],
+  "key": "K023"
+ },
+ {
+  "project": "FP116",
+  "origin": "judge",
+  "n_members": 2,
+  "n_runs": 2,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Co-financing components: The Annual Performance Report co-financing breakdown (e.g., 342,480 USD for ARIS, 317,000 USD for Gov of Kyrgyzstan) does not match the figures in the proposal (e.g., 340,000 USD for ARIS/SAEPF, 320,000 USD for MAFIM).",
+  "members": [
+   "Co-financing components: Individual co-financing line items in the APR (Forestry Service: 340,000; ARIS: 342,480; Gov of Kyrgyzstan: 317,000) do not match the proposal figures (SAEPF: 340,000; ARIS: 340,000; MAFIM: 320,000).",
+   "Co-financing components: The Annual Performance Report co-financing breakdown (e.g., 342,480 USD for ARIS, 317,000 USD for Gov of Kyrgyzstan) does not match the figures in the proposal (e.g., 340,000 USD for ARIS/SAEPF, 320,000 USD for MAFIM)."
+  ],
+  "key": "K024"
+ },
+ {
+  "project": "FP116",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Co-financing components: The annual performance report includes a 400,000 USD grant from FAO and other co-financing items not present in the original commitment records or proposal summary table.",
+  "members": [
+   "Co-financing components: The annual performance report includes a 400,000 USD grant from FAO and other co-financing items not present in the original commitment records or proposal summary table."
+  ],
+  "key": "K025"
+ },
+ {
+  "project": "FP116",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "GCF cumulative disbursement: The annual performance report lists cumulative GCF disbursement as 4,857,050 USD, which contradicts the fund's transaction records showing 2,540,093 USD.",
+  "members": [
+   "GCF cumulative disbursement: The annual performance report lists cumulative GCF disbursement as 4,857,050 USD, which contradicts the fund's transaction records showing 2,540,093 USD."
+  ],
+  "key": "K026"
+ },
+ {
+  "project": "FP116",
+  "origin": "judge",
+  "n_members": 4,
+  "n_runs": 4,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "GCF funding cumulative disbursement: The Annual Performance Report states a cumulative disbursement of 7,510,707 USD, while the fund's records show 2,540,093 USD.",
+  "members": [
+   "GCF cumulative disbursement: The annual report claims a cumulative disbursement of 7,510,707 USD, which conflicts with the fund's transaction records showing a cumulative disbursement of 2,540,093 USD.",
+   "GCF cumulative disbursement: The Annual Performance Report states a cumulative disbursement of 7,510,707 USD, while the transaction records show 2,540,093 USD.",
+   "GCF funding cumulative disbursement: The Annual Performance Report states a cumulative disbursement of 7,510,707 USD, which contradicts the fund's transaction record of 2,540,093 USD.",
+   "GCF funding cumulative disbursement: The Annual Performance Report states a cumulative disbursement of 7,510,707 USD, while the fund's records show 2,540,093 USD."
+  ],
+  "key": "K027"
+ },
+ {
+  "project": "FP116",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "GCF funding total commitment: The proposal states a GCF grant amount of 29.99 million USD, while the fund's records and the Annual Performance Report state 29,988,520 USD.",
+  "members": [
+   "GCF funding total commitment: The proposal states a GCF grant amount of 29.99 million USD, while the fund's records and the Annual Performance Report state 29,988,520 USD."
+  ],
+  "key": "K028"
+ },
+ {
+  "project": "FP116",
+  "origin": "judge",
+  "n_members": 4,
+  "n_runs": 4,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Total project financing: The proposal states total project financing of 49.99 million USD, while the sum of GCF (29.99M) and identified co-financing (20.00M) is 49.99M, but the individual co-financing components listed in the proposal sum to 20.00 million, while the APR reports a total co-financing commitment of 20,001,480 USD.",
+  "members": [
+   "Total project financing: The funding proposal states total project financing as 49.99 million USD, while the sum of the listed components (29.99 GCF + 15.00 RKDF + 0.34 SAEPF + 0.32 MAFIM + 0.34 ARIS + 3.60 Beneficiaries + 0.40 FAO) equals 49.99 million USD, but the components listed in the annual report for co-financing total 20,001,480 USD, creating a discrepancy in the total project value and the breakdown of co-financing.",
+   "Total project financing: The funding proposal states a total project financing of 49.99 million USD, while the sum of GCF (29.99m) and listed co-financing (approx 20m) suggests a figure near 50m, but the individual co-financing components sum to 20,001,480 USD in the annual report, inconsistent with the proposal's total.",
+   "Total project financing: The proposal states total project financing as 49.99 million USD, but the sum of the detailed components (29.99M GCF + 15.00M RKDF + 0.34M + 0.32M + 0.34M + 3.60M + 0.40M) equals 49.99M USD, which is internally consistent but inconsistent with the 20.00M co-financing reported in the APR.",
+   "Total project financing: The proposal states total project financing of 49.99 million USD, while the sum of GCF (29.99M) and identified co-financing (20.00M) is 49.99M, but the individual co-financing components listed in the proposal sum to 20.00 million, while the APR reports a total co-financing commitment of 20,001,480 USD."
+  ],
+  "key": "K029"
+ },
+ {
+  "project": "FP125",
+  "origin": "judge",
+  "n_members": 4,
+  "n_runs": 4,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "ADB Loan commitment: The proposal lists ADB senior loans at 99,590,000 USD, whereas the Annual Performance Report (E.2) lists ADB loans at 84,839,273 USD.",
+  "members": [
+   "ADB Loan commitment: The proposal lists ADB senior loans at 99,590,000 USD, whereas the Annual Performance Report (E.2) lists ADB loans at 84,839,273 USD.",
+   "Co-financier: ADB: The committed amount for ADB in the Annual Performance Report (84,839,273 USD) differs from the commitment record (99,590,000 USD).",
+   "ADB Loan Commitment: The proposal lists ADB Senior Loans at 99,590,000 USD, whereas the Annual Performance Report lists ADB Loans at 84,839,273 USD.",
+   "ADB Loan commitment: The proposal lists ADB senior loans at 99,590,000 USD, whereas the APR reports a committed amount of 84,839,273 USD."
+  ],
+  "key": "K030"
+ },
+ {
+  "project": "FP125",
+  "origin": "judge",
+  "n_members": 4,
+  "n_runs": 4,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Co-financier: Government of Vietnam: The committed grant amounts for the Government of Vietnam in the Annual Performance Report (18,804,571 USD and 3,437,475 USD) do not reconcile with the proposal figures (22,060,000 USD and 406,277 USD).",
+  "members": [
+   "Government grant commitment: The sum of GoV grants in the proposal (22,060,000 + 406,277) is 22,466,277 USD, which does not match the sum of GoV grants in the Annual Performance Report (18,804,571 + 3,437,475 = 22,242,046 USD).",
+   "Co-financier: Government of Vietnam: The committed grant amounts for the Government of Vietnam in the Annual Performance Report (18,804,571 USD and 3,437,475 USD) do not reconcile with the proposal figures (22,060,000 USD and 406,277 USD).",
+   "Government Grants: The proposal lists GoV grants of 22,060,000 USD and 406,277 USD, while the Annual Performance Report lists GoV (WEIDAP) grants at 18,804,571 USD.",
+   "GoV Grant commitment: The proposal lists GoV grants totaling 22,466,277 USD, whereas the APR reports GoV grant commitments of 18,804,571 USD (WEIDAP) and 3,437,475 USD (Provincial/Central)."
+  ],
+  "key": "K031"
+ },
+ {
+  "project": "FP125",
+  "origin": "judge",
+  "n_members": 2,
+  "n_runs": 2,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Co-financier: In-kind: The committed in-kind amount in the Annual Performance Report (1,000,000 USD) does not match the sum of in-kind contributions listed in the proposal (77,550 USD + 922,450 USD = 1,000,000 USD, though the proposal total is internally inconsistent with the listed items).",
+  "members": [
+   "Co-financier: In-kind: The committed in-kind amount in the Annual Performance Report (1,000,000 USD) does not match the sum of in-kind contributions listed in the proposal (77,550 USD + 922,450 USD = 1,000,000 USD, though the proposal total is internally inconsistent with the listed items).",
+   "Government In-kind: The proposal lists in-kind contributions of 77,550 USD and 922,450 USD (total 1,000,000 USD), while the Annual Performance Report lists 1,000,000 USD but reports a cumulative expenditure of 1,005,991 USD, exceeding the commitment."
+  ],
+  "key": "K032"
+ },
+ {
+  "project": "FP125",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Co-financing breakdown: The individual co-financing line items in the APR (ADB, GoV WEIDAP, etc.) do not align with the committed amounts specified in the project proposal.",
+  "members": [
+   "Co-financing breakdown: The individual co-financing line items in the APR (ADB, GoV WEIDAP, etc.) do not align with the committed amounts specified in the project proposal."
+  ],
+  "key": "K033"
+ },
+ {
+  "project": "FP125",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Cumulative disbursement: The GCF cumulative disbursement reported in the APR (25,547,472 USD) does not match the sum of disbursements in the IATI records (30,373,894 USD).",
+  "members": [
+   "Cumulative disbursement: The Annual Performance Report (E.1) claims a cumulative disbursement of 25,547,472 USD, which conflicts with the sum of IATI disbursement records.",
+   "Cumulative disbursement: The GCF cumulative disbursement reported in the APR (25,547,472 USD) does not match the sum of disbursements in the IATI records (30,373,894 USD).",
+   "GCF Disbursement: The cumulative GCF disbursement in the Annual Performance Report (25,547,472 USD) contradicts the reference figure from the fund's records (30,205,367 USD).",
+   "GCF Disbursement: The cumulative GCF disbursement in the Annual Performance Report is 25,547,472 USD, which contradicts the ledger total of 30,383,817 USD.",
+   "GCF cumulative disbursement: The APR reports a cumulative disbursement of 25,547,472 USD, which contradicts the ledger record of 30,383,908 USD (sum of IATI-005 to IATI-010)."
+  ],
+  "key": "K034"
+ },
+ {
+  "project": "FP125",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Cumulative disbursement: The sum of disbursements from IATI records (IATI-005 to IATI-010) is 30,381,838 USD, which exceeds the total GCF commitment of 30,205,367 USD.",
+  "members": [
+   "Cumulative disbursement: The sum of disbursements from IATI records (IATI-005 to IATI-010) is 30,381,838 USD, which exceeds the total GCF commitment of 30,205,367 USD."
+  ],
+  "key": "K035"
+ },
+ {
+  "project": "FP125",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "GoV In-kind commitment: The proposal lists GoV in-kind contributions totaling 999,998 USD, whereas the APR reports 1,000,000 USD.",
+  "members": [
+   "GoV In-kind commitment: The proposal lists GoV in-kind contributions totaling 999,998 USD, whereas the APR reports 1,000,000 USD."
+  ],
+  "key": "K036"
+ },
+ {
+  "project": "FP125",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "IATI-010: The disbursement record IATI-010 (2026-06-22) occurs after the award end date (2026-06-09).",
+  "members": [
+   "IATI-010: The disbursement record IATI-010 (2026-06-22) occurs after the award end date (2026-06-09)."
+  ],
+  "key": "K037"
+ },
+ {
+  "project": "FP125",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Total Co-financing: The committed co-financing amount in the proposal (125,087,475 USD) differs significantly from the total reported in the Annual Performance Report (108,081,319 USD).",
+  "members": [
+   "Co-financing committed amount: The reference records state total co-financing of 125,087,475 USD, while the Annual Performance Report (E.2) reports a total of 108,081,319 USD.",
+   "Co-financing committed amount: The total co-financing committed amount reported in the APR (108,081,319 USD) significantly differs from the fund's reference figure (125,087,475 USD).",
+   "Total Co-financing: The committed co-financing amount in the proposal (125,087,475 USD) does not match the total in the Annual Performance Report (108,081,319 USD).",
+   "Total Co-financing Commitment: The proposal lists total co-financing of 126,087,475 USD (sum of items listed), while the reference figure from records is 125,087,475 USD and the Annual Performance Report reports 108,081,319 USD.",
+   "Total Co-financing: The committed co-financing amount in the proposal (125,087,475 USD) differs significantly from the total reported in the Annual Performance Report (108,081,319 USD)."
+  ],
+  "key": "K038"
+ },
+ {
+  "project": "FP179",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Annual Performance Report E.1: The cumulative disbursement reported in the annual report (56,753,700 USD) significantly differs from the fund's internal records (44,576,551 USD).",
+  "members": [
+   "Cumulative Disbursement: The Annual Performance Report claims cumulative disbursements of 56,753,700 USD for GCF financing, which conflicts with the fund's records of 44,576,551 USD.",
+   "Annual Performance Report E.1: The cumulative GCF disbursement of 56,753,700 USD reported in the annual performance report conflicts with the fund's records of 44,576,551 USD.",
+   "Annual Performance Report E.1: The cumulative GCF disbursement of 56,753,700 USD reported in the Annual Performance Report conflicts with the fund's internal records of 44,576,551 USD.",
+   "E.1. GCF financing: The cumulative disbursement figures in the annual report (56,753,700 USD) significantly conflict with the fund's reference figure (44,576,551 USD).",
+   "Annual Performance Report E.1: The cumulative disbursement reported in the annual report (56,753,700 USD) significantly differs from the fund's internal records (44,576,551 USD)."
+  ],
+  "key": "K039"
+ },
+ {
+  "project": "FP179",
+  "origin": "judge",
+  "n_members": 15,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Annual Performance Report E.2: The co-financing committed amount of 0 USD reported for CRDB Bank PLC conflicts with the project proposal and fund records of 100,000,000 USD.",
+  "members": [
+   "Committed Amount: The Annual Performance Report lists total GCF committed amounts of 13,901,296 USD, which significantly contradicts the award commitment of 100,000,000 USD.",
+   "Co-financing: The Annual Performance Report lists co-financing committed amounts as 0 USD, contradicting the proposal and fund records of 100,000,000 USD.",
+   "Cumulative Expenditure: The Annual Performance Report states cumulative expenditure of 100,461,278 USD for co-financing, which exceeds the total committed co-financing of 100,000,000 USD.",
+   "Annual Performance Report E.1: The total GCF committed amount of 13,901,296 USD reported in the annual performance report conflicts with the project's total GCF funding commitment of 100,000,000 USD.",
+   "Annual Performance Report E.2: The co-financing committed amount of 0 USD reported for CRDB Bank PLC conflicts with the project proposal and fund records of 100,000,000 USD.",
+   "Annual Performance Report E.2: The cumulative co-financing expenditure of 75,000,000 USD exceeds the reported disbursement of 75,000,000 USD while listing an expenditure for the reporting year of 100,461,278 USD, indicating internal inconsistencies.",
+   "Annual Performance Report E.1: The GCF committed amounts for grants and loans in the Annual Performance Report (13,901,296 USD total) do not match the approved GCF commitment of 100,000,000 USD.",
+   "Annual Performance Report E.2: The co-financing commitment for CRDB Bank is reported as 0 USD in the Annual Performance Report, contradicting the approved commitment of 100,000,000 USD.",
+   "Annual Performance Report E.2: The cumulative co-financing expenditure of 75,000,000 USD reported in the Annual Performance Report contradicts the stated commitment of 0 USD and the total project co-financing target.",
+   "E.1. GCF financing: The committed amounts for GCF financing in the annual report (13,901,296 USD) do not match the total approved commitment of 100,000,000 USD.",
+   "E.2. Co-financing: The committed amount for co-financing in the annual report is listed as 0 USD, which conflicts with the approved commitment of 100,000,000 USD.",
+   "E.2. Co-financing: The cumulative expenditure (100,461,278 USD) exceeds the total committed co-financing amount of 100,000,000 USD.",
+   "Annual Performance Report E.1: The committed amounts for grants and loans in the annual report (13,901,296 USD total) are inconsistent with the approved GCF commitment of 100,000,000 USD.",
+   "Annual Performance Report E.2: The committed co-financing amount reported (0 USD) conflicts with the proposal's committed co-financing of 100,000,000 USD.",
+   "Annual Performance Report E.2: The cumulative expenditure for co-financing (75,000,000 USD) exceeds the committed co-financing amount stated in the proposal (100,000,000 USD) relative to the disbursement and reporting period."
+  ],
+  "key": "K040"
+ },
+ {
+  "project": "FP179",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "E.1. GCF financing: The cumulative expenditure of 42,852,404 USD is inconsistent with the reported cumulative disbursement of 56,753,700 USD.",
+  "members": [
+   "E.1. GCF financing: The cumulative expenditure of 42,852,404 USD is inconsistent with the reported cumulative disbursement of 56,753,700 USD."
+  ],
+  "key": "K041"
+ },
+ {
+  "project": "FP179",
+  "origin": "pipeline",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "CONTRADICTED_CLAIM",
+  "text": "GCF funding committed amount: the document line \"(a) Requested GCF funding Total amount Currency (i + ii + iii + iv + v + vi + vii) 100,000,000 million USD ($)\" was read as 100,000,000 million USD, which conflicts with the reference record.",
+  "members": [
+   "GCF funding committed amount: the document line \"(a) Requested GCF funding Total amount Currency (i + ii + iii + iv + v + vi + vii) 100,000,000 million USD ($)\" was read as 100,000,000 million USD, which conflicts with the reference record."
+  ],
+  "key": "K042"
+ },
+ {
+  "project": "FP183",
+  "origin": "judge",
+  "n_members": 7,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Co-financing committed amount: The co-financing commitment of 83,281,185.45 USD in the IATI records differs from the 73,971,000 EUR stated in the funding proposal.",
+  "members": [
+   "Co-financing total: The funding proposal states a co-financing amount of 73,971,000 EUR, whereas the fund's records reflect a commitment of 83,281,185.45 USD.",
+   "Co-financing total in APR: The annual report lists total co-financing as 73,066,490 EUR, which does not match the 73,971,000 EUR stated in the funding proposal.",
+   "Co-financing committed amount: The co-financing commitment of 83,281,185.45 USD in the IATI records differs from the 73,971,000 EUR stated in the funding proposal.",
+   "Total Co-financing (APR): The total co-financing committed amount in the annual performance report (73,066,490 EUR) does not match the total co-financing of 73,971,000 EUR stated in the funding proposal.",
+   "Co-financing committed amount: The Co-financing commitment of 83,281,185.45 USD in the records conflicts with the proposal total of 73,971,000 EUR and the annual report total of 73,066,490 EUR.",
+   "Co-financing total: The funding proposal states total co-financing of 73,971,000 EUR, while the annual report lists 73,066,490 EUR and the fund's reference records indicate 83,281,185.45 USD, reflecting inconsistent totals across documents.",
+   "Co-financing committed amount: The co-financing amount in the proposal (73,971,000 EUR) and annual report (73,066,490 EUR) differs from the fund's records (83,281,185.45 USD)."
+  ],
+  "key": "K043"
+ },
+ {
+  "project": "FP183",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Component 1.2 Co-financing: The proposal lists a co-financing entry of 5,753,3000, which appears to be a typographical error compared to other entries.",
+  "members": [
+   "Component 1.2 Co-financing: The proposal lists a co-financing entry of 5,753,3000, which appears to be a typographical error compared to other entries."
+  ],
+  "key": "K044"
+ },
+ {
+  "project": "FP183",
+  "origin": "judge",
+  "n_members": 2,
+  "n_runs": 2,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Component 1.2 GCF financing: The proposal lists component 1.2 GCF financing as 24,657,000, but the summation of provided breakdown lines does not support this total.",
+  "members": [
+   "Component 1.2 GCF Financing: The proposal lists GCF financing for Component 1.2 as 24,657,000, but the component sub-items total 9,621,325.",
+   "Component 1.2 GCF financing: The proposal lists component 1.2 GCF financing as 24,657,000, but the summation of provided breakdown lines does not support this total."
+  ],
+  "key": "K045"
+ },
+ {
+  "project": "FP183",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Cumulative disbursement: The annual report claims 0 EUR in cumulative disbursements, which contradicts the fund's transaction records showing a disbursement of 4,892,976.64 USD.",
+  "members": [
+   "Cumulative disbursement: The annual report claims 0 EUR in cumulative disbursements, which contradicts the fund's transaction records showing a disbursement of 4,892,976.64 USD.",
+   "GCF cumulative disbursement: The annual performance report indicates 0 EUR disbursed, which contradicts the IATI record IATI-006 showing a disbursement of 4,892,976.64 USD.",
+   "Cumulative disbursement: The cumulative disbursement of 4,892,976.64 USD in the records conflicts with the annual report which states 0 EUR disbursed.",
+   "Cumulative disbursement: The annual performance report claims 0 EUR in cumulative disbursements, which contradicts the fund's transaction records showing a disbursement of 4,892,976.64 USD.",
+   "Cumulative disbursement: The annual report states cumulative disbursements are 0, which contradicts the fund's transaction records showing a disbursement of 4,892,976.64 USD."
+  ],
+  "key": "K046"
+ },
+ {
+  "project": "FP183",
+  "origin": "judge",
+  "n_members": 7,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "GCF committed amount: The GCF committed amount in the proposal (104,415,189 EUR) and annual report (90,677,797 EUR) significantly differs from the fund's records (119,012,432.27 USD).",
+  "members": [
+   "GCF funding total: The funding proposal states a total GCF amount of 104,415,189 EUR, while the fund's records reflect a commitment of 119,012,432.27 USD.",
+   "Annual Performance Report: The annual report lists a total GCF committed amount of 90,677,797 EUR, which is inconsistent with the 104,415,189 EUR total stated in the funding proposal.",
+   "GCF committed amount: The GCF funding commitment of 119,012,432.27 USD in the IATI records significantly differs from the 104,415,189 EUR stated in the funding proposal.",
+   "Total GCF commitment (APR): The total GCF committed amount in the annual performance report (90,677,797 EUR) does not match the total GCF commitment of 104,415,189 EUR stated in the funding proposal.",
+   "GCF committed amount: The GCF commitment of 119,012,432.27 USD in the records conflicts with the proposal total of 104,415,189 EUR and the annual report total of 90,677,797 EUR.",
+   "GCF committed amount: The GCF funding proposal lists a total of 104,415,189 EUR, while the transaction records indicate a total commitment of 119,012,432.27 USD, and the annual report lists a total of 90,677,797 EUR, with no reconciliation provided for these discrepancies.",
+   "GCF committed amount: The GCF committed amount in the proposal (104,415,189 EUR) and annual report (90,677,797 EUR) significantly differs from the fund's records (119,012,432.27 USD)."
+  ],
+  "key": "K047"
+ },
+ {
+  "project": "FP183",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Proposal Total Financing: The proposal states total financing of 177,481,678 EUR, but the sum of GCF (104,415,189 EUR) and Co-financing (73,971,000 EUR) is 178,386,189 EUR.",
+  "members": [
+   "Proposal Total Financing: The proposal states total financing of 177,481,678 EUR, but the sum of GCF (104,415,189 EUR) and Co-financing (73,971,000 EUR) is 178,386,189 EUR."
+  ],
+  "key": "K048"
+ },
+ {
+  "project": "FP183",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Total financing: The proposal states total financing of 177,481,678 EUR, but the sum of the provided components and co-financing figures does not consistently match this total across the proposal tables.",
+  "members": [
+   "Total financing: The proposal states total financing of 177,481,678 EUR, but the sum of the provided components and co-financing figures does not consistently match this total across the proposal tables."
+  ],
+  "key": "K049"
+ },
+ {
+  "project": "FP236",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Annual Performance Report Table E.1: The cumulative expenditure reported in the annual report (2.24 million USD) is inconsistent with the sum of the individual cumulative expenditure lines (2.24 million USD vs 1.1 + 0.99 + 0.15 = 2.24 million USD, however, individual line items in the table for cumulative expenditure are inconsistent with standard reporting expectations for a 2026 as-of date).",
+  "members": [
+   "Annual Performance Report Table E.1: The cumulative expenditure reported in the annual report (2.24 million USD) is inconsistent with the sum of the individual cumulative expenditure lines (2.24 million USD vs 1.1 + 0.99 + 0.15 = 2.24 million USD, however, individual line items in the table for cumulative expenditure are inconsistent with standard reporting expectations for a 2026 as-of date)."
+  ],
+  "key": "K050"
+ },
+ {
+  "project": "FP236",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Co-financing total: The annual report lists total co-financing as 51.45 million USD, which differs from the proposal and reference figures of 51.453 million USD.",
+  "members": [
+   "Co-financing committed amount: The Annual Performance Report reports co-financing as 51.45 million USD, which contradicts the reference figure of 51,453,000 USD (a discrepancy of 3,000 USD).",
+   "Co-financing: The annual performance report lists co-financing cumulative expenditure as 26.7 million USD, which contradicts the official commitment records of 51.453 million USD.",
+   "Co-financing committed amount: The annual performance report lists co-financing as 51.45 million USD, which conflicts with the reference figure of 51,453,000 USD.",
+   "Co-financing total: The annual report lists total co-financing as 51.45 million USD, which differs from the proposal and reference figures of 51.453 million USD.",
+   "Annual Performance Report Table E.2: The cumulative expenditure reported in Table E.2 (26.7 million USD) does not match the sum of the individual components (25.07 + 1.63 = 26.7 million USD, but total co-financing committed 51.45 million USD is presented with inconsistent rounding compared to the proposal's 51.453 million USD)."
+  ],
+  "key": "K051"
+ },
+ {
+  "project": "FP236",
+  "origin": "judge",
+  "n_members": 3,
+  "n_runs": 3,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "IFAD Co-financing commitment: The Annual Performance Report states IFAD co-financing is 38.45 million USD, whereas the Proposal and IATI records specify 38,453,000 USD.",
+  "members": [
+   "IFAD Co-financing commitment: The Annual Performance Report states IFAD co-financing is 38.45 million USD, whereas the Proposal and IATI records specify 38,453,000 USD.",
+   "IFAD Co-financing commitment: The annual performance report lists IFAD loan co-financing as 38.45 million USD, which conflicts with the proposal and reference figure of 38,453,000 USD.",
+   "Co-financing committed amount: The annual report lists IFAD co-financing as 38.45 million USD, which conflicts with the proposal and reference figures of 38.453 million USD."
+  ],
+  "key": "K052"
+ },
+ {
+  "project": "FP236",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "IFAD Co-financing: The annual performance report lists IFAD cumulative expenditure at 25.07 million USD, while the proposal commitment for IFAD is 38.453 million USD.",
+  "members": [
+   "IFAD Co-financing: The annual performance report lists IFAD cumulative expenditure at 25.07 million USD, while the proposal commitment for IFAD is 38.453 million USD."
+  ],
+  "key": "K053"
+ },
+ {
+  "project": "FP236",
+  "origin": "judge",
+  "n_members": 4,
+  "n_runs": 4,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Mexico co-financing committed amount: The annual report lists Mexico co-financing as 13 million USD, while the proposal and reference figures total 13 million USD (7+6), but the annual report misrepresents the individual components as 13 million total rather than the documented 7 and 6 million respectively.",
+  "members": [
+   "Mexico Grants co-financing: The Annual Performance Report states Mexico grants co-financing is 13 million USD, while the Proposal specifies 13 million USD (7 for CONAFOR and 6 for CONAGUA), but the IATI records for these commitments aggregate to 13,000,000 USD, yet the table in the report fails to explicitly break them down as per the proposal.",
+   "Mexico Grants Co-financing: The annual performance report lists Mexico grants co-financing as 13 million USD, while the proposal documentation lists the sum of GoM/CONAFOR and GoM/CONAGUA as 13 million USD (7+6) but labels it as 13 million in the report table.",
+   "Mexico Co-financing commitment: The annual performance report lists Mexico grant co-financing as 13 million USD, which conflicts with the proposal figures of 7 million USD and 6 million USD (total 13,000,000 USD).",
+   "Mexico co-financing committed amount: The annual report lists Mexico co-financing as 13 million USD, while the proposal and reference figures total 13 million USD (7+6), but the annual report misrepresents the individual components as 13 million total rather than the documented 7 and 6 million respectively."
+  ],
+  "key": "K054"
+ },
+ {
+  "project": "FP248",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Co-financier list: Annual Performance Report lists co-financiers (SNAL, MoFor) that do not appear in the original proposal's financing table.",
+  "members": [
+   "Co-financier list: Annual Performance Report lists co-financiers (SNAL, MoFor) that do not appear in the original proposal's financing table."
+  ],
+  "key": "K055"
+ },
+ {
+  "project": "FP248",
+  "origin": "judge",
+  "n_members": 7,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Co-financing breakdown: The Annual Performance Report co-financing breakdown (Total 33,810,000 EUR) is inconsistent with the proposal's co-financing table (Total 40,710,000 EUR).",
+  "members": [
+   "Co-financing committed amount: Proposal states 40,710,000 EUR, while IATI records (IATI-001, 002, 003) total 15,843,220 USD.",
+   "Co-financing committed amount: The funding proposal states total co-financing of 40,710,000 EUR, whereas the fund's transaction records (IATI-001, 002, 003) total 15,843,220 USD.",
+   "Co-financing list: The annual performance report co-financing total (33,810,000 EUR) and individual entries (e.g., BMZ, SNAL, MoFor) do not match the institutional list or totals provided in the funding proposal.",
+   "Co-financing commitment: The proposal lists total co-financing of 40,710,000 EUR, whereas the fund's records (IATI-001, IATI-002, IATI-003) show total commitments of 15,843,220 USD.",
+   "Co-financing breakdown: The Annual Performance Report co-financing breakdown (Total 33,810,000 EUR) is inconsistent with the proposal's co-financing table (Total 40,710,000 EUR).",
+   "Co-financing committed amount: Proposal states 40,710,000 EUR and Annual Report states 33,810,000 EUR, while fund transaction records show 15,843,220 USD.",
+   "Co-financing commitment: The proposal states total co-financing of 40,710,000 EUR, whereas fund records reflect a commitment of 15,843,220 USD."
+  ],
+  "key": "K056"
+ },
+ {
+  "project": "FP248",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Co-financing details: The annual report lists co-financiers and amounts (e.g., BMZ 3M EUR, MoFor 25.8M EUR) that do not align with the original proposal's breakdown or the total co-financing ledger.",
+  "members": [
+   "Co-financing details: The annual report lists co-financiers and amounts (e.g., BMZ 3M EUR, MoFor 25.8M EUR) that do not align with the original proposal's breakdown or the total co-financing ledger."
+  ],
+  "key": "K057"
+ },
+ {
+  "project": "FP248",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Cumulative disbursement: The annual report claims 0 EUR disbursed for GCF financing, which contradicts the fund's ledger (IATI-004) showing a disbursement of 7,862,864.35 USD.",
+  "members": [
+   "Cumulative disbursement: Annual Performance Report claims 0 EUR disbursed, while IATI record IATI-004 reports 7,862,864.35 USD disbursed.",
+   "Cumulative disbursement: The annual performance report claims 0 EUR disbursed for GCF financing, which directly contradicts the fund's transaction record IATI-004 showing a disbursement of 7,862,864.35 USD.",
+   "Cumulative disbursement: The annual report claims 0 EUR disbursed for GCF financing, which contradicts the fund's ledger (IATI-004) showing a disbursement of 7,862,864.35 USD.",
+   "Cumulative disbursement: Annual report claims 0 EUR disbursed, while fund transaction records show 7,862,864.35 USD disbursed.",
+   "Cumulative disbursement: The annual report claims 0 EUR in cumulative disbursements for GCF grants, contradicting the fund's transaction record showing 7,862,864.35 USD disbursed."
+  ],
+  "key": "K058"
+ },
+ {
+  "project": "FP248",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "GCF financing commitment: The proposal states a GCF commitment of 59,484,751 EUR, while the fund's records reflect a commitment of 67,800,719.19 USD.",
+  "members": [
+   "GCF committed amount: Proposal states 59,484,751 EUR, while IATI record IATI-005 reports 67,800,719.19 USD with no provided conversion explanation.",
+   "GCF committed amount: The funding proposal states a GCF commitment of 59,484,751 EUR, while the fund's transaction record IATI-005 records 67,800,719.19 USD, and these figures do not reconcile with the provided currency.",
+   "GCF financing commitment: The project proposal states a GCF commitment of 59,484,751 EUR, while the fund's transaction record (IATI-005) records 67,800,719.19 USD, and the currency and amount differ significantly.",
+   "GCF committed amount: Proposal and annual report state 59,484,751 EUR, while fund transaction records show 67,800,719.19 USD.",
+   "GCF financing commitment: The proposal states a GCF commitment of 59,484,751 EUR, while the fund's records reflect a commitment of 67,800,719.19 USD."
+  ],
+  "key": "K059"
+ },
+ {
+  "project": "SAP005",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Annual Performance Report E.1: The cumulative expenditure reported in the annual report (6,420,755.3 USD) does not align with the sum of disbursements recorded in the IATI feed (9,000,000 USD).",
+  "members": [
+   "Annual Performance Report E.1: The cumulative expenditure reported in the annual report (6,420,755.3 USD) does not align with the sum of disbursements recorded in the IATI feed (9,000,000 USD)."
+  ],
+  "key": "K060"
+ },
+ {
+  "project": "SAP005",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Annual Performance Report E.2: The co-financing instrument reported as 'In-kind' in the annual report contradicts the 'Grant' instrument specified in the funding proposal.",
+  "members": [
+   "Annual Performance Report E.2: The co-financing instrument reported as 'In-kind' in the annual report contradicts the 'Grant' instrument specified in the funding proposal."
+  ],
+  "key": "K061"
+ },
+ {
+  "project": "SAP005",
+  "origin": "judge",
+  "n_members": 8,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Annual Performance Report E.2: The cumulative co-financing expenditure of 648,408 USD is inconsistent with the total committed co-financing figure of 1,000,000 USD and the reported disbursed amount of 648,408 USD.",
+  "members": [
+   "Co-financing: The Annual Performance Report (E.2) reports a total co-financing commitment of only 351,592 USD, which contradicts the proposal and the IATI record (IATI-001) of 1,000,000 USD.",
+   "Co-financing: The Annual Performance Report (E.2) reports total co-financing disbursement of 648,408 USD, which is inconsistent with the total committed amount of 1,000,000 USD.",
+   "Co-financing: The Annual Performance Report states a co-financing commitment of 351,592 USD and disbursement of 648,408 USD, which conflicts with the project proposal and IATI record IATI-001 stating a total commitment of 1,000,000 USD.",
+   "Annual Performance Report E.2: The committed co-financing amount of 351,592 USD reported in the annual report conflicts with the 1,000,000 USD committed in the proposal and the IATI commitment record IATI-001.",
+   "Annual Performance Report E.2: The cumulative co-financing expenditure of 648,408 USD is inconsistent with the total committed co-financing figure of 1,000,000 USD and the reported disbursed amount of 648,408 USD.",
+   "Annual Performance Report E.2: The co-financing committed amount (351,592 USD) and disbursed amount (648,408 USD) in the annual report do not match the total co-financing commitment of 1,000,000 USD documented in the proposal and transaction records.",
+   "Co-financing: The Annual Performance Report E.2 states a total co-financing commitment of 1,000,000 USD (351,592 committed + 648,408 disbursed), but the instrument type is listed as 'In-kind' while the proposal listed it as 'Grant'.",
+   "Co-financing: The Annual Performance Report E.2 reports cumulative co-financing expenditure of 648,408 USD, which contradicts the proposal's premise of a 1,000,000 USD grant commitment."
+  ],
+  "key": "K062"
+ },
+ {
+  "project": "SAP005",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Co-financing: The proposal lists co-financing as a 'Grant' from the Government of Benin, whereas the Annual Performance Report classifies it as 'In-kind'.",
+  "members": [
+   "Co-financing: The proposal lists co-financing as a 'Grant' from the Government of Benin, whereas the Annual Performance Report classifies it as 'In-kind'."
+  ],
+  "key": "K063"
+ },
+ {
+  "project": "SAP005",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 4,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Cumulative Disbursement: The Annual Performance Report claims a cumulative expenditure of 6,420,755.35 USD, while the sum of the IATI disbursement records (IATI-002 through IATI-006) totals 9,000,000 USD.",
+  "members": [
+   "Cumulative Disbursement: The transaction records show total disbursements of 9,000,000 USD, whereas the Annual Performance Report (E.1) reports a cumulative expenditure of only 6,420,755.35 USD.",
+   "Cumulative Disbursement: The Annual Performance Report claims a cumulative expenditure of 6,420,755.35 USD, while the sum of the IATI disbursement records (IATI-002 through IATI-006) totals 9,000,000 USD.",
+   "Annual Performance Report E.1: The cumulative expenditure of 6,420,755.35 USD in the annual report does not align with the cumulative GCF disbursements recorded in the transaction ledger (9,000,000 USD).",
+   "IATI-002 to IATI-006: The sum of disbursements in the transaction records (1,065,605 + 3,039,038 + 2,091,177 + 1,992,037 + 812,143) equals 9,000,000 USD, which implies the project has been fully disbursed, contradicting the ongoing nature of the award period.",
+   "IATI-002, IATI-003, IATI-004, IATI-005, IATI-006: The sum of disbursements in transaction records (1065605 + 3039038 + 2091177 + 1992037 + 812143) equals 9,000,000 USD, but the Annual Performance Report E.1 reports a cumulative expenditure of only 6,420,755.35 USD."
+  ],
+  "key": "K064"
+ },
+ {
+  "project": "SAP005",
+  "origin": "judge",
+  "n_members": 2,
+  "n_runs": 2,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "GCF financing: The Annual Performance Report (E.1) lists a 'Committed Amount' of 2,332,576.85 USD, which contradicts the official award commitment of 9,000,000 USD.",
+  "members": [
+   "GCF financing: The Annual Performance Report (E.1) lists a 'Committed Amount' of 2,332,576.85 USD, which contradicts the official award commitment of 9,000,000 USD.",
+   "Annual Performance Report E.1: The committed GCF amount reported in the annual report (2,332,576.85 USD) is inconsistent with the total award amount of 9,000,000 USD."
+  ],
+  "key": "K065"
+ },
+ {
+  "project": "SAP043",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Co-financing: The Annual Performance Report lists ANIDA co-financing disbursements as 0 EUR, which is inconsistent with the project's own financial documentation.",
+  "members": [
+   "Co-financing: The Annual Performance Report lists ANIDA co-financing disbursements as 0 EUR, which is inconsistent with the project's own financial documentation."
+  ],
+  "key": "K066"
+ },
+ {
+  "project": "SAP043",
+  "origin": "judge",
+  "n_members": 1,
+  "n_runs": 1,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Co-financing: The proposal lists 311,652 EUR in co-financing, while the annual performance report lists only 554 EUR in cumulative expenditure for co-financing.",
+  "members": [
+   "Co-financing: The proposal lists 311,652 EUR in co-financing, while the annual performance report lists only 554 EUR in cumulative expenditure for co-financing."
+  ],
+  "key": "K067"
+ },
+ {
+  "project": "SAP043",
+  "origin": "judge",
+  "n_members": 5,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "Disbursement: The fund records show a cumulative disbursement of 6,267,387.55 USD, whereas the annual performance report lists a disbursement of 5,418,803 EUR, with no reconciliation provided.",
+  "members": [
+   "Disbursement: The fund records show a cumulative disbursement of 6,267,387.55 USD, whereas the annual performance report lists a disbursement of 5,418,803 EUR, with no reconciliation provided.",
+   "Cumulative disbursement: The annual report states a cumulative disbursement of 5,418,803 EUR, which conflicts with the fund's transaction records showing a total disbursement of 6,267,387.55 USD.",
+   "Cumulative disbursement: The Annual Performance Report reports a cumulative disbursement of 5,418,803 EUR, which contradicts the fund's ledger record of 6,267,387.55 USD.",
+   "Cumulative disbursement: The Annual Performance Report reports cumulative disbursements of 5,418,803 EUR, which conflicts with the fund's transaction records showing cumulative disbursements of 6,267,387.55 USD.",
+   "Cumulative disbursement: The Annual Performance Report reports a cumulative disbursement of 5,418,803 EUR, which conflicts with the fund's transaction record showing a cumulative disbursement of 6,267,387.55 USD."
+  ],
+  "key": "K068"
+ },
+ {
+  "project": "SAP043",
+  "origin": "judge",
+  "n_members": 8,
+  "n_runs": 5,
+  "category": "NARRATIVE_MISMATCH",
+  "text": "GCF funding amount: The funding proposal states a total GCF amount of 9,050,089 EUR, whereas the fund's transaction records show an award of 10,315,291.44 USD, indicating a significant discrepancy in currency and total value.",
+  "members": [
+   "GCF funding: The funding proposal states a GCF grant of 9,050,089 EUR, while the fund's records reflect a commitment of 10,315,291.44 USD, indicating a significant discrepancy in currency and total value.",
+   "GCF funding amount: The project documents state a total GCF funding of 9,050,089 EUR, while the fund's records reflect a commitment of 10,315,291.44 USD, indicating a significant discrepancy in the primary funding amount.",
+   "GCF funding amount: The funding proposal states a total GCF amount of 9,050,089 EUR, whereas the fund's transaction records show an award of 10,315,291.44 USD, indicating a significant discrepancy in currency and total value.",
+   "Committed Amount: The Annual Performance Report lists the committed amount as 0 EUR, which directly contradicts the fund's record of 10,315,291.44 USD.",
+   "GCF funding amount: The project proposal states GCF funding of 9,050,089 EUR, while the fund's records reflect a commitment of 10,315,291.44 USD, indicating a significant discrepancy in the approved funding amount.",
+   "Commitment amount: The Annual Performance Report incorrectly states the committed amount as 0 EUR, contradicting the fund's records of 10,315,291.44 USD.",
+   "GCF funding amount: The project proposal states a GCF funding amount of 9,050,089 EUR, whereas the fund's transaction records show a commitment of 10,315,291.44 USD.",
+   "Committed amount: The Annual Performance Report lists the committed amount as 0 EUR, which contradicts the fund's records of a 10,315,291.44 USD commitment."
+  ],
+  "key": "K069"
+ }
+]
