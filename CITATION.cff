@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "MUSE Aegis kernel"
+type: software
+authors:
+  - family-names: Sumalinog
+    given-names: Abraham
+    affiliation: Sumalinog Institute
+license: AGPL-3.0-or-later
+repository-code: "https://github.com/Sumalinog-Institute/muse-aegis-kernel"
+abstract: "Reference implementation, specification, test vectors and Phase 5b evaluation materials for MUSE Aegis."

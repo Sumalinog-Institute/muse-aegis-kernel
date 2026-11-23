@@ -1,0 +1,11 @@
+{
+  "title": "MUSE Aegis kernel: bounded evaluation kernel and evidence-linked audit workflow for AI-assisted compliance screening",
+  "upload_type": "software",
+  "description": "Reference implementation, specification, test vectors and Phase 5b evaluation materials (frozen sample, run results, author labels and report) for MUSE Aegis.",
+  "creators": [
+    { "name": "Sumalinog, Abraham", "affiliation": "Sumalinog Institute" }
+  ],
+  "license": "AGPL-3.0-or-later",
+  "access_right": "open",
+  "keywords": ["AI compliance screening", "audit log", "evidence verification", "Green Climate Fund", "IATI"]
+}
