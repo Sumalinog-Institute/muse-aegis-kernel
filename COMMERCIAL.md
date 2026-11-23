@@ -12,7 +12,7 @@ code in a closed product or run a modified version as a service without
 publishing their changes. It is a separate written agreement with the
 copyright holder, Abraham Sumalinog (Sumalinog Institute).
 
-Contact: [contact address to be added before the repository is made public]
+Contact: licensing@sumalinoginstitute.com
 
 This file describes how to obtain a commercial licence. It is not itself a
 licence, and it does not change the terms of the AGPL.
