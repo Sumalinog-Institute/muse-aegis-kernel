@@ -10,4 +10,12 @@ export const TRUSTED_KEYS: Record<string, JsonWebKey> = {
     x: "4LRmQ8jxhaQW1WP0qkJlqZ_VhW2b9M283rtvG7Xrb9A",
     y: "7mIIilJjuqLtbEOU9aY7jPInI_j-M8oj-bxHwDHOmPQ",
   },
+  "aegis-audit-2026-11": {
+    crv: "P-256",
+    ext: true,
+    key_ops: ["verify"],
+    kty: "EC",
+    x: "cRzEWfIPxa95IHNkfkiZLmAZv3k2p27rBM9FNgmgp_w",
+    y: "gum1_PVDa18ZYQhoSSJJQBB6Dx2M2USYd5nC1IMQD1g",
+  },
 };
