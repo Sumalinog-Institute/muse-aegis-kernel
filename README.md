@@ -67,13 +67,13 @@ W_GROUND 0.40, W4 0.20, W5 0.15, W6 0.30, THETA_DOC 0.25, THETA_STAB 0.20, N_MIN
 | 2 | Signed, hash-chained audit log | Done (v4.2.0-spec) |
 | 3 | Document screening | Done (v4.3.0-spec) |
 | 4 | Reviewer workflow and override screens | Mostly done: review queue with saved drafts, override rules and write route (v4.5.0-spec, type fix in v4.5.1-spec), and override screens, with one live test on synthetic data. Second-approver step, rejections in the signed log, and the project and document references are specified and implemented in the kernel from v4.6.0-spec; the application screens for them are the open part |
-| 5 | Comparison against a plain AI judge | Done on synthetic data, 112 runs (v4.4.0-spec); a version on real documents is planned |
-| 6 | Hardening and deployment | Not done |
-| 7 | Pilot with independently labeled real cases | Not done |
+| 5 | Comparison against a plain AI judge | Done on synthetic data, 112 runs (v4.4.0-spec). Run on 15 randomly drawn real GCF projects (Phase 5b, results in `spec/phase5b/`): the plain judge's issues were 84% supported on the author's labels; 8 of the 15 projects ended as incomplete input in every pipeline run, mainly because table quotes failed the word-for-word check. Author labels only |
+| 6 | Hardening and deployment | Mostly done: the application is published with restricted access, a signed log with key rotation, backups, security headers and a content security policy, public terms, privacy, guide and known-limits pages. Fixes for the incomplete-input problem (table reading, text normalisation, section coverage, unit guard) are planned as v1.1 |
+| 7 | Pilot with independently labeled real cases | Planned: two independent reviewers relabel the Phase 5b issues blind to the method, then a fresh held-out sample after v1.1 |
 
 ## Not done yet
 
-The real-document version of the Phase 5 comparison, hardening and deployment (Phase 6), and a pilot with independently labeled real cases (Phase 7). Nothing here is validated on real cases.
+Independent labelling of the real-document results (Phase 7), the v1.1 reliability fixes with a fresh held-out test, and reading real documents directly in the application. Nothing here is validated by independent reviewers yet.
 
 ## Licence
 
