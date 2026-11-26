@@ -169,6 +169,24 @@ export function locateQuote(doc: string, quote: string): { start: number; end: n
   return null;
 }
 
+/** v1.1 (relaxed mode only): the section context that the table reader puts in front of a repaired row, as in
+ *  "[E.1. GCF financing > (b) Requested amount] Morocco Grants ...". Returns, for every such line, where it lies in the
+ *  normalized document and its context text. The context comes from the document's own headings and row labels. */
+function rowContexts(documentText: string, doc: string): { start: number; end: number; context: string }[] {
+  const out: { start: number; end: number; context: string }[] = [];
+  let from = 0;
+  for (const raw of documentText.split("\n")) {
+    const line = raw.normalize("NFKC").replace(/\s+/g, " ").trim().toLowerCase();
+    if (line === "") continue;
+    const at = doc.indexOf(line, from);
+    if (at < 0) continue;
+    from = at + line.length;
+    const m = /^\[([^\]]{1,160})\]/.exec(line);
+    if (m) out.push({ start: at, end: at + line.length, context: m[1] as string });
+  }
+  return out;
+}
+
 /** Keeps only claims that can be traced to the document. `proposed` is untrusted input (for example model output). */
 export function anchorClaims(
   documentText: string,
@@ -187,6 +205,7 @@ export function anchorClaims(
     if (samples.length < 8 && typeof qv === "string") samples.push({ index, reason, quote: qv.slice(0, 160) });
   };
   const doc = documentText.normalize("NFKC").replace(/\s+/g, " ").toLowerCase();
+  const contexts = relaxedOn ? rowContexts(documentText, doc) : [];
   proposed.forEach((raw, index) => {
     if (claims.length >= LIMITS.MAX_CLAIMS) {
       rejected.push({ index, reason: "TOO_MANY_CLAIMS" });
@@ -234,9 +253,17 @@ export function anchorClaims(
     }
     // The subject must be named in the quote, so a label cannot be attached to a figure that belongs to someone else.
     const sub = subject.normalize("NFKC").replace(/\s+/g, " ").toLowerCase();
+    let inContext = false;
+    let ctx = "";
     if (!q.includes(sub) || !span.includes(sub)) {
-      reject(index, "SUBJECT_NOT_IN_QUOTE", raw);
-      return;
+      // v1.1: a row that the table reader prefixed with its section heading and row label may take its subject from that
+      // context, because the model often leaves the bracketed prefix out of its quote. The claim then shows the prefix.
+      const row = relaxedOn ? contexts.find((c) => c.start <= loc.start && loc.start < c.end) : undefined;
+      if (row && sub !== "" && row.context.includes(sub)) { inContext = true; ctx = row.context; }
+      else {
+        reject(index, "SUBJECT_NOT_IN_QUOTE", raw);
+        return;
+      }
     }
     if (loc.mode === "ordered") relaxed.push(index);
     // A claim may pick one of the preferred ledger labels by number. The labels are then used exactly as the ledger writes them, so
@@ -246,7 +273,7 @@ export function anchorClaims(
     const pick = r["label_id"];
     if (labels && typeof pick === "number" && Number.isInteger(pick) && pick >= 0 && pick < labels.length) {
       const lab = labels[pick] as { subject: string; attribute: string; period: string };
-      if (span.includes(normalizeText(lab.subject))) useLabel = pick;
+      if (span.includes(normalizeText(lab.subject)) || (inContext && ctx.includes(normalizeText(lab.subject)))) useLabel = pick;
     }
     const lab = useLabel === null ? null : (labels as readonly { subject: string; attribute: string; period: string }[])[useLabel];
     const fs = lab ? lab.subject : subject, fa = lab ? lab.attribute : attribute, fp = lab ? lab.period : period;
@@ -254,7 +281,7 @@ export function anchorClaims(
       subject: fs, attribute: fa, period: fp,
       value: parseValue(valueText),
       unit: normalizeText(unitRaw),
-      quote: loc.mode === "ordered" ? span : quote, // relaxed match: the evidence is the document's own text
+      quote: inContext ? `[${ctx}] ${span}` : loc.mode === "ordered" ? span : quote, // relaxed match: the evidence is the document's own text
       key: claimKey(fs, fa, fp),
       at: loc.start + span.indexOf(v),
       label: useLabel,
