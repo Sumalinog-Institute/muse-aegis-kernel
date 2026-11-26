@@ -238,7 +238,7 @@ export async function analyzeWithStability(
 
   return {
     ok: true,
-    extractor_version: `gemini:${p.model}:prompt-v${PROMPT_VERSION}:stab-k${k}-t${temperature}`,
+    extractor_version: `gemini:${p.model}:prompt-v${PROMPT_VERSION}:stab-k${k}-t${temperature}${p.relaxedAnchor === true ? ":relaxed-anchor" : ""}`,
     k,
     temperature,
     valid_runs: itemRuns.length,
