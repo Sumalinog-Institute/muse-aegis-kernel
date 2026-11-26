@@ -1,0 +1,119 @@
+{
+ "run1_relaxed_match_only": {
+  "bundle": "phase5b-stage2-map-v2-incomplete8-v1.1",
+  "bundle_sha256": "fdc8c6b6e393cc10d324626f0ae261347c9ae2a8d1aafb4f7b05adcdfe9b2508",
+  "runs": 40,
+  "decisions": {
+   "INCOMPLETE_INPUT_MANUAL_REVIEW": 40
+  },
+  "by_project": {
+   "FP022": {
+    "INCOMPLETE_INPUT_MANUAL_REVIEW": 5
+   },
+   "FP046": {
+    "INCOMPLETE_INPUT_MANUAL_REVIEW": 5
+   },
+   "FP069": {
+    "INCOMPLETE_INPUT_MANUAL_REVIEW": 5
+   },
+   "FP095": {
+    "INCOMPLETE_INPUT_MANUAL_REVIEW": 5
+   },
+   "FP116": {
+    "INCOMPLETE_INPUT_MANUAL_REVIEW": 5
+   },
+   "FP125": {
+    "INCOMPLETE_INPUT_MANUAL_REVIEW": 5
+   },
+   "FP179": {
+    "INCOMPLETE_INPUT_MANUAL_REVIEW": 5
+   },
+   "FP183": {
+    "INCOMPLETE_INPUT_MANUAL_REVIEW": 5
+   }
+  }
+ },
+ "run2_table_repair_v1": {
+  "bundle": "phase5b-stage2-map-v2-incomplete8-repaired-v1.1",
+  "bundle_sha256": "810a1b7724ca2e27fcebcf6825a7080ddb6a2d1dcd67bab47c1f611ad82ec22d",
+  "runs": 40,
+  "decisions": {
+   "INCOMPLETE_INPUT_MANUAL_REVIEW": 30,
+   "SCREENING_PASS_PENDING_STANDARD_CONTROLS": 6,
+   "FLAG_FOR_REVIEW": 4
+  },
+  "by_project": {
+   "FP022": {
+    "INCOMPLETE_INPUT_MANUAL_REVIEW": 4,
+    "SCREENING_PASS_PENDING_STANDARD_CONTROLS": 1
+   },
+   "FP046": {
+    "INCOMPLETE_INPUT_MANUAL_REVIEW": 5
+   },
+   "FP069": {
+    "INCOMPLETE_INPUT_MANUAL_REVIEW": 5
+   },
+   "FP095": {
+    "INCOMPLETE_INPUT_MANUAL_REVIEW": 5
+   },
+   "FP116": {
+    "FLAG_FOR_REVIEW": 1,
+    "SCREENING_PASS_PENDING_STANDARD_CONTROLS": 4
+   },
+   "FP125": {
+    "INCOMPLETE_INPUT_MANUAL_REVIEW": 5
+   },
+   "FP179": {
+    "FLAG_FOR_REVIEW": 3,
+    "SCREENING_PASS_PENDING_STANDARD_CONTROLS": 1,
+    "INCOMPLETE_INPUT_MANUAL_REVIEW": 1
+   },
+   "FP183": {
+    "INCOMPLETE_INPUT_MANUAL_REVIEW": 5
+   }
+  }
+ },
+ "run3_table_repair_v2_headings": {
+  "bundle": "phase5b-stage2-map-v2-incomplete8-repaired2-v1.1",
+  "bundle_sha256": "c1ca42eb215ad2ca731f2fd42db5ab94b5ddb1a2130f8e0ac9fea93b6ea16cd0",
+  "runs": 40,
+  "decisions": {
+   "FLAG_FOR_REVIEW": 21,
+   "SCREENING_PASS_PENDING_STANDARD_CONTROLS": 9,
+   "INCOMPLETE_INPUT_MANUAL_REVIEW": 10
+  },
+  "by_project": {
+   "FP022": {
+    "FLAG_FOR_REVIEW": 5
+   },
+   "FP046": {
+    "SCREENING_PASS_PENDING_STANDARD_CONTROLS": 4,
+    "FLAG_FOR_REVIEW": 1
+   },
+   "FP069": {
+    "FLAG_FOR_REVIEW": 2,
+    "SCREENING_PASS_PENDING_STANDARD_CONTROLS": 2,
+    "INCOMPLETE_INPUT_MANUAL_REVIEW": 1
+   },
+   "FP095": {
+    "INCOMPLETE_INPUT_MANUAL_REVIEW": 5
+   },
+   "FP116": {
+    "SCREENING_PASS_PENDING_STANDARD_CONTROLS": 1,
+    "FLAG_FOR_REVIEW": 4
+   },
+   "FP125": {
+    "FLAG_FOR_REVIEW": 4,
+    "SCREENING_PASS_PENDING_STANDARD_CONTROLS": 1
+   },
+   "FP179": {
+    "FLAG_FOR_REVIEW": 4,
+    "SCREENING_PASS_PENDING_STANDARD_CONTROLS": 1
+   },
+   "FP183": {
+    "FLAG_FOR_REVIEW": 1,
+    "INCOMPLETE_INPUT_MANUAL_REVIEW": 4
+   }
+  }
+ }
+}
