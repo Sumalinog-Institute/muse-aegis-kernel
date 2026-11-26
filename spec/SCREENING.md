@@ -25,6 +25,7 @@ Top level: `doc_hash` (SHA-256 of the document text), `input` (the profile given
 - `features`: the full results for x4 (values, undocumented and pending records), x5 (late and missing reports) and the watch-list screening (hits).
 - `claims`: every consensus claim with its status, exact quote and matching ledger fact ids; x2 with its counts; ledger flags.
 - `stability`: x1 with its mode and parts, the model, k, temperature, token usage, and for each run what it found (position, status, wording and label of each figure, plus the reasons any proposals were rejected), so a disagreement between runs can be traced.
+- `not_checked` (v1.1; absent in older records): the "could not check" report, derived only from what the screening already holds. It lists the figures that could not be compared with the ledger, the ledger entries that no figure was compared with, how many model quotes were refused because they could not be traced to the document (by reason, with up to 8 samples), the claim count against the number required for this document length, failed runs, and profile parts that could not be computed, and gives each as a plain-language sentence in `lines`. Long lists are cut at 25 items and the real totals are always given. An empty `lines` means nothing was left unchecked by these rules; it does not mean the document is correct.
 - `review`: decision (APPROVED), reviewer, review time, note, the draft's creation time and its MAC.
 
 Records of this kind may be up to 200,000 characters; older plain records are limited to 20,000.

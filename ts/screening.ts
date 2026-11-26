@@ -23,6 +23,8 @@ import type { StructuredFeatures } from "./features.ts";
 import { analyzeWithStability } from "./stability.ts";
 import type { Embed, RunSummary, StabilityResult } from "./stability.ts";
 import type { ExtractError, GeminiDeps } from "./extract.ts";
+import { buildNotCheckedReport } from "./notchecked.ts";
+import type { NotCheckedReport } from "./notchecked.ts";
 import type { Ledger, LedgerFact, X2Result } from "./claims.ts";
 
 export const DRAFT_FORMAT_VERSION = 2;
@@ -59,6 +61,7 @@ export interface Draft {
     features: StructuredFeatures["details"];
     claims: { items: ClaimDetail[]; x2: X2Result; ledger_flags: string[] };
     stability: { result: StabilityResult; model: string; k: number; temperature: number; valid_runs: number; runs: RunSummary[]; usage: { prompt_tokens: number; output_tokens: number } };
+    not_checked?: NotCheckedReport; // v1.1; absent in drafts and records made before it
   };
 }
 
@@ -206,6 +209,10 @@ export async function prepareScreening(
         x2: analysis.consensus.x2,
         ledger_flags: analysis.consensus.ledger_flags,
       },
+      not_checked: buildNotCheckedReport({
+        ledger: claimsLedger, items: analysis.consensus.items, x2: analysis.consensus.x2, runs: analysis.runs, k: analysis.k,
+        documentChars: inp.documentText.length, profile: { x1: analysis.stability.x1, x2: analysis.consensus.x2.x2, x4: features.x4, x5: features.x5, x6: features.x6 },
+      }),
       stability: {
         result: analysis.stability, model: p.model, k: analysis.k, temperature: analysis.temperature,
         valid_runs: analysis.valid_runs, runs: analysis.runs, usage: analysis.usage,
