@@ -19,7 +19,7 @@ import re, sys
 
 CELL = re.compile(r"\S+(?: {1,2}\S+)*")
 NUM_FULL = re.compile(r"^\d{1,3}(,\d{3})*(\.\d{2})?%?$|^\d+(\.\d{2})?%?$")
-NUM_BROKEN = re.compile(r"^\d{1,3}(,\d{1,2}|(,\d{3})*\.\d)$|^\d{1,3}(,\d{3})*,\d{1,2}$")
+NUM_BROKEN = re.compile(r"^\d{1,3}(,\d{1,2}|(,\d{3})*\.\d)$|^\d{1,3}(,\d{3})*,\d{1,2}$|^\d{1,3}(,\d{3})+\.$")
 NUM_LIKE = re.compile(r"^\(?\d[\d,.]*%?\)?$")
 HEADING = re.compile(r"^\s*((?:[A-Z]\.\d{1,2}\.?|[A-Z]\.|\d{1,2}\.\d{1,2}\.?)\s+[A-Za-z(\[].*?)\s*$")
 SHORT_WORDS = {"of", "in", "to", "on", "by", "at", "as", "an", "or", "is", "it", "be", "no", "vs", "and", "the"}
@@ -100,7 +100,7 @@ def margin_label(lines: list[str]) -> str:
         m = CELL.match(l.lstrip())
         if not m or re.match(r"^\(", m.group()) or FIGURE.match(m.group().split()[0]): break
         parts.append(m.group())
-    return " ".join(parts) if len(parts) <= 6 else ""
+    return re.sub(r"\b(Co)- (?=[a-z])", r"\1-", " ".join(parts)) if len(parts) <= 6 else ""
 
 def repair_block(lines: list[str], header: list[tuple[int, int, str]] | None = None) -> str:
     row = []
@@ -113,7 +113,7 @@ def repair_block(lines: list[str], header: list[tuple[int, int, str]] | None = N
                     if ov > best_ov: best, best_ov = label, ov
                 if best: part = f"{best}: {part}"
             row.append(part)
-    return " ".join(row)
+    return re.sub(r"\b(Co)- (?=[a-z])", r"\1-", " ".join(row))
 
 def repair(text: str) -> tuple[str, int]:
     out, block, n, heading, header, label, fresh = [], [], 0, "", None, "", False
