@@ -362,6 +362,11 @@ export type X2Result =
   | { x2: number; counts: Record<EvidenceStatus, number>; n_claims: number }
   | { x2: "INCOMPLETE"; reason: "UNCHECKED_COVERAGE_FAILURE" | "LOW_CLAIM_COVERAGE"; counts: Record<EvidenceStatus, number>; n_claims: number };
 
+/** The fewest claims a document of this length must yield before x2 is computed. */
+export function requiredClaims(documentChars: number): number {
+  return Math.max(1, Math.ceil((LIMITS.MIN_CLAIMS_PER_1000_CHARS * documentChars) / 1000));
+}
+
 /** x2 = (N_contradicted + 0.5 N_ambiguous + 0.5 N_insufficient) / N_claims, computed as an exact fraction
  *  of integers so there is a single division. Zero or implausibly few claims is a coverage failure, never 0. */
 export function computeX2(items: readonly VerifiedClaim[], documentChars: number): X2Result {
@@ -369,7 +374,7 @@ export function computeX2(items: readonly VerifiedClaim[], documentChars: number
   for (const it of items) counts[it.status]++;
   const n = items.length;
   if (n === 0) return { x2: "INCOMPLETE", reason: "UNCHECKED_COVERAGE_FAILURE", counts, n_claims: n };
-  const required = Math.max(1, Math.ceil((LIMITS.MIN_CLAIMS_PER_1000_CHARS * documentChars) / 1000));
+  const required = requiredClaims(documentChars);
   if (n < required) return { x2: "INCOMPLETE", reason: "LOW_CLAIM_COVERAGE", counts, n_claims: n };
   const halves =
     STATUS_WEIGHTS_HALVES.CONTRADICTED * counts.CONTRADICTED +

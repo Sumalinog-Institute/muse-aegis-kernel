@@ -121,7 +121,10 @@ for (const sc of scenarios) {
     assert.equal((await verifyChain(entries, verifier)).ok, true);
     const rec = entries[0]?.record as Record<string, unknown>;
     const details = rec["details"] as Record<string, unknown>;
-    assert.deepEqual(Object.keys(details).sort(), ["claims", "features", "inputs", "review", "stability"]);
+    assert.deepEqual(Object.keys(details).sort(), ["claims", "features", "inputs", "not_checked", "review", "stability"]);
+    const nc = details["not_checked"] as Record<string, unknown>;
+    assert.equal(nc["report_version"], 1);
+    assert.ok(Array.isArray(nc["lines"]));
     assert.deepEqual(rec["input"], d.profile);
     assert.deepEqual(rec["result"], d.result);
     assert.equal((details["review"] as Record<string, unknown>)["draft_mac"], mac);
