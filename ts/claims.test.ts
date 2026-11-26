@@ -302,3 +302,29 @@ test("locateQuote ignores edge punctuation on words but not inside numbers", () 
   assert.equal(locateQuote("total: 12,000 usd, paid in full", "total 12,000 usd paid")?.mode, "ordered");
   assert.equal(locateQuote("total: 12,000 usd, paid in full", "total 12.000 usd paid"), null);
 });
+
+// ---------------------------------------------------------------- v1.1: subject from the reader's row context
+const CTX_DOC = `Intro text.\n[B.2. Financing > (b) GCF financing to recipient] Total requested (i+ii+iii) Amount: 26.91 million USD\nPlain sentence mentioning 7.5 million USD.`;
+const ctxRaw = (over: Record<string, unknown> = {}) => ({
+  subject: "GCF financing", attribute: "committed amount", period: "total", value_text: "26.91", unit: "million usd",
+  quote: "Total requested (i+ii+iii) Amount: 26.91 million USD", ...over,
+});
+
+test("row context: a subject only in the reader's bracketed row prefix is accepted in relaxed mode, and the claim shows the prefix", () => {
+  const r = anchorClaims(CTX_DOC, [ctxRaw()], undefined, { relaxed: true });
+  assert.equal(r.claims.length, 1);
+  assert.match(r.claims[0]!.quote, /^\[b\.2\. financing > \(b\) gcf financing to recipient\] total requested/);
+});
+
+test("row context: off by default, the same claim is rejected", () => {
+  const r = anchorClaims(CTX_DOC, [ctxRaw()], undefined);
+  assert.equal(r.claims.length, 0);
+  assert.equal(r.rejected[0]!.reason, "SUBJECT_NOT_IN_QUOTE");
+});
+
+test("row context: does not apply to a line without a prefix, and not to a subject missing from the prefix", () => {
+  const a = anchorClaims(CTX_DOC, [ctxRaw({ value_text: "7.5", quote: "Plain sentence mentioning 7.5 million USD" })], undefined, { relaxed: true });
+  assert.equal(a.claims.length, 0);
+  const b = anchorClaims(CTX_DOC, [ctxRaw({ subject: "Co-financing" })], undefined, { relaxed: true });
+  assert.equal(b.claims.length, 0);
+});

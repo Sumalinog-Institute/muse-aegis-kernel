@@ -11,6 +11,18 @@ A fresh held-out sample is needed to measure the fixed pipeline (see the plan in
 | run 2 | table repair v1 (wrapped cells joined) | 10 |
 | run 3 | table repair v2 (column clustering, section heading in front of each row, ledger label "GCF financing") | 30 |
 
+Runs 4 and 5 use all 15 stage 2 projects (the 8 above plus the 7 that worked before), to check for regressions (75 pipeline runs each):
+
+| Run | Change | Incomplete runs (of 75) |
+|---|---|---|
+| run 4 | table repair v3 (column header labels, segmentation at headings and enumerated rows) | 8 (FP052 4, FP046 2, FP022 1, SAP043 1) |
+| run 5 | table repair v4 (row labels in tall cells, label carry) | 14 (FP052 5, SAP043 5, FP092 4): **worse** |
+
+Run 5 causes: the model leaves the bracketed row prefix out of its quote, so the subject is missing (all 50 rejections for FP052);
+a figure such as `76,038,273.46` is split into `76,038,273.` and `46` in FP092; a heading rule mistook `67.774 Options` for a section
+heading. Fixes for run 6: subject taken from the row context (`spec/CLAIMS.md`), heading rule limited to section-style numbers.
+FP052 had 4 to 5 supported claims in each run before the repair, so run 4 and 5 are regressions to remove.
+
 Cause found: in narrow table columns a cell wraps over several lines in `pdftotext -layout` output, so a figure such as
 26,964,532.92 is stored as `26,964,532.9` and `2` on different lines. The AI rebuilt the figure correctly, but the document
 text no longer contained it, so the word-for-word anchor check rejected the claim. See `tools/phase5b/repair_tables.py`.
