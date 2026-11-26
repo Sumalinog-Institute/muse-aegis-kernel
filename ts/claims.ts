@@ -6,6 +6,8 @@
 // value and its subject really occur inside that quote, and (3) the value can be read unambiguously. This stops invented claims
 // and makes the evidence for every claim traceable to a place in the document. The subject must be named in the quote too.
 
+import { isScaleSlip, parseUnit, sameScaled, scaled } from "./units.ts";
+
 export type EvidenceStatus = "SUPPORTED" | "CONTRADICTED" | "INSUFFICIENT_EVIDENCE" | "AMBIGUOUS_CONFLICT";
 
 export interface RawClaim {
@@ -334,22 +336,39 @@ export function verifyClaims(claims: readonly Claim[], ledger: Ledger): { items:
   const items: VerifiedClaim[] = [];
   for (const { claim, occurrences } of groups.values()) {
     const flags: string[] = [];
-    const matching = current.filter((f) => factKeys(f).includes(claim.key) && normalizeText(f.unit) === claim.unit);
+    const cu = parseUnit(claim.unit);
+    const sameKey = current.filter((f) => factKeys(f).includes(claim.key));
+    // v1.1: units are compared as a base unit plus a scale ("million usd" is usd with a multiplier of 1e6)
+    const matching = sameKey.filter((f) => parseUnit(f.unit).base === cu.base);
     let status: EvidenceStatus;
     if (matching.length === 0) {
       status = "INSUFFICIENT_EVIDENCE";
       if (ledger.facts.length === 0) flags.push("LEDGER_EMPTY");
       else if (ledger.facts.some((f) => factKeys(f).includes(claim.key))) flags.push("NO_CURRENT_OR_UNIT_MATCH");
     } else {
-      const distinct: (number | string)[] = [];
-      for (const f of matching) if (!distinct.some((d) => sameValue(d, f.value))) distinct.push(f.value);
-      const only = distinct[0] as number | string;
+      const on = (f: LedgerFact) => { const fu = parseUnit(f.unit); return { v: scaled(f.value, fu.mult), involved: fu.mult !== 1 || cu.mult !== 1 }; };
+      const cv = scaled(claim.value, cu.mult);
+      const distinct: { raw: number | string; n: number | null; involved: boolean }[] = [];
+      for (const f of matching) {
+        const o = on(f);
+        const same = distinct.some((d) => (d.n !== null && o.v !== null ? sameScaled(d.n, o.v, d.involved || o.involved) : d.n === null && o.v === null && sameValue(d.raw, f.value)));
+        if (!same) distinct.push({ raw: f.value, n: o.v, involved: o.involved });
+      }
+      const only = distinct[0] as { raw: number | string; n: number | null; involved: boolean };
       if (distinct.length > 1) status = "AMBIGUOUS_CONFLICT";
-      else if (typeof only !== typeof claim.value) {
+      else if (typeof only.raw !== typeof claim.value) {
         // A number cannot be compared with text (for example "12 thousand" against 12000): report it, do not guess.
         status = "INSUFFICIENT_EVIDENCE";
         flags.push("VALUE_TYPE_MISMATCH");
-      } else status = sameValue(claim.value, only) ? "SUPPORTED" : "CONTRADICTED";
+      } else if (only.n !== null && cv !== null) {
+        if (sameScaled(cv, only.n, only.involved)) status = "SUPPORTED";
+        else if (isScaleSlip(cv, only.n)) {
+          // The figure equals the ledger value except for a factor of 1,000, 1,000,000 or 1,000,000,000: the document's unit or
+          // scale is unclear (for example a table in millions read as units). Report it as unchecked, never as a contradiction.
+          status = "INSUFFICIENT_EVIDENCE";
+          flags.push("SCALE_UNCERTAIN");
+        } else status = "CONTRADICTED";
+      } else status = sameValue(claim.value, only.raw) ? "SUPPORTED" : "CONTRADICTED";
     }
     items.push({ claim, occurrences, status, fact_ids: matching.map((f) => f.id), flags });
   }
