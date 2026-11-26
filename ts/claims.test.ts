@@ -328,3 +328,23 @@ test("row context: does not apply to a line without a prefix, and not to a subje
   const b = anchorClaims(CTX_DOC, [ctxRaw({ subject: "Co-financing" })], undefined, { relaxed: true });
   assert.equal(b.claims.length, 0);
 });
+
+// ---------------------------------------------------------------- v1.1: subject aliases
+const aliasClaim = (subject: string, value = 12000): Claim => ({
+  subject, attribute: "disbursed amount", period: "2026-Q2", value, unit: "usd", quote: "q", key: claimKey(subject, "disbursed amount", "2026-Q2"), at: 0, label: null,
+});
+
+test("aliases: a claim under an alias name matches the fact, and without the alias it does not", () => {
+  const withAlias = fact({ subject: "GCF financing", attribute: "disbursed amount", period: "2026-Q2", value: 12000, unit: "usd", subject_aliases: ["GCF funding"] });
+  assert.equal(status(aliasClaim("GCF funding"), [withAlias]).status, "SUPPORTED");
+  assert.equal(status(aliasClaim("GCF financing"), [withAlias]).status, "SUPPORTED");
+  const without = fact({ subject: "GCF financing", attribute: "disbursed amount", period: "2026-Q2", value: 12000, unit: "usd" });
+  assert.equal(status(aliasClaim("GCF funding"), [without]).status, "INSUFFICIENT_EVIDENCE");
+});
+
+test("aliases: a wrong value under an alias is still CONTRADICTED, and a different attribute is not matched", () => {
+  const f = fact({ subject: "GCF financing", attribute: "disbursed amount", period: "2026-Q2", value: 12000, unit: "usd", subject_aliases: ["GCF funding"] });
+  assert.equal(status(aliasClaim("GCF funding", 99), [f]).status, "CONTRADICTED");
+  const other = { ...aliasClaim("GCF funding"), key: claimKey("GCF funding", "committed amount", "2026-Q2") };
+  assert.equal(status(other, [f]).status, "INSUFFICIENT_EVIDENCE");
+});

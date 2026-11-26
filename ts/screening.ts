@@ -112,6 +112,8 @@ export function parseClaimsLedger(v: unknown): Ledger | null {
     for (const d of ["valid_from", "valid_to"]) {
       if (f[d] !== undefined && !(typeof f[d] === "string" && ISO_DATE.test(f[d] as string))) return null;
     }
+    const al = f["subject_aliases"];
+    if (al !== undefined && !(Array.isArray(al) && al.length <= 10 && al.every((a) => typeof a === "string" && a.trim() !== "" && a.length <= 200))) return null;
     out.push(f as unknown as LedgerFact);
   }
   return { snapshot_id: v["snapshot_id"], snapshot_date: v["snapshot_date"], facts: out };

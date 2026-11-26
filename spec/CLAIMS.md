@@ -51,6 +51,10 @@ For each distinct claim (same key, value and unit count once), using current fac
 If there are no claims, or fewer than `max(1, ceil(0.2 x document_characters / 1000))` (provisional), x2 is `INCOMPLETE`
 (`UNCHECKED_COVERAGE_FAILURE` or `LOW_CLAIM_COVERAGE`), never 0, and the kernel routes the case to manual review.
 
+## Subject aliases (v1.1)
+
+A ledger fact may list `subject_aliases`, other names for the same subject (at most 10, each up to 200 characters), for example `"subject": "GCF financing", "subject_aliases": ["GCF funding"]`. A claim whose subject, attribute and period match the fact under its own subject **or under any alias** is checked against that fact. Nothing else changes: the unit, the validity dates and the value comparison are the same, and a wrong value under an alias is still CONTRADICTED. Without aliases a correct claim under the document's own wording was reported as INSUFFICIENT_EVIDENCE, which lowered coverage. Aliases are written by the person who prepares the ledger, so they are part of the sealed ledger and visible in the record.
+
 ## Relaxed anchoring (v1.1, off by default)
 
 Real PDF tables are extracted with cells from different lines interleaved, so a model that copies a table row often drops or skips some cell text. The default rule above then rejects the claim, and a document can end as `INCOMPLETE` although its figures are correct. v1.1 adds an optional second step, used only when the word-for-word match fails and only if the deployment turns it on:

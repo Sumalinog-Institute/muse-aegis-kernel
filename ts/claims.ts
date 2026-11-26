@@ -47,6 +47,8 @@ export interface LedgerFact {
   unit: string;
   valid_from?: string; // ISO date, inclusive
   valid_to?: string; // ISO date, inclusive
+  /** v1.1: other names for the same subject (for example "GCF funding" for "GCF financing"). A claim under any of these names matches this fact. */
+  subject_aliases?: string[];
 }
 
 export interface Ledger {
@@ -76,6 +78,11 @@ export const STATUS_WEIGHTS_HALVES = { CONTRADICTED: 2, AMBIGUOUS_CONFLICT: 1, I
 
 export function normalizeText(s: string): string {
   return s.normalize("NFKC").trim().replace(/\s+/g, " ").toLowerCase();
+}
+
+/** The keys under which a ledger fact can be matched: its own subject and each alias of it. */
+export function factKeys(f: LedgerFact): string[] {
+  return [f.subject, ...(Array.isArray(f.subject_aliases) ? f.subject_aliases : [])].map((s) => claimKey(s, f.attribute, f.period));
 }
 
 export function claimKey(subject: string, attribute: string, period: string): string {
@@ -327,12 +334,12 @@ export function verifyClaims(claims: readonly Claim[], ledger: Ledger): { items:
   const items: VerifiedClaim[] = [];
   for (const { claim, occurrences } of groups.values()) {
     const flags: string[] = [];
-    const matching = current.filter((f) => claimKey(f.subject, f.attribute, f.period) === claim.key && normalizeText(f.unit) === claim.unit);
+    const matching = current.filter((f) => factKeys(f).includes(claim.key) && normalizeText(f.unit) === claim.unit);
     let status: EvidenceStatus;
     if (matching.length === 0) {
       status = "INSUFFICIENT_EVIDENCE";
       if (ledger.facts.length === 0) flags.push("LEDGER_EMPTY");
-      else if (ledger.facts.some((f) => claimKey(f.subject, f.attribute, f.period) === claim.key)) flags.push("NO_CURRENT_OR_UNIT_MATCH");
+      else if (ledger.facts.some((f) => factKeys(f).includes(claim.key))) flags.push("NO_CURRENT_OR_UNIT_MATCH");
     } else {
       const distinct: (number | string)[] = [];
       for (const f of matching) if (!distinct.some((d) => sameValue(d, f.value))) distinct.push(f.value);
