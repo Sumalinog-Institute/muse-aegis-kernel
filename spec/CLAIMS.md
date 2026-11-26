@@ -51,6 +51,17 @@ For each distinct claim (same key, value and unit count once), using current fac
 If there are no claims, or fewer than `max(1, ceil(0.2 x document_characters / 1000))` (provisional), x2 is `INCOMPLETE`
 (`UNCHECKED_COVERAGE_FAILURE` or `LOW_CLAIM_COVERAGE`), never 0, and the kernel routes the case to manual review.
 
+## Relaxed anchoring (v1.1, off by default)
+
+Real PDF tables are extracted with cells from different lines interleaved, so a model that copies a table row often drops or skips some cell text. The default rule above then rejects the claim, and a document can end as `INCOMPLETE` although its figures are correct. v1.1 adds an optional second step, used only when the word-for-word match fails and only if the deployment turns it on:
+
+- Every word of the quote (ignoring punctuation at the edges of words, never inside numbers) must occur in the document **in the same order**, with at most 6 other words between neighbours, in a stretch of at most 1,200 characters. A quote of fewer than 3 words must still match word for word.
+- The value and the subject must be in the quote **and** in the matched stretch. A figure invented by the model, or one that lies only in the skipped words, is rejected.
+- The evidence kept for the claim is the document's own text for that stretch, not the model's wording. The position of the value is the same as for an exact match.
+- Each claim accepted this way is reported (`relaxed`), and each run reports up to 8 rejected quotes with their reasons, so a person can see what was and was not checked.
+
+Risk: in a table, a name and a figure from neighbouring rows can lie within 6 words of each other. Such a claim is still checked against the ledger and shown to the reviewer with the document's own text, but it is the reason why this step is tested on held-out documents before it is turned on.
+
 ## What this does not do
 
 It does not decide whether the ledger itself is right, does not understand claims that cannot be expressed as

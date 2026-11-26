@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { evaluate } from "./kernel.ts";
-import { anchorClaims, claimKey, computeX2, LIMITS, parseValue, verifyClaims } from "./claims.ts";
+import { anchorClaims, claimKey, computeX2, LIMITS, locateQuote, parseValue, verifyClaims } from "./claims.ts";
 import type { Claim, EvidenceStatus, Ledger, LedgerFact, VerifiedClaim } from "./claims.ts";
 
 const DOC = `Annual report.
@@ -244,4 +244,61 @@ test("label_id: invalid picks, or a label whose subject is not in the quote, are
 test("label_id does not relax the other checks: the model's own subject must still be in the quote, and the quote in the document", () => {
   assert.deepEqual(anchorClaims(DOC, [raw({ subject: "Vendor Z", label_id: 0 })], LABELS).rejected, [{ index: 0, reason: "SUBJECT_NOT_IN_QUOTE" }]);
   assert.deepEqual(anchorClaims(DOC, [raw({ quote: "we disbursed 99,999 USD to Vendor A", label_id: 0 })], LABELS).rejected, [{ index: 0, reason: "QUOTE_NOT_IN_DOCUMENT" }]);
+});
+
+// ---------------------------------------------------------------- v1.1: relaxed anchoring
+
+const TABLE = `Financing table
+Senior            99,590,000              USD           ADB (WEIDAP) 8      (25) years       (2.0) %        senior
+Loans
+Grants            30,205,367              USD           GCF                                                  n/a
+Equity            1,000,000               USD           Government of Vietnam                                n/a
+Narrative text that has nothing to do with the table follows here and goes on for a good while longer than the gap allows.`;
+
+const tr = (over: Record<string, unknown> = {}) => ({
+  subject: "ADB", attribute: "senior loan", period: "total", value_text: "99,590,000", unit: "USD",
+  quote: "Senior 99,590,000 USD ADB (WEIDAP) years", ...over,
+});
+
+test("relaxed anchoring is off by default: the same quote is rejected word for word", () => {
+  const r = anchorClaims(TABLE, [tr()]);
+  assert.deepEqual(r.rejected, [{ index: 0, reason: "QUOTE_NOT_IN_DOCUMENT" }]);
+  assert.deepEqual(r.relaxed, []);
+  assert.equal(r.samples[0]?.reason, "QUOTE_NOT_IN_DOCUMENT");
+});
+
+test("relaxed anchoring accepts a quote whose words occur in order within a short stretch, and uses the document's own text as evidence", () => {
+  const r = anchorClaims(TABLE, [tr()], undefined, { relaxed: true });
+  assert.deepEqual(r.rejected, []);
+  assert.deepEqual(r.relaxed, [0]);
+  const c = r.claims[0] as Claim;
+  assert.ok(c.quote.toLowerCase().includes("(25) years") || c.quote.toLowerCase().includes("8 (25)"), "evidence is the document span, including the skipped words");
+  assert.ok(c.quote.startsWith("senior"));
+  const exact = anchorClaims(TABLE, [tr({ subject: "Senior", quote: "Senior 99,590,000 USD" })], undefined, { relaxed: true }).claims[0] as Claim;
+  assert.equal(c.at, exact.at, "the figure keeps the same position whichever way it was matched");
+});
+
+test("an exact quote is still matched as exact when relaxed anchoring is on", () => {
+  const r = anchorClaims(TABLE, [tr({ subject: "Senior", quote: "Senior 99,590,000 USD" })], undefined, { relaxed: true });
+  assert.deepEqual(r.relaxed, []);
+  assert.equal((r.claims[0] as Claim).quote, "Senior 99,590,000 USD");
+});
+
+test("relaxed anchoring still rejects reordered words, long gaps, short quotes and invented figures", () => {
+  const on = { relaxed: true };
+  assert.deepEqual(anchorClaims(TABLE, [tr({ quote: "99,590,000 Senior USD ADB" })], undefined, on).rejected, [{ index: 0, reason: "QUOTE_NOT_IN_DOCUMENT" }]); // reordered
+  assert.deepEqual(anchorClaims(TABLE, [tr({ subject: "Government", quote: "Senior Government of Vietnam" , value_text: "Senior" })], undefined, on).rejected, [{ index: 0, reason: "QUOTE_NOT_IN_DOCUMENT" }]); // gap too long
+  assert.deepEqual(anchorClaims(TABLE, [tr({ subject: "Senior", value_text: "USD", quote: "Senior USD" })], undefined, on).rejected, [{ index: 0, reason: "QUOTE_NOT_IN_DOCUMENT" }]); // two words, not exact
+  assert.deepEqual(anchorClaims(TABLE, [tr({ value_text: "99,999,000", quote: "Senior 99,999,000 USD ADB (WEIDAP) years" })], undefined, on).rejected, [{ index: 0, reason: "QUOTE_NOT_IN_DOCUMENT" }]); // invented figure
+});
+
+test("relaxed anchoring still requires the value and the subject to be in the quote", () => {
+  const on = { relaxed: true };
+  assert.deepEqual(anchorClaims(TABLE, [tr({ value_text: "30,205,367" })], undefined, on).rejected, [{ index: 0, reason: "VALUE_NOT_IN_QUOTE" }]);
+  assert.deepEqual(anchorClaims(TABLE, [tr({ subject: "GCF" })], undefined, on).rejected, [{ index: 0, reason: "SUBJECT_NOT_IN_QUOTE" }]);
+});
+
+test("locateQuote ignores edge punctuation on words but not inside numbers", () => {
+  assert.equal(locateQuote("total: 12,000 usd, paid in full", "total 12,000 usd paid")?.mode, "ordered");
+  assert.equal(locateQuote("total: 12,000 usd, paid in full", "total 12.000 usd paid"), null);
 });

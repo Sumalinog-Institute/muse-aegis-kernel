@@ -7,7 +7,7 @@
 // to improve Google products. Use made-up documents there. For real documents use a paid, billed project.
 
 import { anchorClaims, computeX2, verifyClaims } from "./claims.ts";
-import type { Claim, Ledger, Rejected, VerifiedClaim, X2Result } from "./claims.ts";
+import type { Claim, Ledger, Rejected, RejectedSample, VerifiedClaim, X2Result } from "./claims.ts";
 
 export const PROMPT_VERSION = "2";
 export const EXTRACT_LIMITS = { MAX_DOCUMENT_CHARS: 60000, MAX_OUTPUT_TOKENS: 8192, TIMEOUT_MS: 60000, MAX_RETRIES: 2, MAX_PROPOSED: 500 } as const;
@@ -255,6 +255,8 @@ export interface ExtractParams {
   maxOutputTokens?: number;
   timeoutMs?: number;
   maxRetries?: number;
+  /** v1.1: also accept a quote whose words occur in order within a short stretch of the document (see locateQuote). Off by default. */
+  relaxedAnchor?: boolean;
 }
 
 export type ExtractError = GeminiErrorCode | "EMPTY_DOCUMENT" | "DOCUMENT_TOO_LARGE" | "BAD_MODEL_OUTPUT";
@@ -264,6 +266,8 @@ export type ExtractResult =
       ok: true;
       claims: Claim[];
       rejected: Rejected[];
+      relaxed: number[];
+      samples: RejectedSample[];
       proposed_count: number;
       model: string;
       prompt_version: string;
@@ -286,8 +290,8 @@ export async function extractClaims(deps: GeminiDeps, p: ExtractParams): Promise
   if (!g.ok) return g;
   const parsed = parseModelReply(g.text);
   if (!parsed.ok) return { ok: false, code: parsed.code, status: null };
-  const { claims, rejected } = anchorClaims(text, parsed.proposed, dedupeLabels(p.labels));
-  return { ok: true, claims, rejected, proposed_count: parsed.proposed.length, model: p.model, prompt_version: PROMPT_VERSION, usage: g.usage };
+  const { claims, rejected, relaxed, samples } = anchorClaims(text, parsed.proposed, dedupeLabels(p.labels), { relaxed: p.relaxedAnchor === true });
+  return { ok: true, claims, rejected, relaxed, samples, proposed_count: parsed.proposed.length, model: p.model, prompt_version: PROMPT_VERSION, usage: g.usage };
 }
 
 export type AnalyzeResult =

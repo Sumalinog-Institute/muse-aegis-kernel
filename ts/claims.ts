@@ -109,14 +109,83 @@ function field(v: unknown, max: number): FieldResult {
   return { ok: true, val: t };
 }
 
+// ---------------------------------------------------------------- relaxed anchoring (v1.1)
+
+export const RELAXED = {
+  MIN_TOKENS: 3, // a shorter quote must match word for word
+  MAX_GAP_TOKENS: 6, // words of the document that may lie between two consecutive words of the quote
+  MAX_SPAN_CHARS: 1200, // the matched stretch of the document may not be longer than this
+} as const;
+
+export interface AnchorOptions {
+  /** v1.1: if the quote is not found word for word, accept it when all its words occur in order within one short stretch of the document. */
+  relaxed?: boolean;
+}
+
+export interface RejectedSample {
+  index: number;
+  reason: RejectReason;
+  quote: string; // the model's quote, cut to 160 characters, so a rejection can be understood
+}
+
+const edgePunct = /^[\s"'“”‘’()\[\]{}<>|;:!?…·•*,.\-–—]+|[\s"'“”‘’()\[\]{}<>|;:!?…·•*,.\-–—]+$/g;
+function tokenKey(t: string): string {
+  return t.replace(edgePunct, "");
+}
+
+/** Finds `quote` in `doc` (both already normalized: one space between words, lower case).
+ *  Returns the start and end of the document text that matched, or null.
+ *  Exact: the quote occurs word for word. Ordered: every word of the quote occurs in the same order, with at most
+ *  MAX_GAP_TOKENS other words between neighbours, so that a table row whose cells were split across lines can still be traced.
+ *  The first match in the document wins, the same as for an exact match. */
+export function locateQuote(doc: string, quote: string): { start: number; end: number; mode: "exact" | "ordered" } | null {
+  const at = doc.indexOf(quote);
+  if (at >= 0) return { start: at, end: at + quote.length, mode: "exact" };
+  const qt = quote.split(" ").map(tokenKey).filter((t) => t !== "");
+  if (qt.length < RELAXED.MIN_TOKENS) return null;
+  const words: { key: string; start: number; end: number }[] = [];
+  let pos = 0;
+  for (const w of doc.split(" ")) {
+    const k = tokenKey(w);
+    if (k !== "") words.push({ key: k, start: pos, end: pos + w.length });
+    pos += w.length + 1;
+  }
+  const first = qt[0] as string;
+  for (let i = 0; i < words.length; i++) {
+    if ((words[i] as { key: string }).key !== first) continue;
+    let j = i, ok = true;
+    for (let q = 1; q < qt.length && ok; q++) {
+      let found = -1;
+      for (let g = 1; g <= RELAXED.MAX_GAP_TOKENS + 1 && j + g < words.length; g++) {
+        if ((words[j + g] as { key: string }).key === qt[q]) { found = j + g; break; }
+      }
+      if (found < 0) ok = false;
+      else j = found;
+    }
+    if (!ok) continue;
+    const start = (words[i] as { start: number }).start, end = (words[j] as { end: number }).end;
+    if (end - start <= RELAXED.MAX_SPAN_CHARS) return { start, end, mode: "ordered" };
+  }
+  return null;
+}
+
 /** Keeps only claims that can be traced to the document. `proposed` is untrusted input (for example model output). */
 export function anchorClaims(
   documentText: string,
   proposed: unknown[],
   labels?: readonly { subject: string; attribute: string; period: string }[],
-): { claims: Claim[]; rejected: Rejected[] } {
+  options?: AnchorOptions,
+): { claims: Claim[]; rejected: Rejected[]; relaxed: number[]; samples: RejectedSample[] } {
   const claims: Claim[] = [];
   const rejected: Rejected[] = [];
+  const relaxed: number[] = []; // indexes of proposed claims accepted by the relaxed match (v1.1 only)
+  const samples: RejectedSample[] = []; // up to 8 rejected quotes, to explain why claims were rejected
+  const relaxedOn = options?.relaxed === true;
+  const reject = (index: number, reason: RejectReason, raw?: unknown) => {
+    rejected.push({ index, reason });
+    const qv = typeof raw === "object" && raw !== null && !Array.isArray(raw) ? (raw as Record<string, unknown>)["quote"] : undefined;
+    if (samples.length < 8 && typeof qv === "string") samples.push({ index, reason, quote: qv.slice(0, 160) });
+  };
   const doc = documentText.normalize("NFKC").replace(/\s+/g, " ").toLowerCase();
   proposed.forEach((raw, index) => {
     if (claims.length >= LIMITS.MAX_CLAIMS) {
@@ -151,21 +220,25 @@ export function anchorClaims(
       return;
     }
     const q = quote.normalize("NFKC").replace(/\s+/g, " ").toLowerCase();
-    if (!doc.includes(q)) {
-      rejected.push({ index, reason: "QUOTE_NOT_IN_DOCUMENT" });
+    const loc = relaxedOn ? locateQuote(doc, q) : (doc.includes(q) ? { start: doc.indexOf(q), end: doc.indexOf(q) + q.length, mode: "exact" as const } : null);
+    if (!loc) {
+      reject(index, "QUOTE_NOT_IN_DOCUMENT", raw);
       return;
     }
+    // The value and the subject must be in the quote and also lie inside the text of the document that the quote was matched to.
+    const span = doc.slice(loc.start, loc.end);
     const v = valueText.normalize("NFKC").replace(/\s+/g, " ").toLowerCase();
-    if (!q.includes(v)) {
-      rejected.push({ index, reason: "VALUE_NOT_IN_QUOTE" });
+    if (!q.includes(v) || !span.includes(v)) {
+      reject(index, "VALUE_NOT_IN_QUOTE", raw);
       return;
     }
     // The subject must be named in the quote, so a label cannot be attached to a figure that belongs to someone else.
     const sub = subject.normalize("NFKC").replace(/\s+/g, " ").toLowerCase();
-    if (!q.includes(sub)) {
-      rejected.push({ index, reason: "SUBJECT_NOT_IN_QUOTE" });
+    if (!q.includes(sub) || !span.includes(sub)) {
+      reject(index, "SUBJECT_NOT_IN_QUOTE", raw);
       return;
     }
+    if (loc.mode === "ordered") relaxed.push(index);
     // A claim may pick one of the preferred ledger labels by number. The labels are then used exactly as the ledger writes them, so
     // wording drift cannot stop a claim from matching its ledger fact. The label's subject must still be named in the quote;
     // otherwise the pick is ignored and the model's own wording is used.
@@ -173,7 +246,7 @@ export function anchorClaims(
     const pick = r["label_id"];
     if (labels && typeof pick === "number" && Number.isInteger(pick) && pick >= 0 && pick < labels.length) {
       const lab = labels[pick] as { subject: string; attribute: string; period: string };
-      if (q.includes(normalizeText(lab.subject))) useLabel = pick;
+      if (span.includes(normalizeText(lab.subject))) useLabel = pick;
     }
     const lab = useLabel === null ? null : (labels as readonly { subject: string; attribute: string; period: string }[])[useLabel];
     const fs = lab ? lab.subject : subject, fa = lab ? lab.attribute : attribute, fp = lab ? lab.period : period;
@@ -181,13 +254,13 @@ export function anchorClaims(
       subject: fs, attribute: fa, period: fp,
       value: parseValue(valueText),
       unit: normalizeText(unitRaw),
-      quote,
+      quote: loc.mode === "ordered" ? span : quote, // relaxed match: the evidence is the document's own text
       key: claimKey(fs, fa, fp),
-      at: doc.indexOf(q) + q.indexOf(v),
+      at: loc.start + span.indexOf(v),
       label: useLabel,
     });
   });
-  return { claims, rejected };
+  return { claims, rejected, relaxed, samples };
 }
 
 // ---------------------------------------------------------------- verification against the ledger
