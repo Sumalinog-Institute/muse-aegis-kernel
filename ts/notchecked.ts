@@ -44,6 +44,7 @@ export function buildNotCheckedReport(p: NotCheckedInput): NotCheckedReport {
   const unmatchedAll = p.items.filter((it) => it.status === "INSUFFICIENT_EVIDENCE");
   const reasonOf = (it: VerifiedClaim): string =>
     it.flags.includes("LEDGER_EMPTY") ? "LEDGER_EMPTY"
+    : it.flags.includes("SCALE_UNCERTAIN") ? "SCALE_UNCERTAIN"
     : it.flags.includes("VALUE_TYPE_MISMATCH") ? "VALUE_TYPE_MISMATCH"
     : it.flags.includes("NO_CURRENT_OR_UNIT_MATCH") ? "NO_CURRENT_OR_UNIT_MATCH"
     : "NO_LEDGER_FACT";
@@ -81,6 +82,8 @@ export function buildNotCheckedReport(p: NotCheckedInput): NotCheckedReport {
       : `Only ${plural(found, "figure was", "figures were")} found in the document; at least ${required} are needed for a document of this length, so the check is incomplete.`);
   }
   if (unmatchedAll.length > 0) lines.push(`${plural(unmatchedAll.length, "figure was", "figures were")} found in the document but could not be compared with the ledger (no matching ledger entry, or a different unit or period).`);
+  const slips = unmatchedAll.filter((it) => it.flags.includes("SCALE_UNCERTAIN")).length;
+  if (slips > 0) lines.push(`${plural(slips, "figure equals", "figures equal")} a ledger value except for a factor of 1,000, 1,000,000 or 1,000,000,000, so the unit or scale in the document is unclear; ${slips === 1 ? "it was" : "they were"} not counted as contradictions.`);
   if (notCompared.length > 0 && p.ledger.facts.length > 0) lines.push(`${notCompared.length} of ${p.ledger.facts.length} ledger entries were not compared with any figure of the document.`);
   if (rejectedTotal > 0) lines.push(`${plural(rejectedTotal, "quote", "quotes")} proposed by the model over ${plural(p.runs.length, "run", "runs")} could not be traced to the document and were left out.`);
   if (failed.length > 0) lines.push(`${plural(failed.length, "run", "runs")} of ${p.k} failed (${[...new Set(failed)].join(", ")}).`);

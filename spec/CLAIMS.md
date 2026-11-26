@@ -51,6 +51,12 @@ For each distinct claim (same key, value and unit count once), using current fac
 If there are no claims, or fewer than `max(1, ceil(0.2 x document_characters / 1000))` (provisional), x2 is `INCOMPLETE`
 (`UNCHECKED_COVERAGE_FAILURE` or `LOW_CLAIM_COVERAGE`), never 0, and the kernel routes the case to manual review.
 
+## Units and scale (v1.1)
+
+A unit is read as a **base unit** and a **scale**: "million USD", "USD (million)", "USD m", "in thousands of USD" and "USD '000" are all base `usd` with a multiplier of 1,000,000 or 1,000; "US$", "$" and "US dollars" are written `usd`, "€" and "euro" `eur`. Abbreviations (`m`, `k`, `bn`) count as a scale only next to a currency, and two scale words in one unit are not guessed. A claim is compared with a ledger fact when the base units are equal; the values are then compared **on one scale**, so 26.91 million USD is SUPPORTED by a ledger value of 26,910,000 USD, and the other way round. A wrong figure is still CONTRADICTED after scaling.
+
+If a figure differs from the ledger value **only by a factor of exactly 1,000, 1,000,000 or 1,000,000,000**, it is not called a contradiction: the document's unit or scale is unclear (for example a table in millions read as units). The claim is INSUFFICIENT_EVIDENCE with the flag `SCALE_UNCERTAIN`, and the could-not-check report says so. Different currencies or unrelated units still do not match. Equal values are compared exactly when no scale is involved, and with a relative tolerance of 1e-9 when one is.
+
 ## Subject aliases (v1.1)
 
 A ledger fact may list `subject_aliases`, other names for the same subject (at most 10, each up to 200 characters), for example `"subject": "GCF financing", "subject_aliases": ["GCF funding"]`. A claim whose subject, attribute and period match the fact under its own subject **or under any alias** is checked against that fact. Nothing else changes: the unit, the validity dates and the value comparison are the same, and a wrong value under an alias is still CONTRADICTED. Without aliases a correct claim under the document's own wording was reported as INSUFFICIENT_EVIDENCE, which lowered coverage. Aliases are written by the person who prepares the ledger, so they are part of the sealed ledger and visible in the record.
