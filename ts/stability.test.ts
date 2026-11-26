@@ -327,3 +327,19 @@ test("picking ledger labels by number removes the label-drift instability seen l
   assert.ok(without.stability.x1 > 0.2, `x1 ${without.stability.x1}`); // 3 figures with ledger facts differ in 2 of 3 runs
   assert.equal(without.consensus.items.filter((i) => i.status === "INSUFFICIENT_EVIDENCE").length, 4); // the majority of runs no longer match the ledger
 });
+
+test("v1.1: with the relaxed match on, the version says so, runs report how many claims it accepted, and rejected quotes are sampled", async () => {
+  const skipped = { subject: "Vendor A", attribute: "disbursed amount", period: "2026-Q2", value_text: "12,000", unit: "USD", quote: "the project disbursed 12,000 to Vendor A" };
+  const bad = { ...skipped, quote: "we sent 12,000 USD to Vendor A on a Tuesday" };
+  const f = fake([ok([skipped, bad]), ok([skipped, bad]), ok([skipped, bad])]);
+  const r = await analyzeWithStability(f.deps, params({ relaxedAnchor: true }));
+  assert.equal(r.ok, true);
+  if (!r.ok) return;
+  assert.equal(r.extractor_version, "gemini:gemini-test:prompt-v2:stab-k3-t0.7:relaxed-anchor");
+  const run = r.runs[0] as { claims: number; rejected: number; relaxed?: number; rejected_samples?: { reason: string; quote: string }[] };
+  assert.deepEqual([run.claims, run.rejected, run.relaxed], [1, 1, 1]);
+  assert.equal(run.rejected_samples?.[0]?.quote, bad.quote);
+  const off = await analyzeWithStability(fake([ok([skipped]), ok([skipped]), ok([skipped])]).deps, params());
+  assert.equal(off.ok && (off.runs[0] as { claims: number }).claims, 0, "without the switch the skipped-word quote is rejected");
+  assert.equal(off.ok && "relaxed" in (off.runs[0] as object), false);
+});

@@ -125,7 +125,7 @@ function strOrNull(v: unknown, max = 100): string | null {
 
 export async function prepareScreening(
   deps: PrepareDeps,
-  p: { apiKey: string; model: string; actorId: string; projectId: string; docRef: string; inputs: ScreeningInputs; k?: number; temperature?: number; maxDraftChars?: number },
+  p: { apiKey: string; model: string; actorId: string; projectId: string; docRef: string; inputs: ScreeningInputs; k?: number; temperature?: number; maxDraftChars?: number; relaxedAnchor?: boolean },
 ): Promise<PrepareResult> {
   const bad = (code: PrepareError): PrepareResult => ({ ok: false, code, status: null });
   const inp = p.inputs;
@@ -152,6 +152,7 @@ export async function prepareScreening(
   const analysis = await analyzeWithStability(deps, {
     apiKey: p.apiKey, model: p.model, documentText: inp.documentText, ledger: claimsLedger,
     ...(p.k !== undefined ? { k: p.k } : {}), ...(p.temperature !== undefined ? { temperature: p.temperature } : {}),
+    ...(p.relaxedAnchor === true ? { relaxedAnchor: true } : {}),
   });
   if (!analysis.ok) return { ok: false, code: analysis.code, status: analysis.status, ...(analysis.detail !== undefined ? { detail: analysis.detail } : {}) };
 
