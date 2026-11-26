@@ -23,6 +23,17 @@ a figure such as `76,038,273.46` is split into `76,038,273.` and `46` in FP092; 
 heading. Fixes for run 6: subject taken from the row context (`spec/CLAIMS.md`), heading rule limited to section-style numbers.
 FP052 had 4 to 5 supported claims in each run before the repair, so run 4 and 5 are regressions to remove.
 
+| Run | Change | Incomplete runs (of 75) |
+|---|---|---|
+| run 6 | row-context subject (relaxed mode), heading rule fix | 12 (FP052 5, SAP043 5, FP092 2) |
+| run 7 | table repair v5: trailing-dot figures joined (`76,038,273.` + `46`), "Co- financing" wrap joined; SAP043 ledger given the document's wording "GCF funding" as a second subject (tuning only) | **4** (FP092 3, SAP043 1) |
+
+Run 7 is the best state reached on the 15 tuning projects: 71 of 75 runs complete. The 4 remaining incomplete runs have no rejected
+quotes: the model proposed only 2 to 4 claims from a document with about 20 figures, so the coverage rule correctly reports that it
+did not check enough. That is extraction variability, not a reader defect. FP052 annual report table 3.3 never names the fund, so
+its claims are correctly rejected. Tuning on these projects stops here; they can no longer serve as a fair test.
+Still to do: ledger subject aliases (a proper replacement for the SAP043 workaround), unit and column checks for the new flags.
+
 Cause found: in narrow table columns a cell wraps over several lines in `pdftotext -layout` output, so a figure such as
 26,964,532.92 is stored as `26,964,532.9` and `2` on different lines. The AI rebuilt the figure correctly, but the document
 text no longer contained it, so the word-for-word anchor check rejected the claim. See `tools/phase5b/repair_tables.py`.
