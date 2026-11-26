@@ -143,6 +143,8 @@ export interface RunSummary {
   claims: number;
   rejected: number;
   rejected_reasons?: Record<string, number>;
+  relaxed?: number; // claims accepted only by the relaxed match (v1.1); absent when the relaxed match is off
+  rejected_samples?: { reason: string; quote: string }[]; // up to 8 rejected quotes, to explain why claims were rejected
   figures?: RunFigure[]; // what this run found, so a disagreement between runs can be traced (at most 60 per run)
 }
 
@@ -193,7 +195,11 @@ export async function analyzeWithStability(
     for (const r of e.rejected) reasons[r.reason] = (reasons[r.reason] ?? 0) + 1;
     const figures: RunFigure[] = [...byPosition(v.items).values()].sort((x, y) => x.claim.at - y.claim.at).slice(0, 60)
       .map((it) => ({ at: it.claim.at, status: it.status, subject: it.claim.subject, attribute: it.claim.attribute, period: it.claim.period, label: it.claim.label }));
-    summaries.push({ ok: true, claims: e.claims.length, rejected: e.rejected.length, rejected_reasons: reasons, figures });
+    summaries.push({
+      ok: true, claims: e.claims.length, rejected: e.rejected.length, rejected_reasons: reasons, figures,
+      ...(p.relaxedAnchor === true ? { relaxed: e.relaxed.length } : {}),
+      ...(e.samples.length > 0 ? { rejected_samples: e.samples.map((x) => ({ reason: x.reason, quote: x.quote })) } : {}),
+    });
     usage.prompt_tokens += e.usage.prompt_tokens ?? 0;
     usage.output_tokens += e.usage.output_tokens ?? 0;
   }
