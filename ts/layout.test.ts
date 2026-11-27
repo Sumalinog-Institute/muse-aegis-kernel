@@ -67,3 +67,17 @@ test("sections: a heading with wide spacing between its words is found, and the 
   assert.ok(cutSection("  C.    FINANCING     INFORMATION\nx\n  D.1. Next", "proposal"));
   assert.ok(cutSection("Section   3:   Financial    Information\nx\nSection   4 next", "apr"));
 });
+
+test("layout: pieces that touch are one word (small capitals), pieces a space apart are two", () => {
+  const lines = layoutPage([it("Project", 0, 0), it("F", 8, 0), { s: "inancing", x: 40 + 9 * W, y: 50, w: 8 * W, h: H }, it("Info", 18, 0)], 1);
+  assert.equal(lines[0]?.trim(), "Project Financing Info");
+});
+
+test("sections: headings with a stray space inside a word are still found", () => {
+  const body = Array.from({ length: 3 }, (_, i) => `      Total ${i}      1,000      2,000`).join("\n");
+  const doc = ["B .1. Description", "text", "B.2. Project F inancing I nformation", body, "B . 3 . Financial Markets", "more"].join("\n");
+  const s = cutSection(doc, "proposal");
+  assert.ok(s !== null && s.text.startsWith("B.2. Project F inancing I nformation"));
+  const sap = ["C . F INANCING I NFORMATION", body, "C . 5 . Financial management", "x"].join("\n");
+  assert.ok(cutSection(sap, "proposal") !== null);
+});

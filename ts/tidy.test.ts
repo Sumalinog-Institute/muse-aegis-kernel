@@ -65,12 +65,21 @@ test("tidy: after the repair, empty brackets and wrapped prefixes are tidied", (
 });
 
 test("tidy: the summary names only what was done", () => {
-  assert.equal(tidySummary({ leader_runs: 3, running_lines: 0, joined_words: 0, european_numbers: 0 }), "");
-  assert.equal(tidySummary({ leader_runs: 0, running_lines: 4, joined_words: 2, european_numbers: 9 }), "9 decimal-comma numbers rewritten, 2 split words joined, 4 page header/footer lines removed");
+  assert.equal(tidySummary({ leader_runs: 3, running_lines: 0, joined_words: 0, european_numbers: 0, duplicates: 0 }), "");
+  assert.equal(tidySummary({ leader_runs: 0, running_lines: 4, joined_words: 2, european_numbers: 9, duplicates: 0 }), "9 decimal-comma numbers rewritten, 2 split words joined, 4 page header/footer lines removed");
 });
 
 test("tidy: the method text is short enough to sit in the provenance", () => {
-  const m = tidyMethod({ leader_runs: 22, running_lines: 119, joined_words: 7, european_numbers: 167 });
-  assert.equal(m, "tidy v1: 167 numbers, 7 words, 119 header lines, 22 dot runs");
+  const m = tidyMethod({ leader_runs: 22, running_lines: 119, joined_words: 7, european_numbers: 167, duplicates: 3 });
+  assert.equal(m, "tidy v2: 167 numbers, 7 words, 119 header lines, 3 doubles, 22 dot runs");
   assert.ok(m.length < 80);
+});
+
+test("tidy: a field text drawn twice is dropped once, and a decimal comma before a percent sign is always read as a decimal", () => {
+  const r = tidyPre("IFAD GrantGrant Amount CreditCreditCreditCredit\nISDB Senior LoansSenior Loans 25 years Pricing: 12,5% and 0,75% and 1,234 trees; bookkeeping");
+  assert.match(r.text, /^IFAD Grant {6}Amount/);
+  assert.match(r.text, /Senior Loans {13}25 years Pricing: 12\.5% and 0\.75% and 1,234 trees; bookkeeping/);
+  assert.match(r.text, /Credit {18}\n/);
+  assert.equal(r.report.duplicates, 4);
+  assert.equal(r.report.european_numbers, 2);
 });

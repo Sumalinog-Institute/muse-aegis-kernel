@@ -9,9 +9,10 @@
 //      first part is not a word anywhere else in the document and the joined word is.
 //   4. European numbers: "26 996 000,00" and "4,10" are written as 26,996,000.00 and 4.10 (same width) when the document as a
 //      whole uses decimal commas. A document that does not is left alone, so "12,13" in a list of pages is never changed.
-//   5. After the repair: empty brackets "(   )" get one space, "co- funding" becomes "co-funding".
+//   5. Doubled text: a form field drawn twice gives "GrantGrant" or "Senior LoansSenior Loans"; the repeat is dropped.
+//   6. After the repair: empty brackets "(   )" get one space, "co- funding" becomes "co-funding".
 
-export interface TidyReport { leader_runs: number; running_lines: number; joined_words: number; european_numbers: number }
+export interface TidyReport { leader_runs: number; running_lines: number; joined_words: number; european_numbers: number; duplicates: number }
 
 const SPACED_DEC = /(?<![\d,.])\d{1,3}(?: \d{3})+,\d{2}(?![\d,])/g;
 const ANY_DEC = /(?<![\d,.])(\d{1,3}(?: \d{3})+|\d+),(\d{1,2})(?![\d,])/g;
@@ -109,16 +110,30 @@ function joinSplitWords(text: string, rep: TidyReport): string {
   return pages.map((p) => p.join("\n")).join("\f");
 }
 
+function dropDoubles(text: string, rep: TidyReport): string {
+  // identical runs that touch, each starting with a capital letter: a field text drawn twice (or four times) at the same place
+  let t = text;
+  for (let pass = 0; pass < 3; pass++) {
+    const next = t.replace(/(\p{Lu}[\p{L} ]{2,30}\p{L})\1+(?![\p{L}])/gu, (m, a: string) => { rep.duplicates++; return a + " ".repeat(m.length - a.length); });
+    if (next === t) break;
+    t = next;
+  }
+  return t;
+}
+
 function europeanNumbers(text: string, rep: TidyReport): string {
+  // a decimal comma before a percent sign is a decimal comma in any document ("0,75%", "12,5%")
+  text = text.replace(/(?<![\d,.])(\d{1,2}),(\d{1,2})(?=\s?%)/g, (_m, i: string, d: string) => { rep.european_numbers++; return `${i}.${d}`; });
   if (!isEuropean(text)) return text;
   return text.replace(ANY_DEC, (_m, int: string, dec: string) => { rep.european_numbers++; return `${int.replace(/ /g, ",")}.${dec}`; });
 }
 
 /** Before the table repair. */
 export function tidyPre(text: string): { text: string; report: TidyReport } {
-  const report: TidyReport = { leader_runs: 0, running_lines: 0, joined_words: 0, european_numbers: 0 };
+  const report: TidyReport = { leader_runs: 0, running_lines: 0, joined_words: 0, european_numbers: 0, duplicates: 0 };
   let t = stripLeaders(text, report);
   t = runningLines(t, report);
+  t = dropDoubles(t, report);
   t = joinSplitWords(t, report);
   t = europeanNumbers(t, report);
   return { text: t, report };
@@ -137,10 +152,11 @@ export function tidySummary(r: TidyReport): string {
   if (r.european_numbers > 0) parts.push(`${r.european_numbers} decimal-comma numbers rewritten`);
   if (r.joined_words > 0) parts.push(`${r.joined_words} split words joined`);
   if (r.running_lines > 0) parts.push(`${r.running_lines} page header/footer lines removed`);
+  if (r.duplicates > 0) parts.push(`${r.duplicates} doubled field texts dropped`);
   return parts.join(", ");
 }
 
 /** Short form for the provenance `text_method` (which is limited to 200 characters). */
 export function tidyMethod(r: TidyReport): string {
-  return `tidy v1: ${r.european_numbers} numbers, ${r.joined_words} words, ${r.running_lines} header lines, ${r.leader_runs} dot runs`;
+  return `tidy v2: ${r.european_numbers} numbers, ${r.joined_words} words, ${r.running_lines} header lines, ${r.duplicates} doubles, ${r.leader_runs} dot runs`;
 }
