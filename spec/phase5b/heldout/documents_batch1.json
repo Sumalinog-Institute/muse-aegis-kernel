@@ -1,0 +1,86 @@
+{
+ "batch": 1,
+ "projects": [
+  "FP004",
+  "FP035",
+  "FP041",
+  "FP048",
+  "FP070",
+  "FP105"
+ ],
+ "reader": "pdf.js 6.2.108 in Node (app uses 4.10.38), frozen kernel code",
+ "documents": [
+  {
+   "file": "FP004_apr_2026.pdf",
+   "sha256": "b4bfadf17faa08f70853958dfe0904c84b72727dcb90466a11b84ccf560e7c98",
+   "retrieved_on": "2026-11-28",
+   "frozen_reader": "section 697"
+  },
+  {
+   "file": "FP004_proposal.pdf",
+   "sha256": "6839b93ef72e587076ce616f77716b13b2250ece74efcab8624b829f0b39ef55",
+   "retrieved_on": "2026-11-28",
+   "frozen_reader": "section 2861"
+  },
+  {
+   "file": "FP035_apr_2024.pdf",
+   "sha256": "7f61ed8df1931f079ad5bf22bcfa6f70056bf5deab92074f146cf4bc23d8f974",
+   "retrieved_on": "2026-11-28",
+   "frozen_reader": "NO_SECTION"
+  },
+  {
+   "file": "FP035_proposal.pdf",
+   "sha256": "d29fa7673488d33083376be2cc4f78c5744a17d56cebe3634da2d9b5253b036f",
+   "retrieved_on": "2026-11-28",
+   "frozen_reader": "section 2378"
+  },
+  {
+   "file": "FP041_apr_2026.pdf",
+   "sha256": "3a3a28337318133f42ad8ba0f39f739ca162fa30fa40f790891786b7340b4262",
+   "retrieved_on": "2026-11-28",
+   "frozen_reader": "section 4560"
+  },
+  {
+   "file": "FP041_proposal.pdf",
+   "sha256": "787e43b6dd5a74e65f88a6045a2ce098cb345124449d15fe19841b40f0242981",
+   "retrieved_on": "2026-11-28",
+   "frozen_reader": "section 1125"
+  },
+  {
+   "file": "FP048_apr_2026.pdf",
+   "sha256": "89b725297f145c7499c0c2841de08f1ca09951ad698177553c7867e956ef0bd9",
+   "retrieved_on": "2026-11-28",
+   "frozen_reader": "NO_SECTION"
+  },
+  {
+   "file": "FP048_proposal.pdf",
+   "sha256": "dc40165f7c86b837d899d90fea1805c7104760b1e7fc25944ec5bc477a407e65",
+   "retrieved_on": "2026-11-28",
+   "frozen_reader": "section 2096"
+  },
+  {
+   "file": "FP070_apr_2024.pdf",
+   "sha256": "b5127f2cdc2424ff5d51131172212f3b266a87b9f9dc23e1d7306d6940d206c9",
+   "retrieved_on": "2026-11-28",
+   "frozen_reader": "NO_SECTION"
+  },
+  {
+   "file": "FP070_proposal.pdf",
+   "sha256": "5a4dd19512e0edead751ad676b259b6175e69e12eed19eafe2e25cc4fd248ec7",
+   "retrieved_on": "2026-11-28",
+   "frozen_reader": "section 8203"
+  },
+  {
+   "file": "FP105_apr_2026.pdf",
+   "sha256": "7bdc69d7e3e53c37a80b089c57ad7908c14fd92951fad332c290f21721814d4b",
+   "retrieved_on": "2026-11-28",
+   "frozen_reader": "section 3972"
+  },
+  {
+   "file": "FP105_proposal.pdf",
+   "sha256": "922e7a8c01936b42411321f0b585edac17bf6f926806c936d3b7322e8ebc4066",
+   "retrieved_on": "2026-11-28",
+   "frozen_reader": "section 3390"
+  }
+ ]
+}
