@@ -129,10 +129,16 @@ export function buildNotCheckedReport(p: NotCheckedInput): NotCheckedReport {
       : `Only ${plural(found, "figure was", "figures were")} found in the document; at least ${required} are needed for a document of this length, so the check is incomplete.`);
   }
   if (figures !== undefined && figures.uncovered_total > 0) lines.push(`${figures.covered} of ${figures.total} figures in the document were turned into claims; ${figures.uncovered_total} were not checked (for example ${figures.uncovered.slice(0, 3).map((u) => u.figure).join("; ")}).`);
-  if (unmatchedAll.length > 0) lines.push(`${plural(unmatchedAll.length, "figure was", "figures were")} found in the document but could not be compared with the ledger (no matching ledger entry, or a different unit or period).`);
+  if (unmatchedAll.length > 0) {
+    const eg = unmatched.slice(0, 3).map((u) => `${u.subject}, ${u.attribute}, ${u.period}: ${u.value}`).join("; ");
+    lines.push(`${plural(unmatchedAll.length, "figure was", "figures were")} found in the document but could not be compared with the ledger (no matching ledger entry, or a different unit or period), for example ${eg}.`);
+  }
   const slips = unmatchedAll.filter((it) => it.flags.includes("SCALE_UNCERTAIN")).length;
   if (slips > 0) lines.push(`${plural(slips, "figure equals", "figures equal")} a ledger value except for a factor of 1,000, 1,000,000 or 1,000,000,000, so the unit or scale in the document is unclear; ${slips === 1 ? "it was" : "they were"} not counted as contradictions.`);
-  if (notCompared.length > 0 && p.ledger.facts.length > 0) lines.push(`${notCompared.length} of ${p.ledger.facts.length} ledger entries were not compared with any figure of the document.`);
+  if (notCompared.length > 0 && p.ledger.facts.length > 0) {
+    const eg = notCompared.slice(0, 3).map((f) => `${f.subject}, ${f.attribute}, ${f.period}`).join("; ");
+    lines.push(`${notCompared.length} of ${p.ledger.facts.length} ledger entries were not compared with any figure of the document (for example ${eg}).`);
+  }
   if (rejectedTotal > 0) lines.push(`${plural(rejectedTotal, "quote", "quotes")} proposed by the model over ${plural(p.runs.length, "run", "runs")} could not be traced to the document and were left out.`);
   if (failed.length > 0) lines.push(`${plural(failed.length, "run", "runs")} of ${p.k} failed (${[...new Set(failed)].join(", ")}).`);
   if (notComputed.length > 0) lines.push(`These parts of the profile could not be computed or do not apply: ${notComputed.join(", ")}.`);

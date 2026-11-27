@@ -89,3 +89,11 @@ test("figures that no claim covers are counted, so a document cut down to one cl
   const none = buildNotCheckedReport({ ledger: ledger(2), items, x2: computeX2(items, 1000), runs: [okRun()], k: 1, documentChars: 1000, profile: { x1: 0, x2: 1, x4: 0, x5: 0, x6: 0 } });
   assert.equal(none.figures, undefined);
 });
+
+test("the lines name examples of what was not compared, so a reviewer can see which entries were left out", () => {
+  const items = [item("SUPPORTED", { fact_ids: ["F1"] }), item("INSUFFICIENT_EVIDENCE", { flags: ["NO_CURRENT_OR_UNIT_MATCH"] }, { subject: "Beneficiaries", attribute: "count", period: "2026", value: 250 })];
+  const r = buildNotCheckedReport({ ledger: ledger(3), items, x2: computeX2(items, 1000), runs: [okRun()], k: 1, documentChars: 1000, profile: { x1: 0, x2: 0.5, x4: 0, x5: 0, x6: 0 } });
+  const text = r.lines.join("\n");
+  assert.match(text, /for example Beneficiaries, count, 2026: 250\./);
+  assert.match(text, /2 of 3 ledger entries were not compared with any figure of the document \(for example GCF financing, committed amount, total; GCF financing, committed amount, total\)\./);
+});
