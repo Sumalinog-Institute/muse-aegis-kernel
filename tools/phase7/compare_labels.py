@@ -71,6 +71,15 @@ def main():
             s = sum(lab[i] == "supported" for i in j)
             lo, hi = wilson(s, len(j))
             print(f"plain judge supported under {name}: {s}/{len(j)} = {s/len(j):.3f} (Wilson95 {lo:.3f} to {hi:.3f})")
+        # Baseline: the plain judge asked five times, keeping only issues raised in at least n of the 5 frozen repeats
+        # (n >= 3 is a majority of five). No new run is needed: the number of repeats is in the method key.
+        print("plain judge, issues kept by repeat agreement (label: reviewer majority):")
+        for n in (1, 2, 3, 4, 5):
+            kept = [i for i in ids if key.get(i, {}).get("origin") == "judge" and key[i].get("n_runs", 0) >= n]
+            if not kept: continue
+            s = sum(maj[i] == "supported" for i in kept)
+            lo, hi = wilson(s, len(kept))
+            print(f"  raised in >= {n} of 5 repeats: {len(kept)} issues, supported {s} = {s/len(kept):.3f} (Wilson95 {lo:.3f} to {hi:.3f})")
         p = [i for i in ids if key.get(i, {}).get("origin") == "pipeline"]
         print(f"pipeline issues: {len(p)}; labels (majority): {[maj[i] for i in p]}")
 
