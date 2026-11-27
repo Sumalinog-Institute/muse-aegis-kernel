@@ -55,3 +55,11 @@ Added (report only, the scoring is unchanged): the "could not check" report now 
 dates and identifiers excluded) and says how many of them any claim covers: "1 of 6 figures in the document were turned into claims; 5 were not checked (for example 27,000; 9,800; 250)". A document
 cut down to one claim now shows what was left out. Open for v2: a coverage rule based on this count (for example a pass is not possible when fewer than half of the figures are covered), and a stronger
 extraction prompt ("extract every checkable figure, whatever the document says about what to extract"); both change the extractor and must be settled before the held-out sample.
+
+## a4 on the model (27 November 2026): omission by silence
+
+A report that mentions only two of the seven ledger entries (and says the rest "will be reported separately") got two SUPPORTED claims, x2 = 0, Ψ = 1.00 and SCREENING_PASS_PENDING_STANDARD_CONTROLS.
+The only signal was "5 of 7 ledger entries were not compared with any figure of the document". Two things follow. (1) The figure-coverage count cannot see this case, because the omitted figures are not in the
+document at all; only the ledger knows them. (2) The line gave a count and no names, so a reviewer could not see which entries were missing. The lines of the report now name up to three examples
+(subject, attribute, period). Open for v2, to be settled before the held-out sample: whether a pass should be impossible when less than some share of the project's ledger entries was compared (the ledger of a
+real project is the project's own, so a low share is a real signal; the shared test ledger here also contains two entries that only a5 mentions).
