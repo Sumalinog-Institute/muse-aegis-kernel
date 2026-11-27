@@ -1,0 +1,72 @@
+{
+ "batch": 4,
+ "projects": [
+  "FP257",
+  "FP267",
+  "FP276",
+  "FP279",
+  "SAP011"
+ ],
+ "documents": [
+  {
+   "file": "FP257_apr_2026.pdf",
+   "sha256": "e13d82b7785b741153a1fa4cc4794821ddf988d6a1a1628d8506f36dbf390563",
+   "retrieved_on": "2026-11-28",
+   "note": ""
+  },
+  {
+   "file": "FP257_proposal.pdf",
+   "sha256": "7bfba73c7d2b65ba0e39d7d2b593350f5e48ec320c536605fdb4c6c867233da9",
+   "retrieved_on": "2026-11-28",
+   "note": ""
+  },
+  {
+   "file": "FP267_apr_2026.pdf",
+   "sha256": "d3c9ab58b8169726dfa6f76554ca29c1fe4722a4238f9e4418cb1b8eaa8291f1",
+   "retrieved_on": "2026-11-28",
+   "note": ""
+  },
+  {
+   "file": "FP267_proposal.pdf",
+   "sha256": "ed22b9915227cc29b42e763c28f90e15665d33235e944600a0e03b68784688a3",
+   "retrieved_on": "2026-11-28",
+   "note": ""
+  },
+  {
+   "file": "FP276_apr_2026.pdf",
+   "sha256": "bd5a282194f2b4ec4924c1884719cc469ced50ab20530d7b4308e3ac0ed20392",
+   "retrieved_on": "2026-11-28",
+   "note": "NOT a project report: GCF \"Annual progress report 2025\" (fund-level); same file as FP279_apr_2026"
+  },
+  {
+   "file": "FP276_proposal.pdf",
+   "sha256": "9d3869b58410508d39174b717ff9ef2a97913c4f35bb14cba0cb199fb9411536",
+   "retrieved_on": "2026-11-28",
+   "note": ""
+  },
+  {
+   "file": "FP279_apr_2026.pdf",
+   "sha256": "bd5a282194f2b4ec4924c1884719cc469ced50ab20530d7b4308e3ac0ed20392",
+   "retrieved_on": "2026-11-28",
+   "note": "NOT a project report: GCF \"Annual progress report 2025\" (fund-level); same file as FP276_apr_2026"
+  },
+  {
+   "file": "FP279_proposal.pdf",
+   "sha256": "b34e868b8e5ce0b584b59ee9af807ee8e69062cdf1d0dd5e61126fd9acbe5d56",
+   "retrieved_on": "2026-11-28",
+   "note": ""
+  },
+  {
+   "file": "SAP011_apr_2026.pdf",
+   "sha256": "dafb498f770b9caea8da0b852887c869ee19b2780911b4084ab59962c942dc77",
+   "retrieved_on": "2026-11-28",
+   "note": ""
+  },
+  {
+   "file": "SAP011_proposal.pdf",
+   "sha256": "ed230d5f42121bda48736c5e74edd789af38f9e99367d892b625fb86d24db729",
+   "retrieved_on": "2026-11-28",
+   "note": ""
+  }
+ ]
+}
