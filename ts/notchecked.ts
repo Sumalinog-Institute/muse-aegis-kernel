@@ -2,7 +2,7 @@
 // so a clean-looking result cannot hide a thin check. It is derived only from data the screening already holds (no model call),
 // it is part of the sealed draft, and every line is plain language that a reviewer can read without the JSON.
 
-import { requiredClaims } from "./claims.ts";
+import { foldText, indexOfWholeNumber, requiredClaims } from "./claims.ts";
 import type { Ledger, LedgerFact, VerifiedClaim, X2Result } from "./claims.ts";
 import type { RunSummary } from "./stability.ts";
 
@@ -24,6 +24,8 @@ export interface NotCheckedReport {
   runs: { k: number; valid: number; failed_codes: string[] };
   /** Parts of the profile that could not be computed or do not apply ("NA" or incomplete). */
   profile_parts_not_computed: string[];
+  /** Figures that stand in the document text (v1.1) and how many of them any claim covers. Left out when the document text was not given. */
+  figures?: { total: number; covered: number; uncovered_total: number; uncovered: { figure: string; context: string }[] };
   /** Figures for which the document itself states two or more different values (same subject, attribute, period and unit). */
   document_conflicts: { subject: string; attribute: string; period: string; unit: string; values: (number | string)[] }[];
   document_conflicts_total: number;
@@ -41,6 +43,32 @@ export interface NotCheckedInput {
   profile: Record<string, unknown>;
   /** v1.1: whether the screening recorded where the document came from. Left out: not reported. */
   provenanceRecorded?: boolean;
+  /** v1.1: the document text, so that figures no claim covers can be counted. */
+  documentText?: string;
+}
+
+// A figure here is a number a reader would check: grouped with thousands commas, with decimals, a percentage, or three or more digits.
+// Years, dates and identifiers ("2026", "2026-Q2", "TX-2026-016") are not figures.
+const FIGURE = /(?<![\w.,-])(?:\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+\.\d+|\d{3,})%?(?![\w-])|(?<![\w.,-])\d+%/g;
+const isYear = (f: string): boolean => /^\d{4}$/.test(f) && Number(f) >= 1900 && Number(f) <= 2100;
+
+export function figuresCoverage(documentText: string, items: readonly VerifiedClaim[]): NonNullable<NotCheckedReport["figures"]> {
+  const text = foldText(documentText).replace(/\s+/g, " ");
+  const quotes = items.map((it) => foldText(it.claim.quote).replace(/\s+/g, " "));
+  const seen = new Set<number>();
+  let total = 0;
+  const uncovered: { figure: string; context: string }[] = [];
+  let uncoveredTotal = 0;
+  for (const m of text.matchAll(FIGURE)) {
+    const f = m[0];
+    const at = m.index as number;
+    if (isYear(f)) continue;
+    total++;
+    if (quotes.some((q) => indexOfWholeNumber(q, f) >= 0)) { seen.add(at); continue; }
+    uncoveredTotal++;
+    if (uncovered.length < 10) uncovered.push({ figure: f, context: text.slice(Math.max(0, at - 40), at + f.length + 20).trim() });
+  }
+  return { total, covered: total - uncoveredTotal, uncovered_total: uncoveredTotal, uncovered };
 }
 
 const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`;
@@ -88,6 +116,8 @@ export function buildNotCheckedReport(p: NotCheckedInput): NotCheckedReport {
     return { subject: c.subject, attribute: c.attribute, period: c.period, unit: c.unit, values: [...new Set(g.map((x) => x.claim.value))].slice(0, 6) };
   });
 
+  const figures = p.documentText === undefined ? undefined : figuresCoverage(p.documentText, p.items);
+
   const lines: string[] = [];
   if (conflictsAll.length > 0) {
     const first = conflicts[0] as (typeof conflicts)[number];
@@ -98,6 +128,7 @@ export function buildNotCheckedReport(p: NotCheckedInput): NotCheckedReport {
       ? "No figure could be traced to the document, so no factual check was made."
       : `Only ${plural(found, "figure was", "figures were")} found in the document; at least ${required} are needed for a document of this length, so the check is incomplete.`);
   }
+  if (figures !== undefined && figures.uncovered_total > 0) lines.push(`${figures.covered} of ${figures.total} figures in the document were turned into claims; ${figures.uncovered_total} were not checked (for example ${figures.uncovered.slice(0, 3).map((u) => u.figure).join("; ")}).`);
   if (unmatchedAll.length > 0) lines.push(`${plural(unmatchedAll.length, "figure was", "figures were")} found in the document but could not be compared with the ledger (no matching ledger entry, or a different unit or period).`);
   const slips = unmatchedAll.filter((it) => it.flags.includes("SCALE_UNCERTAIN")).length;
   if (slips > 0) lines.push(`${plural(slips, "figure equals", "figures equal")} a ledger value except for a factor of 1,000, 1,000,000 or 1,000,000,000, so the unit or scale in the document is unclear; ${slips === 1 ? "it was" : "they were"} not counted as contradictions.`);
@@ -117,6 +148,7 @@ export function buildNotCheckedReport(p: NotCheckedInput): NotCheckedReport {
     coverage: { claims_found: found, claims_required: required, document_chars: p.documentChars, enough },
     runs: { k: p.k, valid, failed_codes: failed },
     profile_parts_not_computed: notComputed,
+    ...(figures !== undefined ? { figures } : {}),
     document_conflicts: conflicts, document_conflicts_total: conflictsAll.length,
     lines,
   };
