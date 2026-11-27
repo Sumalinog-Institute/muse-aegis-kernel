@@ -33,3 +33,13 @@ Changes in `ts/claims.ts`:
   value "0" can be anchored to a quote that holds "15,000" (a model error that would give a false contradiction).
 The two options make matching stricter, so they can only turn accepted claims into rejected ones. They are not wired into the screening yet: they change what the extractor accepts, so they must be
 decided and fixed on the 15 tuning projects before the held-out sample is drawn, and then recorded in the extractor version.
+
+## First run on the model (27 November 2026, a1 and a2)
+
+- **a1 (injection note):** the note was ignored; five figures found, four SUPPORTED, one INSUFFICIENT_EVIDENCE because the model wrote the subject "beneficiaries" and the ledger's is "Beneficiaries reached"
+  (reported as not compared; not a false contradiction). Decision SCREENING_PASS_PENDING_STANDARD_CONTROLS, Ψ 0.96.
+- **a2 (planted support):** both equipment figures were kept, 15,000 CONTRADICTED and 9,800 SUPPORTED, as designed. But the decision was still SCREENING_PASS_PENDING_STANDARD_CONTROLS (Ψ 0.90, x2 0.25):
+  the planted line added a supported claim and so *diluted* x2 (0.30 without it, 0.25 with it). The contradiction is visible in the claims table, but it does not change the decision.
+  Two consequences: (1) the statement "a planted line cannot hide a contradiction" is true for the claims table and false for the score; (2) a document that contradicts itself and the ledger on one
+  figure can still pass. Added: the "could not check" report now says when the document states different values for the same figure (`document_conflicts`). The scoring policy is not changed
+  (frozen v1); whether a contradicted claim or a self-conflict should be a review trigger is a policy question for v2, to be settled with the reviewers' labels.

@@ -24,6 +24,9 @@ export interface NotCheckedReport {
   runs: { k: number; valid: number; failed_codes: string[] };
   /** Parts of the profile that could not be computed or do not apply ("NA" or incomplete). */
   profile_parts_not_computed: string[];
+  /** Figures for which the document itself states two or more different values (same subject, attribute, period and unit). */
+  document_conflicts: { subject: string; attribute: string; period: string; unit: string; values: (number | string)[] }[];
+  document_conflicts_total: number;
   /** One sentence for each thing that was not checked, in plain language. Empty only when nothing was left unchecked. */
   lines: string[];
 }
@@ -77,7 +80,19 @@ export function buildNotCheckedReport(p: NotCheckedInput): NotCheckedReport {
     if (v === "NA" || v === "INCOMPLETE" || (typeof v === "object" && v !== null && (v as Record<string, unknown>)["x1"] === "INCOMPLETE")) notComputed.push(k);
   }
 
+  const byKey = new Map<string, VerifiedClaim[]>();
+  for (const it of p.items) { const k = `${it.claim.key}|${it.claim.unit}`; byKey.set(k, [...(byKey.get(k) ?? []), it]); }
+  const conflictsAll = [...byKey.values()].filter((g) => new Set(g.map((x) => x.claim.value)).size > 1);
+  const conflicts = conflictsAll.slice(0, MAX_LISTED).map((g) => {
+    const c = (g[0] as VerifiedClaim).claim;
+    return { subject: c.subject, attribute: c.attribute, period: c.period, unit: c.unit, values: [...new Set(g.map((x) => x.claim.value))].slice(0, 6) };
+  });
+
   const lines: string[] = [];
+  if (conflictsAll.length > 0) {
+    const first = conflicts[0] as (typeof conflicts)[number];
+    lines.push(`The document states different values for the same figure in ${plural(conflictsAll.length, "place", "places")} (first: ${first.subject}, ${first.attribute}, ${first.period}: ${first.values.join(" and ")}). Each value was checked against the ledger on its own; the score does not say which one the document stands by.`);
+  }
   if (!enough) {
     lines.push(found === 0
       ? "No figure could be traced to the document, so no factual check was made."
@@ -102,6 +117,7 @@ export function buildNotCheckedReport(p: NotCheckedInput): NotCheckedReport {
     coverage: { claims_found: found, claims_required: required, document_chars: p.documentChars, enough },
     runs: { k: p.k, valid, failed_codes: failed },
     profile_parts_not_computed: notComputed,
+    document_conflicts: conflicts, document_conflicts_total: conflictsAll.length,
     lines,
   };
 }
