@@ -56,3 +56,17 @@ budget table elsewhere in the document, not in this section. The reader shows wh
 
 Evaluation on the 15 tuning projects (30 documents, word boxes): the same 27 sections are found; the number of figures that appear only in the browser path is 7, of which 6 are decimal-comma
 figures now written in English form (FP014, FP022) and 1 is a figure that the page header had split in the pdftotext path (FP092 APR 35,672,790.52). Tests: `ts/tidy.test.ts`.
+
+## Second real use (27 November 2026, tidy v2, section cut v3)
+
+Reading SAP005, FP095 and FP183 in the browser showed that two of the three gave no section: pdf.js 4.10 splits text written in small capitals into
+pieces ("B.2. Project F inancing I nformation", "A. 6 .", "b aseline", "2 8 February"), and the layout renderer put a space between any two pieces
+that were close together. Changes:
+- **Layout:** pieces that touch (gap below 0.12 x the median character width; a real space is about 0.5) are one word (`LAYOUT.TOUCH`).
+- **Section cutter (v3, TypeScript only):** heading rules accept one stray space between the letters of a heading word and around the dots of a section number
+  ("C . 5 ."). The frozen Python cutter of stage 2 is unchanged; on the 30 tuning documents both cutters still give identical sections.
+- **Tidy v2:** a field text drawn two or more times at the same place ("GrantGrant", "Senior LoansSenior Loans", "CreditCreditCreditCredit") is kept once;
+  a decimal comma before a percent sign ("12,5%", "0,75%") is always written with a point.
+Check with the real pdf.js (version 6.2.108, the only copy available here; the app uses 4.10.38, which splits more): sections found in 27 of 30 PDFs of the
+tuning projects, the same 27 as the pdftotext path; the three without a section (FP014, FP046 and FP095 annual performance reports) have no financial section in the
+file or are too short. Documents of the held-out sample must not be used to change these rules.

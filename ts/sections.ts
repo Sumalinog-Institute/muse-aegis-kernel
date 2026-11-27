@@ -6,14 +6,19 @@
 export type DocumentKind = "proposal" | "apr";
 export const SECTION_CAP = 14000;
 
+// A PDF reader may put a stray space inside a heading written in small capitals ("B.2. Project F inancing I nformation", "C . 5 ."),
+// so the letters of the heading words may be followed by one space.
+const loose = (phrase: string): string => phrase.split(" ").map((w) => [...w].map((c) => c.replace(/[.()]/g, "\\$&")).join("\\s?")).join("\\s+");
+const num = (letter: string, n: string): string => `${letter}\\s?\\.\\s?${n}`;
+
 const RULES: Record<DocumentKind, [RegExp, RegExp][]> = {
   proposal: [
-    [/^\s*B\.2\.\s*Project\s+Financing\s+Information/i, /^\s*B\.3\./i],
-    [/^\s*(C\.\s*)?FINANCING\s+INFORMATION\s*$/i, /^\s*(C\.[3-9]\b|D\.1\b)/i],
+    [new RegExp(`^\\s*${num("B", "2")}\\s?\\.?\\s*${loose("Project Financing Information")}`, "i"), new RegExp(`^\\s*${num("B", "3")}\\s?\\.`, "i")],
+    [new RegExp(`^\\s*(C\\s?\\.\\s*)?${loose("FINANCING INFORMATION")}\\s*$`, "i"), new RegExp(`^\\s*(${num("C", "[3-9]")}\\b|${num("D", "1")}\\b)`, "i")],
   ],
   apr: [
-    [/^(APR CY2024\s+)?(\[APR CY2024\]\s+)?\.?\s*Section\s+3:\s*Financial\s+Information/i, /^(APR CY2024\s+)?Section\s+4/i],
-    [/^\s*FINANCIAL\s+INFORMATION\s*$/i, /^\s*(E\.[4-9]\.|F\.\s?\d|Section\s+F|G\.\s?\d)/i],
+    [new RegExp(`^(APR CY2024\\s+)?(\\[APR CY2024\\]\\s+)?\\.?\\s*${loose("Section 3:")}\\s*${loose("Financial Information")}`, "i"), /^(APR CY2024\s+)?Section\s+4/i],
+    [new RegExp(`^\\s*${loose("FINANCIAL INFORMATION")}\\s*$`, "i"), new RegExp(`^\\s*(${num("E", "[4-9]")}\\.|F\\.\\s?\\d|Section\\s+F|G\\.\\s?\\d)`, "i")],
   ],
 };
 

@@ -19,6 +19,7 @@ export const LAYOUT = {
   LINE_TOLERANCE: 0.45, // items whose vertical centres differ by less than this x the median height share a line
   BLANK_LINE_GAP: 2.0, // a gap of more than this x the usual line pitch gives a blank line
   FALLBACK_CHAR_WIDTH: 5,
+  TOUCH: 0.12, // pieces closer than this x the median character width are one word (a real space is about 0.5)
 } as const;
 
 /** The lines of one page. */
@@ -26,7 +27,8 @@ export function layoutPage(items: readonly TextItem[], charScale: number = LAYOU
   const its = items.filter((i) => i.s.trim() !== "" && i.w > 0);
   if (its.length === 0) return [];
   const widths = its.filter((i) => i.s.length >= 4).map((i) => i.w / i.s.length);
-  const cw = (median(widths) || LAYOUT.FALLBACK_CHAR_WIDTH) * charScale;
+  const mw = median(widths) || LAYOUT.FALLBACK_CHAR_WIDTH; // median character width
+  const cw = mw * charScale;
   const tol = LAYOUT.LINE_TOLERANCE * (median(its.map((i) => i.h)) || 10);
   const x0 = Math.min(...its.map((i) => i.x));
 
@@ -50,6 +52,7 @@ export function layoutPage(items: readonly TextItem[], charScale: number = LAYOU
     for (const it of [...row.items].sort((a, b) => a.x - b.x)) {
       const target = Math.round((it.x - x0) / cw);
       if (line === "") line = " ".repeat(Math.max(0, target));
+      else if (it.x - prevEnd < mw * LAYOUT.TOUCH) { /* pieces of one word (small capitals, split by the PDF reader): no space */ }
       else if (it.x - prevEnd < cw * 1.6) line += " "; // the next word of the same phrase: one space, whatever the grid says
       else line += " ".repeat(Math.max(1, target - line.length));
       line += it.s.trim();
