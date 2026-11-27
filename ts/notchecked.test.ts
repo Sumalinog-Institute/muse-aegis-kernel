@@ -63,3 +63,17 @@ test("long lists are cut but the real totals are kept", () => {
   assert.equal(r.ledger_facts_not_compared.length, 25);
   assert.equal(r.ledger_facts_not_compared_total, 60);
 });
+
+test("a document that states two different values for the same figure is reported, whichever one matches the ledger", () => {
+  const items = [
+    item("CONTRADICTED", { fact_ids: ["F1"] }, { value: 150 }),
+    item("SUPPORTED", { fact_ids: ["F1"] }, { value: 100 }),
+    item("SUPPORTED", { fact_ids: ["F2"] }, { subject: "Other", key: claimKey("Other", "committed amount", "total"), value: 5 }),
+  ];
+  const r = buildNotCheckedReport({ ledger: ledger(2), items, x2: computeX2(items, 1000), runs: [okRun(), okRun(), okRun()], k: 3, documentChars: 1000, profile: { x1: 0.1, x2: 0.3, x4: 0.1, x5: 0.1, x6: 0 } });
+  assert.equal(r.document_conflicts_total, 1);
+  assert.deepEqual(r.document_conflicts[0]?.values, [150, 100]);
+  assert.match(r.lines[0] ?? "", /different values for the same figure in 1 place \(first: GCF financing, committed amount, total: 150 and 100\)/);
+  const clean = buildNotCheckedReport({ ledger: ledger(2), items: items.slice(1), x2: computeX2(items.slice(1), 1000), runs: [okRun(), okRun(), okRun()], k: 3, documentChars: 1000, profile: { x1: 0.1, x2: 0, x4: 0.1, x5: 0.1, x6: 0 } });
+  assert.equal(clean.document_conflicts_total, 0);
+});
