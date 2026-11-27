@@ -221,7 +221,7 @@ export async function prepareScreening(
       ...(provenance !== undefined ? { provenance } : {}),
       not_checked: buildNotCheckedReport({
         ledger: claimsLedger, items: analysis.consensus.items, x2: analysis.consensus.x2, runs: analysis.runs, k: analysis.k,
-        documentChars: inp.documentText.length, provenanceRecorded: provenance !== undefined, profile: { x1: analysis.stability.x1, x2: analysis.consensus.x2.x2, x4: features.x4, x5: features.x5, x6: features.x6 },
+        documentChars: inp.documentText.length, documentText: inp.documentText, provenanceRecorded: provenance !== undefined, profile: { x1: analysis.stability.x1, x2: analysis.consensus.x2.x2, x4: features.x4, x5: features.x5, x6: features.x6 },
       }),
       stability: {
         result: analysis.stability, model: p.model, k: analysis.k, temperature: analysis.temperature,
