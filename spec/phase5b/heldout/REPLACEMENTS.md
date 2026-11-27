@@ -9,6 +9,7 @@ Recorded 28 November 2026, in the order they happened. A project whose annual re
 | 2 | FP230 | no annual performance report published | FP197 | has annual report (per author) |
 | 3 | FP237 | no annual performance report published | FP067 | has annual report (per author) |
 | 4 | FP247 | no annual performance report published | FP261 | FP261: no annual report -> next |
-|   |       |   | FP240 | (pending) |
+|   |       |   | FP240 | FP240: no annual report -> next |
+|   |       |   | FP009 | (pending) |
 
 Note (author, 28 Nov 2026): projects without an annual report are mostly ones approved in 2023-24 that have no results yet.
