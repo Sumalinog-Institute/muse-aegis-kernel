@@ -8,11 +8,17 @@ The extractor, the scoring and the reader are frozen at these commits and are no
 Known weaknesses are not fixed before the test and are reported as limits of v1.1: a model can obey an injected instruction (adversarial pack a3), a report that leaves out figures can still pass (a4), and the
 score does not treat a contradicted figure as a trigger (a2). See `spec/phase5b/v1.1/ADVERSARIAL.md`.
 
-## Frame and draw
-Every GCF funding proposal approved at B.43 or earlier (FP001-FP288, SAP001-SAP065; FP289 and SAP066 open B.44, 25-28 March 2026), minus the 15 tuning projects
-(FP014, FP022, FP046, FP052, FP069, FP092, FP095, FP116, FP125, FP179, FP183, FP236, FP248, SAP005, SAP043). The highest numbers checked on 28 November 2026 against GCF/B.46/02 (FP328 and SAP074 are B.46 approvals).
+## Frame and draw (version 2, 28 November 2026)
+The frame is the stage 2 pool (`spec/phase5b/stage2/stage2_draw_order.csv`: every GCF activity in the IATI list, because the ledger is built from the activity's IATI data, minus the 40 projects of stage 1 and
+the pilot draw), restricted to projects approved at B.43 or earlier (FP001-FP288, SAP001-SAP065; FP289 and SAP066 open B.44, 25-28 March 2026), minus the 15 stage 2 projects and minus the 6 projects that stage 2 found to
+have no published annual performance report. 222 FP and 51 SAP projects remain. The highest numbers were checked on 28 November 2026 against GCF/B.46/02 (FP328 and SAP074 are B.46 approvals).
 `tools/phase5b/draw_heldout.py` (seed 20261128, ordered random sample without replacement; the output is in `heldout_draw.json` and the script reproduces it exactly) gives 24 FP and 6 SAP projects,
 plus ordered replacements (36 FP, 14 SAP). The draw is not repeated and is not changed by hand.
+
+## Correction: version 1 of the draw is void
+The first draw (merged earlier the same day, kept as `heldout_draw_VOID_v1.json`) used FP001-FP288 and SAP001-SAP065 minus the 15 tuning projects only. It left out two conditions that the stage 2 protocol already
+had: no project from the 40 projects of stage 1 and the pilot draw, and only projects with IATI data. Eleven of its 30 projects were such projects (FP005, FP006, FP007, FP047, FP079, FP083, FP163, FP186, FP253, FP266, SAP016).
+The error was found by comparing the draw with the stage 2 pool before any held-out document had been read or any result produced. The same seed was used for the corrected frame, so the correction does not choose a new seed.
 
 ## Replacement rule
 A project is replaced by the next unused project of its list (FP or SAP) only if its funding proposal PDF or its latest annual performance report PDF cannot be obtained from the GCF website, or has no
