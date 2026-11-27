@@ -136,7 +136,7 @@ def repair(text: str) -> tuple[str, int]:
         if not block: return
         # heading lines in front of a table stay as they are, so the section cutter and the reader still see them
         while block and (m := HEADING.match(block[0])) and len(block[0].split()) <= 14 and not re.search(r"\d{1,3},\d{3}", block[0]) and not table_like(block[:1]):
-            out.append(block.pop(0)); heading = m.group(1); header = None; label = ""
+            out.append(block.pop(0)); heading = re.sub(r"\s+", " ", m.group(1)); header = None; label = ""
         if not block: return
         if table_like(block):
             own = margin_label(block)
@@ -155,7 +155,7 @@ def repair(text: str) -> tuple[str, int]:
             if is_header(block): header = header_labels(block)
             for l in block:
                 m = HEADING.match(l)
-                if m and len(l.split()) <= 14 and not re.search(r"\d{1,3},\d{3}", l): heading = m.group(1); header = None; label = ""
+                if m and len(l.split()) <= 14 and not re.search(r"\d{1,3},\d{3}", l): heading = re.sub(r"\s+", " ", m.group(1)); header = None; label = ""
     for l in text.split("\n"):
         if l.strip() == "": flush(); out.append(l)
         else: block.append(l)

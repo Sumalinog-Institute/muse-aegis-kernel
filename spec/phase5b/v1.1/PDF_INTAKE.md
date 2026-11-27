@@ -19,3 +19,14 @@ held-out sample must not be used to change it.
 Limits: the evaluation uses poppler's word boxes (`pdftotext -bbox`), not the output of the browser's PDF reader, which groups text differently, so
 the browser path needs its own check on the same documents before real use. Scanned PDFs (images without text) give no text and are refused.
 Documents that are not in the GCF templates give no section: the operator then pastes the text by hand, as today.
+
+## First use on real PDFs (27 November 2026)
+
+The first run of the browser reader on FP014, FP022 and FP046 showed three faults that the word-box evaluation had not shown, because
+pdf.js returns text with the PDF's own wide word spacing: (1) the FP022 section was not found because the heading is written
+"B.2.     Project      Financing         Information" and the rule needed single spaces; (2) the section heading in the row prefix kept
+that spacing and was cut at 70 characters; (3) blank lines appeared between lines of one paragraph. Changes: the TypeScript section rules accept any
+white space between the words of a heading (`\s+`); both readers (Python and TypeScript) collapse white space in the heading used as the row
+prefix (table repair v6, still identical on 30 documents); the blank-line threshold of the layout renderer is 2.0 times the line pitch (the share of
+blank lines then equals that of pdftotext: 0.12 against 0.13 on FP022). A second proxy for pdf.js items (pdfplumber words with font-size heights)
+finds the section in all three documents. The frozen Python cutter of stage 2 is not changed; the TypeScript rules are the wider ones.

@@ -17,7 +17,7 @@ const median = (xs: number[]): number => {
 export const LAYOUT = {
   CHAR_WIDTH_SCALE: 0.8, // grid pitch = this x the median width of a character
   LINE_TOLERANCE: 0.45, // items whose vertical centres differ by less than this x the median height share a line
-  BLANK_LINE_GAP: 1.75, // a gap of more than this x the usual line pitch gives a blank line
+  BLANK_LINE_GAP: 2.0, // a gap of more than this x the usual line pitch gives a blank line
   FALLBACK_CHAR_WIDTH: 5,
 } as const;
 
