@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-FP279",
+ "title": "Enhancing Climate Resilience in Flood-Prone Areas in Northwestern South Sudan (ECRF)",
+ "currency": "USD",
+ "amount_awarded": 44679086.0,
+ "award_date": "2025-10-30",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "World Food Programme"
+ },
+ "planned_dates": {
+  "start": "2025-10-30",
+  "end": "2030-12-02"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

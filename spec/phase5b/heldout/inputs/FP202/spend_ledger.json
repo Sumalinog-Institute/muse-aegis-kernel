@@ -1,0 +1,83 @@
+{
+ "snapshot_id": "P5B-FP202-SPEND",
+ "as_of": "2026-11-04",
+ "currency": "USD",
+ "complete": true,
+ "transactions": [
+  {
+   "id": "IATI-001",
+   "type": "expenditure",
+   "date": "2023-03-16",
+   "category": "iati_commitment",
+   "description": "GCF financing commitment",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Food and Agriculture Organization of the United Nations",
+    "identifiers": []
+   },
+   "value": 33300000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-002",
+   "type": "expenditure",
+   "date": "2023-03-16",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "MMAyA",
+   "receiver_org": {
+    "name": "Food and Agriculture Organization of the United Nations",
+    "identifiers": []
+   },
+   "value": 29500000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-003",
+   "type": "expenditure",
+   "date": "2023-03-16",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "FAM",
+   "receiver_org": {
+    "name": "Food and Agriculture Organization of the United Nations",
+    "identifiers": []
+   },
+   "value": 500000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-004",
+   "type": "expenditure",
+   "date": "2024-02-22",
+   "category": "iati_disbursement",
+   "description": "Disbursement",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Food and Agriculture Organization of the United Nations",
+    "identifiers": []
+   },
+   "value": 7603613.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-005",
+   "type": "expenditure",
+   "date": "2026-04-24",
+   "category": "iati_disbursement",
+   "description": "Disbursement",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Food and Agriculture Organization of the United Nations",
+    "identifiers": []
+   },
+   "value": 11138814.0,
+   "currency": "USD",
+   "documents": []
+  }
+ ]
+}

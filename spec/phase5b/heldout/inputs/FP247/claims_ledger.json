@@ -1,0 +1,38 @@
+{
+ "snapshot_id": "P5B-FP247-CLAIMS",
+ "snapshot_date": "2026-11-04",
+ "facts": [
+  {
+   "id": "IF1",
+   "subject": "GCF funding",
+   "attribute": "committed amount",
+   "period": "total",
+   "value": 50588093.32,
+   "unit": "usd"
+  },
+  {
+   "id": "IF2",
+   "subject": "GCF funding",
+   "attribute": "committed amount",
+   "period": "total",
+   "value": 50588093.32,
+   "unit": "count"
+  },
+  {
+   "id": "IF3",
+   "subject": "Co-financing",
+   "attribute": "committed amount",
+   "period": "total",
+   "value": 8170086.4,
+   "unit": "usd"
+  },
+  {
+   "id": "IF4",
+   "subject": "Co-financing",
+   "attribute": "committed amount",
+   "period": "total",
+   "value": 8170086.4,
+   "unit": "count"
+  }
+ ]
+}

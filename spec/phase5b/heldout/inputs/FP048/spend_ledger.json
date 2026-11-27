@@ -1,0 +1,203 @@
+{
+ "snapshot_id": "P5B-FP048-SPEND",
+ "as_of": "2026-11-04",
+ "currency": "USD",
+ "complete": true,
+ "transactions": [
+  {
+   "id": "IATI-001",
+   "type": "expenditure",
+   "date": "2017-10-02",
+   "category": "iati_commitment",
+   "description": "GCF financing commitment",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Inter-American Development Bank",
+    "identifiers": []
+   },
+   "value": 11000000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-002",
+   "type": "expenditure",
+   "date": "2017-10-02",
+   "category": "iati_commitment",
+   "description": "GCF financing commitment",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Inter-American Development Bank",
+    "identifiers": []
+   },
+   "value": 2140000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-003",
+   "type": "expenditure",
+   "date": "2017-10-02",
+   "category": "iati_commitment",
+   "description": "GCF financing commitment",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Inter-American Development Bank",
+    "identifiers": []
+   },
+   "value": 5360000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-004",
+   "type": "expenditure",
+   "date": "2017-10-02",
+   "category": "iati_commitment",
+   "description": "GCF financing commitment",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Inter-American Development Bank",
+    "identifiers": []
+   },
+   "value": 1500000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-005",
+   "type": "expenditure",
+   "date": "2017-10-02",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "IDBG",
+   "receiver_org": {
+    "name": "Inter-American Development Bank",
+    "identifiers": []
+   },
+   "value": 3000000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-006",
+   "type": "expenditure",
+   "date": "2017-10-02",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "IDBG",
+   "receiver_org": {
+    "name": "Inter-American Development Bank",
+    "identifiers": []
+   },
+   "value": 1500000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-007",
+   "type": "expenditure",
+   "date": "2017-10-02",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "IDBG",
+   "receiver_org": {
+    "name": "Inter-American Development Bank",
+    "identifiers": []
+   },
+   "value": 1100000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-008",
+   "type": "expenditure",
+   "date": "2017-10-02",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "IDBG",
+   "receiver_org": {
+    "name": "Inter-American Development Bank",
+    "identifiers": []
+   },
+   "value": 4400000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-009",
+   "type": "expenditure",
+   "date": "2019-03-15",
+   "category": "iati_disbursement",
+   "description": "Disbursement",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Inter-American Development Bank",
+    "identifiers": []
+   },
+   "value": 2140000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-010",
+   "type": "expenditure",
+   "date": "2020-07-06",
+   "category": "iati_disbursement",
+   "description": "Disbursement",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Inter-American Development Bank",
+    "identifiers": []
+   },
+   "value": 3500000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-011",
+   "type": "expenditure",
+   "date": "2021-04-23",
+   "category": "iati_disbursement",
+   "description": "Disbursement",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Inter-American Development Bank",
+    "identifiers": []
+   },
+   "value": 1900000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-012",
+   "type": "expenditure",
+   "date": "2021-09-29",
+   "category": "iati_disbursement",
+   "description": "Disbursement",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Inter-American Development Bank",
+    "identifiers": []
+   },
+   "value": 1000000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-013",
+   "type": "expenditure",
+   "date": "2024-12-12",
+   "category": "iati_disbursement",
+   "description": "Disbursement",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Inter-American Development Bank",
+    "identifiers": []
+   },
+   "value": 496000.0,
+   "currency": "USD",
+   "documents": []
+  }
+ ]
+}

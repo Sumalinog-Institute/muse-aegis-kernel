@@ -1,0 +1,218 @@
+{
+ "snapshot_id": "P5B-FP216-SPEND",
+ "as_of": "2026-11-04",
+ "currency": "USD",
+ "complete": true,
+ "transactions": [
+  {
+   "id": "IATI-001",
+   "type": "expenditure",
+   "date": "2023-10-25",
+   "category": "iati_commitment",
+   "description": "GCF financing commitment",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "United Nations Development Programme",
+    "identifiers": []
+   },
+   "value": 14400000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-002",
+   "type": "expenditure",
+   "date": "2023-10-25",
+   "category": "iati_commitment",
+   "description": "GCF financing commitment",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "United Nations Development Programme",
+    "identifiers": []
+   },
+   "value": 0.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-003",
+   "type": "expenditure",
+   "date": "2023-10-25",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "Forestry and Water Management of Republika Srpska (MAFWM RS)- EiB Loan",
+   "receiver_org": {
+    "name": "United Nations Development Programme",
+    "identifiers": []
+   },
+   "value": 21111111.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-004",
+   "type": "expenditure",
+   "date": "2023-10-25",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "Ministry of Foreign Trade and Economic Relations (MOFTER)",
+   "receiver_org": {
+    "name": "United Nations Development Programme",
+    "identifiers": []
+   },
+   "value": 5555556.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-005",
+   "type": "expenditure",
+   "date": "2023-10-25",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "Civil Engineering and Ecology of Republika Srpska (UNFCCC and GCF Focal point) (MSPCEE)",
+   "receiver_org": {
+    "name": "United Nations Development Programme",
+    "identifiers": []
+   },
+   "value": 300000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-006",
+   "type": "expenditure",
+   "date": "2023-10-25",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "Hydro Power Plant (HPP)",
+   "receiver_org": {
+    "name": "United Nations Development Programme",
+    "identifiers": []
+   },
+   "value": 5000000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-007",
+   "type": "expenditure",
+   "date": "2023-10-25",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "Sarajevo (WA Sava",
+   "receiver_org": {
+    "name": "United Nations Development Programme",
+    "identifiers": []
+   },
+   "value": 16000000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-008",
+   "type": "expenditure",
+   "date": "2023-10-25",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "Association of Insurance Companies FB&H (AOIC)",
+   "receiver_org": {
+    "name": "United Nations Development Programme",
+    "identifiers": []
+   },
+   "value": 300000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-009",
+   "type": "expenditure",
+   "date": "2023-10-25",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "Mostar (WA AB)",
+   "receiver_org": {
+    "name": "United Nations Development Programme",
+    "identifiers": []
+   },
+   "value": 5000000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-010",
+   "type": "expenditure",
+   "date": "2023-10-25",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "UNDP",
+   "receiver_org": {
+    "name": "United Nations Development Programme",
+    "identifiers": []
+   },
+   "value": 800000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-011",
+   "type": "expenditure",
+   "date": "2023-10-25",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "Re-insurance company Bosna RE (Bosna RE)",
+   "receiver_org": {
+    "name": "United Nations Development Programme",
+    "identifiers": []
+   },
+   "value": 333333.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-012",
+   "type": "expenditure",
+   "date": "2023-10-25",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "Forestry and Water Management of Republika Srpska (MAFWM RS)",
+   "receiver_org": {
+    "name": "United Nations Development Programme",
+    "identifiers": []
+   },
+   "value": 3888889.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-013",
+   "type": "expenditure",
+   "date": "2025-03-14",
+   "category": "iati_disbursement",
+   "description": "Disbursement",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "United Nations Development Programme",
+    "identifiers": []
+   },
+   "value": 1671594.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-014",
+   "type": "expenditure",
+   "date": "2026-06-04",
+   "category": "iati_disbursement",
+   "description": "Disbursement",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "United Nations Development Programme",
+    "identifiers": []
+   },
+   "value": 3769041.0,
+   "currency": "USD",
+   "documents": []
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "snapshot_id": "P5B-FP267-SPEND",
+ "as_of": "2026-11-04",
+ "currency": "USD",
+ "complete": true,
+ "transactions": [
+  {
+   "id": "IATI-001",
+   "type": "expenditure",
+   "date": "2025-07-03",
+   "category": "iati_commitment",
+   "description": "GCF financing commitment",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "South African National Biodiversity Institute",
+    "identifiers": []
+   },
+   "value": 40104179.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-002",
+   "type": "expenditure",
+   "date": "2025-07-10",
+   "category": "iati_disbursement",
+   "description": "Disbursement",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "South African National Biodiversity Institute",
+    "identifiers": []
+   },
+   "value": 6356790.0,
+   "currency": "USD",
+   "documents": []
+  }
+ ]
+}

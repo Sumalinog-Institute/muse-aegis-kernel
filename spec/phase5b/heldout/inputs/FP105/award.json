@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-FP105",
+ "title": "BOAD Climate Finance Facility to Scale Up Solar Energy Investments in Francophone West Africa LDCs",
+ "currency": "USD",
+ "amount_awarded": 69527800.0,
+ "award_date": "2019-02-28",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Banque Ouest Africaine de Développement (West African Development Bank)"
+ },
+ "planned_dates": {
+  "start": "2019-02-28",
+  "end": "2027-04-09"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

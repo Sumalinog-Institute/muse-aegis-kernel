@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-FP162",
+ "title": "The Africa Integrated Climate Risk Management Programme: Building the resilience of smallholder farmers to climate change impacts in 7 Sahelian Countries of the Great Green Wall (GGW)",
+ "currency": "USD",
+ "amount_awarded": 82849899.97,
+ "award_date": "2021-03-19",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "International Fund for Agricultural Development"
+ },
+ "planned_dates": {
+  "start": "2021-03-19",
+  "end": "2029-10-10"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

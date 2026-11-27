@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-FP070",
+ "title": "Global Clean Cooking Program – Bangladesh",
+ "currency": "USD",
+ "amount_awarded": 20000000.0,
+ "award_date": "2018-03-01",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "International Bank for Reconstruction and Development and International Development Association"
+ },
+ "planned_dates": {
+  "start": "2018-03-01",
+  "end": "2024-12-30"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

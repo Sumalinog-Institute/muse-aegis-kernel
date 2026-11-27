@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-FP148",
+ "title": "Participation in Energy Access Relief Facility (\"EARF\")",
+ "currency": "USD",
+ "amount_awarded": 30000000.0,
+ "award_date": "2020-11-13",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Acumen Fund, Inc."
+ },
+ "planned_dates": {
+  "start": "2020-11-13",
+  "end": "2028-05-03"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

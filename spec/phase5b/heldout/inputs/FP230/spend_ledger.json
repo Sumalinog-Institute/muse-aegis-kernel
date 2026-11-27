@@ -1,0 +1,218 @@
+{
+ "snapshot_id": "P5B-FP230-SPEND",
+ "as_of": "2026-11-04",
+ "currency": "USD",
+ "complete": true,
+ "transactions": [
+  {
+   "id": "IATI-001",
+   "type": "expenditure",
+   "date": "2024-03-06",
+   "category": "iati_commitment",
+   "description": "GCF financing commitment",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Compañia Española de Financiación del Desarrollo",
+    "identifiers": []
+   },
+   "value": 0.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-002",
+   "type": "expenditure",
+   "date": "2024-03-06",
+   "category": "iati_commitment",
+   "description": "GCF financing commitment",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Compañia Española de Financiación del Desarrollo",
+    "identifiers": []
+   },
+   "value": 28495000.01,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-003",
+   "type": "expenditure",
+   "date": "2024-03-06",
+   "category": "iati_commitment",
+   "description": "GCF financing commitment",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Compañia Española de Financiación del Desarrollo",
+    "identifiers": []
+   },
+   "value": 0.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-004",
+   "type": "expenditure",
+   "date": "2024-03-06",
+   "category": "iati_commitment",
+   "description": "GCF financing commitment",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Compañia Española de Financiación del Desarrollo",
+    "identifiers": []
+   },
+   "value": 8890440.01,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-005",
+   "type": "expenditure",
+   "date": "2024-03-06",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "EU (blending facility)",
+   "receiver_org": {
+    "name": "Compañia Española de Financiación del Desarrollo",
+    "identifiers": []
+   },
+   "value": 1436148.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-006",
+   "type": "expenditure",
+   "date": "2024-03-06",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "EU (blending facility)",
+   "receiver_org": {
+    "name": "Compañia Española de Financiación del Desarrollo",
+    "identifiers": []
+   },
+   "value": 649685.98,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-007",
+   "type": "expenditure",
+   "date": "2024-03-06",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "Kuali Fund",
+   "receiver_org": {
+    "name": "Compañia Española de Financiación del Desarrollo",
+    "identifiers": []
+   },
+   "value": 2051640.02,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-008",
+   "type": "expenditure",
+   "date": "2024-03-06",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "AECID",
+   "receiver_org": {
+    "name": "Compañia Española de Financiación del Desarrollo",
+    "identifiers": []
+   },
+   "value": 20060479.97,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-009",
+   "type": "expenditure",
+   "date": "2024-03-06",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "Private investors",
+   "receiver_org": {
+    "name": "Compañia Española de Financiación del Desarrollo",
+    "identifiers": []
+   },
+   "value": 82977439.93,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-010",
+   "type": "expenditure",
+   "date": "2024-03-06",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "AECID",
+   "receiver_org": {
+    "name": "Compañia Española de Financiación del Desarrollo",
+    "identifiers": []
+   },
+   "value": 341940.01,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-011",
+   "type": "expenditure",
+   "date": "2024-03-06",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "Kuali Fund",
+   "receiver_org": {
+    "name": "Compañia Española de Financiación del Desarrollo",
+    "identifiers": []
+   },
+   "value": 45591.97,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-012",
+   "type": "expenditure",
+   "date": "2024-03-06",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "GAWA Capital",
+   "receiver_org": {
+    "name": "Compañia Española de Financiación del Desarrollo",
+    "identifiers": []
+   },
+   "value": 1139799.98,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-013",
+   "type": "expenditure",
+   "date": "2026-02-09",
+   "category": "iati_disbursement",
+   "description": "Disbursement",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Compañia Española de Financiación del Desarrollo",
+    "identifiers": []
+   },
+   "value": 0.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-014",
+   "type": "expenditure",
+   "date": "2026-02-09",
+   "category": "iati_disbursement",
+   "description": "Disbursement",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Compañia Española de Financiación del Desarrollo",
+    "identifiers": []
+   },
+   "value": 18757245.7,
+   "currency": "USD",
+   "documents": []
+  }
+ ]
+}

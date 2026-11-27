@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-FP267",
+ "title": "Scaling up ecosystem-based approaches to managing climate-intensified disaster risks in vulnerable regions of South Africa (\"Eco-DRR\")",
+ "currency": "USD",
+ "amount_awarded": 40104179.0,
+ "award_date": "2025-07-03",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "South African National Biodiversity Institute"
+ },
+ "planned_dates": {
+  "start": "2025-07-03",
+  "end": "2033-07-03"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

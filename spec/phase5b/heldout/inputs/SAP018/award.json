@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-SAP018",
+ "title": "Enhancing Climate Information Systems for Resilient Development in Liberia (Liberia CIS)",
+ "currency": "USD",
+ "amount_awarded": 10000000.0,
+ "award_date": "2020-11-13",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "African Development Bank"
+ },
+ "planned_dates": {
+  "start": "2020-11-13",
+  "end": "2027-10-03"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

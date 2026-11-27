@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-FP224",
+ "title": "Renewstable Barbados Project",
+ "currency": "USD",
+ "amount_awarded": 41000000.0,
+ "award_date": "2023-10-25",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "International Finance Corporation"
+ },
+ "planned_dates": {
+  "start": "2023-10-25",
+  "end": "2026-11-04"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

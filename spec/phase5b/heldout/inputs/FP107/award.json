@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-FP107",
+ "title": "Supporting Climate Resilience and Transformational Change in the Agriculture Sector in Bhutan",
+ "currency": "USD",
+ "amount_awarded": 25347194.0,
+ "award_date": "2019-07-08",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "United Nations Development Programme"
+ },
+ "planned_dates": {
+  "start": "2019-07-08",
+  "end": "2025-11-07"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

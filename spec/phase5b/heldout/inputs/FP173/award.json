@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-FP173",
+ "title": "The Amazon Bioeconomy Fund: Unlocking private capital by valuing bioeconomy products and services with climate mitigation and adaptation results in the Amazon",
+ "currency": "USD",
+ "amount_awarded": 279000000.0,
+ "award_date": "2021-10-07",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Inter-American Development Bank"
+ },
+ "planned_dates": {
+  "start": "2021-10-07",
+  "end": "2029-09-28"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

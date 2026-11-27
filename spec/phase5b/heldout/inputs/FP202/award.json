@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-FP202",
+ "title": "Upscaling Ecosystem Based Climate Resilience of Vulnerable Rural Communities in the Valles Macro-region of the Plurinational State of Bolivia (RECEM-Valles)",
+ "currency": "USD",
+ "amount_awarded": 33300000.0,
+ "award_date": "2023-03-16",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Food and Agriculture Organization of the United Nations"
+ },
+ "planned_dates": {
+  "start": "2023-03-16",
+  "end": "2029-01-29"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

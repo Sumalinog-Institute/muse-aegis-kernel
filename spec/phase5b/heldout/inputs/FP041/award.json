@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-FP041",
+ "title": "Simiyu Climate Resilient Project",
+ "currency": "USD",
+ "amount_awarded": 117057460.0,
+ "award_date": "2017-04-06",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Kreditanstalt für Wiederaufbau"
+ },
+ "planned_dates": {
+  "start": "2017-04-06",
+  "end": "2029-02-09"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

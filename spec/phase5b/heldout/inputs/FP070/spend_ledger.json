@@ -1,0 +1,98 @@
+{
+ "snapshot_id": "P5B-FP070-SPEND",
+ "as_of": "2026-11-04",
+ "currency": "USD",
+ "complete": true,
+ "transactions": [
+  {
+   "id": "IATI-001",
+   "type": "expenditure",
+   "date": "2018-03-01",
+   "category": "iati_commitment",
+   "description": "GCF financing commitment",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "International Bank for Reconstruction and Development and International Development Association",
+    "identifiers": []
+   },
+   "value": 0.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-002",
+   "type": "expenditure",
+   "date": "2018-03-01",
+   "category": "iati_commitment",
+   "description": "GCF financing commitment",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "International Bank for Reconstruction and Development and International Development Association",
+    "identifiers": []
+   },
+   "value": 0.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-003",
+   "type": "expenditure",
+   "date": "2018-03-01",
+   "category": "iati_commitment",
+   "description": "GCF financing commitment",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "International Bank for Reconstruction and Development and International Development Association",
+    "identifiers": []
+   },
+   "value": 20000000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-004",
+   "type": "expenditure",
+   "date": "2018-03-01",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "IDA / IDA terms",
+   "receiver_org": {
+    "name": "International Bank for Reconstruction and Development and International Development Association",
+    "identifiers": []
+   },
+   "value": 20000000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-005",
+   "type": "expenditure",
+   "date": "2021-07-13",
+   "category": "iati_disbursement",
+   "description": "Disbursement",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "International Bank for Reconstruction and Development and International Development Association",
+    "identifiers": []
+   },
+   "value": 10000000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-006",
+   "type": "expenditure",
+   "date": "2023-11-29",
+   "category": "iati_disbursement",
+   "description": "Disbursement",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "International Bank for Reconstruction and Development and International Development Association",
+    "identifiers": []
+   },
+   "value": 10000000.0,
+   "currency": "USD",
+   "documents": []
+  }
+ ]
+}
