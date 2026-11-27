@@ -1,0 +1,70 @@
+{
+ "snapshot_id": "P5B-SAP045-CLAIMS",
+ "snapshot_date": "2026-11-04",
+ "facts": [
+  {
+   "id": "IF1",
+   "subject": "GCF funding",
+   "attribute": "committed amount",
+   "period": "total",
+   "value": 25000000.0,
+   "unit": "usd"
+  },
+  {
+   "id": "IF2",
+   "subject": "GCF funding",
+   "attribute": "committed amount",
+   "period": "total",
+   "value": 25000000.0,
+   "unit": "count"
+  },
+  {
+   "id": "IF3",
+   "subject": "GCF funding",
+   "attribute": "committed amount",
+   "period": "total",
+   "value": 25.0,
+   "unit": "million usd"
+  },
+  {
+   "id": "IF4",
+   "subject": "GCF funding",
+   "attribute": "cumulative disbursement",
+   "period": "total",
+   "value": 11371242.0,
+   "unit": "usd"
+  },
+  {
+   "id": "IF5",
+   "subject": "GCF funding",
+   "attribute": "cumulative disbursement",
+   "period": "total",
+   "value": 11371242.0,
+   "unit": "count"
+  },
+  {
+   "id": "IF6",
+   "subject": "Co-financing",
+   "attribute": "committed amount",
+   "period": "total",
+   "value": 10000000.0,
+   "unit": "usd"
+  },
+  {
+   "id": "IF7",
+   "subject": "Co-financing",
+   "attribute": "committed amount",
+   "period": "total",
+   "value": 10000000.0,
+   "unit": "count"
+  },
+  {
+   "id": "IF8",
+   "subject": "Co-financing",
+   "attribute": "committed amount",
+   "period": "total",
+   "value": 10.0,
+   "unit": "million usd"
+  }
+ ]
+}

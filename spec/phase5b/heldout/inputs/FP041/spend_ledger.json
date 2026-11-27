@@ -1,0 +1,128 @@
+{
+ "snapshot_id": "P5B-FP041-SPEND",
+ "as_of": "2026-11-04",
+ "currency": "USD",
+ "complete": true,
+ "transactions": [
+  {
+   "id": "IATI-001",
+   "type": "expenditure",
+   "date": "2017-04-06",
+   "category": "iati_commitment",
+   "description": "GCF financing commitment",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Kreditanstalt für Wiederaufbau",
+    "identifiers": []
+   },
+   "value": 117057460.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-002",
+   "type": "expenditure",
+   "date": "2017-04-06",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "Government of Tanzania",
+   "receiver_org": {
+    "name": "Kreditanstalt für Wiederaufbau",
+    "identifiers": []
+   },
+   "value": 46389860.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-003",
+   "type": "expenditure",
+   "date": "2017-04-06",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "KfW",
+   "receiver_org": {
+    "name": "Kreditanstalt für Wiederaufbau",
+    "identifiers": []
+   },
+   "value": 29748780.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-004",
+   "type": "expenditure",
+   "date": "2017-04-06",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "Local user groups",
+   "receiver_org": {
+    "name": "Kreditanstalt für Wiederaufbau",
+    "identifiers": []
+   },
+   "value": 1709700.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-005",
+   "type": "expenditure",
+   "date": "2020-11-02",
+   "category": "iati_disbursement",
+   "description": "Disbursement",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Kreditanstalt für Wiederaufbau",
+    "identifiers": []
+   },
+   "value": 4626400.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-006",
+   "type": "expenditure",
+   "date": "2022-11-29",
+   "category": "iati_disbursement",
+   "description": "Disbursement",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Kreditanstalt für Wiederaufbau",
+    "identifiers": []
+   },
+   "value": 17117680.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-007",
+   "type": "expenditure",
+   "date": "2024-08-05",
+   "category": "iati_disbursement",
+   "description": "Disbursement",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Kreditanstalt für Wiederaufbau",
+    "identifiers": []
+   },
+   "value": 26139160.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-008",
+   "type": "expenditure",
+   "date": "2026-04-01",
+   "category": "iati_disbursement",
+   "description": "Disbursement",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Kreditanstalt für Wiederaufbau",
+    "identifiers": []
+   },
+   "value": 23687168.0,
+   "currency": "USD",
+   "documents": []
+  }
+ ]
+}

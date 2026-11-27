@@ -1,0 +1,83 @@
+{
+ "snapshot_id": "P5B-FP105-SPEND",
+ "as_of": "2026-11-04",
+ "currency": "USD",
+ "complete": true,
+ "transactions": [
+  {
+   "id": "IATI-001",
+   "type": "expenditure",
+   "date": "2019-02-28",
+   "category": "iati_commitment",
+   "description": "GCF financing commitment",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Banque Ouest Africaine de Développement (West African Development Bank)",
+    "identifiers": []
+   },
+   "value": 64968600.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-002",
+   "type": "expenditure",
+   "date": "2019-02-28",
+   "category": "iati_commitment",
+   "description": "GCF financing commitment",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Banque Ouest Africaine de Développement (West African Development Bank)",
+    "identifiers": []
+   },
+   "value": 4559200.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-003",
+   "type": "expenditure",
+   "date": "2019-02-28",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "BOAD",
+   "receiver_org": {
+    "name": "Banque Ouest Africaine de Développement (West African Development Bank)",
+    "identifiers": []
+   },
+   "value": 1139800.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-004",
+   "type": "expenditure",
+   "date": "2019-02-28",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "BOAD",
+   "receiver_org": {
+    "name": "Banque Ouest Africaine de Développement (West African Development Bank)",
+    "identifiers": []
+   },
+   "value": 68388000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-005",
+   "type": "expenditure",
+   "date": "2022-10-10",
+   "category": "iati_disbursement",
+   "description": "Disbursement",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Banque Ouest Africaine de Développement (West African Development Bank)",
+    "identifiers": []
+   },
+   "value": 2313200.0,
+   "currency": "USD",
+   "documents": []
+  }
+ ]
+}

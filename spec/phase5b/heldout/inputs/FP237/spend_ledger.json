@@ -1,0 +1,98 @@
+{
+ "snapshot_id": "P5B-FP237-SPEND",
+ "as_of": "2026-11-04",
+ "currency": "USD",
+ "complete": true,
+ "transactions": [
+  {
+   "id": "IATI-001",
+   "type": "expenditure",
+   "date": "2024-07-18",
+   "category": "iati_commitment",
+   "description": "GCF financing commitment",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Agence Française de Developpement",
+    "identifiers": []
+   },
+   "value": 104092800.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-002",
+   "type": "expenditure",
+   "date": "2024-07-18",
+   "category": "iati_commitment",
+   "description": "GCF financing commitment",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Agence Française de Developpement",
+    "identifiers": []
+   },
+   "value": 25455626.44,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-003",
+   "type": "expenditure",
+   "date": "2024-07-18",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "CAF",
+   "receiver_org": {
+    "name": "Agence Française de Developpement",
+    "identifiers": []
+   },
+   "value": 164503800.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-004",
+   "type": "expenditure",
+   "date": "2024-07-18",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "Government",
+   "receiver_org": {
+    "name": "Agence Française de Developpement",
+    "identifiers": []
+   },
+   "value": 29444832.94,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-005",
+   "type": "expenditure",
+   "date": "2024-07-18",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "GIZ",
+   "receiver_org": {
+    "name": "Agence Française de Developpement",
+    "identifiers": []
+   },
+   "value": 20874701.86,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-006",
+   "type": "expenditure",
+   "date": "2026-05-18",
+   "category": "iati_disbursement",
+   "description": "Disbursement",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Agence Française de Developpement",
+    "identifiers": []
+   },
+   "value": 6939600.0,
+   "currency": "USD",
+   "documents": []
+  }
+ ]
+}

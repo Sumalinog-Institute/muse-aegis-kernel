@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-FP234",
+ "title": "Tonga Coastal Resilience",
+ "currency": "USD",
+ "amount_awarded": 22656409.0,
+ "award_date": "2024-07-18",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "United Nations Development Programme"
+ },
+ "planned_dates": {
+  "start": "2024-07-18",
+  "end": "2031-08-27"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

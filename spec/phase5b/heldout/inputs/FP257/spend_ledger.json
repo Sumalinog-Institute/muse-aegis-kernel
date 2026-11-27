@@ -1,0 +1,53 @@
+{
+ "snapshot_id": "P5B-FP257-SPEND",
+ "as_of": "2026-11-04",
+ "currency": "USD",
+ "complete": true,
+ "transactions": [
+  {
+   "id": "IATI-001",
+   "type": "expenditure",
+   "date": "2025-02-20",
+   "category": "iati_commitment",
+   "description": "GCF financing commitment",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Alliance for a Green Revolution in Africa",
+    "identifiers": []
+   },
+   "value": 75623754.06,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-002",
+   "type": "expenditure",
+   "date": "2025-02-20",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "AGRA",
+   "receiver_org": {
+    "name": "Alliance for a Green Revolution in Africa",
+    "identifiers": []
+   },
+   "value": 29376245.94,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-003",
+   "type": "expenditure",
+   "date": "2025-02-25",
+   "category": "iati_disbursement",
+   "description": "Disbursement",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "Alliance for a Green Revolution in Africa",
+    "identifiers": []
+   },
+   "value": 11300000.0,
+   "currency": "USD",
+   "documents": []
+  }
+ ]
+}

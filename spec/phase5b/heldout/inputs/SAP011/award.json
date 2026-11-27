@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-SAP011",
+ "title": "Climate-resilient food security for women and men smallholders in Mozambique through integrated risk management",
+ "currency": "USD",
+ "amount_awarded": 9250000.0,
+ "award_date": "2019-11-14",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "World Food Programme"
+ },
+ "planned_dates": {
+  "start": "2019-11-14",
+  "end": "2026-08-24"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

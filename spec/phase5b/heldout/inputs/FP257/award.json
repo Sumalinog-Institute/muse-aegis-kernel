@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-FP257",
+ "title": "RE-GAIN: Scaling solutions for food loss in Africa",
+ "currency": "USD",
+ "amount_awarded": 75623754.06,
+ "award_date": "2025-02-20",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Alliance for a Green Revolution in Africa"
+ },
+ "planned_dates": {
+  "start": "2025-02-20",
+  "end": "2030-04-20"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

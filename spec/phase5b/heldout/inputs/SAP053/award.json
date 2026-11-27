@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-SAP053",
+ "title": "FISH-ADAPT: Transforming climate resilience and sustainability in Saint Lucia's fisheries communities",
+ "currency": "USD",
+ "amount_awarded": 14750000.0,
+ "award_date": "2025-07-03",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Food and Agriculture Organization of the United Nations"
+ },
+ "planned_dates": {
+  "start": "2025-07-03",
+  "end": "2030-07-04"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-FP035",
+ "title": "Climate Information Services for Resilient Development Planning in Vanuatu (Van-CIS-RDP)",
+ "currency": "USD",
+ "amount_awarded": 18106905.0,
+ "award_date": "2016-12-15",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Secretariat of the Pacific Regional Environment Programme"
+ },
+ "planned_dates": {
+  "start": "2016-12-15",
+  "end": "2026-03-10"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

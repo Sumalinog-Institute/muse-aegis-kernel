@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-FP004",
+ "title": "Climate Resilient Infrastructure Mainstreaming (CRIM)",
+ "currency": "USD",
+ "amount_awarded": 40000000.0,
+ "award_date": "2015-11-05",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Kreditanstalt für Wiederaufbau"
+ },
+ "planned_dates": {
+  "start": "2015-11-05",
+  "end": "2028-03-31"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

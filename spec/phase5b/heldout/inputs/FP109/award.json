@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-FP109",
+ "title": "Safeguarding rural communities and their physical and economic assets from climate induced disasters in Timor-Leste",
+ "currency": "USD",
+ "amount_awarded": 22356805.0,
+ "award_date": "2019-07-08",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "United Nations Development Programme"
+ },
+ "planned_dates": {
+  "start": "2019-07-08",
+  "end": "2026-03-09"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

@@ -1,0 +1,158 @@
+{
+ "snapshot_id": "P5B-FP109-SPEND",
+ "as_of": "2026-11-04",
+ "currency": "USD",
+ "complete": true,
+ "transactions": [
+  {
+   "id": "IATI-001",
+   "type": "expenditure",
+   "date": "2019-07-08",
+   "category": "iati_commitment",
+   "description": "GCF financing commitment",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "United Nations Development Programme",
+    "identifiers": []
+   },
+   "value": 22356805.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-002",
+   "type": "expenditure",
+   "date": "2019-07-08",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "Ministry of Social Solidarity (MSS)",
+   "receiver_org": {
+    "name": "United Nations Development Programme",
+    "identifiers": []
+   },
+   "value": 5000000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-003",
+   "type": "expenditure",
+   "date": "2019-07-08",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "UNDP",
+   "receiver_org": {
+    "name": "United Nations Development Programme",
+    "identifiers": []
+   },
+   "value": 400000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-004",
+   "type": "expenditure",
+   "date": "2019-07-08",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "Ministry of Agriculture and Fishery (MAF)",
+   "receiver_org": {
+    "name": "United Nations Development Programme",
+    "identifiers": []
+   },
+   "value": 12000000.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-005",
+   "type": "expenditure",
+   "date": "2019-07-08",
+   "category": "iati_commitment",
+   "description": "Co-financing commitment",
+   "provider_org": "Ministry of State Administration (MSA)",
+   "receiver_org": {
+    "name": "United Nations Development Programme",
+    "identifiers": []
+   },
+   "value": 19687062.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-006",
+   "type": "expenditure",
+   "date": "2020-06-03",
+   "category": "iati_disbursement",
+   "description": "Disbursement",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "United Nations Development Programme",
+    "identifiers": []
+   },
+   "value": 2349598.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-007",
+   "type": "expenditure",
+   "date": "2022-05-30",
+   "category": "iati_disbursement",
+   "description": "Disbursement",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "United Nations Development Programme",
+    "identifiers": []
+   },
+   "value": 2997580.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-008",
+   "type": "expenditure",
+   "date": "2023-05-11",
+   "category": "iati_disbursement",
+   "description": "Disbursement",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "United Nations Development Programme",
+    "identifiers": []
+   },
+   "value": 4028584.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-009",
+   "type": "expenditure",
+   "date": "2024-04-01",
+   "category": "iati_disbursement",
+   "description": "Disbursement",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "United Nations Development Programme",
+    "identifiers": []
+   },
+   "value": 6164937.0,
+   "currency": "USD",
+   "documents": []
+  },
+  {
+   "id": "IATI-010",
+   "type": "expenditure",
+   "date": "2025-01-31",
+   "category": "iati_disbursement",
+   "description": "Disbursement",
+   "provider_org": "Green Climate Fund",
+   "receiver_org": {
+    "name": "United Nations Development Programme",
+    "identifiers": []
+   },
+   "value": 5300883.0,
+   "currency": "USD",
+   "documents": []
+  }
+ ]
+}

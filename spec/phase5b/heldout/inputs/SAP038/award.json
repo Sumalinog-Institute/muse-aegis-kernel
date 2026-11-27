@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-SAP038",
+ "title": "Climate Adaptation, Resilience and Engagement in Local Governments (CARE-LG)",
+ "currency": "USD",
+ "amount_awarded": 10000000.0,
+ "award_date": "2024-07-18",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Bhutan Trust Fund for Environmental Conservation"
+ },
+ "planned_dates": {
+  "start": "2024-07-18",
+  "end": "2029-07-18"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

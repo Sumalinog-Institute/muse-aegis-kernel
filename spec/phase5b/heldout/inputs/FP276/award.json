@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-FP276",
+ "title": "GCF's investment into the Global Green Bond Initiative (GGBI) (previously known as Green and Resilience Debt Platform (GRDP)",
+ "currency": "USD",
+ "amount_awarded": 227959999.99,
+ "award_date": "2025-07-03",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "European Investment Bank"
+ },
+ "planned_dates": {
+  "start": "2025-07-03",
+  "end": "2043-06-11"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}
