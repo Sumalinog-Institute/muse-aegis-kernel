@@ -4,6 +4,7 @@
 import { layoutText } from "../../ts/layout.ts";
 import { repairTables } from "../../ts/tables.ts";
 import { cutSection } from "../../ts/sections.ts";
+import { tidyPre, tidyPost } from "../../ts/tidy.ts";
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 const [B, E] = process.argv.slice(2); // B: word boxes from `pdftotext -bbox <pdf> <name>.html`; E: excerpts of the Python path (<id>/<kind>_excerpt.txt)
 const dec = (s) => s.replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&amp;/g,"&");
@@ -23,7 +24,7 @@ const SCALE = process.env.SCALE ? +process.env.SCALE : undefined;
 let sum = 0; let found = 0, same = 0, tot = 0;
 for (const f of readdirSync(B)) {
   const name = f.replace(".html", ""); const [id, kind] = [name.replace(/_(proposal|apr)$/, ""), name.endsWith("_apr") ? "apr" : "proposal"];
-  const txt = repairTables(layoutText(pages(readFileSync(`${B}/${f}`, "utf8")), SCALE)).text;
+  const txt = tidyPost(repairTables(tidyPre(layoutText(pages(readFileSync(`${B}/${f}`, "utf8")), SCALE)).text).text);
   const s = cutSection(txt, kind);
   const p = `${E}/${id}/${kind}_excerpt.txt`; const py = existsSync(p) ? readFileSync(p, "utf8") : null;
   tot++;
@@ -36,7 +37,7 @@ console.log(process.env.SCALE, { tot, both_found: found, figures_agree_95: same,
   let extra = 0, missing = 0, total = 0;
   for (const f of readdirSync(B)) {
     const name = f.replace(".html", ""); const id = name.replace(/_(proposal|apr)$/, ""), kind = name.endsWith("_apr") ? "apr" : "proposal";
-    const txt = repairTables(layoutText(pages(readFileSync(`${B}/${f}`, "utf8")), SCALE)).text; const s = cutSection(txt, kind);
+    const txt = tidyPost(repairTables(tidyPre(layoutText(pages(readFileSync(`${B}/${f}`, "utf8")), SCALE)).text).text); const s = cutSection(txt, kind);
     const p = `${E}/${id}/${kind}_excerpt.txt`; if (!s || !existsSync(p)) continue;
     const a = figs(readFileSync(p, "utf8")), b = figs(s.text);
     for (const [k, v] of b) { total += v; extra += Math.max(0, v - (a.get(k) || 0)); }
