@@ -77,3 +77,15 @@ test("a document that states two different values for the same figure is reporte
   const clean = buildNotCheckedReport({ ledger: ledger(2), items: items.slice(1), x2: computeX2(items.slice(1), 1000), runs: [okRun(), okRun(), okRun()], k: 3, documentChars: 1000, profile: { x1: 0.1, x2: 0, x4: 0.1, x5: 0.1, x6: 0 } });
   assert.equal(clean.document_conflicts_total, 0);
 });
+
+test("figures that no claim covers are counted, so a document cut down to one claim shows what was left out", () => {
+  const doc = "Spent 27,000 USD on personnel in 2026-Q2 (TX-2026-016). Spent 9,800 USD on equipment. 250 beneficiaries, 12% overhead, 3.5 million. Then 1,000,000 USD.";
+  const items = [item("CONTRADICTED", { fact_ids: ["F1"] }, { value: 1000000, quote: "Then 1,000,000 USD." })];
+  const r = buildNotCheckedReport({ ledger: ledger(2), items, x2: computeX2(items, 1000), runs: [okRun(), okRun(), okRun()], k: 3, documentChars: 1000, documentText: doc, profile: { x1: 0, x2: 1, x4: 0, x5: 0, x6: 0 } });
+  assert.equal(r.figures?.total, 6); // 27,000  9,800  250  12%  3.5  1,000,000 (the year, the quarter and the identifier are not figures)
+  assert.equal(r.figures?.covered, 1);
+  assert.equal(r.figures?.uncovered_total, 5);
+  assert.match(r.lines.join(" "), /1 of 6 figures in the document were turned into claims; 5 were not checked \(for example 27,000; 9,800; 250\)/);
+  const none = buildNotCheckedReport({ ledger: ledger(2), items, x2: computeX2(items, 1000), runs: [okRun()], k: 1, documentChars: 1000, profile: { x1: 0, x2: 1, x4: 0, x5: 0, x6: 0 } });
+  assert.equal(none.figures, undefined);
+});
