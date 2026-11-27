@@ -49,3 +49,21 @@ test("sections: nothing found gives null, a capped section is not accepted, the 
   const doc = ["B.2. Project Financing Information", "contents", "B.3. Next", "filler", "B.2. Project Financing Information", "a long line of real content", "another long line of real content", "B.3. Next"].join("\n");
   assert.equal(cutSection(doc, "proposal")?.first_line, 5);
 });
+
+test("sections: a heading with wide spacing between its words is found, and the row prefix is one clean line", () => {
+  const doc = [
+    "  B.2.     Project      Financing         Information",
+    "",
+    "(b) GCF financing to recipient    Total requested     26.91     million USD",
+    "                                  (i+ii)              12.00     USD",
+    "",
+    "  B.3.     Financial        Markets      Overview",
+  ].join("\n");
+  const rep = repairTables(doc).text;
+  const s = cutSection(rep, "proposal");
+  assert.ok(s, "section found");
+  assert.match(rep, /^\[B\.2\. Project Financing Information\] /m);
+  assert.doesNotMatch(rep, /\[B\.2\.\s{2,}/);
+  assert.ok(cutSection("  C.    FINANCING     INFORMATION\nx\n  D.1. Next", "proposal"));
+  assert.ok(cutSection("Section   3:   Financial    Information\nx\nSection   4 next", "apr"));
+});

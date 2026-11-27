@@ -168,7 +168,7 @@ export function repairTables(text: string): { text: string; blocks: number } {
       const m = isHeading(first);
       if (m === null || tableLike([first])) break;
       out.push(b.shift() as string);
-      heading = m[1] as string; header = null; label = "";
+      heading = (m[1] as string).replace(/\s+/g, " "); header = null; label = "";
     }
     if (b.length === 0) return;
     if (tableLike(b)) {
@@ -188,7 +188,7 @@ export function repairTables(text: string): { text: string; blocks: number } {
       if (isHeader(b)) header = headerLabels(b);
       for (const l of b) {
         const m = isHeading(l);
-        if (m) { heading = m[1] as string; header = null; label = ""; }
+        if (m) { heading = (m[1] as string).replace(/\s+/g, " "); header = null; label = ""; }
       }
     }
   };

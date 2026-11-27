@@ -8,12 +8,12 @@ export const SECTION_CAP = 14000;
 
 const RULES: Record<DocumentKind, [RegExp, RegExp][]> = {
   proposal: [
-    [/^\s*B\.2\.\s*Project Financing Information/i, /^\s*B\.3\./i],
-    [/^\s*(C\.\s*)?FINANCING INFORMATION\s*$/i, /^\s*(C\.[3-9]\b|D\.1\b)/i],
+    [/^\s*B\.2\.\s*Project\s+Financing\s+Information/i, /^\s*B\.3\./i],
+    [/^\s*(C\.\s*)?FINANCING\s+INFORMATION\s*$/i, /^\s*(C\.[3-9]\b|D\.1\b)/i],
   ],
   apr: [
-    [/^(APR CY2024 )?(\[APR CY2024\] )?\.?\s*Section 3: Financial Information/i, /^(APR CY2024 )?Section 4/i],
-    [/^\s*FINANCIAL INFORMATION\s*$/i, /^\s*(E\.[4-9]\.|F\.\s?\d|Section F|SECTION F|G\.\s?\d)/i],
+    [/^(APR CY2024\s+)?(\[APR CY2024\]\s+)?\.?\s*Section\s+3:\s*Financial\s+Information/i, /^(APR CY2024\s+)?Section\s+4/i],
+    [/^\s*FINANCIAL\s+INFORMATION\s*$/i, /^\s*(E\.[4-9]\.|F\.\s?\d|Section\s+F|G\.\s?\d)/i],
   ],
 };
 
