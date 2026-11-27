@@ -369,3 +369,20 @@ test("parseClaimsLedger accepts the fixtures and refuses malformed ledgers", () 
   assert.equal(parseClaimsLedger(mutate((l) => { facts(l)[0]!["value"] = Infinity; })), null);
   assert.equal(parseClaimsLedger([]), null);
 });
+
+test("provenance: stated provenance is sealed into the draft details, a bad block is refused, and a missing one is reported", async () => {
+  const p = { source_url: "https://www.greenclimate.fund/document/example", retrieved_on: "2026-10-01", file_sha256: "b".repeat(64), text_method: "pasted by hand" };
+  const withP = await prep("s1-clean", { provenance: p });
+  assert.equal(withP.r.ok, true);
+  if (withP.r.ok) {
+    assert.deepEqual(withP.r.draft.details.provenance, p);
+    assert.ok(!(withP.r.draft.details.not_checked?.lines ?? []).some((l) => /No source address/.test(l)));
+  }
+  const without = await prep("s1-clean");
+  if (without.r.ok) {
+    assert.equal(without.r.draft.details.provenance, undefined);
+    assert.ok((without.r.draft.details.not_checked?.lines ?? []).some((l) => /No source address/.test(l)));
+  }
+  const bad = await prep("s1-clean", { provenance: { source_url: "http://insecure.example.org/a" } });
+  assert.deepEqual(bad.r, { ok: false, code: "BAD_PARAMS", status: null });
+});

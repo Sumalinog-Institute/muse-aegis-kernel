@@ -25,6 +25,8 @@ import type { Embed, RunSummary, StabilityResult } from "./stability.ts";
 import type { ExtractError, GeminiDeps } from "./extract.ts";
 import { buildNotCheckedReport } from "./notchecked.ts";
 import type { NotCheckedReport } from "./notchecked.ts";
+import { validateProvenance } from "./provenance.ts";
+import type { Provenance } from "./provenance.ts";
 import type { Ledger, LedgerFact, X2Result } from "./claims.ts";
 
 export const DRAFT_FORMAT_VERSION = 2;
@@ -62,6 +64,7 @@ export interface Draft {
     claims: { items: ClaimDetail[]; x2: X2Result; ledger_flags: string[] };
     stability: { result: StabilityResult; model: string; k: number; temperature: number; valid_runs: number; runs: RunSummary[]; usage: { prompt_tokens: number; output_tokens: number } };
     not_checked?: NotCheckedReport; // v1.1; absent in drafts and records made before it
+    provenance?: Provenance; // v1.1; stated by the person screening, present only when given
   };
 }
 
@@ -130,7 +133,7 @@ function strOrNull(v: unknown, max = 100): string | null {
 
 export async function prepareScreening(
   deps: PrepareDeps,
-  p: { apiKey: string; model: string; actorId: string; projectId: string; docRef: string; inputs: ScreeningInputs; k?: number; temperature?: number; maxDraftChars?: number; relaxedAnchor?: boolean },
+  p: { apiKey: string; model: string; actorId: string; projectId: string; docRef: string; inputs: ScreeningInputs; k?: number; temperature?: number; maxDraftChars?: number; relaxedAnchor?: boolean; provenance?: unknown },
 ): Promise<PrepareResult> {
   const bad = (code: PrepareError): PrepareResult => ({ ok: false, code, status: null });
   const inp = p.inputs;
@@ -138,6 +141,12 @@ export async function prepareScreening(
   // New entries always carry both references (the legacy exemption applies only to entries written before v4.6.0).
   if (validateScreeningFields({ project_id: p.projectId, doc_ref: p.docRef }, LEGACY_MAX_SEQ + 1).length > 0) return bad("BAD_PARAMS");
   if (typeof inp.documentText !== "string" || inp.documentText.trim() === "" || inp.documentText.length > MAX_DOCUMENT_CHARS) return bad("BAD_INPUT");
+  let provenance: Provenance | undefined;
+  if (p.provenance !== undefined) {
+    const v = validateProvenance(p.provenance, deps.now().toISOString().slice(0, 10));
+    if (!v.ok) return bad("BAD_PARAMS");
+    provenance = v.value;
+  }
   const claimsLedger = parseClaimsLedger(inp.claimsLedger);
   if (!claimsLedger) return bad("BAD_INPUT");
   if (![inp.award, inp.spendLedger, inp.schedule, inp.register].every(isRec)) return bad("BAD_INPUT");
@@ -209,9 +218,10 @@ export async function prepareScreening(
         x2: analysis.consensus.x2,
         ledger_flags: analysis.consensus.ledger_flags,
       },
+      ...(provenance !== undefined ? { provenance } : {}),
       not_checked: buildNotCheckedReport({
         ledger: claimsLedger, items: analysis.consensus.items, x2: analysis.consensus.x2, runs: analysis.runs, k: analysis.k,
-        documentChars: inp.documentText.length, profile: { x1: analysis.stability.x1, x2: analysis.consensus.x2.x2, x4: features.x4, x5: features.x5, x6: features.x6 },
+        documentChars: inp.documentText.length, provenanceRecorded: provenance !== undefined, profile: { x1: analysis.stability.x1, x2: analysis.consensus.x2.x2, x4: features.x4, x5: features.x5, x6: features.x6 },
       }),
       stability: {
         result: analysis.stability, model: p.model, k: analysis.k, temperature: analysis.temperature,

@@ -36,6 +36,8 @@ export interface NotCheckedInput {
   k: number;
   documentChars: number;
   profile: Record<string, unknown>;
+  /** v1.1: whether the screening recorded where the document came from. Left out: not reported. */
+  provenanceRecorded?: boolean;
 }
 
 const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`;
@@ -88,6 +90,8 @@ export function buildNotCheckedReport(p: NotCheckedInput): NotCheckedReport {
   if (rejectedTotal > 0) lines.push(`${plural(rejectedTotal, "quote", "quotes")} proposed by the model over ${plural(p.runs.length, "run", "runs")} could not be traced to the document and were left out.`);
   if (failed.length > 0) lines.push(`${plural(failed.length, "run", "runs")} of ${p.k} failed (${[...new Set(failed)].join(", ")}).`);
   if (notComputed.length > 0) lines.push(`These parts of the profile could not be computed or do not apply: ${notComputed.join(", ")}.`);
+
+  if (p.provenanceRecorded === false) lines.push("No source address, retrieval date or file fingerprint was recorded for this document, so it cannot be traced to a file later.");
 
   return {
     report_version: NOT_CHECKED_VERSION,
