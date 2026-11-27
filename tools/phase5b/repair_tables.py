@@ -21,7 +21,7 @@ CELL = re.compile(r"\S+(?: {1,2}\S+)*")
 NUM_FULL = re.compile(r"^\d{1,3}(,\d{3})*(\.\d{2})?%?$|^\d+(\.\d{2})?%?$")
 NUM_BROKEN = re.compile(r"^\d{1,3}(,\d{1,2}|(,\d{3})*\.\d)$|^\d{1,3}(,\d{3})*,\d{1,2}$|^\d{1,3}(,\d{3})+\.$")
 NUM_LIKE = re.compile(r"^\(?\d[\d,.]*%?\)?$")
-HEADING = re.compile(r"^\s*((?:[A-Z]\.\d{1,2}\.?|[A-Z]\.|\d{1,2}\.\d{1,2}\.?)\s+[A-Za-z(\[].*?)\s*$")
+HEADING = re.compile(r"^\s*((?:[A-Z]\.\d{1,2}\.?|[A-Z]\.|\d{1,2}\.\d{1,2}\.?)\s+[A-Z(\[].*?)\s*$")
 SHORT_WORDS = {"of", "in", "to", "on", "by", "at", "as", "an", "or", "is", "it", "be", "no", "vs", "and", "the"}
 
 def table_like(lines: list[str]) -> bool:

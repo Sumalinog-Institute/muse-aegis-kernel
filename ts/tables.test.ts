@@ -23,3 +23,10 @@ test("tables: a wrapped figure is joined, a label in a tall cell is carried to t
   assert.match(out, /Committed Amount 26,964,532\.92/);
   assert.match(out, /\[B\.2\. Project Financing Information\] \(c\) Co-financing to recipient Grant 14\.00 12,500/);
 });
+
+test("tables: a figure such as '49.2 million' is not a section heading", () => {
+  const doc = "B.2. Project Financing Information\n\n      Total project financing      49.2        million\n      GCF financing                39.3        million\n";
+  const out = repairTables(doc).text;
+  assert.doesNotMatch(out, /\[49\.2/);
+  assert.match(out, /\[B\.2\. Project Financing Information\]/);
+});
