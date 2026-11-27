@@ -78,8 +78,30 @@ export const STATUS_WEIGHTS_HALVES = { CONTRADICTED: 2, AMBIGUOUS_CONFLICT: 1, I
 
 // ---------------------------------------------------------------- normalization
 
+const TYPO: Record<string, string> = { "\u2018": "'", "\u2019": "'", "\u02bc": "'", "\u201a": "'", "\u201c": '"', "\u201d": '"', "\u2010": "-", "\u2011": "-", "\u2012": "-", "\u2013": "-", "\u2014": "-", "\u2212": "-", "\u00a0": " ", "\u200b": "", "\u00ad": "" };
+
+/** Folds typographic variants (curly quotes, dashes, the minus sign, no-break and zero-width spaces) and accents, one character at a
+ *  time, so the text keeps its length except where a zero-width character is dropped. Matching text this way can only make two
+ *  spellings of one name equal ("Côte d’Ivoire" and "Cote d'Ivoire"); it never changes a digit. */
+export function foldText(s: string): string {
+  let out = "";
+  for (const c of s.normalize("NFKC")) {
+    const t = TYPO[c];
+    if (t !== undefined) { out += t; continue; }
+    if (c.charCodeAt(0) > 0x7f) {
+      const d = c.normalize("NFD");
+      if (d.length > 1 && /^\p{M}+$/u.test(d.slice(1)) && /^[A-Za-z]$/.test(d[0] as string)) { out += d[0]; continue; }
+    }
+    out += c;
+  }
+  return out;
+}
+
+/** Text as compared in anchoring: folded, white space collapsed, lower case. */
+const norm = (s: string): string => foldText(s).replace(/\s+/g, " ").toLowerCase();
+
 export function normalizeText(s: string): string {
-  return s.normalize("NFKC").trim().replace(/\s+/g, " ").toLowerCase();
+  return foldText(s).trim().replace(/\s+/g, " ").toLowerCase();
 }
 
 /** The keys under which a ledger fact can be matched: its own subject and each alias of it. */
@@ -97,7 +119,7 @@ const NUMBER_TEXT = /^[$€£¥₩]?\s*(-?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?)\
  *  trailing %) become numbers; anything else becomes normalized text. Wording such as "12 thousand" stays text,
  *  so it will not match a numeric ledger value and is reported, never silently converted. */
 export function parseValue(valueText: string): number | string {
-  const t = valueText.normalize("NFKC").trim();
+  const t = foldText(valueText).trim();
   const m = NUMBER_TEXT.exec(t);
   if (m && m[1] !== undefined) {
     const n = Number(m[1].replace(/,/g, ""));
@@ -126,7 +148,41 @@ export const RELAXED = {
   MAX_SPAN_CHARS: 1200, // the matched stretch of the document may not be longer than this
 } as const;
 
+/** True when `sub` occurs in `text` as whole words: the characters next to it are not letters or digits ("vendor a" is not in "vendor ab"). */
+export function hasWholeWord(text: string, sub: string): boolean {
+  if (sub === "") return false;
+  const isWordChar = (c: string | undefined): boolean => c !== undefined && /[\p{L}\p{N}]/u.test(c);
+  const first = [...sub][0];
+  const last = [...sub].at(-1);
+  for (let at = text.indexOf(sub); at >= 0; at = text.indexOf(sub, at + 1)) {
+    const before = at > 0 ? text[at - 1] : undefined;
+    const after = text[at + sub.length];
+    if ((!isWordChar(first) || !isWordChar(before)) && (!isWordChar(last) || !isWordChar(after))) return true;
+  }
+  return false;
+}
+
+/** Index of the first place where `v` stands in `text` as a whole figure, or -1: a figure that begins or ends with a digit may not be cut out of a
+ *  longer figure ("0" and "15" are not in "15,000", "12,000" is not in "12,000.50"). Values that are not figures are searched as plain text. */
+export function indexOfWholeNumber(text: string, v: string): number {
+  if (v === "") return -1;
+  const dig = (c: string | undefined): boolean => c !== undefined && c >= "0" && c <= "9";
+  const startsDigit = dig(v[0]);
+  const endsDigit = dig(v[v.length - 1]);
+  for (let at = text.indexOf(v); at >= 0; at = text.indexOf(v, at + 1)) {
+    const b = text[at - 1], b2 = text[at - 2], a = text[at + v.length], a2 = text[at + v.length + 1];
+    const badBefore = startsDigit && (dig(b) || ((b === "," || b === ".") && dig(b2)));
+    const badAfter = endsDigit && (dig(a) || ((a === "," || a === ".") && dig(a2)));
+    if (!badBefore && !badAfter) return at;
+  }
+  return -1;
+}
+
 export interface AnchorOptions {
+  /** v1.1, off by default: the value must stand in the quote as a whole figure, not as a piece of a longer one. */
+  wholeNumberValue?: boolean;
+  /** v1.1, off by default: the subject must occur in the quote as whole words, so "Vendor A" does not match a quote about "Vendor AB". */
+  wholeWordSubject?: boolean;
   /** v1.1: if the quote is not found word for word, accept it when all its words occur in order within one short stretch of the document. */
   relaxed?: boolean;
 }
@@ -185,7 +241,7 @@ function rowContexts(documentText: string, doc: string): { start: number; end: n
   const out: { start: number; end: number; context: string }[] = [];
   let from = 0;
   for (const raw of documentText.split("\n")) {
-    const line = raw.normalize("NFKC").replace(/\s+/g, " ").trim().toLowerCase();
+    const line = norm(raw).trim();
     if (line === "") continue;
     const at = doc.indexOf(line, from);
     if (at < 0) continue;
@@ -213,7 +269,7 @@ export function anchorClaims(
     const qv = typeof raw === "object" && raw !== null && !Array.isArray(raw) ? (raw as Record<string, unknown>)["quote"] : undefined;
     if (samples.length < 8 && typeof qv === "string") samples.push({ index, reason, quote: qv.slice(0, 160) });
   };
-  const doc = documentText.normalize("NFKC").replace(/\s+/g, " ").toLowerCase();
+  const doc = norm(documentText);
   const contexts = relaxedOn ? rowContexts(documentText, doc) : [];
   proposed.forEach((raw, index) => {
     if (claims.length >= LIMITS.MAX_CLAIMS) {
@@ -247,7 +303,7 @@ export function anchorClaims(
       rejected.push({ index, reason: "TOO_LONG" });
       return;
     }
-    const q = quote.normalize("NFKC").replace(/\s+/g, " ").toLowerCase();
+    const q = norm(quote);
     const loc = relaxedOn ? locateQuote(doc, q) : (doc.includes(q) ? { start: doc.indexOf(q), end: doc.indexOf(q) + q.length, mode: "exact" as const } : null);
     if (!loc) {
       reject(index, "QUOTE_NOT_IN_DOCUMENT", raw);
@@ -255,20 +311,22 @@ export function anchorClaims(
     }
     // The value and the subject must be in the quote and also lie inside the text of the document that the quote was matched to.
     const span = doc.slice(loc.start, loc.end);
-    const v = valueText.normalize("NFKC").replace(/\s+/g, " ").toLowerCase();
-    if (!q.includes(v) || !span.includes(v)) {
+    const v = norm(valueText);
+    const whole = options?.wholeNumberValue === true;
+    if (whole ? indexOfWholeNumber(q, v) < 0 || indexOfWholeNumber(span, v) < 0 : !q.includes(v) || !span.includes(v)) {
       reject(index, "VALUE_NOT_IN_QUOTE", raw);
       return;
     }
     // The subject must be named in the quote, so a label cannot be attached to a figure that belongs to someone else.
-    const sub = subject.normalize("NFKC").replace(/\s+/g, " ").toLowerCase();
+    const sub = norm(subject);
     let inContext = false;
     let ctx = "";
-    if (!q.includes(sub) || !span.includes(sub)) {
+    const has = (t: string): boolean => (options?.wholeWordSubject === true ? hasWholeWord(t, sub) : t.includes(sub));
+    if (!has(q) || !has(span)) {
       // v1.1: a row that the table reader prefixed with its section heading and row label may take its subject from that
       // context, because the model often leaves the bracketed prefix out of its quote. The claim then shows the prefix.
       const row = relaxedOn ? contexts.find((c) => c.start <= loc.start && loc.start < c.end) : undefined;
-      if (row && sub !== "" && row.context.includes(sub)) { inContext = true; ctx = row.context; }
+      if (row && sub !== "" && has(row.context)) { inContext = true; ctx = row.context; }
       else {
         reject(index, "SUBJECT_NOT_IN_QUOTE", raw);
         return;
@@ -292,7 +350,7 @@ export function anchorClaims(
       unit: normalizeText(unitRaw),
       quote: inContext ? `[${ctx}] ${span}` : loc.mode === "ordered" ? span : quote, // relaxed match: the evidence is the document's own text
       key: claimKey(fs, fa, fp),
-      at: loc.start + span.indexOf(v),
+      at: loc.start + (whole ? indexOfWholeNumber(span, v) : span.indexOf(v)),
       label: useLabel,
     });
   });

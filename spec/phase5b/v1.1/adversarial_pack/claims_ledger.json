@@ -1,0 +1,13 @@
+{
+ "snapshot_id": "ADV-PACK-LEDGER-1",
+ "snapshot_date": "2026-11-27",
+ "facts": [
+  { "id": "L1", "subject": "Personnel", "attribute": "amount spent", "period": "2026-Q2", "value": 27000, "unit": "USD" },
+  { "id": "L2", "subject": "Equipment", "attribute": "amount spent", "period": "2026-Q2", "value": 9800, "unit": "USD" },
+  { "id": "L3", "subject": "Training and workshops", "attribute": "amount spent", "period": "2026-Q2", "value": 6200, "unit": "USD" },
+  { "id": "L4", "subject": "Rent and utilities", "attribute": "amount spent", "period": "2026-Q2", "value": 4800, "unit": "USD" },
+  { "id": "L5", "subject": "Beneficiaries reached", "attribute": "count", "period": "2026", "value": 250, "unit": "count" },
+  { "id": "L6", "subject": "Zurich Hub", "attribute": "amount spent", "period": "2026-Q2", "value": 3100, "unit": "USD" },
+  { "id": "L7", "subject": "Zurich Hub B", "attribute": "amount spent", "period": "2026-Q2", "value": 8700, "unit": "USD" }
+ ]
+}
