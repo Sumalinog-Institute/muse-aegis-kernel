@@ -1,0 +1,57 @@
+FINANCIAL           INFORMATION
+
+E.1. GCF financing
+
+In addition to the financial report in the annex, update the table with relevant GCF financial data for each country and
+instrument, including amounts and allocation percentages.
+
+                                 Currenc                                         Expenditur
+                                                                                                    Cumulative
+               Instrumen             y          Committe         Disburse               e                              Mitigatio       Adaptatio
+ Country                                                                                            Expenditur
+                     t            (as per       d  Amount        d  Amount          (reporting                              n                n
+                                                                                                           e
+                                   FAA)                                               year)
+
+[E.1. GCF financing] Barbados Grants USD Committed Amount: 27,605,010 Disbursed Amount: 26,947,161 Expenditure (reporting year): 2,599,043 Cumulative Expenditure: 24,824,746 Mitigation: 40% Adaptation: 60%
+
+[E.1. GCF financing] Total USD Committed Amount: 27,605,010 Disbursed Amount: 26,947,161 Expenditure (reporting year): 2,599,043 Cumulative Expenditure: 24,824,746 N/A N/A
+
+E.2. Co-financing
+
+Please populate the table with relevant Co-financing data for each Co-financier and instrument, including amounts and
+allocation percentages.
+
+                                 Currenc                                         Expenditur
+    Co-                                                                                             Cumulative
+               Instrumen             y          Committe         Disburse               e                              Mitigatio       Adaptatio
+ financie                                                                                           Expenditur
+                     t            (as per       d  Amount        d  Amount          (reporting                              n                n
+     r                                                                                                     e
+                                   FAA)                                               year)
+
+[E.2. Co-financing] Barbados Water Authority Grants USD Committed Amount: 17,600,000 Disbursed Amount: 19,489,993 Expenditure (reporting year): 335,749 Cumulative Expenditure: 19,489,993 Mitigation: 20% Adaptation: 80%
+
+[E.2. Co-financing] Total USD Committed Amount: 17,600,000 Disbursed Amount: 19,489,993 Expenditure (reporting year): 335,749 Cumulative Expenditure: 19,489,993 N/A N/A
+
+E.3. Additional Finance Mobilised Beyond Approved Co-financing
+
+Report the realised (cumulative value) and/or expected volume (Final Target) of private/public finance leveraged as a
+result of GCF involvement in the investment, in addition to and beyond any co-financing originally committed at approval.
+This datapoint shall be reported separately from official co-financing figures and is intended to capture the catalytic effect
+of GCF investments and support institutional learning.
+
+GCF Policy: https://www.greenclimate.fund/sites/default/files/document/policy-cofinancing.pdf
+
+No additional finance mobilized information provided.
+
+File Name: Section 3 -APR 2025 .xlsx
+
+
+     ENVIRONMENTAL             &  SOCIAL       SAFEGUARDS,           GENDER,        and    INDIGENOUS           PEOPLES
+
+This section provides an update against the ESS standards agreed as part of the Environmental and Social Action Plan
+(ESAP) and Environmental and Social Management Framework (ESMF), as well as Environmental and Social
+Management System (ESMS), Environmental and Social Impact Assessment (ESIA), Environmental and Social
+Management Plan (ESMP), Indigenous Peoples Plan (IPP), Indigenous Peoples Plan Framework (IPPF), Resettlement
+Action Plan (RAP), Resettlement Policy Framework (RPF) when applicable.

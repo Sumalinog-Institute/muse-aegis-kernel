@@ -1,0 +1,58 @@
+{
+ "note": "Final held-out sample after replacements (28 Nov 2026). Original slot -> project.",
+ "sample": {
+  "fp": [
+   "FP004",
+   "FP035",
+   "FP041",
+   "FP048",
+   "FP070",
+   "FP105",
+   "FP107",
+   "FP109",
+   "FP148",
+   "FP162",
+   "FP173",
+   "FP202",
+   "FP216",
+   "FP234",
+   "FP250",
+   "FP257",
+   "FP267",
+   "FP218",
+   "FP197",
+   "FP067",
+   "FP009",
+   "FP060",
+   "FP058",
+   "FP126"
+  ],
+  "sap": [
+   "SAP011",
+   "SAP018",
+   "SAP038",
+   "SAP045",
+   "SAP053",
+   "SAP019"
+  ]
+ },
+ "slots": {
+  "FP224": "FP218",
+  "FP230": "FP197",
+  "FP237": "FP067",
+  "FP247": "FP009",
+  "FP278": "FP060",
+  "FP276": "FP058",
+  "FP279": "FP126",
+  "SAP059": "SAP019"
+ },
+ "dropped_after_documents_read": {
+  "FP164": "annual report is a scan",
+  "FP189": "unfilled template only",
+  "FP233": "unfilled template only (author's check)",
+  "FP275": "no annual report",
+  "FP261": "no annual report",
+  "FP240": "no annual report",
+  "FP274": "read but not needed (FP250 has an annual report)"
+ }
+}

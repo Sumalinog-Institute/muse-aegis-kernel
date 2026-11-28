@@ -1,0 +1,105 @@
+FINANCIAL        INFORMATION
+
+E.1. GCF financing
+
+In addition to the financial report in the annex, update the table with relevant GCF financial data for each country and
+instrument, including amounts and allocation percentages.
+
+                                Currenc                                    Expenditur
+                                                             Disburse                       Cumulative
+                Instrument          y        Committed                           e                           Mitigatio     Adaptatio
+  Country                                                        d                          Expenditur
+                                 (as per       Amount                        (reporting                           n             n
+                                                             Amount                               e
+                                  FAA)                                         year)
+
+[E.1. GCF financing] Bosnia and Herzegovina Grants USD Committed Amount: 14,400,000 Disbursed Amount: 1,671,594 Expenditure (reporting year): 1,347,345.29 Cumulative Expenditure: 1,347,345.29 Mitigation: 0% Adaptation: 100%
+       
+
+[E.1. GCF financing] Total USD Committed Amount: 14,400,000 Disbursed Amount: 1,671,594 Expenditure (reporting year): 1,347,345.29 Cumulative Expenditure: 1,347,345.29 N/A N/A
+
+E.2. Co-financing
+
+Please populate the table with relevant Co-financing data for each Co-financier and instrument, including amounts and
+allocation percentages.
+
+                                Currenc                                      Expenditur       Cumulativ
+                                                               Disburse
+     Co-         Instrume           y        Committed                             e               e          Mitigatio     Adaptatio
+                                                                   d
+  financier          nt          (as per       Amount                          (reporting    Expenditur           n              n
+                                                               Amount
+                                  FAA)                                           year)             e
+
+[E.2. Co-financing] Water Agency for Sava River Basin, Sarajevo Grants USD Committed Amount: 15,999,999.92 Disbursed Amount: 246,666 Expenditure (reporting year): 246,666 Cumulative Expenditure: 246,666 Mitigation: 0% Adaptation: 100%
+
+[E.2. Co-financing] Water Agency for Adriatic River Basin, Mostar Grants USD Committed Amount: 4,999,999.86 Disbursed Amount: 290,000 Expenditure (reporting year): 290,000 Cumulative Expenditure: 290,000 Mitigation: 0% Adaptation: 100%
+
+[E.2. Co-financing] Hydro Power Grants USD Committed Amount: 5,000,000 Disbursed Amount: 411,687 Expenditure (reporting year): 411,687 Cumulative Expenditure: 411,687 Mitigation: 0% Adaptation: 100%
+
+    Plant
+
+[E.2. Co-financing] Ministry of Foreign Trade and Economic Relations (GCF Focal point) (MOFTER) Grants USD Committed Amount: 5,555,555.99 Disbursed Amount: 0 Expenditure (reporting year): 0 Cumulative Expenditure: 0 Mitigation: 0% Adaptation: 100%
+
+ Ministry of
+Agriculture,
+
+[E.2. Co-financing] Forestry and Water Management of Grants USD Committed Amount: 3,888,889.23 Disbursed Amount: 130,000 Expenditure (reporting year): 130,000 Cumulative Expenditure: 130,000 Mitigation: 0% Adaptation: 100%
+
+
+                               Currenc                                    Expenditur       Cumulativ
+                                                             Disburse
+    Co-          Instrume          y        Committed                           e               e         Mitigatio     Adaptatio
+                                                                 d
+ financier           nt         (as per       Amount                        (reporting    Expenditur           n             n
+                                                             Amount
+                                 FAA)                                         year)             e
+ Republika
+   Srpska
+ (MAFWM
+     RS
+
+[E.2. Co-financing] Ministry of Spatial Planning, Civil Engineering and Ecology of Republika Srpska (UNFCCC and GCF Focal point) Grants USD Committed Amount: 90,000 Disbursed Amount: 15,000 Expenditure (reporting year): 15,000 Cumulative Expenditure: 15,000 Mitigation: 0% Adaptation: 100%
+
+[E.2. Co-financing] Ministry of Spatial Planning, Civil Engineering and Ecology of Republika Srpska (UNFCCC Focal point) (MSPCEE) Grants USD Committed Amount: 210,000 Disbursed Amount: 20,000 Expenditure (reporting year): 20,000 Cumulative Expenditure: 20,000 Mitigation: 0% Adaptation: 100%
+
+[E.2. Co-financing] Ministry of Agriculture, Forestry and Water Management of Republika Srpska - EiB Loan Loans USD Committed Amount: 21,111,111 Disbursed Amount: 0 Expenditure (reporting year): 0 Cumulative Expenditure: 0 Mitigation: 0% Adaptation: 100%
+
+[E.2. Co-financing] Re-insurance company Bosna RE (Bosna RE) Grants USD Committed Amount: 333,333 Disbursed Amount: 33,333 Expenditure (reporting year): 33,333 Cumulative Expenditure: 33,333 Mitigation: 0% Adaptation: 100%
+
+[E.2. Co-financing] Association of Insurance Companies FB&H (AOIC) Grants USD Committed Amount: 300,000 Disbursed Amount: 0 Expenditure (reporting year): 0 Cumulative Expenditure: 0 Mitigation: 0% Adaptation: 100%
+
+[E.2. Co-financing] UNDP Grants USD Committed Amount: 800,000 Disbursed Amount: 249,810 Expenditure (reporting year): 249,810 Cumulative Expenditure: 249,810 Mitigation: 0% Adaptation: 100%
+
+
+                                    Currenc                                           Expenditur         Cumulativ
+                                                                      Disburse
+     Co-           Instrume             y          Committed                                 e                 e           Mitigatio       Adaptatio
+                                                                           d
+  financier             nt           (as per         Amount                             (reporting       Expenditur             n               n
+                                                                       Amount
+                                      FAA)                                                 year)               e
+
+[E.2. Co-financing] Total USD Committed Amount: 58,288,889 Disbursed Amount: 1,396,496 Expenditure (reporting year): 1,396,496 Cumulative Expenditure: 1,396,496 N/A N/A
+
+E.3. Additional Finance Mobilised Beyond Approved Co-financing
+
+Report the realised (cumulative value) and/or expected volume (Final Target) of private/public finance leveraged as a
+result of GCF involvement in the investment, in addition to and beyond any co-financing originally committed at approval.
+This datapoint shall be reported separately from official co-financing figures and is intended to capture the catalytic effect
+of GCF investments and support institutional learning.
+
+GCF Policy: https://www.greenclimate.fund/sites/default/files/document/policy-cofinancing.pdf
+
+No additional finance mobilized information provided.
+
+File Name: PIMS 6360_APR_2025_Grant-Financial Progress Detail_cleared by QM.xlsx
+
+
+     ENVIRONMENTAL             &  SOCIAL       SAFEGUARDS,           GENDER,        and    INDIGENOUS           PEOPLES
+
+This section provides an update against the ESS standards agreed as part of the Environmental and Social Action Plan
+(ESAP) and Environmental and Social Management Framework (ESMF), as well as Environmental and Social
+Management System (ESMS), Environmental and Social Impact Assessment (ESIA), Environmental and Social
+Management Plan (ESMP), Indigenous Peoples Plan (IPP), Indigenous Peoples Plan Framework (IPPF), Resettlement
+Action Plan (RAP), Resettlement Policy Framework (RPF) when applicable.

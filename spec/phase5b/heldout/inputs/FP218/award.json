@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-FP218",
+ "title": "Building climate resilience in the landscapes of Kigoma region, Tanzania",
+ "currency": "USD",
+ "amount_awarded": 19007353.0,
+ "award_date": "2023-10-25",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "United Nations Environment Programme"
+ },
+ "planned_dates": {
+  "start": "2023-10-25",
+  "end": "2029-04-18"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

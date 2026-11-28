@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-FP058",
+ "title": "Responding to the increasing risk of drought: building gender-responsive resilience of the most vulnerable communities",
+ "currency": "USD",
+ "amount_awarded": 45002759.0,
+ "award_date": "2017-10-02",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Ministry of Finance of the Federal Democratic Republic of Ethiopia"
+ },
+ "planned_dates": {
+  "start": "2017-10-02",
+  "end": "2025-08-31"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

@@ -1,0 +1,44 @@
+=== PROPOSAL EXCERPT ===
+B.2. Project Financing Information
+
+                     Financial Instrument                 Amount              Currency                   Tenor                       Pricing
+
+[B.2. Project Financing Information] (a) Total project financing (a) = (b) + (c) Amount: 26.635 million USD ($)
+
+                    (i) Senior Loans
+                                                            
+                    (ii) Subordinated                                                                   () years
+                    Loans                                                                                                          ( ) % IRR
+
+                    (iii) Equity                            
+
+                    (iv) Guarantees                                          million USD
+
+                    (v) Reimbursable                                               ($)
+(b) GCF
+financing to        grants *
+                                                           22.953
+recipient           (vi) Grants *
+
+                    * Please provide economic and financial justification in section F.1 for the concessionality that GCF is expected to
+                    provide, particularly in the case of grants. Please specify difference in tenor and price between GCF financing and
+                    that of accredited entities. Please note that the level of concessionality should correspond to the level of the
+                    project/programme’s expected performance against the investment criteria indicated in section E.
+
+[B.2. Project Financing Information > (b) GCF financing to recipient] Total requested (i+ii+iii+iv+v+vi) Amount: 22.953 million USD ($) B
+
+
+
+                     Financial                                            Name of
+                                       Amount           Currency                           Tenor        Pricing           Seniority
+                    Instrument                                           Institution
+
+[B.2. Project Financing Information] (c) Co-financing to recipient Grant Amount: 1.5 Amount: 2.182 million USD ($) million USD ($) VMGD Delivery Partners ( ) years ( ) years ( ) % ( ) % IRR Options Options
+
+                   Lead financing institution:
+
+                   * Please provide a confirmation letter or a letter of commitment in section I issued by the co-financing institution.
+
+=== ANNUAL PERFORMANCE REPORT EXCERPT ===
+(not available for this project)
+

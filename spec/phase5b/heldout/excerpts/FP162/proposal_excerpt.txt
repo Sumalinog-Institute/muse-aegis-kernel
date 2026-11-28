@@ -1,0 +1,108 @@
+FINANCING        INFORMATION
+
+C.1. Total financing
+
+[C.1. Total financing] (a) Requested GCF funding (i + ii + iii + iv + v + vi + vii) Total amount 82,849.900 Currency million USD ($)
+
+GCF financial instrument                    Amount                           Tenor                      Grace period                  Pricing
+
+(i)     Senior loans                        Enter amount                     Enter years                Enter years                   Enter %
+
+(ii)    Subordinated loans                  Enter amount                     Enter years                Enter years                   Enter %
+
+                                                                                                                                      Enter   %    equity
+(iii)   Equity                              Enter amount                                                                              return
+
+(iv)    Guarantees                          Enter amount                     Enter years
+
+(v)     Reimbursable grants                 Enter amount
+
+[C.1. Total financing > (a) Requested GCF funding (i + ii + iii + iv + v + vi + vii)] (vi) Grants Amount: 82,849.900
+
+(vii)   Results-based payments              Enter amount
+
+                                            Total amount                                                Currency
+(b) Co-financing information
+                                            60,477                                                      Options
+                                            Financial                                                   Tenor        &
+Name of institution                                              Amount                Currency                            Pricing        Seniority
+                                            instrument                                                  grace
+                                                                                                        Enter years        Enter%         Options
+IFAD                                                             30,315                Million USD
+                                            Grant                                                       Enter years
+                                                                                                        Enter years        Enter%         Options
+AfDB                                        Grant                22,923                Million USD
+                                                                                                        Enter years
+                                                                                                        Enter    years     Enter%         Options
+ARC                                         In kind              7,239                 Million USD
+                                                                                                        Enter years
+                                            Options                                                     Enter years        Enter%         Options
+Gov (Taxes exemption )                                           Enter amount          Million USD
+                                                                                                        Enter years
+
+[C.1. Total financing > (b) Co-financing information Name of institution IFAD AfDB ARC Gov (Taxes exemption )] (c) (c) = (a)+(b) Total financing Amount Total amount: 143,4 Currency Million USD
+
+[C.1. Total financing] (d) arrangements and contributions (max. 250 words, approximately 0.5 page) Other financing The GCF Programme will be complementary to the overall IFAD, AfDB, ARC baseline investments in the selected countries. Current contributions from IFAD in form of grants amount to US$30,315 million, from AfDB (US$22,923 million), ARC (US$7.239 million). However, IFAD PMUs’ contributions provided in the form of human resources, office structures and technical input will be counted as co-financing. This co-financing enhance the financial sustainability of the overall sustainability of the programme beyond the timeframe of the execution of GCF funds.
+
+C.2. Financing by component
+
+Please provide an estimate of the total cost per component and output as outlined in section B.3. above and disaggregate by source
+of financing. More than one co-financing institution can fund a single component or output. Provide the summarised cost estimates
+in the table below and the detailed budget plan as annex 4. See Annex
+
+  Component             Output                        Indicative    GCF financing, USD              Co-financing (USD)
+                                                        cost
+                                                                    Amount         Financial        Amount        Financial        Name         of
+                                                      Options       Options        Instrument       million       Instrument       Institutions
+                                                                                                    USD ($)
+
+                        1.1. Increased access
+[1.1. Increased access] Component 1: Climate Risk Preparedness to agro-climatic information services and early warning infrastructure to support integrated climate 11 620 550 11 550 620 Grants - - -
+
+
+                                                                                                                                     DD
+
+                           risks
+                           management
+                      1.2. Improved
+[1.2. Improved] Awareness- raising, capacity- building and institutional development on integrated climate risks management. 7 661 300 7 661 300 Grants - - -
+                           2.1. Best
+[2.1. Best] Component 2. Climate Risk Reduction ( Adaptation /mitigation) available technologies, adaptation/mitigat ion practices (( forest and land use; renewable energy) adopted and implemented with agricultural insurance schemes 23 000 153 23 000 153 Grants - - -
+                           2.2. Diversified
+[2.2. Diversified] livelihood through the promotion of income- generating activities powered with renewable energy 28,063,670 0 Grants 30 000 315 Grants IFAD
+                        3.1. Access to micro                                   Grants
+                             insurance                                                         -              -               -
+                             expanded to
+                             enhance                             30     255
+                             integrated           30      255    100
+                                                  100
+                             climate risks
+                             management
+                        3.2.
+                        3.3.
+Component               3.1. Sovereign risk                                                    7 239          Grants          ARC
+3.2: Climate                 transfer
+Risk Transfer                mechanism
+                             (macro-                                           Grants          22      923    Grants          AfDB
+                             insurance)                                                        000                            ADRIFI
+                             supported and
+                                                  37      909    7 747 950
+                             promoted to
+                                                  950
+                             strengthen
+                             integrated
+                             climate risks
+                             management
+                        3.2.
+                        3.3.
+Programme              Progamme                                                Grants          4 502 659      Grants          IFAD
+                                                  6 914 659      2 412 000
+Coordination          management
+
+[3.1. Access to micro Grants] Indicative total cost (USD) 143, 327 82, 849.900 60, 477
+
+                                                                                                                                               DD
+
+This table should match the one presented in the term sheet and be consistent with information presented in other annexes including
+the detailed budget plan and implementation timetable. e of a multi-country/region programme, specify indicative requested GCF
+funding amount for each country in annex 17, if available.

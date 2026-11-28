@@ -1,0 +1,136 @@
+=== PROPOSAL EXCERPT ===
+B.2.    Project      Financing       Information
+
+                                                                                   Currenc
+                           Financial Instrument                   Amount                                Tenor                 Pricing
+                                                                                        y
+
+[B.2. Project Financing Information] (a) Total project financing (a) = (b) + (c) Amount: 45.20 million USD ($)
+
+                                                                                    Options
+                        (i) Senior Loans                                                              ( ) years                 ( ) %
+
+                                                                                    Options
+                        (ii) Subordinated Loans                                                       ( ) years                 ( ) %
+
+                                                                                    Options
+                        (iii) Equity                                                                                        ( ) % IRR
+
+                                                                                    Options
+                        (iv) Guarantees
+
+[B.2. Project Financing Information] (b) GCF financing to recipient (v) Reimbursable grants * (vi) Grants * Amount: 27.60 Options million USD ($)
+
+                        * Please provide economic and financial justification in section F.1 for the concessionality that
+                        GCF is expected to provide, particularly in the case of grants. Please specify difference in tenor
+                        and price between GCF financing and that of accredited entities. Please note that the level of
+                        concessionality should correspond to the level of the project/programme’s expected
+                        performance against the investment criteria indicated in section E.
+
+[B.2. Project Financing Information > (b) GCF financing to recipient] Total requested (i+ii+iii+iv+v+vi) Amount: 27.60 million USD ($)
+
+                                                                                       Name    of
+                               Financial                Amount         Currenc                                     Pricing
+                                                                                      Institution      Tenor                   Seniority
+                              Instrument                                    y                                          
+                                                                                             
+
+                                                          17.6                            BWA
+                           Grant                                                                                                 Options
+                                                                        million                          ( )       ( ) %
+                           Options                                     USD ($)                         years                     Options
+                                                                                                                   ( ) %
+(c) Co-                    Options                                      Options                          ( )                     Options
+                                                                                                                   ( ) %
+financing to                                                                                           years
+                           Options                                      Options                                    IRR           Options
+recipient
+
+                                                                        Options           
+
+                                                                                         
+
+                        Lead    financing        institution:                    
+
+                        * Please provide a confirmation letter or a letter of commitment in section I issued by the co-
+                        financing institution.
+
+                        In cases where the accredited entity (AE) deploys the GCF financing directly to the recipient, (i.e.
+                        the GCF financing passes directly from the GCF to the recipient through the AE) or if the AE is
+(d) Financial           the recipient itself, in the proposed financial instrument and terms as described in part (b), this
+terms between           subsection can be skipped.
+GCF    and    AE
+(if applicable)         If there is a financial arrangement between the GCF and the AE, which entails a financial
+                        instrument and/or financial terms separate from the ones described in part (b), please fill out the
+                        table below to specify the proposed instrument and terms between the GCF and the AE.
+                                                                                                                                  B
+
+
+
+                             Financial
+                                                     Amount                 Currency              Tenor              Pricing
+                            instrument
+                          Choose an item.                                   Options            ( ) years             ( ) %
+
+                       Please provide a justification for the difference in the financial instrument and/or terms between
+                       what is provided by the AE to the recipient and what is requested from the GCF to the AE.
+
+=== ANNUAL PERFORMANCE REPORT EXCERPT ===
+FINANCIAL           INFORMATION
+
+E.1. GCF financing
+
+In addition to the financial report in the annex, update the table with relevant GCF financial data for each country and
+instrument, including amounts and allocation percentages.
+
+                                 Currenc                                         Expenditur
+                                                                                                    Cumulative
+               Instrumen             y          Committe         Disburse               e                              Mitigatio       Adaptatio
+ Country                                                                                            Expenditur
+                     t            (as per       d  Amount        d  Amount          (reporting                              n                n
+                                                                                                           e
+                                   FAA)                                               year)
+
+[E.1. GCF financing] Barbados Grants USD Committed Amount: 27,605,010 Disbursed Amount: 26,947,161 Expenditure (reporting year): 2,599,043 Cumulative Expenditure: 24,824,746 Mitigation: 40% Adaptation: 60%
+
+[E.1. GCF financing] Total USD Committed Amount: 27,605,010 Disbursed Amount: 26,947,161 Expenditure (reporting year): 2,599,043 Cumulative Expenditure: 24,824,746 N/A N/A
+
+E.2. Co-financing
+
+Please populate the table with relevant Co-financing data for each Co-financier and instrument, including amounts and
+allocation percentages.
+
+                                 Currenc                                         Expenditur
+    Co-                                                                                             Cumulative
+               Instrumen             y          Committe         Disburse               e                              Mitigatio       Adaptatio
+ financie                                                                                           Expenditur
+                     t            (as per       d  Amount        d  Amount          (reporting                              n                n
+     r                                                                                                     e
+                                   FAA)                                               year)
+
+[E.2. Co-financing] Barbados Water Authority Grants USD Committed Amount: 17,600,000 Disbursed Amount: 19,489,993 Expenditure (reporting year): 335,749 Cumulative Expenditure: 19,489,993 Mitigation: 20% Adaptation: 80%
+
+[E.2. Co-financing] Total USD Committed Amount: 17,600,000 Disbursed Amount: 19,489,993 Expenditure (reporting year): 335,749 Cumulative Expenditure: 19,489,993 N/A N/A
+
+E.3. Additional Finance Mobilised Beyond Approved Co-financing
+
+Report the realised (cumulative value) and/or expected volume (Final Target) of private/public finance leveraged as a
+result of GCF involvement in the investment, in addition to and beyond any co-financing originally committed at approval.
+This datapoint shall be reported separately from official co-financing figures and is intended to capture the catalytic effect
+of GCF investments and support institutional learning.
+
+GCF Policy: https://www.greenclimate.fund/sites/default/files/document/policy-cofinancing.pdf
+
+No additional finance mobilized information provided.
+
+File Name: Section 3 -APR 2025 .xlsx
+
+
+     ENVIRONMENTAL             &  SOCIAL       SAFEGUARDS,           GENDER,        and    INDIGENOUS           PEOPLES
+
+This section provides an update against the ESS standards agreed as part of the Environmental and Social Action Plan
+(ESAP) and Environmental and Social Management Framework (ESMF), as well as Environmental and Social
+Management System (ESMS), Environmental and Social Impact Assessment (ESIA), Environmental and Social
+Management Plan (ESMP), Indigenous Peoples Plan (IPP), Indigenous Peoples Plan Framework (IPPF), Resettlement
+Action Plan (RAP), Resettlement Policy Framework (RPF) when applicable.
+

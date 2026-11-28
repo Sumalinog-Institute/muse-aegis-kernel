@@ -1,0 +1,135 @@
+=== PROPOSAL EXCERPT ===
+C.  FINANCING        INFORMATION
+
+C.1. Total financing
+
+[C.1. Total financing] (a) Requested GCF funding (i + ii + iii + iv + v + vi + vii) Total amount 30 Currency million USD ($)
+
+  GCF financial
+                            Amount                       Tenor                   Grace period                 Pricing
+    instrument
+
+           Senior
+(i)
+           loans
+
+           Subordi
+(ii)       nated
+           loans
+
+[C.1. Total financing] (iii) Equity Amount: 30,000,000 4-6 years Nominal hurdle rate
+
+           Guaran
+(iv)                     Enter amount                 Enter years
+           tees
+
+           Reimbu
+
+(v)        rsable        Enter amount
+           grants
+
+(vi)       Grants        Enter amount
+
+           Results
+           -based
+(vii)                    Enter amount
+           payments
+              
+
+                                          Total amount                                            Currency
+(b) Co-financing
+information
+                                               0-30                                            million USD ($)
+
+                       Financial
+                                                                                Tenor
+     Name of                 
+                                       Amount                Currency             &             Pricing            Seniority
+    institution        instrument
+                                                                                grace
+                            
+
+[C.1. Total financing > (b) Co-financing information] Senior Investors Notes Up to 30.00 million USD ($) Multiple years Nominal interest target
+
+                                             Amount                                               Currency
+
+
+                                                                                                                                    C
+
+     (c) Total
+
+[C.1. Total financing] financing 30 – 60 million USD ($)
+
+     (c) = (a)+(b)
+
+(d) Other                Please explain if any of the financing parties including the AE would benefit from any type of
+
+financing                guarantee (e.g. sovereign guarantee, MIGA guarantee).
+arrangements
+and                      Please also explain other contributions such as in-kind contributions including tax exemptions
+
+contributions            and contributions of assets.
+
+(max. 250
+                         Please also include parallel financing associated with this project or programme.
+words,
+
+approximately
+
+0.5 page)
+
+C.2. Financing by component
+
+Please provide an estimate of the total cost per component and output as outlined in section B.3. above and
+
+disaggregate by source of financing. More than one co-financing institution can fund a single component or output.
+
+Provide the summarised cost estimates in the table below and the detailed budget plan as annex 4.
+
+ Component              Output            Indicative             GCF financing                                 Co-financing
+                                          cost
+
+                                          Options           Amount           Financial          Amount         Financial           Name of
+
+                                                            Options         Instrument         Options         Instrument        Institutions
+                                                                                                                     
+
+                        Companies                                          Equity in
+                        funded in the                                      Climate CV,
+                                                         Total GCF
+                        energy                                             disbursed as
+[C.2. Financing by component] 1.1 Loans to energy access companies access sector financing minus certain costs and reserves participations in subordinated loans to borrowers Up to $30,000,000 Junior loans to borrowers Click here to enter text.
+
+                        SPV
+                        participation     SPV Setup
+                        agreement         and
+                        legal costs,      Termination
+                        set up and          Legally
+[C.2. Financing by component] 1.2 Established Climate CV termination costs, and applicable contingency costs related to SPV structure SPV documents Contingency Certain costs Equity in Climate CV Click here to enter text.
+
+                        10
+ 2.1 Knowledge
+ Exchange22             knowledge         $0
+                        products
+
+    22 Component 2 may be integrated into Component 1.
+
+
+                                                                                                                                 C
+
+ Indicative total cost (USD)             Enter
+                                                        $30,000,000                        $0 to $30,000,000
+                                         amount
+
+This table should match the one presented in the term sheet and be consistent with information presented in other
+annexes including the detailed budget plan and implementation timetable.
+
+See above
+
+In case of a multi-country/region programme, specify indicative requested GCF funding amount for each
+
+country in annex 17, if available.
+
+=== ANNUAL PERFORMANCE REPORT EXCERPT ===
+(not available for this project)
+

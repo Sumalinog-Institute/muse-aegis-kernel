@@ -1,0 +1,34 @@
+B.2. Project Financing Information
+
+                     Financial Instrument                Amount                Currency                  Tenor                     Pricing
+
+[B.2. Project Financing Information] (a) Total project financing (a) = (b) + (c) Amount: 59.444 million USD ($)
+
+[B.2. Project Financing Information] (b) GCF financing to recipient (i) Senior Loans (ii) Subordinated Loans (iii) Equity (iv) Guarantees (v) Reimbursable grants * (vi) Grants * Amount: 22.357 Options Options Options Options Options million USD ($) ( ) years ( ) years ( ) % ( ) % ( ) % IRR
+
+                    * Please provide economic and financial justification in section F.1 for the concessionality that GCF is expected to
+                    provide, particularly in the case of grants. Please specify difference in tenor and price between GCF financing and
+                    that of accredited entities. Please note that the level of concessionality should correspond to the level of the
+                    project/programme’s expected performance against the investment criteria indicated in section E.
+
+[B.2. Project Financing Information > (b) GCF financing to recipient] Total requested (i+ii+iii+iv+v+vi) Amount: 22.357 Options
+
+                        Financial                                                           Name of
+                                                Amount                Currency                               Tenor        Pricing       Seniority
+                       Instrument                                                          Institution
+
+[B.2. Project Financing Information] Grant Amount: 0.400 million USD ($) UNDP
+
+[B.2. Project Financing Information] Grant Amount: 12.500 million USD ($) MSA ( ) years ( ) % Options
+[B.2. Project Financing Information] (c) Co-financing to recipient Grant Grant Grant Amount: 12.000 Amount: 5.000 Amount: 7.187 million USD ($) million USD ($) million USD ($) MAF MSS GoTL ( ) years ( ) % ( ) % Options Options Options
+
+                    Lead financing institution: not applicable
+
+                    * Please provide a confirmation letter or a letter of commitment in section I issued by the co-financing institution.
+
+(d) Financial
+terms               N/A
+
+between
+GCF and AE
+(if applicable)

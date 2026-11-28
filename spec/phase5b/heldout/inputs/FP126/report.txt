@@ -1,0 +1,249 @@
+=== PROPOSAL EXCERPT ===
+FINANCING           INFORMATION
+
+C.1. Total financing
+
+ (a) Requested GCF funding                                Total amount                                          Currency
+
+[C.1. Total financing > (a) Requested GCF funding] (i + ii + iii + iv + v + vi + vii) Total amount: 38.207 million USD ($)
+
+   GCF financial instrument                      Amount                       Tenor                Grace period                Pricing
+
+(i)    Senior loans                                 NA                    Enter years               Enter years                Enter %
+
+(ii)   Subordinated loans                           NA                    Enter years               Enter years                Enter %
+
+                                                                                                                           Enter % equity
+(iii)  Equity                                       NA                                                                          return
+
+(iv)   Guarantees                                   NA                    Enter years
+
+(v)    Reimbursable grants                          NA
+
+(vi)   Grants                                     38.207
+
+(vii)  Result-based payments                        NA
+
+(b) Co-financing                                          Total amount                                          Currency
+
+[C.1. Total financing > (b) Co-financing] information 59 Total amount: 81.707 million USD ($)
+
+[C.1. Total financing] Name of institution MINAG Financial instrument Grant Amount Total amount: 23,220,250 Currency million USD ($) Tenor & grace Enter years Enter years Pricing Enter% Seniority Options
+
+[C.1. Total financing] MINAG Click here to enter text. Click here to enter text. In kind Options Options Total amount: 58,487,143 Enter amount Enter amount Options Options Options Enter years Enter years Enter years Enter years Enter years Enter years Enter% Enter% Enter% Options Options Options
+
+                                                             Amount                                             Currency
+
+     (c)  Total financing
+
+[C.1. Total financing] (c) = (a)+(b) Amount: 119.914 million USD ($)
+
+[C.1. Total financing] (d) Other financing arrangements and contributions (max 0.5 page) .
+
+   59 MINAG contribution will be in the form of a cash grant and in-kind support. FAO applies the official UN exchange rate set on a
+   monthly basis by the UN Treasury – this exchange rate is currently set at $1 USD to $1 Cuban Peso.
+
+                                                                     34
+
+
+                                                                                                                                                        C
+
+C.2.    Financing        by    Component
+
+                                                                                                                     Indicative             GCF financing                                    Co-financing
+
+  Components                                                                                                           cost            Amount                                Amount
+                                            Output                                   Activity                                                            Financial                              Financial           Name    of
+                                                                                                                     million         million USD                           million USD
+                                                                                                                     USD ($)                           Instrument                             Instrument          Institutions
+                                                                                                                                           ($)                                   ($)
+
+  Component 1:                                                    1.1 Restore approximately 15,544 ha of
+                                  Output 1: Increased
+  Climate reslient                                                farmland from marabu, and increase
+                                  CC-resilient production
+  agricultural systems                                            CC-resilience through sustainable
+                                  landscapes through
+                                                                  agroforestry (AF), CTNPFs and assisted               59.354           20.513         Grants                 38.841          Grants             MINAG
+                                  investment in
+                                                                  natural regeneration (mitigation co-
+                                  innovative agroforestry
+                                                                  benefit 833,950.60 million tCO2-eq. in 7
+                                  and silvopastoral
+                                                                  years of implementation)
+                                  systems, reforestation
+                                  with close-to-nature            1.2 Restore approximately 20,189 ha of
+                                  planted forests                 rangeland with compacted soils and
+                                  (CTNPFs) and assisted           increase CC-resilience through
+                                  natural forest                  improved silvopastoral systems                       51.604           14.151         Grants                 37.453          Grants             MINAG
+                                  regeneration                    (mitigation net co-benefit 381,311.51
+                                                                  million t CO2eq in 7 years of
+                                                                  implementation).
+
+  Component 2:                                                    2.1 Increase institutional capacities to
+  Strengthened                                                    support farmers and producers’
+  institutional and               Output 2:                       organizations to establish and maintain                                                                                     Choose an
+                                                                                                                       0.108         0.108             Grants             00.00                                  n/a
+  technical capacities            Strengthened                    agroforestry, silvopastoral and forestry                                                                                    item.
+                                  institutional and farmer        systems for improved ecosystem
+                                  capacities to improve           services
+                                  ecosystem services
+                                  through agroforestry            2.2 Train agricultural producers to
+                                  and forestry systems            collectively revitalize and manage
+                                  and enhance the                 landscape resources through climate                                                                                         Choose an
+                                  climate-resilience of           resilience-enhancing agroforestry,                   0.719             0.719         Grants             00.00                                  n/a
+                                                                                                                                                                                              item.
+                                  production landscapes           silvopastoral and forestry systems for
+                                                                  gender-equitable agricultural
+                                                                  production and ecosystem services
+
+[C.2. Financing by Component] Component 3: Strengthened governance, legal Output 3: Effective governance to support climate resilience- enhancing production 3.1 Develop, discuss and analyze options for policy reforms to support implementation of agroforestry, silvopastoral and forestry systems for cost million USD ($): 0.261 Amount million USD ($): 0.261 Grants Amount million USD ($): 00.00 Choose an item. n/a
+
+                                                                                                                    35
+
+
+                                                                                                                                             C
+and regulatory                systems and ecosystem         landscape resilience through improved
+framework                     services                      ecosystem services
+                                                            3.2 Establish a Landscape Resilience
+[3.2 Establish a Landscape Resilience] Fund to support adoption and implementation of agroforestry, silvopastoral and forestry systems in support of landscape resilience through ecosystem service enhancement 0.643 0.092 Grants 0.551 Grants MINAG
+
+                                                            3.3 Strengthen planning, governance
+[3.3 Strengthen planning, governance] and coordination at the landscape level in support of landscape resilience through enhancement of ecosystem services 0.042 0.042 Grants 00.00 Choose an item. MINAG
+
+[3.3 Strengthen planning, governance] Project Management Costs 6.372 1.760 Grants 4.612 Grants MINAG
+
+[3.3 Strengthen planning, governance] Evaluation (includes cost of an impact evaluation) 0.812 0.562 Grants 0.250 Grants MINAG
+
+[3.3 Strengthen planning, governance] Indicative total cost (USD) 119.914 38.207 81.707
+
+                                                                                                           36
+
+                                                                                                                                               C
+
+=== ANNUAL PERFORMANCE REPORT EXCERPT ===
+APR CY2024 Section 3: Financial Information - v2 2025-04-30 23:36 +09:00
+
+
+[APR CY2024] Section 3: Financial Information
+Please note that this is section 3 of the five Annual Performance Report (APR) sections. APR will be considered valid only after all the five sections are filled with
+relevant details.
+
+
+
+Annual Financial Performance Report
+
+Please download the Financial Performance Report Template in Excel.
+
+Financial Performance Report Template (https://www.greenclimate.fund/document/annual-performance-report-financial-information-section-3)
+Please note that the Financial Performance Report template has been updated with an additional master sheet where you will see a summary of data automatically extracted from
+multiple worksheets. AEs do not need to make any additional actions in this regard.
+
+
+Please attach the Annual Financial Performance Report here.
+
+ FP126-APR2024 13 - CUB 021 GCF 2025 04 29.xlsx (/GCF/programme_form/download_attachment/5766/50827/project_report?
+
+ attachment_attr=clonenwp9gVbt_field_fA7v4oZD:ITblra6u)
+
+Please make sure you use the attached template provided by the GCF. Reports submitted in any other formats would not be accepted.
+
+
+Please provide any comments as necessary.
+
+
+
+
+Unaudited Financial Statement
+
+Submit the Unaudited financial statement (as required by FAA)
+
+ GCF - Annual Financial Statements - P13 2024 - GCP CUB021.pdf (/GCF/programme_form/download_attachment/5766/50827/project_report?
+
+ attachment_attr=field_fA7v4oZD:4HmkCAC7)
+
+(Semi-)Annual Audited financial statement, Interim/Final Evaluation Report should be submitted via separate and dedicated submission channels.
+
+
+Please provide any comments as necessary.
+
+
+
+
+3.3 Disbursement projection
+
+Select reporting currencies *
+X USD
+   EUR
+   GBP
+   JPY
+
+
+
+
+This section is for GCF internal planning purposes only. Please provide indicative disbursement projections for 2025 and 2026. The information reported herein
+will not be published.
+
+Please be mindful of the Undisbursed Balance provided above and avoid overbudgeting the projected values.
+Annual Performance Report CY2024                                                                                                                                       64 / 117
+
+
+
+Projected disbursements to be requested in all of 2025: January 1st – December 31st, 2025. Please include disbursement requests already submitted in 2025
+prior to APR submission.
+
+Projected disbursements to be requested in all of 2026 (USD): January 1st – December 31st, 2026.
+
+Please insert 0 (zero) and elaborate the reasons in the notes box below, if no projection can be provided.
+
+Please insert 0 (zero) if financial instruments are not appliable to this project/programme.
+
+
+
+                          Approved budget by        Cumulative Amount         Undisbursed Balance   Projected                  Projected                  Remaining budget
+                          instrument                Disbursed from GCF to     (GCF Approved         disbursements to be        disbursements to be
+                                                    AE (until the end of      Funding)-(GCF         requested in all of 2025   requested in all of 2026
+                                                    2023) by instrument       Disbursed Funds)      (USD)                      (USD)
+
+Equity                                               0                        0                                                                           0.0
+
+
+Grants                     38206791                  15648409                 22558382               8392948                    7270399                   14165434.0
+
+
+Guarantees                                           0                        0                                                                           0.0
+
+
+In-kind                                                                       0                                                                           0.0
+
+
+Results-Based                                        0                        0                                                                           0.0
+Payment
+
+Senior Loans                                         0                        0                                                                           0.0
+
+
+Sub-ordinated Loans                                  0                        0                                                                           0.0
+
+
+Total                      38206791                  15648409                 22558382              8392948                    7270399                    14165434.0
+
+
+
+Notes
+
+Balance after 2026 projected disbursement should be 6,895,034USD
+Please note that 2025 disbursement has been already received in January 2025
+
+Please add any further explanations on the provided disbursement projections above if necessary.
+
+
+Please confirm that disbursement projections are provided as per the guiding notes above. *
+X Confirmed
+
+
+Confirmation and Acknowledgement of Information *
+* This is a required question to submit section 3 of the Annual Performance Report (APR).
+X The accredited entity hereby confirms that the information provided in section 3 is complete and ready for submission.
+Annual Performance Report CY2024                                                                                                                             65 / 117
+

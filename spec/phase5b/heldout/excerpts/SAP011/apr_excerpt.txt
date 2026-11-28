@@ -1,0 +1,58 @@
+FINANCIAL           INFORMATION
+
+E.1. GCF financing
+
+In addition to the financial report in the annex, update the table with relevant GCF financial data for each country and
+instrument, including amounts and allocation percentages.
+
+                                    Currenc                                        Expenditur
+                                                                    Disburse                          Cumulative
+                  Instrumen             y          Committe                               e                              Mitigatio      Adaptatio
+  Country                                                                d                            Expenditur
+                         t           (as per      d   Amount                          (reporting                              n               n
+                                                                    Amount                                  e
+                                      FAA)                                              year)
+
+[E.1. GCF financing] Mozambique Grants USD Committed: 9,250,000 Disbursed Amount: 9,250,000 Expenditure (reporting year): 1,978,242 Cumulative Expenditure: 7,498,623 Mitigation: 0% Adaptation: 100%
+        
+
+[E.1. GCF financing] Total USD Committed: 9,250,000 Disbursed Amount: 9,250,000 Expenditure (reporting year): 1,978,242 Cumulative Expenditure: 7,498,623 N/A N/A
+
+E.2. Co-financing
+
+Please populate the table with relevant Co-financing data for each Co-financier and instrument, including amounts and
+allocation percentages.
+
+                                   Currenc                                         Expenditur
+                                                                   Disburse                           Cumulative
+     Co-          Instrumen             y         Committe                                e                             Mitigatio       Adaptatio
+                                                                        d                             Expenditur
+  financier             t            (as per      d  Amount                          (reporting                              n                n
+                                                                    Amount                                  e
+                                      FAA)                                              year)
+
+[E.2. Co-financing] Government of Flanders Grants USD Committed Amount: 750,000 Disbursed Amount: 750,000 Expenditure (reporting year): 0 Cumulative Expenditure: 750,000 Mitigation: 0% Adaptation: 100%
+
+[E.2. Co-financing] Total USD Committed Amount: 750,000 Disbursed Amount: 750,000 Expenditure (reporting year): 0 Cumulative Expenditure: 750,000 N/A N/A
+
+E.3. Additional Finance Mobilised Beyond Approved Co-financing
+
+Report the realised (cumulative value) and/or expected volume (Final Target) of private/public finance leveraged as a
+result of GCF involvement in the investment, in addition to and beyond any co-financing originally committed at approval.
+This datapoint shall be reported separately from official co-financing figures and is intended to capture the catalytic effect
+of GCF investments and support institutional learning.
+
+GCF Policy: https://www.greenclimate.fund/sites/default/files/document/policy-cofinancing.pdf
+
+No additional finance mobilized information provided.
+
+File Name: grant-financial-progress-detail 2025 - SAP011.xlsx
+
+
+     ENVIRONMENTAL             &   SOCIAL       SAFEGUARDS,            GENDER,        and     INDIGENOUS          PEOPLES
+
+This section provides an update against the ESS standards agreed as part of the Environmental and Social Action Plan
+(ESAP) and Environmental and Social Management Framework (ESMF), as well as Environmental and Social
+Management System (ESMS), Environmental and Social Impact Assessment (ESIA), Environmental and Social
+Management Plan (ESMP), Indigenous Peoples Plan (IPP), Indigenous Peoples Plan Framework (IPPF), Resettlement
+Action Plan (RAP), Resettlement Policy Framework (RPF) when applicable.

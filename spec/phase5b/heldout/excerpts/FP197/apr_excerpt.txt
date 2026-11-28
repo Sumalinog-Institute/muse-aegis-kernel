@@ -1,0 +1,85 @@
+FINANCIAL           INFORMATION
+
+E.1. GCF financing
+
+In addition to the financial report in the annex, update the table with relevant GCF financial data for each country and
+instrument, including amounts and allocation percentages.
+
+                                                                                                 Current
+                                                                                Expendit
+                                Currency        Committ         Disburse                        Residual
+                Instrume                                                            ure                         Mitigatio       Adaptati
+ Country                           (as per          ed               d                             Risk
+                     nt                                                         (Reportin                            n              on
+                                    FAA)         Amount          Amount                          (latest
+                                                                                 g year)
+                                                                                                 update)
+
+Enter           Select                          Amount         Amount          Amount          Total           Mitigation      Adaptation
+country         instrument                      committed      transferred     spent on        amount          allocation      allocation
+name            type                            to the         from GCF        the Funded      spent on        of the          of the
+                                                country        to the          Activity in     the Funded      amount          amount
+                                                and            Accredited      the             Activity        spent in        spent in
+                                                instrument     Entity          reporting       since           the             the
+                                                selected to    (Inflows)       (Outflows)      project         reporting       reporting
+                                                date                                           implement       year            year
+                                                                                               ation
+                                                                                               (Outflows)
+
+                Choose an                          Enter           Enter           Enter           Enter
+                                  Options                                                                        Enter %         Enter %
+                    item.                         amount          amount          amount         amount
+
+                Choose an                          Enter           Enter           Enter           Enter
+                                  Options                                                                        Enter %         Enter %
+                    item.                         amount          amount          amount         amount
+
+                                                   Enter           Enter           Enter           Enter
+Total                NA           Options                                                                           NA              NA
+                                                  amount          amount          amount         amount
+
+E.2. Co-financing
+
+Please populate the table with relevant Co-financing data for each Co-financier and instrument, including amounts and
+allocation percentages.
+
+                                                                                                 Current
+                                                                                Expendit
+                                Currency        Committ         Disburse                        Residual
+    Co-         Instrume                                                            ure                         Mitigatio       Adaptati
+                                  (As per           ed               d                             Risk
+Financier            nt                                                         (Reportin                            n              on
+                                    FAA)         Amount          Amount                          (latest
+                                                                                 g year)
+                                                                                                 update)
+
+Enter co-       Select          Select          Amount         Amount          Amount          Total           Mitigation      Adaptation
+financier       instrument      currency        committed      transferred     spent on        amount          allocation      allocation
+name            type                            to the         from GCF        the Funded      spent on        of the          of the
+                                                country        to the          Activity in     the Funded      amount          amount
+                                                and            Accredited      the             Activity        spent in        spent in
+                                                instrument     Entity          reporting       since           the             the
+                                                selected to    (Inflows)       (Outflows)      project         reporting       reporting
+                                                date                                           implement       year            year
+                                                                                               ation
+                                                                                               (Outflows)
+
+                Choose an                          Enter           Enter           Enter           Enter
+                                  Options                                                                        Enter %         Enter %
+                    item.                         amount          amount          amount         amount
+
+                Choose an                          Enter           Enter           Enter           Enter
+                                  Options                                                                        Enter %         Enter %
+                    item.                         amount          amount          amount         amount
+
+                                                   Enter           Enter           Enter           Enter
+   Total             NA           Options                                                                           NA              NA
+                                                  amount          amount          amount         amount
+
+
+     ENVIRONMENTAL                &   SOCIAL        SAFEGUARDS,              GENDER,         and     INDIGENOUS             PEOPLES
+This section provides an update against the ESS standards agreed as part of the Environmental and Social Action Plan
+(ESAP) and Environmental and Social Management Framework (ESMF), as well as Environmental and Social
+Management System (ESMS), Environmental and Social Impact Assessment (ESIA), Environmental and Social
+Management Plan (ESMP), Indigenous Peoples Plan (IPP), Indigenous Peoples Plan Framework (IPPF), Resettlement
+Action Plan (RAP), Resettlement Policy Framework (RPF) when applicable.

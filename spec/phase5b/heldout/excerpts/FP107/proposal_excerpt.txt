@@ -1,0 +1,63 @@
+B.2. Project Financing Information
+
+                     Financial Instrument                 Amount               Currency                   Tenor                       Pricing
+
+[B.2. Project Financing Information] (a) Total project financing (a) = (b) + (c) Amount: 58.015 million USD ($)
+
+                     (i) Senior Loans                        
+                                                                                 Options
+                                                                                                        ( ) years                      ( ) %
+                     (ii) Subordinated                       
+                                                                                 Options
+                     Loans                                                                              ( ) years                      ( ) %
+                                                                                 Options
+                     (iii) Equity                                                                                                   ( ) % IRR
+                                                                                 Options
+                     (iv) Guarantees
+                                                                                 Options
+                     (v) Reimbursable
+(b) GCF              grants *                                                 million USD
+
+[B.2. Project Financing Information > (b) GCF] financing to recipient (vi) Grants * Amount: 25.347 ($)
+
+                     * Please provide economic and financial justification in section F.1 for the concessionality that GCF is
+                     expected to provide, particularly in the case of grants. Please specify difference in tenor and price
+                     between GCF financing and that of accredited entities. Please note that the level of concessionality
+                     should correspond to the level of the project/programme’s expected performance against the
+                     investment criteria indicated in section E.
+
+[B.2. Project Financing Information > (b) GCF] Total requested (i+ii+iii+iv+v+vi) Amount: 25.347 million USD ($)
+
+                       Financial                                                  Name    of
+                                          Amount             Currency                                Tenor         Pricing            Seniority
+                      Instrument                                                 Institution
+                                                                                                                                            B
+
+
+
+[B.2. Project Financing Information] Grant In Kind Grant In Kind Amount: 1.990 Amount: 0.550 Amount: 0.968 Amount: 9.052 million USD ($) million USD ($) million USD ($) million USD ($) MoWHS MoWHS MoAF MoAF n/a n/a n/a
+[B.2. Project Financing Information] (c) Co-financing to recipient In Kind Grant Amount: 0.242 Amount: 19.866 million USD ($) million USD ($) NCHM GNHC
+
+                     Lead financing institution: N/A
+
+                     * Please provide a confirmation letter or a letter of commitment in section I issued by the co-financing
+                     institution.
+
+                     In cases where the accredited entity (AE) deploys the GCF financing directly to the recipient, (i.e. the
+                     GCF financing passes directly from the GCF to the recipient through the AE) or if the AE is the recipient
+                     itself, in the proposed financial instrument and terms as described in part (b), this subsection can be
+                     skipped.
+
+                     If there is a financial arrangement between the GCF and the AE, which entails a financial instrument
+                     and/or financial terms separate from the ones described in part (b), please fill out the table below to
+(d) Financial
+                     specify the proposed instrument and terms between the GCF and the AE.
+terms
+between                     Financial
+GCF   and    AE                                        Amount                    Currency                    Tenor                     Pricing
+                           instrument
+(if applicable)
+                              Grants                      N/A                million USD ($)                  n/a                        n/a
+
+                     Please provide a justification for the difference in the financial instrument and/or terms between what is
+                     provided by the AE to the recipient and what is requested from the GCF to the AE.

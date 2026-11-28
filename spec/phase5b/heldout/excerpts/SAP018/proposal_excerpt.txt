@@ -1,0 +1,174 @@
+C. FINANCING INFORMATION
+
+C.1. Total financing
+
+[C.1. Total financing] (a) Requested GCF funding (i + ii + iii + iv + v + vi) US$ 10,000,000.00 Options
+
+  GCF Financial Instrument                     Amount                      Currency                     Tenor              Pricing
+
+[C.1. Total financing > (a) Requested GCF funding] (i) Senior loans Amount: 0 - - 0 %
+
+[C.1. Total financing > (a) Requested GCF funding] (ii) Subordinated loans Amount: 0 - - 0 %
+
+[C.1. Total financing] (iii) Equity Amount: 0 - 0 % equity return
+
+[C.1. Total financing] (iv) Guarantees Amount: 0 - - Pricing: 0 %
+
+[C.1. Total financing > (a) Requested GCF funding] (v) Reimbursable grants Amount: 0 -
+
+[C.1. Total financing > (a) Requested GCF funding] (vi) Grants Amount: 10,000,000 US$ Tenor: 5
+
+                                                         Total amount                                       Currency
+
+                                                                                                                      48
+
+
+[C.1. Total financing] (b) Co-financing information 36 Name of institution Government of Liberia (GoL). Financial instrument In kind US$ 1,000,000 Amount Total amount: 1,000,000.00 Currency USD Tenor Currency: 5 USD Pricing 0% Seniority Options
+                                                                                                                                         
+[C.1. Total financing] African Development Bank Grant Total amount: 431,969.00 USD 5 0%
+[C.1. Total financing] (c)  Total investment = (a)+(b) Amount US$ 11,431,969.00 Currency USD
+ (d) Co-financing ratio
+                                                         0.125
+ (d) = (b)/(a)
+ (e) Other financing                     Please explain if any of the financing parties, including the AE, would benefit from
+ arrangements for the                    any type of guarantee, e.g., sovereign guarantee, MIGA guarantee, etc.
+ project/programme (max ½                Information on legal, due diligence (taxes, insurance, etc.) shall be reported in
+ page)                                   Annex 10.
+ C.2. Financing by component
+ Please provide an estimate of the cost per component (as outlined in Section B.2. above) and disaggregate by
+ sources of financing. This table should match the one presented in the term sheet, and the names (in the rows)
+ should match those presented in the logic framework in section D below.
+                                                  Indicative       GCF financing                          Co-financing of
+                                                  cost                                    EUR400,000/US$431,969           from   AfDB     is
+                                                  (USD)                                   included as co-financing to complement that
+                                                                                          of GoL.
+
+                                                                  Amount       Financial   Amount       Financial Nam      Am     Fi    Na
+    Component                  Output                              (USD)                    (USD)                 e of    oun     na    me
+                                                                               Instru                   Instru    Institutio t     nc     of
+                                                                                ment                    ment               (U     ial   Ins
+                                                                                                                   ns      SD     In    titu
+                                                                                                                            )     str    tio
+                                                                                                                                   u     ns
+                                                                                                                                  m
+                                                                                                                                  en
+                                                                                                                                   t
+   Component           Output 1.1:                352,500        589,500       Grants     0                       GoL     0       -     Af
+   1: Enhanced         Established                                                                                                      DB
+   Disaster Risk       Guidelines, risk
+   Knowledge of        modelling tools
+   individuals         and climate
+   and                 knowledge
+   institutions        dissemination
+   across the          platform
+   country
+
+      36If the co-financing is provided in different currency other than the GCF requested, please provide detailed
+      financing information and a converted figure in the GCF requested currency in the comment box. Please refer
+      to the date when the currency conversion was performed and the reference source.
+
+                                                                                                                               49
+
+
+                   Output 1.2:               237,000
+                   Enhanced risk
+                   analysis for the
+                   design of Forecast
+                   based Financing
+                   and capacity
+                   building
+Component          Output 2.1:               2,285,99     5,198,99     Grants     0                     GoL     292    Gr    Af
+2: Enhanced        Established               7            7                                                     ,00    an    DB
+Detection,         Climate smart labs                                                                           0      ts
+Monitoring,        and automated
+Analysis and       decision
+Forecasting        management
+of the             systems
+Hazards and
+Possible
+Consequences
+ 
+                   Output 2.2:               2,383,50
+                   Rehabilitated             0
+                   National
+                   Meterorological
+                   Center (NMC) and
+                   Enhanced
+                   hydromet
+                   observation
+                   networks
+
+                   Output 2.3                305,000
+                   Established Quality
+                   Management
+                   System (QMS) for
+                   LMS
+
+[C.2. Financing by component] Output 2.4: Enhanced climate services information system 516,500
+
+[C.2. Financing by component] Component 3: Improved warning dissemination and communication Output 3.1: Effective communication channels and improved public weather services 887,665 1,617,835 Grants 0 GoL 79, 469 Gr an ts Af DB
+ 
+
+                   Output 3.2:               809,639
+                   Improved impact-
+                   based risk
+                   information service
+                   and Community-
+                   based EWS
+                   communication
+                   mechanism
+
+                                                                                                                     50
+
+
+  Component           Output             4.1:    251,500        1,921,26      Grants     0                       GoL      0      Gr     Af
+  4:   Improved       Strengthened                              8                                                                an     DB
+  Preparedness        Legislation        and                                                                                     ts
+              and     Disaster
+  Response            Management
+  Capabilities        Framework
+  through
+  legislation         Output 4.2 Risk            669,768
+  and   forecast-     scenarios
+  based               developped and
+  financing           outreach strategies
+  (FBF)               designed for
+  mechanism           stakeholders at all
+                      level
+                      Output 4.3 Liberian        1,000,00
+                      Climate Change             0
+                      Trust Fund
+                      established
+  Component           Output             5.1:    140,000        372,400       Grants     700,000                 GoL      10,    Gr     Af
+  5:          Co-     Enhanced                                                                                            500    an     DB
+  ordinated           collaboration      with                                                                                    ts
+  Project             regional
+  management          organization       and
+  and                 other          African
+  implementation      Institutions
+     across all
+  climate             Output       5.2:     A    9,000
+  information         Project
+  service    units    Management         Unit
+  in Liberia          (PMU)     is  in place
+                      and            Project
+                      Supervision
+                      Achieved
+                      Output              5.3    933,900
+                      Monitoring,
+                      Evaluation         and
+                      Learning system is
+                      established
+                      PMC                        650,000        300,000       Grants     300,000                 GoL      50,    Gr     Af
+                                                                                                                          000    an     DB
+                                                                                                                                 ts
+                                                     US$                                              US$                       US$
+                                                                         US$
+        Indicative total cost (USD)               11,431,9                                      1,000,000.00                431,969.00
+                                                                  10,000,000.00
+                                                    69.00
+C.2.1 Financing structure (if applicable, mandatory for private sector proposal (max.300 words)
+For private sector proposals, provide an overview (diagram) of the proposed financing structure. Please note that
+this section should focus on describing what is being paid for, either by GCF funding and/or co-financing.
+
+N/A

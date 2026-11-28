@@ -1,0 +1,258 @@
+=== PROPOSAL EXCERPT ===
+FINANCING         INFORMATION
+
+C.1. Total financing
+
+[C.1. Total financing] (a) Requested GCF funding (i + ii + iii + iv + v + vi + vii) Total amount 82.5 Currency million USD ($)million USD ($)
+
+   GCF financial
+                                   Amount                           Tenor                     Grace period                       Pricing
+    instrument
+
+(i) Senior loans                Enter amount                     Enter years                    Enter years                      Enter %
+
+(ii) Subordinated
+                                Enter amount                     Enter years                    Enter years                      Enter %
+loans
+
+[C.1. Total financing > (a) Requested GCF funding] (iii) Equity Amount: 82.5 6 % equity return
+
+(iv) Guarantees                 Enter amount                     Enter years
+
+(v) Reimbursable
+                                Enter amount
+grants
+
+(vi) Grants                     Enter amount
+
+(vii) Results-based
+                                Enter amount
+payments
+
+(b) Co-financing                               Total amount                                                     Currency
+
+[C.1. Total financing > (b) Co-financing] information Total amount: 322.5 Options
+
+      Name of                Financial                                                      Tenor &
+                                                   Amount              Currency                                   Pricing            Seniority
+     institution            instrument                                                        grace
+
+[C.1. Total financing] FCDO Equity Amount: 40 Options Enter years Pricing: 6% pari passu
+
+[C.1. Total financing] Other Equity Amount: 147.5 Options Enter years Pricing: 6% pari passu
+
+[C.1. Total financing] Other Equity Amount: 135 Options Enter years Pricing: 3% pari passu
+
+     (c)   Total                                   Amount                                                       Currency
+
+[C.1. Total financing] financing (c) = (a)+(b) Amount: 405 million USD ($)
+
+                          Please explain if any of the financing parties including the AE would benefit from any type of
+                          guarantee (e.g., sovereign guarantee, MIGA guarantee).
+
+                          1.111      Taking the lead in structuring the guaranteed green bond and loan transactions, GGC aims
+
+                                     to “crowd in” other risk participants into the transaction to share and reduce GGC’s risks
+                                     exposure in a transaction.         It can anchor a transaction with up to a 100% guarantee and
+                                     work with partners and interested public and private sector co-participants to share risks
+
+                                     where possible.
+
+                          1.112      To support more challenging projects where repayment certainty is less pronounced but are
+
+                                     critically needed for adaptation purposes for example, sovereign guarantees or other forms
+(d) Other
+                                     of sovereign support (such as first loss capital) may be sought on a case-by-case basis to
+financing
+                                     allow for the project to be supported.
+arrangements
+
+and                       Please also explain other contributions such as in-kind contributions including tax exemptions and
+
+[C.1. Total financing > (d) Other financing arrangements] contributions (max. 250 words, approximately contributions of assets. Amount: 1.113 While not needed for GGC on an institution basis, specific projects may benefit from
+
+0.5 page)                            contributions in-kind and tax exemptions including withholding tax on interest payments and
+                                     guarantee fees to allow for savings to be transferred to the users and beneficiaries of the
+                                     projects in the communities. This will be solely the prerogative of the respective Sovereigns
+                                     to support projects which are critical to their climate change mitigation and adaptation goals.
+
+                                     GGC can then complement the support for the projects by raising long term funding at more
+                                     affordable funding costs to make them bankable.
+
+                          Please also include parallel financing associated with this project or programme (refer to the co-
+
+                          financing policy).
+
+
+                                                                                                                                         D
+
+[C.1. Total financing] 1.114 is  operational. As  an indication By drawing support from other co-participants as explained above, GGC’s risk exposure on a gross (partial guarantee) and net basis (if insured) will reduce by the introduction of other participants to take up or share risks to the projects guaranteed. Their participation will be backed by their own equity and risk capacity that will be sitting in parallel with GGC’s guarantee exposures. While it is not possible to quantify this at this moment, any risk sharing, and co-participation of risks will be reported to GCF on an on-going basis when GGC implemented a quota share reinsurance treaty from private reinsurers for 25% of their portfolio since 2016. of  the levels  possible, CGIF has successfully
+
+C.2. Financing by component
+Please provide an estimate of the total cost per component and output as outlined in section B.3. above and disaggregate
+by source of financing. More than one co-financing institution can fund a single component or output. Provide the
+summarised cost estimates in the table below and the detailed budget plan as annex 4.
+
+  Component             Output            Indicative               GCF financing                                Co-financing
+                                          cost
+                                                               Amount           Financial         Amount           Financial        Name of
+                                          Options              Options        Instrument           Options         Instrument      Institutions
+                                                                                                                         
+[C.2. Financing by component] Component 1: Equity Investment Activity 1.1 - Formation and capitalisation of GGC Activity 1.2 - Secure investment Indicative cost Options: 3,850,000 Indicative cost Options: 1,190,000 GCF financing Amount Options: 1,058,294 GCF financing Amount Options: 294,022 Equity Equity Amount Options: 2,791,706 Amount Options: 895,978 Equity Equity FCDO other public and private investors FCDO other public and and
+
+
+                                                                                                                                             D
+
+                         grade credit                                                                                                and private
+                         rating for                                                                                                  investors
+                         GGC
+                         Activity 1.3                         78,179,837        Equity            309,142,888        Equity          FCDO    and
+                         – Identify,                                                                                                 other public
+                         execute and                                                                                                 and private
+                         financially                                                                                                 investors
+                         structure
+                         guarantees
+                         that
+                         mobilise
+                         institutional
+                         capital in
+                                           387,322,724
+                         global credit
+                         and capital
+                         markets to
+                         fund climate
+                         mitigation
+                         and
+                         adaptation
+                         projects in
+                         developing
+                         countries.
+                         Activity 1.4 -                       2,492,520         Equity            8,104,574          Equity          FCDO    and
+                         Manage                                                                                                      other public
+                         and report                                                                                                  and private
+                         on portfolio                                                                                                investors
+                         of
+                                           10,597,094
+                         guarantees
+                                           Enter
+                         for risk
+                                           amount
+                         management
+                           ,
+                         performance
+                          , and
+                         impact
+                         Activity 1.5                         475,327           Equity            1,564,855          Equity          FCDO    and
+                         - Establish                                                                                                 other public
+                         commercial                                                                                                  and private
+                         viability of                                                                                                investors
+                         GGC    and
+                                           2,040,182
+                         facilitate
+                         exit for
+                         GCF   and
+                         FCDO
+
+[C.2. Financing by component] Indicative total cost (USD) Indicative cost Options: 405,000,000 GCF financing Amount Options: 82,500,000 Amount Options: 322,500,000
+
+This table should match the one presented in the term sheet and be consistent with information presented in other
+annexes including the detailed budget plan and implementation timetable.
+
+In case of a multi-country/region programme, specify indicative requested GCF funding amount for each country in annex
+17, if available.
+
+      1.115      Note: For illustrative purposes only. Actual budget by component is subject to change. GCF’s allocated
+                 financing amount for activities is equal to 21% of total indicative cost assuming GCF commits $82.5 million.
+                 For breakdown of component 1 expenses, please see Annex 4 set-up costs. It should be further noted that
+                 any costs incurred (including management fees) are anticipated to be covered first by operating cashflows.
+
+
+                                                                                                                                                  D
+
+=== ANNUAL PERFORMANCE REPORT EXCERPT ===
+FINANCIAL           INFORMATION
+
+E.1. GCF financing
+
+In addition to the financial report in the annex, update the table with relevant GCF financial data for each country and
+instrument, including amounts and allocation percentages.
+
+                                                                                                 Current
+                                                                                Expendit
+                                Currency        Committ         Disburse                        Residual
+                Instrume                                                            ure                         Mitigatio       Adaptati
+ Country                           (as per          ed               d                             Risk
+                     nt                                                         (Reportin                            n              on
+                                    FAA)         Amount          Amount                          (latest
+                                                                                 g year)
+                                                                                                 update)
+
+Enter           Select                          Amount         Amount          Amount          Total           Mitigation      Adaptation
+country         instrument                      committed      transferred     spent on        amount          allocation      allocation
+name            type                            to the         from GCF        the Funded      spent on        of the          of the
+                                                country        to the          Activity in     the Funded      amount          amount
+                                                and            Accredited      the             Activity        spent in        spent in
+                                                instrument     Entity          reporting       since           the             the
+                                                selected to    (Inflows)       (Outflows)      project         reporting       reporting
+                                                date                                           implement       year            year
+                                                                                               ation
+                                                                                               (Outflows)
+
+                Choose an                          Enter           Enter           Enter           Enter
+                                  Options                                                                        Enter %         Enter %
+                    item.                         amount          amount          amount         amount
+
+                Choose an                          Enter           Enter           Enter           Enter
+                                  Options                                                                        Enter %         Enter %
+                    item.                         amount          amount          amount         amount
+
+                                                   Enter           Enter           Enter           Enter
+Total                NA           Options                                                                           NA              NA
+                                                  amount          amount          amount         amount
+
+E.2. Co-financing
+
+Please populate the table with relevant Co-financing data for each Co-financier and instrument, including amounts and
+allocation percentages.
+
+                                                                                                 Current
+                                                                                Expendit
+                                Currency        Committ         Disburse                        Residual
+    Co-         Instrume                                                            ure                         Mitigatio       Adaptati
+                                  (As per           ed               d                             Risk
+Financier            nt                                                         (Reportin                            n              on
+                                    FAA)         Amount          Amount                          (latest
+                                                                                 g year)
+                                                                                                 update)
+
+Enter co-       Select          Select          Amount         Amount          Amount          Total           Mitigation      Adaptation
+financier       instrument      currency        committed      transferred     spent on        amount          allocation      allocation
+name            type                            to the         from GCF        the Funded      spent on        of the          of the
+                                                country        to the          Activity in     the Funded      amount          amount
+                                                and            Accredited      the             Activity        spent in        spent in
+                                                instrument     Entity          reporting       since           the             the
+                                                selected to    (Inflows)       (Outflows)      project         reporting       reporting
+                                                date                                           implement       year            year
+                                                                                               ation
+                                                                                               (Outflows)
+
+                Choose an                          Enter           Enter           Enter           Enter
+                                  Options                                                                        Enter %         Enter %
+                    item.                         amount          amount          amount         amount
+
+                Choose an                          Enter           Enter           Enter           Enter
+                                  Options                                                                        Enter %         Enter %
+                    item.                         amount          amount          amount         amount
+
+                                                   Enter           Enter           Enter           Enter
+   Total             NA           Options                                                                           NA              NA
+                                                  amount          amount          amount         amount
+
+
+     ENVIRONMENTAL                &   SOCIAL        SAFEGUARDS,              GENDER,         and     INDIGENOUS             PEOPLES
+This section provides an update against the ESS standards agreed as part of the Environmental and Social Action Plan
+(ESAP) and Environmental and Social Management Framework (ESMF), as well as Environmental and Social
+Management System (ESMS), Environmental and Social Impact Assessment (ESIA), Environmental and Social
+Management Plan (ESMP), Indigenous Peoples Plan (IPP), Indigenous Peoples Plan Framework (IPPF), Resettlement
+Action Plan (RAP), Resettlement Policy Framework (RPF) when applicable.
+

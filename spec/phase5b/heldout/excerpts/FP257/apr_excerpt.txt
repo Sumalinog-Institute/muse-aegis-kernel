@@ -1,0 +1,70 @@
+FINANCIAL         INFORMATION
+
+E.1. GCF financing
+
+In addition to the financial report in the annex, update the table with relevant GCF financial data for each country and
+instrument, including amounts and allocation percentages.
+
+                             Currenc                                      Expenditur
+                                                                                           Cumulative
+             Instrumen           y         Committe        Disburse             e                            Mitigatio     Adaptatio
+Country                                                                                    Expenditur
+                   t           (as per     d Amount        d Amount         (reporting                           n              n
+                                                                                                 e
+                                FAA)                                          year)
+
+[E.1. GCF financing] Burkina Faso Grants USD Committed Amount: 10,699,070 Disbursed Amount: 1,598,697 Expenditure (reporting year): 369,099 Cumulative Expenditure: 369,099 Mitigation: 50% Adaptation: 50%
+
+[E.1. GCF financing] Ethiopia Grants USD Committed Amount: 11,052,230 Disbursed Amount: 1,651,468 Expenditure (reporting year): 397,353 Cumulative Expenditure: 397,353 Mitigation: 50% Adaptation: 50%
+
+[E.1. GCF financing] Kenya Grants USD Committed Amount: 10,820,193 Disbursed Amount: 1,616,796 Expenditure (reporting year): 418,954 Cumulative Expenditure: 418,954 Mitigation: 50% Adaptation: 50%
+
+[E.1. GCF financing] Malawi Grants USD Committed Amount: 10,663,284 Disbursed Amount: 1,593,350 Expenditure (reporting year): 430,730 Cumulative Expenditure: 430,730 Mitigation: 50% Adaptation: 50%
+
+[E.1. GCF financing] Tanzania Grants USD Committed Amount: 10,589,227 Disbursed Amount: 1,582,284 Expenditure (reporting year): 399,569 Cumulative Expenditure: 399,569 Mitigation: 50% Adaptation: 50%
+     
+
+[E.1. GCF financing] Uganda Grants USD Committed Amount: 10,743,392 Disbursed Amount: 1,605,320 Expenditure (reporting year): 467,724 Cumulative Expenditure: 467,724 Mitigation: 50% Adaptation: 50%
+
+[E.1. GCF financing] Zambia Grants USD Committed Amount: 11,056,358 Disbursed Amount: 1,652,085 Expenditure (reporting year): 337,926 Cumulative Expenditure: 337,926 Mitigation: 50% Adaptation: 50%
+
+[E.1. GCF financing] Total USD Committed Amount: 75,623,754 Disbursed Amount: 11,300,000 Expenditure (reporting year): 2,821,355 Cumulative Expenditure: 2,821,355 N/A N/A
+
+E.2. Co-financing
+
+Please populate the table with relevant Co-financing data for each Co-financier and instrument, including amounts and
+allocation percentages.
+
+                              Currenc                                     Expenditur
+   Co-                                                                                     Cumulative
+              Instrumen           y        Committe        Disburse             e                            Mitigatio     Adaptatio
+financie                                                                                   Expenditur
+                   t           (as per     d Amount        d Amount         (reporting                           n              n
+     r                                                                                           e
+                                FAA)                                          year)
+
+[E.2. Co-financing] AGRA Grants USD Committed Amount: 29,376,246 Disbursed Amount: 6,419,314 Expenditure (reporting year): 6,419,314 Cumulative Expenditure: 6,419,314 Mitigation: 50% Adaptation: 50%
+
+[E.2. Co-financing] Total USD Committed Amount: 29,376,246 Disbursed Amount: 6,419,314 Expenditure (reporting year): 6,419,314 Cumulative Expenditure: 6,419,314 N/A N/A
+
+E.3. Additional Finance Mobilised Beyond Approved Co-financing
+
+Report the realised (cumulative value) and/or expected volume (Final Target) of private/public finance leveraged as a
+result of GCF involvement in the investment, in addition to and beyond any co-financing originally committed at approval.
+This datapoint shall be reported separately from official co-financing figures and is intended to capture the catalytic effect
+of GCF investments and support institutional learning.
+
+GCF Policy: https://www.greenclimate.fund/sites/default/files/document/policy-cofinancing.pdf
+
+No additional finance mobilized information provided.
+
+File Name: AGRA REGAIN 2025 APR Financial Report_Apr2026.xlsx
+
+
+     ENVIRONMENTAL              &   SOCIAL       SAFEGUARDS,            GENDER,        and     INDIGENOUS           PEOPLES
+
+This section provides an update against the ESS standards agreed as part of the Environmental and Social Action Plan
+(ESAP) and Environmental and Social Management Framework (ESMF), as well as Environmental and Social
+Management System (ESMS), Environmental and Social Impact Assessment (ESIA), Environmental and Social
+Management Plan (ESMP), Indigenous Peoples Plan (IPP), Indigenous Peoples Plan Framework (IPPF), Resettlement
+Action Plan (RAP), Resettlement Policy Framework (RPF) when applicable.

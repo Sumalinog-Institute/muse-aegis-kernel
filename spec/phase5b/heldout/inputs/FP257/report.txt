@@ -1,0 +1,162 @@
+=== PROPOSAL EXCERPT ===
+C.    FINANCING           INFORMATION
+
+C.1.      Total financing
+
+[C.1. Total financing] (a) Requested GCF funding (i + ii + iii + iv + v + vi + vii) GCF financial instrument Total amount 75.62 Amount Tenor Currency million USD ($) Grace period Pricing
+ (i) Senior loans
+ (ii) Subordinated
+ loans
+ (iii) Equity
+ (iv) Guarantees
+ (v) Reimbursable grants
+ (vi) Grants                        75,623,754 USD
+ (vii) Results-based
+ payments
+ (b) Co-financing                   Total amount                                         Currency
+ information                       29.38                                                 million USD ($)
+                                    Financial                                            Tenor and
+ Name of institution                                    Amount         Currency                               Pricing             Seniority
+                                    instrument                                           grace
+                                                                       million
+ AGRA                               Grant               29.38
+                                                                       USD ($)
+ Click here to enter
+ text.
+ Click here to enter
+ text.
+ Click here to enter
+ text.
+                                    Amount                                               Currency
+ (c) Total financing
+[C.1. Total financing] (c) = (a)+(b) 105 million USD ($)
+ (d) Other financing               Please explain if any of the financing parties including the AE would benefit from any type of guarantee
+ arrangements and                  (e.g. sovereign guarantee, MIGA guarantee).
+ contributions (max.               Please also explain other contributions such as in-kind contributions including tax exemptions and
+ 250 words,                        contributions of assets.
+ approximately 0.5                 Please also include parallel financing associated with this project or programme (refer to the co-financing
+ page)                             policy).
+
+
+                                                                                                                           C
+
+        C.2.     Financing by component
+
+170.    The budget presented below presents the total RE-GAIN Programme budget, totalled for all seven countries. Budget will be distributed
+
+       equally between countries, as indicated in Annex 17.
+
+   Component                  Output                            Indicative cost     GCF financing                                Co-financing
+
+                                                                million USD         Amount                 Financial             Amount              Financial            Name of
+                                                                ($)                 million USD ($)        Instrument            million USD         Instrument           Institutions
+                                                                                                                                 ($)
+
+   Food Loss-
+
+[C.2. Financing by component] Reduction Solutions (FL-RS) demand 1.1: Smallholder farmers supported to adopt FL-RS million USD ($): 28.28 Amount million USD ($): 19.6 Grants Amount million USD ($): 8.68 Grants AGRA
+
+[C.2. Financing by component] side development to increase the adoption of FL-RS by farmers 1.2: Improved market linkages between agri- value chain actors million USD ($): 14.46 Amount million USD ($): 3.17 Grants Amount million USD ($): 11.29 Grants AGRA
+
+                              2.1: Business
+                              development support for
+   FL-RS supply side                                                 28.11                 26.38                 Grants                1.73               Grants                AGRA
+                              the improved provision of
+   development to
+                              FL-RS on local markets
+   increase availability
+                              2.2: Financial mechanisms
+   and affordability of
+                              for smallholders and
+   FL-RS                                                             15.28                 14.50                 Grants                0.79               Grants                AGRA
+                              MSMEs to support the
+                              adoption of FL-RS
+   Enabling                   3.1: Enhanced capacity of
+   environment to             national institutions to
+                                                                     11.34                  6.34                 Grants                5.00               Grants                AGRA
+   ensure sustainability      enable investments in FL-
+   of the FL-RS market        RS
+
+[C.2. Financing by component] M&E million USD ($): 2.5 Amount million USD ($): 2.05 Grants Amount million USD ($): 0.45 Grants AGRA
+
+[C.2. Financing by component] PMC million USD ($): 5.02 Amount million USD ($): 3.59 Grants Amount million USD ($): 1.44 Grants AGRA
+
+[C.2. Financing by component] Indicative total cost (USD) million USD ($): 105 Amount million USD ($): 75.62 Amount million USD ($): 29.38
+
+       This table should match the one presented in the term sheet and be consistent with information presented in other annexes including the detailed budget plan and implementation timetable.
+       In case of a multi-country/region programme, specify indicative requested GCF funding amount for each country in annex 17, if available.
+
+                                                                                                                        C
+
+=== ANNUAL PERFORMANCE REPORT EXCERPT ===
+FINANCIAL         INFORMATION
+
+E.1. GCF financing
+
+In addition to the financial report in the annex, update the table with relevant GCF financial data for each country and
+instrument, including amounts and allocation percentages.
+
+                             Currenc                                      Expenditur
+                                                                                           Cumulative
+             Instrumen           y         Committe        Disburse             e                            Mitigatio     Adaptatio
+Country                                                                                    Expenditur
+                   t           (as per     d Amount        d Amount         (reporting                           n              n
+                                                                                                 e
+                                FAA)                                          year)
+
+[E.1. GCF financing] Burkina Faso Grants USD Committed Amount: 10,699,070 Disbursed Amount: 1,598,697 Expenditure (reporting year): 369,099 Cumulative Expenditure: 369,099 Mitigation: 50% Adaptation: 50%
+
+[E.1. GCF financing] Ethiopia Grants USD Committed Amount: 11,052,230 Disbursed Amount: 1,651,468 Expenditure (reporting year): 397,353 Cumulative Expenditure: 397,353 Mitigation: 50% Adaptation: 50%
+
+[E.1. GCF financing] Kenya Grants USD Committed Amount: 10,820,193 Disbursed Amount: 1,616,796 Expenditure (reporting year): 418,954 Cumulative Expenditure: 418,954 Mitigation: 50% Adaptation: 50%
+
+[E.1. GCF financing] Malawi Grants USD Committed Amount: 10,663,284 Disbursed Amount: 1,593,350 Expenditure (reporting year): 430,730 Cumulative Expenditure: 430,730 Mitigation: 50% Adaptation: 50%
+
+[E.1. GCF financing] Tanzania Grants USD Committed Amount: 10,589,227 Disbursed Amount: 1,582,284 Expenditure (reporting year): 399,569 Cumulative Expenditure: 399,569 Mitigation: 50% Adaptation: 50%
+     
+
+[E.1. GCF financing] Uganda Grants USD Committed Amount: 10,743,392 Disbursed Amount: 1,605,320 Expenditure (reporting year): 467,724 Cumulative Expenditure: 467,724 Mitigation: 50% Adaptation: 50%
+
+[E.1. GCF financing] Zambia Grants USD Committed Amount: 11,056,358 Disbursed Amount: 1,652,085 Expenditure (reporting year): 337,926 Cumulative Expenditure: 337,926 Mitigation: 50% Adaptation: 50%
+
+[E.1. GCF financing] Total USD Committed Amount: 75,623,754 Disbursed Amount: 11,300,000 Expenditure (reporting year): 2,821,355 Cumulative Expenditure: 2,821,355 N/A N/A
+
+E.2. Co-financing
+
+Please populate the table with relevant Co-financing data for each Co-financier and instrument, including amounts and
+allocation percentages.
+
+                              Currenc                                     Expenditur
+   Co-                                                                                     Cumulative
+              Instrumen           y        Committe        Disburse             e                            Mitigatio     Adaptatio
+financie                                                                                   Expenditur
+                   t           (as per     d Amount        d Amount         (reporting                           n              n
+     r                                                                                           e
+                                FAA)                                          year)
+
+[E.2. Co-financing] AGRA Grants USD Committed Amount: 29,376,246 Disbursed Amount: 6,419,314 Expenditure (reporting year): 6,419,314 Cumulative Expenditure: 6,419,314 Mitigation: 50% Adaptation: 50%
+
+[E.2. Co-financing] Total USD Committed Amount: 29,376,246 Disbursed Amount: 6,419,314 Expenditure (reporting year): 6,419,314 Cumulative Expenditure: 6,419,314 N/A N/A
+
+E.3. Additional Finance Mobilised Beyond Approved Co-financing
+
+Report the realised (cumulative value) and/or expected volume (Final Target) of private/public finance leveraged as a
+result of GCF involvement in the investment, in addition to and beyond any co-financing originally committed at approval.
+This datapoint shall be reported separately from official co-financing figures and is intended to capture the catalytic effect
+of GCF investments and support institutional learning.
+
+GCF Policy: https://www.greenclimate.fund/sites/default/files/document/policy-cofinancing.pdf
+
+No additional finance mobilized information provided.
+
+File Name: AGRA REGAIN 2025 APR Financial Report_Apr2026.xlsx
+
+
+     ENVIRONMENTAL              &   SOCIAL       SAFEGUARDS,            GENDER,        and     INDIGENOUS           PEOPLES
+
+This section provides an update against the ESS standards agreed as part of the Environmental and Social Action Plan
+(ESAP) and Environmental and Social Management Framework (ESMF), as well as Environmental and Social
+Management System (ESMS), Environmental and Social Impact Assessment (ESIA), Environmental and Social
+Management Plan (ESMP), Indigenous Peoples Plan (IPP), Indigenous Peoples Plan Framework (IPPF), Resettlement
+Action Plan (RAP), Resettlement Policy Framework (RPF) when applicable.
+

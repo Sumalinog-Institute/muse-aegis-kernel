@@ -1,0 +1,88 @@
+C.    FINANCING           INFORMATION
+
+C.1.      Total financing
+
+[C.1. Total financing] (a) Requested GCF funding (i + ii + iii + iv + v + vi + vii) GCF financial instrument Total amount 75.62 Amount Tenor Currency million USD ($) Grace period Pricing
+ (i) Senior loans
+ (ii) Subordinated
+ loans
+ (iii) Equity
+ (iv) Guarantees
+ (v) Reimbursable grants
+ (vi) Grants                        75,623,754 USD
+ (vii) Results-based
+ payments
+ (b) Co-financing                   Total amount                                         Currency
+ information                       29.38                                                 million USD ($)
+                                    Financial                                            Tenor and
+ Name of institution                                    Amount         Currency                               Pricing             Seniority
+                                    instrument                                           grace
+                                                                       million
+ AGRA                               Grant               29.38
+                                                                       USD ($)
+ Click here to enter
+ text.
+ Click here to enter
+ text.
+ Click here to enter
+ text.
+                                    Amount                                               Currency
+ (c) Total financing
+[C.1. Total financing] (c) = (a)+(b) 105 million USD ($)
+ (d) Other financing               Please explain if any of the financing parties including the AE would benefit from any type of guarantee
+ arrangements and                  (e.g. sovereign guarantee, MIGA guarantee).
+ contributions (max.               Please also explain other contributions such as in-kind contributions including tax exemptions and
+ 250 words,                        contributions of assets.
+ approximately 0.5                 Please also include parallel financing associated with this project or programme (refer to the co-financing
+ page)                             policy).
+
+
+                                                                                                                           C
+
+        C.2.     Financing by component
+
+170.    The budget presented below presents the total RE-GAIN Programme budget, totalled for all seven countries. Budget will be distributed
+
+       equally between countries, as indicated in Annex 17.
+
+   Component                  Output                            Indicative cost     GCF financing                                Co-financing
+
+                                                                million USD         Amount                 Financial             Amount              Financial            Name of
+                                                                ($)                 million USD ($)        Instrument            million USD         Instrument           Institutions
+                                                                                                                                 ($)
+
+   Food Loss-
+
+[C.2. Financing by component] Reduction Solutions (FL-RS) demand 1.1: Smallholder farmers supported to adopt FL-RS million USD ($): 28.28 Amount million USD ($): 19.6 Grants Amount million USD ($): 8.68 Grants AGRA
+
+[C.2. Financing by component] side development to increase the adoption of FL-RS by farmers 1.2: Improved market linkages between agri- value chain actors million USD ($): 14.46 Amount million USD ($): 3.17 Grants Amount million USD ($): 11.29 Grants AGRA
+
+                              2.1: Business
+                              development support for
+   FL-RS supply side                                                 28.11                 26.38                 Grants                1.73               Grants                AGRA
+                              the improved provision of
+   development to
+                              FL-RS on local markets
+   increase availability
+                              2.2: Financial mechanisms
+   and affordability of
+                              for smallholders and
+   FL-RS                                                             15.28                 14.50                 Grants                0.79               Grants                AGRA
+                              MSMEs to support the
+                              adoption of FL-RS
+   Enabling                   3.1: Enhanced capacity of
+   environment to             national institutions to
+                                                                     11.34                  6.34                 Grants                5.00               Grants                AGRA
+   ensure sustainability      enable investments in FL-
+   of the FL-RS market        RS
+
+[C.2. Financing by component] M&E million USD ($): 2.5 Amount million USD ($): 2.05 Grants Amount million USD ($): 0.45 Grants AGRA
+
+[C.2. Financing by component] PMC million USD ($): 5.02 Amount million USD ($): 3.59 Grants Amount million USD ($): 1.44 Grants AGRA
+
+[C.2. Financing by component] Indicative total cost (USD) million USD ($): 105 Amount million USD ($): 75.62 Amount million USD ($): 29.38
+
+       This table should match the one presented in the term sheet and be consistent with information presented in other annexes including the detailed budget plan and implementation timetable.
+       In case of a multi-country/region programme, specify indicative requested GCF funding amount for each country in annex 17, if available.
+
+                                                                                                                        C

@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-SAP019",
+ "title": "Gums for Adaptation and Mitigation in Sudan (GAMS): Enhancing adaptive capacity of local communities and restoring carbon sink potential of the Gum Arabic belt, expanding Africa’s Great Green Wall",
+ "currency": "USD",
+ "amount_awarded": 9975000.0,
+ "award_date": "2020-11-13",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Food and Agriculture Organization of the United Nations"
+ },
+ "planned_dates": {
+  "start": "2020-11-13",
+  "end": "2028-11-25"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}
