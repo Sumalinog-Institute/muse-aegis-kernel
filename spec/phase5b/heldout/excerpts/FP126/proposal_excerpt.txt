@@ -1,0 +1,121 @@
+FINANCING           INFORMATION
+
+C.1. Total financing
+
+ (a) Requested GCF funding                                Total amount                                          Currency
+
+[C.1. Total financing > (a) Requested GCF funding] (i + ii + iii + iv + v + vi + vii) Total amount: 38.207 million USD ($)
+
+   GCF financial instrument                      Amount                       Tenor                Grace period                Pricing
+
+(i)    Senior loans                                 NA                    Enter years               Enter years                Enter %
+
+(ii)   Subordinated loans                           NA                    Enter years               Enter years                Enter %
+
+                                                                                                                           Enter % equity
+(iii)  Equity                                       NA                                                                          return
+
+(iv)   Guarantees                                   NA                    Enter years
+
+(v)    Reimbursable grants                          NA
+
+(vi)   Grants                                     38.207
+
+(vii)  Result-based payments                        NA
+
+(b) Co-financing                                          Total amount                                          Currency
+
+[C.1. Total financing > (b) Co-financing] information 59 Total amount: 81.707 million USD ($)
+
+[C.1. Total financing] Name of institution MINAG Financial instrument Grant Amount Total amount: 23,220,250 Currency million USD ($) Tenor & grace Enter years Enter years Pricing Enter% Seniority Options
+
+[C.1. Total financing] MINAG Click here to enter text. Click here to enter text. In kind Options Options Total amount: 58,487,143 Enter amount Enter amount Options Options Options Enter years Enter years Enter years Enter years Enter years Enter years Enter% Enter% Enter% Options Options Options
+
+                                                             Amount                                             Currency
+
+     (c)  Total financing
+
+[C.1. Total financing] (c) = (a)+(b) Amount: 119.914 million USD ($)
+
+[C.1. Total financing] (d) Other financing arrangements and contributions (max 0.5 page) .
+
+   59 MINAG contribution will be in the form of a cash grant and in-kind support. FAO applies the official UN exchange rate set on a
+   monthly basis by the UN Treasury – this exchange rate is currently set at $1 USD to $1 Cuban Peso.
+
+                                                                     34
+
+
+                                                                                                                                                        C
+
+C.2.    Financing        by    Component
+
+                                                                                                                     Indicative             GCF financing                                    Co-financing
+
+  Components                                                                                                           cost            Amount                                Amount
+                                            Output                                   Activity                                                            Financial                              Financial           Name    of
+                                                                                                                     million         million USD                           million USD
+                                                                                                                     USD ($)                           Instrument                             Instrument          Institutions
+                                                                                                                                           ($)                                   ($)
+
+  Component 1:                                                    1.1 Restore approximately 15,544 ha of
+                                  Output 1: Increased
+  Climate reslient                                                farmland from marabu, and increase
+                                  CC-resilient production
+  agricultural systems                                            CC-resilience through sustainable
+                                  landscapes through
+                                                                  agroforestry (AF), CTNPFs and assisted               59.354           20.513         Grants                 38.841          Grants             MINAG
+                                  investment in
+                                                                  natural regeneration (mitigation co-
+                                  innovative agroforestry
+                                                                  benefit 833,950.60 million tCO2-eq. in 7
+                                  and silvopastoral
+                                                                  years of implementation)
+                                  systems, reforestation
+                                  with close-to-nature            1.2 Restore approximately 20,189 ha of
+                                  planted forests                 rangeland with compacted soils and
+                                  (CTNPFs) and assisted           increase CC-resilience through
+                                  natural forest                  improved silvopastoral systems                       51.604           14.151         Grants                 37.453          Grants             MINAG
+                                  regeneration                    (mitigation net co-benefit 381,311.51
+                                                                  million t CO2eq in 7 years of
+                                                                  implementation).
+
+  Component 2:                                                    2.1 Increase institutional capacities to
+  Strengthened                                                    support farmers and producers’
+  institutional and               Output 2:                       organizations to establish and maintain                                                                                     Choose an
+                                                                                                                       0.108         0.108             Grants             00.00                                  n/a
+  technical capacities            Strengthened                    agroforestry, silvopastoral and forestry                                                                                    item.
+                                  institutional and farmer        systems for improved ecosystem
+                                  capacities to improve           services
+                                  ecosystem services
+                                  through agroforestry            2.2 Train agricultural producers to
+                                  and forestry systems            collectively revitalize and manage
+                                  and enhance the                 landscape resources through climate                                                                                         Choose an
+                                  climate-resilience of           resilience-enhancing agroforestry,                   0.719             0.719         Grants             00.00                                  n/a
+                                                                                                                                                                                              item.
+                                  production landscapes           silvopastoral and forestry systems for
+                                                                  gender-equitable agricultural
+                                                                  production and ecosystem services
+
+[C.2. Financing by Component] Component 3: Strengthened governance, legal Output 3: Effective governance to support climate resilience- enhancing production 3.1 Develop, discuss and analyze options for policy reforms to support implementation of agroforestry, silvopastoral and forestry systems for cost million USD ($): 0.261 Amount million USD ($): 0.261 Grants Amount million USD ($): 00.00 Choose an item. n/a
+
+                                                                                                                    35
+
+
+                                                                                                                                             C
+and regulatory                systems and ecosystem         landscape resilience through improved
+framework                     services                      ecosystem services
+                                                            3.2 Establish a Landscape Resilience
+[3.2 Establish a Landscape Resilience] Fund to support adoption and implementation of agroforestry, silvopastoral and forestry systems in support of landscape resilience through ecosystem service enhancement 0.643 0.092 Grants 0.551 Grants MINAG
+
+                                                            3.3 Strengthen planning, governance
+[3.3 Strengthen planning, governance] and coordination at the landscape level in support of landscape resilience through enhancement of ecosystem services 0.042 0.042 Grants 00.00 Choose an item. MINAG
+
+[3.3 Strengthen planning, governance] Project Management Costs 6.372 1.760 Grants 4.612 Grants MINAG
+
+[3.3 Strengthen planning, governance] Evaluation (includes cost of an impact evaluation) 0.812 0.562 Grants 0.250 Grants MINAG
+
+[3.3 Strengthen planning, governance] Indicative total cost (USD) 119.914 38.207 81.707
+
+                                                                                                           36
+
+                                                                                                                                               C

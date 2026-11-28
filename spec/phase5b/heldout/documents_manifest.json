@@ -1,0 +1,1142 @@
+[
+ {
+  "project": "FP004",
+  "kind": "proposal",
+  "pdf": "FP004_proposal.pdf",
+  "pdf_sha256": "6839b93ef72e587076ce616f77716b13b2250ece74efcab8624b829f0b39ef55",
+  "pages": 55,
+  "reader": "section 2861 chars",
+  "reference": "section 3216 chars",
+  "used": "reader",
+  "chars": 2861,
+  "excerpt_sha256": "a0e2e77f1de93fdc9b2d88ffe45d57336b589ca6c3ead14ff7f1e61d1a937c41",
+  "tidy": {
+   "leader_runs": 5,
+   "running_lines": 98,
+   "joined_words": 5,
+   "european_numbers": 8,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP004",
+  "kind": "apr",
+  "pdf": "FP004_apr_2026.pdf",
+  "pdf_sha256": "b4bfadf17faa08f70853958dfe0904c84b72727dcb90466a11b84ccf560e7c98",
+  "pages": 26,
+  "reader": "section 697 chars",
+  "reference": "section 761 chars",
+  "used": "reader",
+  "chars": 697,
+  "excerpt_sha256": "937242b830b5ffe2ffb07a3cd9ae8075de540500e56716239808f1ef5628111e",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 25,
+   "joined_words": 0,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP035",
+  "kind": "proposal",
+  "pdf": "FP035_proposal.pdf",
+  "pdf_sha256": "d29fa7673488d33083376be2cc4f78c5744a17d56cebe3634da2d9b5253b036f",
+  "pages": 113,
+  "reader": "section 2378 chars",
+  "reference": "section 2982 chars",
+  "used": "reader",
+  "chars": 2378,
+  "excerpt_sha256": "b80c07bcd40512e54767fedd3dafa15857b654f031123b0d736606c66b44c07f",
+  "tidy": {
+   "leader_runs": 5,
+   "running_lines": 215,
+   "joined_words": 0,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP035",
+  "kind": "apr",
+  "pdf": "FP035_apr_2024.pdf",
+  "pdf_sha256": "7f61ed8df1931f079ad5bf22bcfa6f70056bf5deab92074f146cf4bc23d8f974",
+  "pages": 100,
+  "reader": "NO_SECTION",
+  "reference": "not found",
+  "used": "none",
+  "chars": 0,
+  "excerpt_sha256": null,
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 0,
+   "joined_words": 0,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP041",
+  "kind": "proposal",
+  "pdf": "FP041_proposal.pdf",
+  "pdf_sha256": "787e43b6dd5a74e65f88a6045a2ce098cb345124449d15fe19841b40f0242981",
+  "pages": 82,
+  "reader": "section 1125 chars",
+  "reference": "section 1787 chars",
+  "used": "reader",
+  "chars": 1125,
+  "excerpt_sha256": "5975fca319dc1f3041ca4d3bde978915ca1a0424dcb6177d4079b9f350371a70",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 133,
+   "joined_words": 4,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP041",
+  "kind": "apr",
+  "pdf": "FP041_apr_2026.pdf",
+  "pdf_sha256": "3a3a28337318133f42ad8ba0f39f739ca162fa30fa40f790891786b7340b4262",
+  "pages": 26,
+  "reader": "section 4560 chars",
+  "reference": "section 4711 chars",
+  "used": "reader",
+  "chars": 4560,
+  "excerpt_sha256": "535466b88d4fff06d3306839f6c22bc22695e65caad0ffa1044a77716e4ad2fd",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 25,
+   "joined_words": 10,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP048",
+  "kind": "proposal",
+  "pdf": "FP048_proposal.pdf",
+  "pdf_sha256": "dc40165f7c86b837d899d90fea1805c7104760b1e7fc25944ec5bc477a407e65",
+  "pages": 74,
+  "reader": "section 2096 chars",
+  "reference": "section 3470 chars",
+  "used": "reader",
+  "chars": 2096,
+  "excerpt_sha256": "a597cfdae81b4ea16ea216f8acd1e58f55c27b595a801cddf5aeb04fe63f9d7b",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 136,
+   "joined_words": 4,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP048",
+  "kind": "apr",
+  "pdf": "FP048_apr_2024.pdf",
+  "pdf_sha256": "8bf1e0ada6e85f3cd246fd0de5ce5a2e7a5780b0d37ef0f6ca999507f37fb703",
+  "pages": 32,
+  "reader": "NO_SECTION",
+  "reference": "not found",
+  "used": "none",
+  "chars": 0,
+  "excerpt_sha256": null,
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 0,
+   "joined_words": 0,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP070",
+  "kind": "proposal",
+  "pdf": "FP070_proposal.pdf",
+  "pdf_sha256": "5a4dd19512e0edead751ad676b259b6175e69e12eed19eafe2e25cc4fd248ec7",
+  "pages": 66,
+  "reader": "section 8203 chars",
+  "reference": "section 9986 chars",
+  "used": "reader",
+  "chars": 8203,
+  "excerpt_sha256": "2c9fc1c9286c8162f27bb9b0f8f30dccaa882fc5a7bec1fe19272ebfc74558cd",
+  "tidy": {
+   "leader_runs": 9,
+   "running_lines": 125,
+   "joined_words": 2,
+   "european_numbers": 0,
+   "duplicates": 2
+  }
+ },
+ {
+  "project": "FP070",
+  "kind": "apr",
+  "pdf": "FP070_apr_2024.pdf",
+  "pdf_sha256": "b5127f2cdc2424ff5d51131172212f3b266a87b9f9dc23e1d7306d6940d206c9",
+  "pages": 25,
+  "reader": "NO_SECTION",
+  "reference": "not found",
+  "used": "none",
+  "chars": 0,
+  "excerpt_sha256": null,
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 0,
+   "joined_words": 0,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP105",
+  "kind": "proposal",
+  "pdf": "FP105_proposal.pdf",
+  "pdf_sha256": "922e7a8c01936b42411321f0b585edac17bf6f926806c936d3b7322e8ebc4066",
+  "pages": 76,
+  "reader": "section 3390 chars",
+  "reference": "section 4590 chars",
+  "used": "reader",
+  "chars": 3390,
+  "excerpt_sha256": "9a6cb8cf85642453c61e4bb1a6147dfd891b8985693546743c5d87b2bad51b95",
+  "tidy": {
+   "leader_runs": 1,
+   "running_lines": 139,
+   "joined_words": 2,
+   "european_numbers": 16,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP105",
+  "kind": "apr",
+  "pdf": "FP105_apr_2026.pdf",
+  "pdf_sha256": "7bdc69d7e3e53c37a80b089c57ad7908c14fd92951fad332c290f21721814d4b",
+  "pages": 23,
+  "reader": "section 3972 chars",
+  "reference": "section 3517 chars",
+  "used": "reader",
+  "chars": 3972,
+  "excerpt_sha256": "e50fd66086a070bc43e335554e8c6939c0b6a354c69616f992d2d09966ef3187",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 22,
+   "joined_words": 2,
+   "european_numbers": 3,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP107",
+  "kind": "proposal",
+  "pdf": "FP107_proposal.pdf",
+  "pdf_sha256": "36273cc72f218db2dfa0c239893f6b2d432189f6950cd2a78c0b12cdfad1a7d4",
+  "pages": 76,
+  "reader": "section 4656 chars",
+  "reference": "section 4813 chars",
+  "used": "reader",
+  "chars": 4656,
+  "excerpt_sha256": "8b56c19691e25a23c50fc97ae99cdef98d93dc8e2ed6c0043a1bd2086e1e3414",
+  "tidy": {
+   "leader_runs": 5,
+   "running_lines": 144,
+   "joined_words": 4,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP107",
+  "kind": "apr",
+  "pdf": "FP107_apr_2024.pdf",
+  "pdf_sha256": "dcc8ff4ebbbd8f52d0cd3b68fc4a70eea9b2be4cef07a40294cbfcbf5394d956",
+  "pages": 65,
+  "reader": "NO_SECTION",
+  "reference": "not found",
+  "used": "none",
+  "chars": 0,
+  "excerpt_sha256": null,
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 0,
+   "joined_words": 0,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP109",
+  "kind": "proposal",
+  "pdf": "FP109_proposal.pdf",
+  "pdf_sha256": "74b78bd413842b557f13b883e7b43e7fed46f59bb46779d416e5f13af7361ae2",
+  "pages": 100,
+  "reader": "section 2278 chars",
+  "reference": "section 3544 chars",
+  "used": "reader",
+  "chars": 2278,
+  "excerpt_sha256": "b2924f53e1cfb857e2733c4c293c6ea0631b59edd89ddc192318fa6c27c0dbd4",
+  "tidy": {
+   "leader_runs": 5,
+   "running_lines": 190,
+   "joined_words": 4,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP109",
+  "kind": "apr",
+  "pdf": "FP109_apr_2026.pdf",
+  "pdf_sha256": "4d091eaed09d725cc13e82969721e24f2c66cc4fda18027cad290dde1b780ed6",
+  "pages": 29,
+  "reader": "section 4480 chars",
+  "reference": "section 4747 chars",
+  "used": "reader",
+  "chars": 4480,
+  "excerpt_sha256": "9f9c8822d0bf1f8f9f303a319bb1f2f399fe98af1d2f7107e762c72858d7fce8",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 28,
+   "joined_words": 9,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP148",
+  "kind": "proposal",
+  "pdf": "FP148_proposal.pdf",
+  "pdf_sha256": "c649bb440798922ac9c861a4d41d06b1de28de20b644efc31c1a950a30954ac9",
+  "pages": 77,
+  "reader": "section 5345 chars",
+  "reference": "section 6506 chars",
+  "used": "reader",
+  "chars": 5345,
+  "excerpt_sha256": "edb6e53772f7fa220f103a209744e90cb7d9cc191dea19684b88b3c46b28db33",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 75,
+   "joined_words": 13,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP148",
+  "kind": "apr",
+  "pdf": "FP148_apr_2026.pdf",
+  "pdf_sha256": "9a580eace13bba5d072d05bfd43078816b45a4e3b47671688de137a2afa9f06d",
+  "pages": 35,
+  "reader": "NO_SECTION",
+  "reference": "not found",
+  "used": "none",
+  "chars": 0,
+  "excerpt_sha256": null,
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 34,
+   "joined_words": 1,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP162",
+  "kind": "proposal",
+  "pdf": "FP162_proposal.pdf",
+  "pdf_sha256": "2e43d133b9935b922d7d117e6b100d8bf46770ade2e42c0385ba68ebf8807a17",
+  "pages": 91,
+  "reader": "section 8571 chars",
+  "reference": "section 9896 chars",
+  "used": "reader",
+  "chars": 8571,
+  "excerpt_sha256": "9e9fbc7c28e6ab517b2a74017af386ab1a2d82573865e1cad787254cae86ce41",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 89,
+   "joined_words": 16,
+   "european_numbers": 4,
+   "duplicates": 2
+  }
+ },
+ {
+  "project": "FP162",
+  "kind": "apr",
+  "pdf": "FP162_apr_2026.pdf",
+  "pdf_sha256": "aea70a4cbf5a07a2101da71ec871fb5142a7f0c0899f28465e4eaca2278ffb62",
+  "pages": 96,
+  "reader": "section 5306 chars",
+  "reference": "section 4629 chars",
+  "used": "reader",
+  "chars": 5306,
+  "excerpt_sha256": "205cda178bfe5d308b1e37cd5cc35002243a0e46fd878aeb9495463d6d06f4d5",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 95,
+   "joined_words": 6,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP173",
+  "kind": "proposal",
+  "pdf": "FP173_proposal.pdf",
+  "pdf_sha256": "7b872de13d89b0790b8098b444267baa732111312275965158e17bad0151bca8",
+  "pages": 84,
+  "reader": "NO_SECTION",
+  "reference": "not found",
+  "used": "none",
+  "chars": 0,
+  "excerpt_sha256": null,
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 83,
+   "joined_words": 1,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP173",
+  "kind": "apr",
+  "pdf": "FP173_apr_2024.pdf",
+  "pdf_sha256": "1db4e0c2ecb939571ce528ee4d514aa9e4bada854790b3bbe7f7ee83d4497463",
+  "pages": 8,
+  "reader": "NO_SECTION",
+  "reference": "not found",
+  "used": "none",
+  "chars": 0,
+  "excerpt_sha256": null,
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 0,
+   "joined_words": 0,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP202",
+  "kind": "proposal",
+  "pdf": "FP202_proposal.pdf",
+  "pdf_sha256": "8762f4a2920cbde40ba01cc7ba149f115bcc0168b269cf5b1a30afcf503a160e",
+  "pages": 123,
+  "reader": "section 7269 chars",
+  "reference": "section 8009 chars",
+  "used": "reader",
+  "chars": 7269,
+  "excerpt_sha256": "2eef2eaccad9eb77110e26a4a451c871e8976a7b25d22d3dbbdef2c11e4fb4b3",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 122,
+   "joined_words": 3,
+   "european_numbers": 1,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP202",
+  "kind": "apr",
+  "pdf": "FP202_apr_2026.pdf",
+  "pdf_sha256": "2facecf998b86e7775abe6b7b993693560d379cc0909754de677fb81a50f2b28",
+  "pages": 39,
+  "reader": "section 4360 chars",
+  "reference": "section 4126 chars",
+  "used": "reader",
+  "chars": 4360,
+  "excerpt_sha256": "e88565e043e234301c7fcaa954c680a1d3ab6689ebcef16f0bc2d95527d407c4",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 38,
+   "joined_words": 1,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP216",
+  "kind": "proposal",
+  "pdf": "FP216_proposal.pdf",
+  "pdf_sha256": "d65ca9d063515164bd61b23ecbab3027a91606f1797ebbea77e9493ecc35e041",
+  "pages": 116,
+  "reader": "section 12682 chars",
+  "reference": "not found",
+  "used": "reader",
+  "chars": 12682,
+  "excerpt_sha256": "aed3524b93ac42ba8190a2f18d044bcf37446ce9436d246b571bb6a9dc2bedae",
+  "tidy": {
+   "leader_runs": 3,
+   "running_lines": 115,
+   "joined_words": 8,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP216",
+  "kind": "apr",
+  "pdf": "FP216_apr_2026.pdf",
+  "pdf_sha256": "558c302534b4d466755b17659c58e0d944ea3bbc4e318ee023c322a6e8ba522d",
+  "pages": 34,
+  "reader": "section 7858 chars",
+  "reference": "section 7191 chars",
+  "used": "reader",
+  "chars": 7858,
+  "excerpt_sha256": "5d587fb3889c1ed4db7aeea9007e9302be96bb4f7305359d32fb882cdbec6f16",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 33,
+   "joined_words": 5,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP234",
+  "kind": "proposal",
+  "pdf": "FP234_proposal.pdf",
+  "pdf_sha256": "f2e729de417190e8b62bd8a648481c88ce5b1de08ce179755b8e4bf6f13f000b",
+  "pages": 88,
+  "reader": "section 11349 chars",
+  "reference": "section 11905 chars",
+  "used": "reader",
+  "chars": 11349,
+  "excerpt_sha256": "9ea06bdde879773ba194908c224182aa17b19c96008e6cb7d7ce2c755eb0536e",
+  "tidy": {
+   "leader_runs": 2,
+   "running_lines": 86,
+   "joined_words": 13,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP234",
+  "kind": "apr",
+  "pdf": "FP234_apr_2026.pdf",
+  "pdf_sha256": "1f633b9ed019a232d7b32d3a25759416ceed9daf0e5f878d1b1ec911422cc30d",
+  "pages": 57,
+  "reader": "section 4283 chars",
+  "reference": "section 3706 chars",
+  "used": "reader",
+  "chars": 4283,
+  "excerpt_sha256": "9705ad89d81ec800ca5c22109ba41ad6afca7da359522217c587dbda6adb253e",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 56,
+   "joined_words": 5,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP250",
+  "kind": "proposal",
+  "pdf": "FP250_proposal.pdf",
+  "pdf_sha256": "b2430a685df7ef73c0401219cf2a7f6db4b7cc8c8ed005780d14c24f837ca8cf",
+  "pages": 73,
+  "reader": "section 9771 chars",
+  "reference": "section 11323 chars",
+  "used": "reader",
+  "chars": 9771,
+  "excerpt_sha256": "bb394c6d7f04e5228b38e7a9e89528a7eb629700a45e4e1e65120d7ed7d4418f",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 72,
+   "joined_words": 2,
+   "european_numbers": 2,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP250",
+  "kind": "apr",
+  "pdf": "FP250_apr_2026.pdf",
+  "pdf_sha256": "e173bc2971919f5fd13ef6801e74494f778dc29b2a7737d918dd2b4ccb318062",
+  "pages": 27,
+  "reader": "section 4166 chars",
+  "reference": "section 3649 chars",
+  "used": "reader",
+  "chars": 4166,
+  "excerpt_sha256": "ffbd2e1af5942ca87c83f40ea16efed12258bbbd52bc100645742e875cb91ea4",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 26,
+   "joined_words": 2,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP257",
+  "kind": "proposal",
+  "pdf": "FP257_proposal.pdf",
+  "pdf_sha256": "7bfba73c7d2b65ba0e39d7d2b593350f5e48ec320c536605fdb4c6c867233da9",
+  "pages": 86,
+  "reader": "section 5644 chars",
+  "reference": "section 6335 chars",
+  "used": "reader",
+  "chars": 5644,
+  "excerpt_sha256": "403fbe65e93bb7434d9f5de0bc46ca982b089ab75ab30e8ed332abfc2c178b96",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 85,
+   "joined_words": 1,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP257",
+  "kind": "apr",
+  "pdf": "FP257_apr_2026.pdf",
+  "pdf_sha256": "e13d82b7785b741153a1fa4cc4794821ddf988d6a1a1628d8506f36dbf390563",
+  "pages": 36,
+  "reader": "section 5149 chars",
+  "reference": "section 4487 chars",
+  "used": "reader",
+  "chars": 5149,
+  "excerpt_sha256": "3a90d969d4af9cbee0afc085e9848e10c4b9b43046e03b4e225c045e8c20a89c",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 35,
+   "joined_words": 1,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP267",
+  "kind": "proposal",
+  "pdf": "FP267_proposal.pdf",
+  "pdf_sha256": "ed22b9915227cc29b42e763c28f90e15665d33235e944600a0e03b68784688a3",
+  "pages": 73,
+  "reader": "section 5255 chars",
+  "reference": "section 8372 chars",
+  "used": "reader",
+  "chars": 5255,
+  "excerpt_sha256": "2694be1b4a494dd626dd093c2fefe5ef15060af974604aad3a63635aa86a31c0",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 71,
+   "joined_words": 5,
+   "european_numbers": 2,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP267",
+  "kind": "apr",
+  "pdf": "FP267_apr_2026.pdf",
+  "pdf_sha256": "d3c9ab58b8169726dfa6f76554ca29c1fe4722a4238f9e4418cb1b8eaa8291f1",
+  "pages": 43,
+  "reader": "section 4408 chars",
+  "reference": "section 3867 chars",
+  "used": "reader",
+  "chars": 4408,
+  "excerpt_sha256": "2d01a0eb48b87f293c202de662f27b6d3a11f1b8271e032db43e30583dd7d3e4",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 42,
+   "joined_words": 1,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP218",
+  "kind": "proposal",
+  "pdf": "FP218_proposal.pdf",
+  "pdf_sha256": "abb612d28a739e449ed4d18149d376941d434c019f2a2104c566b4adcc530090",
+  "pages": 160,
+  "reader": "section 7002 chars",
+  "reference": "section 7884 chars",
+  "used": "reader",
+  "chars": 7002,
+  "excerpt_sha256": "29528d768c9656bbfcab4f0e77bd3b5ef4ec5fa2601ede1744d0945ce75cc4c3",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 159,
+   "joined_words": 73,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP218",
+  "kind": "apr",
+  "pdf": "FP218_apr_2026.pdf",
+  "pdf_sha256": "938a2f190e7e9a27728df9895147bdd5fce12e537be1a6eddc8fcffef4ec7309",
+  "pages": 49,
+  "reader": "section 4085 chars",
+  "reference": "section 3705 chars",
+  "used": "reader",
+  "chars": 4085,
+  "excerpt_sha256": "73b05205f4daeaf177701d522aa82119fb4fda5f14cef3353fbf0c6036ecb746",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 48,
+   "joined_words": 4,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP197",
+  "kind": "proposal",
+  "pdf": "FP197_proposal.pdf",
+  "pdf_sha256": "eeb825e5e4c23f10abda163299263ac523c9897dd90683cb30732244ddde07f9",
+  "pages": 74,
+  "reader": "section 11467 chars",
+  "reference": "section 12219 chars",
+  "used": "reader",
+  "chars": 11467,
+  "excerpt_sha256": "21e0ec8992e9d8b2f131418e50aaf2af61a36eed348e854d20ce42402bc65be1",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 72,
+   "joined_words": 28,
+   "european_numbers": 0,
+   "duplicates": 1
+  }
+ },
+ {
+  "project": "FP197",
+  "kind": "apr",
+  "pdf": "FP197_apr_2026.pdf",
+  "pdf_sha256": "3b72eb10da10de4e87ebf66a83a714a091fca09b97ab1bc6b64f292bbba1f176",
+  "pages": 36,
+  "reader": "section 7639 chars",
+  "reference": "section 7063 chars",
+  "used": "reader",
+  "chars": 7639,
+  "excerpt_sha256": "30ae4ef387e2964aba6a8fa0ca97546719f32ebfec0a17fdc790a317137d3194",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 35,
+   "joined_words": 1,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP067",
+  "kind": "proposal",
+  "pdf": "FP067_proposal.pdf",
+  "pdf_sha256": "4b950f56727caf411a2c76517d67422b21d55743ef04dce8d39b5e52967b6c3e",
+  "pages": 77,
+  "reader": "section 5654 chars",
+  "reference": "section 5951 chars",
+  "used": "reader",
+  "chars": 5654,
+  "excerpt_sha256": "3c4896aa6cb0a540cbac9d45ac0adb035d0c23bbd31c805f3298f4f9ae324803",
+  "tidy": {
+   "leader_runs": 9,
+   "running_lines": 145,
+   "joined_words": 6,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP067",
+  "kind": "apr",
+  "pdf": "FP067_apr_2024.pdf",
+  "pdf_sha256": "188cacaab4056e6c137722b1a23b4852ce5b9e1d1bbe0a6097f19db541b505ae",
+  "pages": 54,
+  "reader": "NO_SECTION",
+  "reference": "not found",
+  "used": "none",
+  "chars": 0,
+  "excerpt_sha256": null,
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 0,
+   "joined_words": 0,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP009",
+  "kind": "proposal",
+  "pdf": "FP009_proposal.pdf",
+  "pdf_sha256": "fe07d877d01186be1123e716cd2a78c7ac1b945dcfc5cbf015629697c5ed93bd",
+  "pages": 73,
+  "reader": "section 4452 chars",
+  "reference": "section 4508 chars",
+  "used": "reader",
+  "chars": 4452,
+  "excerpt_sha256": "e96a8ff5ba352a87d9abece1d9ffd0907f2127243989c5221ca784b3ae1cc58f",
+  "tidy": {
+   "leader_runs": 7,
+   "running_lines": 135,
+   "joined_words": 0,
+   "european_numbers": 0,
+   "duplicates": 2
+  }
+ },
+ {
+  "project": "FP009",
+  "kind": "apr",
+  "pdf": "FP009_apr_2023.pdf",
+  "pdf_sha256": "7e96cc8a65d0ab0ebafdc0f25888353f28148abbd0302a1563a3ece26fa992a0",
+  "pages": 28,
+  "reader": "NO_SECTION",
+  "reference": "not found",
+  "used": "none",
+  "chars": 0,
+  "excerpt_sha256": null,
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 0,
+   "joined_words": 0,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP060",
+  "kind": "proposal",
+  "pdf": "FP060_proposal.pdf",
+  "pdf_sha256": "9597d79fec1453bdf8b435f6e005e206a46a93cc32834a805010d7f31a28c486",
+  "pages": 93,
+  "reader": "section 5752 chars",
+  "reference": "section 5509 chars",
+  "used": "reader",
+  "chars": 5752,
+  "excerpt_sha256": "fb17c538dc4dff1ae82565959af80d6b60d5aebf65e39e8002f10297bcfadd71",
+  "tidy": {
+   "leader_runs": 19,
+   "running_lines": 172,
+   "joined_words": 41,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP060",
+  "kind": "apr",
+  "pdf": "FP060_apr_2026.pdf",
+  "pdf_sha256": "b316354ab89cd3172878f98389bbae6842deaa4ed378a56f68d5ebc4aecaf754",
+  "pages": 31,
+  "reader": "section 4077 chars",
+  "reference": "section 3997 chars",
+  "used": "reader",
+  "chars": 4077,
+  "excerpt_sha256": "7cff5036be56dcff03041266797972972bf3580e939527992352d8421d80ef16",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 30,
+   "joined_words": 1,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP058",
+  "kind": "proposal",
+  "pdf": "FP058_proposal.pdf",
+  "pdf_sha256": "03caa6f5b81654fb6e8e5648f74f5d4b6af15814eb3eba84e65f29ec3725b344",
+  "pages": 67,
+  "reader": "section 2570 chars",
+  "reference": "section 3099 chars",
+  "used": "reader",
+  "chars": 2570,
+  "excerpt_sha256": "ac1f80b155ab4534a487ec7942f668f2301c5c6e41b47dad18b55f4f559c798b",
+  "tidy": {
+   "leader_runs": 7,
+   "running_lines": 126,
+   "joined_words": 8,
+   "european_numbers": 0,
+   "duplicates": 3
+  }
+ },
+ {
+  "project": "FP058",
+  "kind": "apr",
+  "pdf": "FP058_apr_2024.pdf",
+  "pdf_sha256": "dfff1aace484075bbfab5e46a66af3fc15e79190418115ebe058f6cea5be5c6a",
+  "pages": 37,
+  "reader": "NO_SECTION",
+  "reference": "not found",
+  "used": "none",
+  "chars": 0,
+  "excerpt_sha256": null,
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 0,
+   "joined_words": 1,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP126",
+  "kind": "proposal",
+  "pdf": "FP126_proposal.pdf",
+  "pdf_sha256": "3c6b1414129c791d37728e1026a2548772372a4f349947bdb1933b572d97683b",
+  "pages": 70,
+  "reader": "section 10210 chars",
+  "reference": "section 12058 chars",
+  "used": "reader",
+  "chars": 10210,
+  "excerpt_sha256": "e760451934619706b5e3d07650d5ee5137cced6e6a74abfbc780a2794777ec37",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 67,
+   "joined_words": 3,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "FP126",
+  "kind": "apr",
+  "pdf": "FP126_apr_2025.pdf",
+  "pdf_sha256": "7b89b4beb79c492b4b1e86f3f78a31301109707396704753b921f9fa07dde510",
+  "pages": 117,
+  "reader": "section 696 chars",
+  "reference": "section 5418 chars",
+  "used": "reference (reader section too short)",
+  "chars": 5418,
+  "excerpt_sha256": "a8de0605e1cde5778849273b3ab2425f272a5393bc600b9fc64855d0d4190ac5",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 0,
+   "joined_words": 0,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "SAP011",
+  "kind": "proposal",
+  "pdf": "SAP011_proposal.pdf",
+  "pdf_sha256": "ed230d5f42121bda48736c5e74edd789af38f9e99367d892b625fb86d24db729",
+  "pages": 35,
+  "reader": "section 3659 chars",
+  "reference": "section 5236 chars",
+  "used": "reader",
+  "chars": 3659,
+  "excerpt_sha256": "67bbd37b3495eba6cd3eea0fbb89977142d07b5e721e242552f5227857dccc3d",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 33,
+   "joined_words": 11,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "SAP011",
+  "kind": "apr",
+  "pdf": "SAP011_apr_2026.pdf",
+  "pdf_sha256": "dafb498f770b9caea8da0b852887c869ee19b2780911b4084ab59962c942dc77",
+  "pages": 37,
+  "reader": "section 4085 chars",
+  "reference": "section 3535 chars",
+  "used": "reader",
+  "chars": 4085,
+  "excerpt_sha256": "424de6b5b6685410aa6fb57fc064d512cdee2e61f1d7a9440ff93de978ade0ed",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 36,
+   "joined_words": 2,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "SAP018",
+  "kind": "proposal",
+  "pdf": "SAP018_proposal.pdf",
+  "pdf_sha256": "ffa3ef9419e1d85eee319086524cbc20d55a63748fa245ac2739becd57c40bf5",
+  "pages": 75,
+  "reader": "section 10536 chars",
+  "reference": "section 11380 chars",
+  "used": "reader",
+  "chars": 10536,
+  "excerpt_sha256": "a72787c8b4f85df391a2e488ebbe919c4fdbd6c56063fd908085da0fe21ee3a1",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 72,
+   "joined_words": 25,
+   "european_numbers": 2,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "SAP018",
+  "kind": "apr",
+  "pdf": "SAP018_apr_2024.pdf",
+  "pdf_sha256": "deaccc46a116ef0dc7943b4bf9d1a511d62d709cb226f006d030d2415912bf7d",
+  "pages": 52,
+  "reader": "NO_SECTION",
+  "reference": "not found",
+  "used": "none",
+  "chars": 0,
+  "excerpt_sha256": null,
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 0,
+   "joined_words": 0,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "SAP038",
+  "kind": "proposal",
+  "pdf": "SAP038_proposal.pdf",
+  "pdf_sha256": "168b974f8122455b30e9617d24f000d09542b89fcd9007a9a3d7404148bb7da2",
+  "pages": 25,
+  "reader": "section 7413 chars",
+  "reference": "section 8280 chars",
+  "used": "reader",
+  "chars": 7413,
+  "excerpt_sha256": "6a7b2a8ad037feb4476aaab1c851ee50ead9922b3b0185615e8afaebd4fd634e",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 24,
+   "joined_words": 1,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "SAP038",
+  "kind": "apr",
+  "pdf": "SAP038_apr_2026.pdf",
+  "pdf_sha256": "78c1c0affef9084aad6daf465b25c622177e148265f70fbb43b270d847961f9d",
+  "pages": 39,
+  "reader": "section 4607 chars",
+  "reference": "section 3967 chars",
+  "used": "reader",
+  "chars": 4607,
+  "excerpt_sha256": "722a4d3f21fa19febdbf92bcf40f78a6f6434db82910083013042d03d31d0c38",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 38,
+   "joined_words": 4,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "SAP045",
+  "kind": "proposal",
+  "pdf": "SAP045_proposal.pdf",
+  "pdf_sha256": "9ded0b34201957d38e3a98b446bbda40bf64ba3c297953423b631b74c93e5066",
+  "pages": 32,
+  "reader": "section 8152 chars",
+  "reference": "section 9701 chars",
+  "used": "reader",
+  "chars": 8152,
+  "excerpt_sha256": "1f3f51ee4e8bbe302b6e78f027c6e611033dad2639fb61bf263cd7f2c3067d0d",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 31,
+   "joined_words": 2,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "SAP045",
+  "kind": "apr",
+  "pdf": "SAP045_apr_2026.pdf",
+  "pdf_sha256": "66511b1da6cfff4f10b2d6b5b59df700877f4ad467659976e7139fff8c1f0cc5",
+  "pages": 33,
+  "reader": "NO_SECTION",
+  "reference": "not found",
+  "used": "none",
+  "chars": 0,
+  "excerpt_sha256": null,
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 0,
+   "joined_words": 0,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "SAP053",
+  "kind": "proposal",
+  "pdf": "SAP053_proposal.pdf",
+  "pdf_sha256": "5f1d3094e8d47b035ed1e8e2c9097f42f11382af1ff3d26e7205ddd9756908d8",
+  "pages": 47,
+  "reader": "section 4403 chars",
+  "reference": "section 6415 chars",
+  "used": "reader",
+  "chars": 4403,
+  "excerpt_sha256": "b125a0d0434f389ee61b91e98c30b72474f26bca3d4010fb188d6904b9a35415",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 46,
+   "joined_words": 3,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "SAP053",
+  "kind": "apr",
+  "pdf": "SAP053_apr_2026.pdf",
+  "pdf_sha256": "c41a9a73fad9092081c019a24b3585f28f29b68e6cfaaaf47536d1b04079bada",
+  "pages": 29,
+  "reader": "section 4266 chars",
+  "reference": "section 3708 chars",
+  "used": "reader",
+  "chars": 4266,
+  "excerpt_sha256": "3df09a9e771325bf63904f3a9293b2135ed084731b1d85e650ed29daecb1af12",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 28,
+   "joined_words": 2,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "SAP019",
+  "kind": "proposal",
+  "pdf": "SAP019_proposal.pdf",
+  "pdf_sha256": "fd4aee141ebdccc6d1ff356e97257ecf5ddf13096c038c952834c762929d8c6b",
+  "pages": 41,
+  "reader": "section 5174 chars",
+  "reference": "section 6994 chars",
+  "used": "reader",
+  "chars": 5174,
+  "excerpt_sha256": "1276f0a5ccf66da490a8c999b072c4f67812d1a3042ef466642b55917cdcd948",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 39,
+   "joined_words": 19,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ },
+ {
+  "project": "SAP019",
+  "kind": "apr",
+  "pdf": "SAP019_apr_2026.pdf",
+  "pdf_sha256": "c3f5a010ea4d85e85e66f0a76454cb0445856fe9e951d74930cd4e4271345b81",
+  "pages": 24,
+  "reader": "section 4049 chars",
+  "reference": "section 3531 chars",
+  "used": "reader",
+  "chars": 4049,
+  "excerpt_sha256": "6a6d7d28f98ca572ce58807020cecd1ef2fb45335ca36298d77093c9d1714b25",
+  "tidy": {
+   "leader_runs": 0,
+   "running_lines": 23,
+   "joined_words": 3,
+   "european_numbers": 0,
+   "duplicates": 0
+  }
+ }
+]

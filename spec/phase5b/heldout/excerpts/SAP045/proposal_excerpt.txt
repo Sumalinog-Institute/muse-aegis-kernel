@@ -1,0 +1,118 @@
+C.   FINANCING         INFORMATION
+
+
+C.1. Total financing
+
+ (a) Requested
+  GCF    funding
+                                      Total Amount: 25,000,000                                               Currency: USD
+ (i + ii + iii + iv +
+       v + vi)
+
+ GCF Financial
+                             Amount                         Currency                      Tenor & grace                        Pricing
+   Instrument
+
+           Senior
+ (i)                             n/a                             n/a                              n/a                             n/a
+            loans
+
+         Subordinated
+ (ii)                            n/a                             n/a                              n/a                             n/a
+             loans
+
+(iii)      Equity                n/a                             n/a                              n/a                             n/a
+
+(iv)    Guarantees               n/a                             n/a                              n/a                             n/a
+
+         Reimbursable
+ (v)                             n/a                             n/a                              n/a                             n/a
+             grants
+
+[C.1. Total financing > (a) Requested GCF] (vi) Grants Amount: 25,000,000 USD n/a n/a
+
+                                              Total amount                                                       Currency
+      (b) Co-
+
+[C.1. Total financing] financing information41 Total amount: 10,000,000 USD
+
+     Name     of            Financial                                                      Tenor &
+                                                  Amount             Currency                              Pricing               Seniority
+    institution            instrument                                                       Grace
+
+[C.1. Total financing] Dovetail Impact Foundation (DIF) Grant Amount: 6,000,000 USD n/a n/a n/a
+
+[C.1. Total financing] Knight Family Foundation (KFF) Grant Amount: 1,000,000 USD n/a n/a n/a
+
+[C.1. Total financing] Pershing Square Philanthropies (PSP) Grant Amount: 3,000,000 USD n/a n/a n/a
+
+     (c)   Total                                  Amount                                                         Currency
+
+[C.1. Total financing] investment (c) = (a)+(b) Amount: 35,000,000 USD
+
+      (d) Co-
+
+ financing ratio         0.4
+
+   (d) = (b)/(a)
+
+    41 If the co-financing is provided in different currency other than the GCF requested, please provide detailed financing information
+    and a converted figure in the GCF requested currency in the comment box. Please refer to the date when the currency conversion
+    was performed and the reference source.
+
+
+[C.1. Total financing > (d) = (b)/(a)] (e) Other financing arrangements for the project/progra mme page) (max ½ 34. As detailed in Annex 2, 1AF is a non-profit. However, its programmatic model includes a farmer contribution for services that they receive. In 2023, farmer contributions covered around 50% of total operating expenses. This approach will be applied via this GCF-funded project. Farmer contributions towards the cost of services will be paid slowly over the course of agricultural seasons from 2025-2029, with expected low levels of leakage (i.e. <2%; estimated based on more than ten years of historical performance data). This farmer contribution, which will create an opportunity for project beneficiaries to have ‘skin in the game’ (and thereby generate a more ownership of farming and agroforestry outcomes) lowers the amount of funding needed to cover the project’s operational expenses. This makes the model more sustainable and equipped to deliver services in the long-term, even beyond 2029. The farmers contributions will be received into the project’s ‘General Account’ (see Figure 9 in section B.3 above for the complete funding flow arrangement).
+
+                              35. This model will make this project much more financially efficient, as compared to those
+                                   implemented by most INGOs operating in the region42. In addition, an extremely high
+                                   rate of farmer re-enrollment (i.e. >90%) year-on-year is expected (see sections D.1
+                                   and D.6.3 for more details).
+
+C.2. Financing by component
+
+Component          Output                    Indicative             GCF financing                                Co-financing
+                                             cost
+                                             Options
+
+                                                               Amount          Financial         Amount           Financial          Name of
+                                                               Options        Instrument          Options        Instrument        Institutions
+
+                   Output 1.1: Increased                     $21.1M          Grant             $5.1M            Grant             DIF
+                   access to climate-resilience $29.6M                                         $846K            Grant             KFF
+                   inputs in a sustainable,
+Component 1:       long-term model.                                                            $2.5M            Grant             PSP
+Sustainable access
+to climate
+resilience inputs  Output 1.2: Enhanced                      $101K           Grant             $24K             Grant             DIF
+                   ability of ag and financial $141K                                           $4K              Grant             KFF
+                   sector service providers to
+                   respond to farmer needs.                                                    $12K             Grant             PSP
+
+                   Output 2: Enhanced                        $1.7M           Grant             $406K            Grant             DIF
+Component 2:       farmers' capacities to adopt                                                $68K             Grant             KFF
+Farmer advisory    improved, climate smart   $2.4M
+and extension      practices.                                                                  $203K            Grant             PSP
+
+                   Output 3:                                 $1.2M           Grant             $280K            Grant             DIF
+Component 3:       Large-scale adoption of   $1.6M                                             $47K             Grant             KFF
+Agroforestry       agroforestry practices.
+                                                                                               $140K            Grant             PSP
+
+                                                             $382K           Grant             $92K             Grant             DIF
+Monitoring and evaluation costs              $534K                                             $15K             Grant             KFF
+                                                                                               $46K             Grant             PSP
+
+                                                             $511K           Grant             $123K            Grant             DIF
+Project management costs                     $716K
+                                                                                               $20K             Grant             KFF
+
+    42 Burundi ranks 187th in the HDI, and the per capita GDP is $259. It is not feasible to expect farmers to cover the full amount.
+    However, it is important that farmers make a contribution. This increases their buy-in and encourages them to follow practices taught
+    in training. It is also not possible to use debt financing for operational expenses, as there is no viable pathway to paying back lenders
+    because 1AF ends each year with a financial deficit.
+
+
+                                                                                               $61K             Grant             PSP
+
+Indicative total cost (USD)
+                                             $35M            $25M                              $10M

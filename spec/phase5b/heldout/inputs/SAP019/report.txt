@@ -1,0 +1,122 @@
+=== PROPOSAL EXCERPT ===
+C.   FINANCING         INFORMATION
+C.1. Total financing
+[C.1. Total financing] (a) Requested GCF funding (i + ii + iii + iv + v + vi) GCF Financial Instrument (i) (ii) (iii)  Equity Senior loans Subordinated loans Amount Enter amount Enter amount Enter amount 10 Currency Options Options Options million USD ($) Tenor Enter years Enter years Enter % equity return Pricing Enter % Enter %
+
+
+(iv)    Guarantees                               Enter amount                      Options                  Enter years                 Enter %
+(v)     Reimbursable grants                      Enter amount                      Options
+                                                                                million USD
+[C.1. Total financing > (a) Requested GCF funding] (vi) Grants 9.975 ($)million USD ($)
+[C.1. Total financing] (b) Co-financing information 31 Name of institution Click here to enter text. Click here to enter text. Financial instrument Options Total amount 0 Amount 0.0 Enter amount Currency million USD ($)million USD ($) Options Currency million USD ($)million USD ($) Tenor Enter% Enter years Enter% Enter years Pricing Seniority Options Options
+
+                                             Options                                                                      Enter%          Options
+     Click here to enter text.                                  Enter amount           Options         Enter years
+
+                                             Options                                                                      Enter%          Options
+     Click here to enter text.                                  Enter amount           Options         Enter years
+
+     (c)  Total investment                                        Amount                                                Currency
+[C.1. Total financing] (c) = (a)+(b) Amount: 9.975 million USD ($)
+(d) Co-financing ratio 32
+                                           0.0
+(d) = (b)/(a)
+(e) Other financing                        Please explain if any of the financing parties including the AE would benefit from
+arrangements for the                       any type of guarantee e.g. sovereign guarantee, MIGA guarantee, etc.
+project/programme (max ½
+                                           N.A.
+page)
+C.2. Financing by component
+Please provide an estimate of the cost per component (as outlined in Section B.2. above) and disaggregate by
+sources of financing.
+                                                Indicative              GCF financing                               Co-financing
+   Component                 Output             cost               Amount           Financial         Amount           Financial         Name of
+                                                (USD)                (USD)         Instrument          (USD)          Instrument       Institutions
+  1.Smallholder       Click here to enter       5,599,100        5,599,100        GrantsGran                         Choose an         Click here to
+  gum                 text.                                                       ts                                 item.             enter text.
+  agroforestry
+  2. Livestock        Click here to enter       3,900,900        3,900,900        GrantsGran                         Choose an         Click here to
+  mobility and        text.                                                       ts                                 item.             enter text.
+  rangeland
+  restoration
+  Project             Click here to enter       475,000          475,000          GrantsGran                         GrantsGrant
+  management          text.                                                       ts                                 s
+  Click here to       Click here to enter       Enter            Enter            Choose an        Enter amount      Choose an         Click here to
+  enter text.         text.                     amount           amount           item.                              item.             enter text.
+
+    31 These figures do not include USD 14.72 million of leveraged private sector financing for Component 1 to be provided by
+    COMATS/Elemats gum company and EBDAA Bank (see signed commitment letters attached). In addition, the GAMS project aims to
+    mobilize an additional USD 25 million in private sector financing from other gum exporting companies. Nor do these figures includee
+    the in-kind contribution of the Government of Sudan for staff salaries and office space, valued at USD 2,232,000.
+    32 Not taking into account leveraged private sector financing of USD 14.72 million (see commitment letters provided) and the
+    government in-kind contribution worth USD 2.3 million, as explained in fn 21.
+
+
+[C.2. Financing by component] Indicative total cost (USD) 9,975,000 9,975,000 0
+
+C.2.1 Financing structure (if applicable, mandatory for private sector proposal (max.300 words)
+For private sector proposals, provide an overview (diagram) of the proposed financing structure. Please note that this section
+should focus on describing what is being paid for, either by GCF funding and/or co-financing.
+N.A.
+
+=== ANNUAL PERFORMANCE REPORT EXCERPT ===
+FINANCIAL           INFORMATION
+
+E.1. GCF financing
+
+In addition to the financial report in the annex, update the table with relevant GCF financial data for each country and
+instrument, including amounts and allocation percentages.
+
+                                Currenc                                           Expenditur
+                                                                                                     Cumulative
+ Country      Instrumen              y         Committe          Disburse               e                               Mitigatio       Adaptatio
+                                                                                                     Expenditur
+                    t             (as per      d   Amount        d  Amount          (reporting                               n                n
+                                                                                                           e
+                                   FAA)                                               year)
+
+[E.1. GCF financing] Sudan Grants USD Committed: 9,975,000 Disbursed Amount: 1,972,090 Expenditure (reporting year): 21,824 Cumulative Expenditure: 1,400,830 Mitigation: 55% Adaptation: 45%
+
+[E.1. GCF financing] Total USD Committed: 9,975,000 Disbursed Amount: 1,972,090 Expenditure (reporting year): 21,824 Cumulative Expenditure: 1,400,830 N/A N/A
+
+E.2. Co-financing
+
+Please populate the table with relevant Co-financing data for each Co-financier and instrument, including amounts and
+allocation percentages.
+
+                                   Currenc                                         Expenditur
+                                                                   Disburse                           Cumulative
+     Co-          Instrumen             y         Committe                                e                              Mitigatio       Adaptatio
+                                                                        d                             Expenditur
+ financier              t            (as per      d  Amount                          (reporting                               n               n
+                                                                    Amount                                   e
+                                      FAA)                                              year)
+
+[E.2. Co-financing] NO FINANCIE CO Grants USD Committed Amount: 0 Disbursed Amount: 0 Expenditure (reporting year): 0 Cumulative Expenditure: 0 Mitigation: 0% Adaptation: 100%
+
+      R
+
+[E.2. Co-financing] Total USD Committed Amount: 0 Disbursed Amount: 0 Expenditure (reporting year): 0 Cumulative Expenditure: 0 N/A N/A
+
+E.3. Additional Finance Mobilised Beyond Approved Co-financing
+
+Report the realised (cumulative value) and/or expected volume (Final Target) of private/public finance leveraged as a
+result of GCF involvement in the investment, in addition to and beyond any co-financing originally committed at approval.
+This datapoint shall be reported separately from official co-financing figures and is intended to capture the catalytic effect
+of GCF investments and support institutional learning.
+
+GCF Policy: https://www.greenclimate.fund/sites/default/files/document/policy-cofinancing.pdf
+
+No additional finance mobilized information provided.
+
+File Name: APR2025 grant-financial-progress-detail-template_SUDAN 20260407 NO ETL.xlsx
+
+
+     ENVIRONMENTAL             &  SOCIAL       SAFEGUARDS,           GENDER,        and    INDIGENOUS           PEOPLES
+
+This section provides an update against the ESS standards agreed as part of the Environmental and Social Action Plan
+(ESAP) and Environmental and Social Management Framework (ESMF), as well as Environmental and Social
+Management System (ESMS), Environmental and Social Impact Assessment (ESIA), Environmental and Social
+Management Plan (ESMP), Indigenous Peoples Plan (IPP), Indigenous Peoples Plan Framework (IPPF), Resettlement
+Action Plan (RAP), Resettlement Policy Framework (RPF) when applicable.
+

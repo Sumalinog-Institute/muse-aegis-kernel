@@ -27,3 +27,9 @@ readable text (a scan). Each replacement is recorded with the reason. A project 
 ## What is recorded for each project
 Source address, retrieval date and SHA-256 of each PDF (the Screen page's provenance fields); the reader's output for the financial section; the ledger built from GCF's public data under the same rules as stage 2;
 the pipeline and judge results; and the reviewers' labels where a flag needs one. Tuning documents are never reused.
+
+## Run settings and excerpt rule (fixed 28 November 2026, before any run)
+- Page: Phase 5b of the app. Bundle: `phase5b-heldout-bundle.json` (30 projects; its SHA-256 is shown on the page and must equal the value in the pull request). Judge prompt hash as in stage 2.
+- Both methods (judge and pipeline), 3 repeats each as the page does; "Relaxed quote match" ON (the v1.1 setting used from tuning run 6 onward); "Pipeline only" OFF. Results are downloaded once, hashed, and not rerun.
+- Excerpt rule: see `tools/phase5b/build_heldout_excerpts.py`. The frozen reader's section is used when it found one; a reference section (pdftotext + stage 2 rules) only when the reader found none or only a contents entry (under 1,000 characters while the reference is at least 3 times longer). Projects whose document has no financial section keep the placeholder text.
+- Final sample and replacements: `final_sample.json`, `REPLACEMENTS.md`, `documents_manifest.json` (SHA-256 of all 60 documents).

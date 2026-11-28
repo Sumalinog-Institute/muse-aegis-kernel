@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-FP197",
+ "title": "Green Guarantee Company (\"GGC\")",
+ "currency": "USD",
+ "amount_awarded": 40500000.0,
+ "award_date": "2022-10-20",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "MUFG Bank, Ltd"
+ },
+ "planned_dates": {
+  "start": "2022-10-20",
+  "end": "2028-08-19"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

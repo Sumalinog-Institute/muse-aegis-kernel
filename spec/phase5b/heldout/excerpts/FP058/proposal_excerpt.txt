@@ -1,0 +1,29 @@
+B.2. Project Financing Information
+
+                     Financial Instrument                Amount                Currency                  Tenor                     Pricing
+
+[B.2. Project Financing Information] (a) Total project financing (a) = (b) + (c) Amount: 50 million USD ($)
+                    (i) Senior Loans
+                                                                            million USD ($)            ( ) years                    ( ) %
+                    (ii) Subordinated
+                    Loans                                                   million USD ($)            ( ) years                    ( ) %
+                    (iii) Equity                                            million USD ($)                                      ( ) % IRR
+                    (iv) Guarantees                                         million USD ($)
+[B.2. Project Financing Information] (b) GCF financing to recipient Currency (v) Reimbursable grants * Financial Instrument: 45 (vi) Grants * * Please provide economic and financial justification in section F.1 for the concessionality that GCF is expected to provide, particularly in the case of grants. Please specify difference in tenor and price between GCF financing and that of accredited entities. Please note that the level of concessionality should correspond to the level of the project/programme’s expected performance against the investment criteria indicated in section E. Total requested Financial Instrument: 45 (i+ii+iii+iv+v+vi) Financial Amount Instrument million USD ($) million USD ($) million USD ($) Name of Institution Tenor Pricing Seniority
+
+[B.2. Project Financing Information] Grant 5 million USD ($) GoE ( ) years ( ) % Options
+(c) Co-                                                     Options                                             ( ) %               Options
+                                                                                                  ( ) years
+financing to                                                                                                    ( ) % IRR           Options
+recipient              Grant
+                                                                                                                                     Options
+
+                    Lead financing institution: Ministry of Finance and Economic Cooperation (MoFEC)
+
+                    * A letter of commitment issued by the co-financing institution has been provided in Annex IV.
+
+(d) Financial
+terms               N.A
+between
+GCF and AE
+(if applicable)

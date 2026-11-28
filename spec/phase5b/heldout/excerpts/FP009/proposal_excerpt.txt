@@ -1,0 +1,66 @@
+B.2. Project Financing Information
+
+                    Financial Instrument                Amount                 Currency                  Tenor                     Pricing
+
+[B.2. Project Financing Information] (a) Total project financing (a) = (b) + (c) Amount: 41.7 Options
+
+[B.2. Project Financing Information > (a) Total project financing] (i) Senior Loans 20 million USD ($) (20) years (0.75) %
+
+                    (ii) Subordinated              n.a                     Options
+                    Loans
+
+                    (iii) Equity                   n.a.                    Options
+
+                    (iv) Guarantees                n.a.                    Options
+
+(b) GCF             (v) Reimbursable
+                                                   n.a.                    Options
+financing to        grants *
+
+[B.2. Project Financing Information > (b) GCF financing to] recipient (vi) Grants * Amount: 1.7 million USD ($)
+
+                    * Please provide economic and financial justification in section F.1 for the concessionality that GCF is expected to
+                    provide, particularly in the case of grants. Please specify difference in tenor and price between GCF financing and that
+                    of accredited entities. Please note that the level of concessionality should correspond to the level of the
+                    project/programme’s expected performance against the investment criteria indicated in section E.
+
+[B.2. Project Financing Information > (b) GCF financing to] Total requested (i+ii+iii+iv+v+vi) Amount: 21.7 million USD ($)
+
+                      Financial                                                Name of
+                                          Amount          Currency                                 Tenor            Pricing            Seniority
+                     Instrument                                               Institution
+
+[B.2. Project Financing Information] Senior Loans Amount: 20.0 million USD ($) BANDESAL (5-7) years (6.125-6.875) % pari passu
+                                                                                
+(c) Co-                Options                           Options                                                                        Options
+                                                                                
+financing to                                                                                                                            Options
+                       Options                           Options
+recipient                                                                       
+                       Options                           Options                                                                        Options
+
+                    Lead financing institution: BANDESAL
+
+                    * Please see Annex 5 for the BANDESAL’s Confirmation letter for its co-financing commitment.
+
+(d) Financial
+terms               In cases where the accredited entity (AE) deploys the GCF financing directly to the recipient, (i.e. the GCF financing
+                    passes directly from the GCF to the recipient through the AE) or if the AE is the recipient itself, in the proposed financial
+between
+                    instrument and terms as described in part (b), this subsection can be skipped.
+GCF and AE
+(if applicable)
+                                                                                                                                          B
+
+
+
+                    If there is a financial arrangement between the GCF and the AE, which entails a financial instrument and/or financial
+                    terms separate from the ones described in part (b), please fill out the table below to specify the proposed instrument
+                    and terms between the GCF and the AE.
+                            Financial
+                                                      Amount                   Currency                     Tenor                   Pricing
+                           instrument
+                                                                                 Options                  ( ) years                  ( ) %
+
+                    Please provide a justification for the difference in the financial instrument and/or terms between what is provided by the
+                    AE to the recipient and what is requested from the GCF to the AE.

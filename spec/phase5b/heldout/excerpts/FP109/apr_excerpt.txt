@@ -1,0 +1,61 @@
+FINANCIAL          INFORMATION
+
+E.1. GCF financing
+
+In addition to the financial report in the annex, update the table with relevant GCF financial data for each country and
+instrument, including amounts and allocation percentages.
+
+                               Currenc                                         Expenditur
+ Country     Instrument            y         Committed        Disbursed              e            Cumulative         Mitigatio       Adaptation
+                                (as per        Amount           Amount           (reporting      Expenditure              n                
+                                 FAA)                                              year)
+
+[E.1. GCF financing] Timor- Leste Grants USD Committed Amount: 22,356,805 Disbursed Amount: 20,841,582 Expenditure (reporting year): 3,978,863.54 Cumulative Expenditure: 15,550,951.43 Mitigation: 0% Adaptation: 100%
+
+[E.1. GCF financing] Total USD Committed Amount: 22,356,805 Disbursed Amount: 20,841,582 Expenditure (reporting year): 3,978,863.54 Cumulative Expenditure: 15,550,951.43 N/A N/A
+
+E.2. Co-financing
+
+Please populate the table with relevant Co-financing data for each Co-financier and instrument, including amounts and
+allocation percentages.
+
+                                  Currenc                                         Expenditur
+                                                Committed                                            Cumulative
+     Co-           Instrument         y                         Disbursed                e                             Mitigatio      Adaptation
+                                                                                                     Expenditur
+  financier                         (as per                       Amount            (reporting                              n               
+                                                 Amount                                                    e
+                                    FAA)                                               year)
+
+[E.2. Co-financing] Ministry of Agriculture and Fishery Grants USD Committed Amount: 12,000,000 Disbursed Amount: 12,000,000 Expenditure (reporting year): 917,215.6 Cumulative Expenditure: 12,000,000 Mitigation: 0% Adaptation: 100%
+
+[E.2. Co-financing] Secretary of State for Civil Protection Grants USD Committed Amount: 5,000,000 Disbursed Amount: 5,000,000 Expenditure (reporting year): 488,496 Cumulative Expenditure: 5,000,000 Mitigation: 0% Adaptation: 100%
+
+[E.2. Co-financing] Ministry of State Administration Grants USD Committed Amount: 19,687,062 Disbursed Amount: 19,687,062 Expenditure (reporting year): 11,087,265 Cumulative Expenditure: 19,687,062 Mitigation: 0% Adaptation: 100%
+        
+
+[E.2. Co-financing] UNDP Grants USD Committed Amount: 400,000 Disbursed Amount: 394,559.54 Expenditure (reporting year): 50,422.34 Cumulative Expenditure: 394,559.54 Mitigation: 0% Adaptation: 100%
+
+[E.2. Co-financing] Total USD Committed Amount: 37,087,062 Disbursed Amount: 37,081,621.54 Expenditure (reporting year): 12,543,398.94 Cumulative Expenditure: 37,081,621.54 N/A N/A
+
+E.3. Additional Finance Mobilised Beyond Approved Co-financing
+
+Report the realised (cumulative value) and/or expected volume (Final Target) of private/public finance leveraged as a
+result of GCF involvement in the investment, in addition to and beyond any co-financing originally committed at approval.
+This datapoint shall be reported separately from official co-financing figures and is intended to capture the catalytic effect
+of GCF investments and support institutional learning.
+
+GCF Policy: https://www.greenclimate.fund/sites/default/files/document/policy-cofinancing.pdf
+
+No additional finance mobilized information provided.
+
+File Name: 5910_APR_2025_SECTION-3_Timor Leste clean version.xlsx
+
+
+     ENVIRONMENTAL             &  SOCIAL       SAFEGUARDS,           GENDER,        and    INDIGENOUS           PEOPLES
+
+This section provides an update against the ESS standards agreed as part of the Environmental and Social Action Plan
+(ESAP) and Environmental and Social Management Framework (ESMF), as well as Environmental and Social
+Management System (ESMS), Environmental and Social Impact Assessment (ESIA), Environmental and Social
+Management Plan (ESMP), Indigenous Peoples Plan (IPP), Indigenous Peoples Plan Framework (IPPF), Resettlement
+Action Plan (RAP), Resettlement Policy Framework (RPF) when applicable.

@@ -1,0 +1,96 @@
+B.2. Project Financing Information
+
+                       Financial Instrument                Amount             Currency                  Tenor                       Pricing
+
+[B.2. Project Financing Information] (a) Total project financing (a) = (b) + (c) Amount: 82.17 million USD ($)
+
+[B.2. Project Financing Information] (i) Senior Loans (ii) Subordinated Loans (iii) Equity (iv) Guarantees (v) Reimbursable grants * (vi) Grants * Amount: 20 Options Options Options Options Options million USD ($) ( ) years ( ) years ( ) % ( ) % ( ) % IRR
+
+                    * Please provide economic and financial justification in section F.1 for the concessionality that GCF is expected to
+                    provide, particularly in the case of grants. Please specify difference in tenor and price between GCF financing and
+                    that of accredited entities. Please note that the level of concessionality should correspond to the level of the
+                    project/programme’s expected performance against the investment criteria indicated in section E.
+
+(b) GCF             The total project size is US$82.17 million, including US$20 million from IDA and US$20 million proposed
+financing to        from GCF, and parallel financing of US$42.17 million from rural households. (Parallel financing from rural
+recipient           households will be verified through IDCOL inspection reports – Annex 12). Every inspection form
+                    provided by IDCOL has details of the household and investments done in purchase of ICS. IDCOL plans
+                    to inspect 25% of the proposed 4 m ICS installed and will prepare a detailed inspection report every year.
+                    The report will monitor the parallel financing by households and also the current status of use by
+                    households.
+
+                    The grant amount per stove in the previous phase was a fixed amount per stove irrespective of type of
+                    stove. In this phase II, IDCOL plans to offer a differential grant structure which is linked to the efficiency
+                    levels of stoves recognizing that higher efficiency stoves that have more benefits in terms of HAP are
+                    also relatively more expensive, and therefore would require more promotional and outreach activities to
+                    convince consumers for buying such stoves.
+
+                    The Program is designed to prevent POs from subsidizing the stove production costs. The GCF grant
+                    and IDA loan to the Government which will be distributed by IDCOL as a grant to POs will be used for
+                    market promotion, awareness building, and supply chain development activities, and not for subsidizing
+                    the cost of production of ICS for households. Households will pay for actual cost of production of ICS, to
+                    ensure a transition to a fully commercial ICS program. The grant will be disbursed only after cash
+                                                                                                                                         B
+
+
+
+                    payment by the households to the POs (IDCOL inspection activities require checking the price at which
+                    the ICS are sold). A contract agreement has been signed between POs and IDCOL regarding this
+                    arrangement and can be found attached as Annex 9.
+
+                    As it has been followed in other programs of IDCOL, this grant structure will be gradually phased out to
+                    ensure long term sustainability of the program. Realizing that the lower efficiency (tier 2) stoves have
+                    already gained market acceptability, grant support is proposed to be reduced in phase 2 of the program.
+                    By proposing more grant for higher efficiency stoves in phase 2, the proposed project is aimed at creating
+                    a market for the higher efficiency stoves with the aim at phasing out grant support completely. After the
+                    completion of the project, IDCOL will phase out the grant component and gradually transfer the promotion
+                    and awareness cost of ICS program in the to the end-users through a moderate increase in price of the
+                    ICS. Production costs of ICS are expected to come down with scale and technology advancements.
+                    IDCOL plans to move to a pure commercial implementation of ICS program once the proposed project
+                    is complete.
+
+                    The success of this approach already has been proven under Phase I but will be enhanced in Phase II.
+                    This success is due to:
+                         (i)       a sense of consumer ownership;
+                         (ii)      customer training by the POs;
+                         (iii)     social acceptability of the POs at the community level;
+                         (iv)      cost-effective and efficient institutional set-up of the POs;
+                         (v)       strong and well-enforced technical standards;
+                         (vi)      appropriate market development by IDCOL and the POs;
+                         (vii)     effective selection of customers by the POs and attention by both IDCOL and the POs to
+                                   cost and efficiency of ICS;
+                         (viii)    a large customer base in relatively densely populated rural areas.
+
+                    Sustainability of the program is ensured by the fact that the ICS are constructed by local entrepreneurs,
+                    sold by local NGOs, financed by a local company IDCOL and is based on a market approach.
+
+[B.2. Project Financing Information > (b) GCF financing to recipient] Total requested (i+ii+iii+iv+v+vi) Amount: 20 million USD ($)
+
+                       Financial                                                Name of
+                                          Amount            Currency                               Tenor         Pricing            Seniority
+                     Instrument                                                Institution
+
+[B.2. Project Financing Information] Senior Loans Amount: 20 million USD ($) million USD Co-financing IDA Parallel financing by Local IDA Term IDA Term senior Options
+[B.2. Project Financing Information] (c) Co-financing to recipient Equity Options Options Amount: 42.17 ($) Options Options Beneficiary equity for purchase of ICS Options Options
+                                                                                    
+                                                                                    
+
+                    Lead financing institution: World Bank (IDA)
+
+                    * Please provide a confirmation letter or a letter of commitment in section I issued by the co-financing institution.
+                    (attached) (Annex 13 – Commitment letter from the World Bank)
+                                                                                                                                               B
+
+
+
+                     In cases where the accredited entity (AE) deploys the GCF financing directly to the recipient, (i.e. the GCF financing
+                     passes directly from the GCF to the recipient through the AE) or if the AE is the recipient itself, in the proposed
+                     financial instrument and terms as described in part (b), this subsection can be skipped.
+(d) Financial
+terms                If there is a financial arrangement between the GCF and the AE, which entails a financial instrument and/or financial
+between              terms separate from the ones described in part (b), please fill out the table below to specify the proposed instrument
+                     and terms between the GCF and the AE.
+GCF    and   AE
+(if applicable)      Please provide a justification for the difference in the financial instrument and/or terms between what is provided by
+                     the AE to the recipient and what is requested from the GCF to the AE.
+                     Not applicable

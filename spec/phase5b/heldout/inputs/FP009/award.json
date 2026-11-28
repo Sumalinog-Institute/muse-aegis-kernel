@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-FP009",
+ "title": "Energy Savings Insurance (ESI) for private energy efficiency investments by Small and Medium-Sized Enterprises (SMEs)",
+ "currency": "USD",
+ "amount_awarded": 21700000.0,
+ "award_date": "2016-06-30",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Inter-American Development Bank"
+ },
+ "planned_dates": {
+  "start": "2016-06-30",
+  "end": "2026-07-22"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

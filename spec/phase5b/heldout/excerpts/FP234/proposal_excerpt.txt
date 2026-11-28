@@ -1,0 +1,228 @@
+FINANCING          INFORMATION
+
+C.1. Total financing
+
+ (a)
+                                        Total amount                                              Currency
+ Requested
+    
+ GCF
+ funding
+
+[C.1. Total financing > (a) Requested] (i + ii + iii + iv + v + vi + Total amount: 22.66 million USD ($)
+
+ vii)
+
+   GCF
+
+financial
+                   Amount                         Tenor                        Grace period                  Pricing
+instrument
+      
+
+(i) Senior
+                Enter amount                   Enter years                      Enter years                  Enter %
+loans
+
+(ii)
+
+Subordin
+                Enter amount                   Enter years                      Enter years                  Enter %
+ated
+loans
+
+(iii)                                                                                                    Enter % equity
+                Enter amount
+Equity                                                                                                        return
+
+(iv)
+
+Guarante        Enter amount                   Enter years
+es
+
+(v)
+Reimbur
+                Enter amount
+sable
+grants
+
+(vi)
+                     22.66
+Grants
+
+(vii)
+Results-
+based           Enter amount
+payment
+s
+
+(b) Co-                           Total amount                                              Currency
+
+[C.1. Total financing > (b) Co-] financin g information Total amount: 1.263 million USD ($)
+
+   
+
+              Financial
+Name of
+                                                                            Tenor &                               Seniori
+institution                    Amount                 Currency                                   Pricing
+               instrument                                                    grace                                   ty
+      
+                   
+
+[C.1. Total financing] Ministry of Finance Gra nt Amount: 1.2 million USD ($) Enter years Enter years Enter% Options
+
+[C.1. Total financing] UNDP Gra nt Amount: 0.063 million USD ($) Enter years Enter years Enter% Options
+
+   Click                                                                                         Enter%           Options
+ here to      Opti                                                       Enter years
+                            Enter amount               Options
+   enter       ons                                                       Enter years
+   text.
+
+   Click      Opti                                                       Enter years             Enter%           Options
+                            Enter amount               Options
+ here to       ons                                                       Enter years
+
+
+                                                                                                                                            C
+
+[C.1. Total financing] enter text. Name of institution: 1. otal financing T Amount Currency
+         
+[C.1. Total financing] (c) = (a)+( b) Currency: 23.92 Please explain if any of the financing parties including the AE would benefit from any type of guarantee (e.g. sovereign guarantee, MIGA guarantee). Please also explain other contributions such as in-kind contributions including tax exemptions and million USD ($)
+(d) Other
+                 contributions of assets.
+financin
+g                Please also include parallel financing associated with this project or programme (refer to the co-financing
+arrange          policy).
+ments
+                      105.UNDP projects in Tonga are exempted from taxation in line with conditions stipulated in the
+and
+                            Standard Basic Assistance Agreement (SBAA), for activities related to procurement of good and
+contribu                    services through UNDP. Section 7 of the Convention on the Privileges and Immunities of the
+tions                       United Nations provides, inter alia, that the United Nations, including its subsidiary organs, is
+(max.                       exempt from all direct taxes, except charges for utilities services, and is exempt from customs
+250                         duties and charges of a similar nature in respect of articles imported or exported for its official use.
+words,
+approxi               106.According to the UN Convention on Privileges and Immunities, UN or UNDP are not, as a general
+mately                      rule, exempted from indirect taxes. However, Section 8 of the Convention states the following: “…
+                            when the United Nations is making important purchases for official use of property on which such
+0.5
+                            duties and taxes have been charged or are chargeable, Members will, whenever possible, make
+page)                       appropriate administrative arrangements for the remission or return of the amount of duty or tax.”
+                            As such, the Government of Tonga has put in place the national regulation on Consumption Tax
+                            (2020) where UNDP has been granted tax exemption by the Government of Tonga, and they are
+                            currently in the process of issuing a letter confirming that the regulation would cover this project.
+C.2.    Financing       by   component
+Please provide an estimate of the total cost per component and output as outlined in section B.3. above and
+disaggregate by source of financing. More than one co-financing institution can fund a single component or output.
+Provide the summarised cost estimates in the table below and the detailed budget plan as annex 4.
+
+  Output                Activity          Indicative               GCF financing                                 Co-financing
+                                          cost
+                                                              Amount           Financial         Amount           Financial          Name of
+                                          million           million USD       Instrument           million       Instrument        Institutions
+                                          USD ($)
+                                                                 ($)                              USD ($)
+                        1.1 Establish     1.74             1.60               Grant             0.14            Grants            Ministry of
+                        a national                                                                                                Finance
+                        multi-
+  1. Strengthened       stakeholder
+  knowledge,            engagement
+  capacity and          platform for
+  engagement for        dialogue on
+  incorporating         co-creating
+  climate risks into    long-term
+  long-term             climate
+  adaptation            change
+  planning              adaptation
+  supported             strategies
+  through a multi-      and solutions
+  sectoral, multi-      including
+  stakeholder           voluntary
+  engagement and        retreat
+  dialogue platform     1.2  Develop      0.83             0.75               Grants            0.08            Grants            Ministry of
+                        village   and
+                                                                                                                                  Finance
+                        district  level
+                        participatory
+                        climate    risk
+
+
+                                                                                                                                               C
+
+                       informed
+                       plans
+                       1.3 Build the     1.64              1.13               Grants             0.51             Grants            Ministry of
+                       capacity of                                                                                                  Finance
+                       local
+                       government,
+                       village
+                       committees
+                       and NGOs to
+                       integrate
+                       climate risks
+                       and
+                       adaptation
+                       needs into
+                       community
+                       level
+                       planning,
+                       and inform
+                       future
+                       Community
+                       Development
+                       Plans (CDP)
+                       2.1               6.70              6.47               Grants             0.23             Grants            Ministry of
+                       Strengthened                                                                                                 Finance
+                        
+                       mechanism
+                       for collecting
+                       and
+                       analysing
+                       data and
+                       information
+                       for better-
+                       informed
+                       climate risk
+                       monitoring
+2.
+                       and coastal
+Strengthened
+                       adaptation
+national and           planning
+local capacities
+for effective          2.2 Improve       1.02              0.99               Grants             0.03             Grants            Ministry of
+monitoring and         the                                                                                                          Finance
+assessment of          knowledge
+                       base of
+climate risks
+                       multi-
+                       sectoral,
+                       multi-
+                       stakeholders
+                       on
+                       adaptation
+                       planning
+                       strategies for
+                       long-term
+                       resilient
+                       planning and
+                       transformative
+                        
+[1.3 Build the 1.64 1.13 Grants 0.51 Grants Ministry of] 3. Reduced vulnerabilities of coastal communities in Hahake to climate hazards through coastal 3.1 Build coastal protection measures along 4.3 km of coastline in Hahake 3.2 Sharing of lessons learned and best 9.92 1.06 9.85 0.86 Grants Grants 0.07 0.14 Grants Grants Ministry of Finance Ministry of Finance
+
+
+                                                                                                                                          C
+
+[1.3 Build the 1.64 1.13 Grants 0.51 Grants Ministry of] protection measures practices in climate resilient coastal protection measures for scale-up at the national and regional level Grants 0.06 Grants UNDP
+
+[1.3 Build the 1.64 1.13 Grants 0.51 Grants Ministry of] 4. Project Management Project Management Costs 1.01 1.01 Grants
+
+[1.3 Build the 1.64 1.13 Grants 0.51 Grants Ministry of] Indicative total cost (USD) 23.92 22.66 1.26
+
+This table should match the one presented in the term sheet and be consistent with information presented in other
+annexes including the detailed budget plan and implementation timetable.
+
+In case of a multi-country/region programme, specify indicative requested GCF funding amount for each country in
+annex 17, if available.

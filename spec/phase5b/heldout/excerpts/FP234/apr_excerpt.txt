@@ -1,0 +1,61 @@
+FINANCIAL           INFORMATION
+
+E.1. GCF financing
+
+In addition to the financial report in the annex, update the table with relevant GCF financial data for each country and
+instrument, including amounts and allocation percentages.
+
+                                Currenc                                          Expenditur
+                                                                                                    Cumulative
+ Country      Instrumen             y          Committe         Disburse               e                               Mitigatio       Adaptatio
+                                                                                                    Expenditur
+                    t            (as per       d  Amount        d  Amount          (reporting                               n               n
+                                                                                                          e
+                                  FAA)                                               year)
+
+[E.1. GCF financing] Tonga Grants USD Committed Amount: 22,656,409 Disbursed Amount: 954,864 Expenditure (reporting year): 765,511.89 Cumulative Expenditure: 765,511.89 Mitigation: 0% Adaptation: 100%
+
+[E.1. GCF financing] Total USD Committed Amount: 22,656,409 Disbursed Amount: 954,864 Expenditure (reporting year): 765,511.89 Cumulative Expenditure: 765,511.89 N/A N/A
+
+E.2. Co-financing
+
+Please populate the table with relevant Co-financing data for each Co-financier and instrument, including amounts and
+allocation percentages.
+
+                                    Currenc                                        Expenditur
+                                                                   Disburse                          Cumulative
+     Co-           Instrumen            y         Committe                               e                              Mitigatio      Adaptatio
+                                                                        d                            Expenditur
+  financier              t           (as per      d  Amount                          (reporting                              n               n
+                                                                    Amount                                  e
+                                      FAA)                                             year)
+
+[E.2. Co-financing] Ministry of Finance, Tonga Grants USD Committed Amount: 1,200,000 Disbursed Amount: 0 Expenditure (reporting year): 0 Cumulative Expenditure: 0 Mitigation: 0% Adaptation: 100%
+
+[E.2. Co-financing] United Nations Development Grants USD Committed Amount: 63,000 Disbursed Amount: 0 Expenditure (reporting year): 0 Cumulative Expenditure: 0 Mitigation: 0% Adaptation: 100%
+         
+Programme
+
+[E.2. Co-financing] Total USD Committed Amount: 1,263,000 Disbursed Amount: 0 Expenditure (reporting year): 0 Cumulative Expenditure: 0 N/A N/A
+
+E.3. Additional Finance Mobilised Beyond Approved Co-financing
+
+Report the realised (cumulative value) and/or expected volume (Final Target) of private/public finance leveraged as a
+result of GCF involvement in the investment, in addition to and beyond any co-financing originally committed at approval.
+This datapoint shall be reported separately from official co-financing figures and is intended to capture the catalytic effect
+of GCF investments and support institutional learning.
+
+GCF Policy: https://www.greenclimate.fund/sites/default/files/document/policy-cofinancing.pdf
+
+No additional finance mobilized information provided.
+
+File Name: PIMS 5942_APR_2025_Grant-Financial Progress Detail_cleared by QM.xlsx
+
+
+     ENVIRONMENTAL             &  SOCIAL       SAFEGUARDS,           GENDER,        and    INDIGENOUS           PEOPLES
+
+This section provides an update against the ESS standards agreed as part of the Environmental and Social Action Plan
+(ESAP) and Environmental and Social Management Framework (ESMF), as well as Environmental and Social
+Management System (ESMS), Environmental and Social Impact Assessment (ESIA), Environmental and Social
+Management Plan (ESMP), Indigenous Peoples Plan (IPP), Indigenous Peoples Plan Framework (IPPF), Resettlement
+Action Plan (RAP), Resettlement Policy Framework (RPF) when applicable.

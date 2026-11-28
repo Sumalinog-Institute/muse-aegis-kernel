@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-FP060",
+ "title": "Water Sector Resilience Nexus for Sustainability in Barbados (WSRN S-Barbados)",
+ "currency": "USD",
+ "amount_awarded": 27605010.0,
+ "award_date": "2018-03-01",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Caribbean Community Climate Change Centre"
+ },
+ "planned_dates": {
+  "start": "2018-03-01",
+  "end": "2025-12-27"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

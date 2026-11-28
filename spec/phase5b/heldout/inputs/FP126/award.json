@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-FP126",
+ "title": "Increased climate resilience of rural households and communities through the rehabilitation of production landscapes in selected localities of the Republic of Cuba (IRES)",
+ "currency": "USD",
+ "amount_awarded": 38206791.0,
+ "award_date": "2020-03-12",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Food and Agriculture Organization of the United Nations"
+ },
+ "planned_dates": {
+  "start": "2020-03-12",
+  "end": "2027-06-08"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

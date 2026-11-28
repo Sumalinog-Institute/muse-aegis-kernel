@@ -1,0 +1,60 @@
+=== PROPOSAL EXCERPT ===
+B.2. Project Financing Information
+
+                     Financial Instrument                Amount               Currency                   Tenor                      Pricing
+
+[B.2. Project Financing Information] (a) Total project financing (a) = (b) + (c) Amount: 80.0 million USD ($)
+
+                    (i) Senior Loans
+                                                                                Options
+                    (ii) Subordinated
+                                                                                Options
+                    Loans
+
+                                                                                Options
+                    (iii) Equity
+
+                                                                                Options
+                    (iv) Guarantees
+
+                                                                                Options
+(b)                 (v) Reimbursable
+Requested           grants *                                                 million USD
+
+[B.2. Project Financing Information > (b) Requested] GCF amount (vi) Grants * Amount: 40.0 ($)
+
+                    * Please provide economic and financial justification in section F.1 for the concessionality that GCF is expected to
+                    provide, particularly in the case of grants. Please specify difference in tenor and price between GCF financing and
+                    that of accredited entities. Please note that the level of concessionality should correspond to the level of the
+                    project/programme’s expected performance against the investment criteria indicated in section E.
+
+[B.2. Project Financing Information > (b) Requested] Total requested (i+ii+iii+iv+v+vi) Amount: 40.0 million USD ($)
+
+                       Financial                                                 Name of
+                                           Amount            Currency                               Tenor         Pricing            Seniority
+                      Instrument                                                Institution
+
+[B.2. Project Financing Information] Grant Grant Amount: 15.0 Amount: 25.0 million USD ($) million USD BMZ/KfW GoB ( ) years ( ) years ( ) % ( ) % Options Options
+(c) Co-                                                          ($)                                            ( ) % IRR
+
+financing
+
+                    Lead financing institution: KfW (as both, GCF and BMZ grants will be channelled through KfW). It is
+                    expected that approximately half of the GoB contribution (i.e. 12-13 million USD) will be sufficient to
+                    cover all applicable taxes. Please see Annex 7, III for more details.
+
+                    * Please provide a confirmation letter or a letter of commitment in section I issued by the co-financing institution.
+
+=== ANNUAL PERFORMANCE REPORT EXCERPT ===
+FINANCIAL INFORMATION
+This is a confidential section of the report.
+
+
+     ENVIRONMENTAL & SOCIAL                     SAFEGUARDS, GENDER, and INDIGENOUS                             PEOPLES
+
+This section provides an update against the ESS standards agreed as part of the Environmental and Social Action Plan
+(ESAP) and Environmental and Social Management Framework (ESMF), as well as Environmental and Social
+Management System (ESMS), Environmental and Social Impact Assessment (ESIA), Environmental and Social
+Management Plan (ESMP), Indigenous Peoples Plan (IPP), Indigenous Peoples Plan Framework (IPPF), Resettlement
+Action Plan (RAP), Resettlement Policy Framework (RPF) when applicable.
+

@@ -1,0 +1,174 @@
+=== PROPOSAL EXCERPT ===
+C.   FINANCING         INFORMATION
+
+C.1. Total financing
+
+[C.1. Total financing] (a) Requested GCF funding (i + ii + iii + iv + v + vi + vii) Total amount 33.30 Currency million USD ($)
+
+ GCF financial
+                              Amount                       Tenor                  Grace period                   Pricing
+   instrument
+
+(i) Senior loans           Enter amount                 Enter years                 Enter years                  Enter %
+
+(ii) Subordinated
+                           Enter amount                 Enter years                 Enter years                  Enter %
+loans
+
+                                                                                                             Enter % equity
+(iii) Equity               Enter amount
+                                                                                                                  return
+
+(iv) Guarantees            Enter amount                 Enter years
+
+(v)
+Reimbursable               Enter amount
+grants
+
+(vi) Grants                     33.30
+
+(vii) Results-
+                           Enter amount
+based payments
+
+(b) Co-                                  Total amount                                             Currency
+
+[C.1. Total financing > (b) Co-] financing information Total amount: 30.00 million USD ($)
+
+     Name of             Financial                                               Tenor &
+                                            Amount            Currency                              Pricing          Seniority
+    institution         instrument                                                grace
+
+[C.1. Total financing] MMAyA In kind Amount: 29.5 million USD ($) Enter years Enter years Enter% Options
+
+[C.1. Total financing] FAM In-kind Amount: 0.50 million USD ($) Enter years Enter years Enter% Options
+
+   Click here to                              Enter                           Enter years           Enter%            Options
+                         Options                               Options
+    enter text.                              amount                           Enter years
+
+   Click here to                              Enter                           Enter years           Enter%            Options
+                         Options                               Options
+    enter text.                              amount                           Enter years
+
+[C.1. Total financing] (c)  Total financing (c) = (a)+(b) Amount Amount: 63.30 Currency million USD ($)
+
+(d) Other
+financing              Please explain if any of the financing parties including the AE would benefit from any type of
+arrangements           guarantee (e.g. sovereign guarantee, MIGA guarantee).
+
+and                    Please also explain other contributions such as in-kind contributions including tax exemptions and
+contributions          contributions of assets.
+(max. 250
+words,                 Please also include parallel financing associated with this project or programme (refer to the co-
+
+approximately          financing policy).
+
+0.5 page)
+
+C.2. Financing by component
+
+Please provide an estimate of the total cost per component and output as outlined in section B.3. above and disaggregate
+by source of financing. More than one co-financing institution can fund a single component or output. Provide the
+summarised cost estimates in the table below and the detailed budget plan as annex 4.
+
+
+                                                                                                                                              C
+
+                                          Indicative
+                                                                GCF financing                                 Co-financing
+                                                 cost
+
+    Component               Output        million USD       Amount          Financial          Amount                              Name of
+                                                    ($)                                                         Financial
+                                                                            Instrument                                            Institution
+                                                           million USD                        million USD      Instrument               s
+                                                                ($)                                ($)
+
+[C.2. Financing by component] Component 1. Output 1.1 Output 1.2 million USD ($): 11,312,532 million USD ($): 4,307,098 Amount million USD ($): 11,312,532 Amount million USD ($): 4,307,098 Grant Grant Amount million USD ($): 0 Amount million USD ($): 0 - - - -
+
+[C.2. Financing by component] Component 2. Component 3. Output 2.1 Output 2.2 Output 3.1 Output 3.2 million USD ($): 25,697,161 million USD ($): 3,032,571 million USD ($): 10,447,992 million USD ($): 506,489 Amount million USD ($): 5,197,161 Amount million USD ($): 1,832,571 Amount million USD ($): 3,848,000 Amount million USD ($): 506,489 Grant Grant Grant Grant Amount million USD ($): 20,500,000 Amount million USD ($): 1,200,000 Amount million USD ($): 6,599,992 Amount million USD ($): 0 In-kind In-kind In-kind - MMAyA MMAyA/FA M MMAyA -
+
+[C.2. Financing by component] Output 4.1 million USD ($): 280,050 Amount million USD ($): 280,050 Grant Amount million USD ($): 0 - -
+
+[C.2. Financing by component] Component 4 Output 4.2 million USD ($): 1,839,999 Amount million USD ($): 1,839,999 Grant Amount million USD ($): 0 - -
+
+[C.2. Financing by component] Output 4.3 million USD ($): 1,891,000 Amount million USD ($): 1,591,000 Grant Amount million USD ($): 300,000 In-kind FAM
+
+[C.2. Financing by component] M&E Project Management (PMC) Indicative total cost (USD) million USD ($): 1,032,001 million USD ($): 2,953,107 million USD ($): 63,300,000 Amount million USD ($): 1,032,001 Amount million USD ($): 1,553,099 Financial Instrument: 1,032,001 Financial Instrument: 1,553,099 Financial Instrument: 33,300,000 Amount million USD ($): 0 Amount million USD ($): 1,400,008 - In-kind - MMAyA Name of Institutions: 30,000,000
+
+199.Please see Annex 4 – Detailed Budget Annex for details of the cost allocation. The Plurinational State of Bolivia
+      through the Ministry of Environment and Water (MMAyA) and the Federations of Municipalities (FAM) will allocate
+      resources for co-financing the project implementation, showing its commitment to support actions that will foster
+      climate-resilient agriculture in the Bolivian Valleys Macro-region. This co-financing will be distributed as follows: USD
+      21,700,000 for the implementation of on-farm climate-proofing management systems (Component 2); USD 6,599,992
+      for the conservation of watersheds, restoration and conservation of ecosystems functions and services activities
+      (Component 3); and USD 300,000, to strengthening institutional capacities to support climate risk management
+      (Component 4). The Project Management Cost contribution of USD 1,400,008 will be co-financed by MMAyA.
+      Altogether, the expected co-financing for the project equals USD 30,000,000.
+
+ See annex 4 for more information and allocation of requested GCF funding per cost category
+
+=== ANNUAL PERFORMANCE REPORT EXCERPT ===
+FINANCIAL           INFORMATION
+
+E.1. GCF financing
+
+In addition to the financial report in the annex, update the table with relevant GCF financial data for each country and
+instrument, including amounts and allocation percentages.
+
+                                    Currenc                                        Expenditur
+                                                                   Disburse                          Cumulative
+                   Instrumen            y         Committe                                e                             Mitigatio      Adaptatio
+  Country                                                               d                            Expenditur
+                         t           (as per      d  Amount                          (reporting                              n               n
+                                                                    Amount                                  e
+                                      FAA)                                             year)
+
+[E.1. GCF financing] Bolivia (Plurination al State of) Grants USD Committed Amount: 33,300,000 Disbursed Amount: 7,603,613 Expenditure (reporting year): 3,363,303 Cumulative Expenditure: 3,927,523 Mitigation: 0% Adaptation: 100%
+
+[E.1. GCF financing] Total USD Committed Amount: 33,300,000 Disbursed Amount: 7,603,613 Expenditure (reporting year): 3,363,303 Cumulative Expenditure: 3,927,523 N/A N/A
+
+E.2. Co-financing
+
+Please populate the table with relevant Co-financing data for each Co-financier and instrument, including amounts and
+allocation percentages.
+
+                                   Currenc                                         Expenditur
+                                                                   Disburse                          Cumulative
+     Co-          Instrumen             y         Committe                               e                              Mitigatio      Adaptatio
+                                                                        d                            Expenditur
+  financier             t            (as per      d  Amount                          (reporting                             n                n
+                                                                    Amount                                  e
+                                     FAA)                                              year)
+
+[E.2. Co-financing] Government of Bolivia -  MDPRyA Grants USD Committed Amount: 29,500,000 Disbursed Amount: 0 Expenditure (reporting year): 10,640,656 Cumulative Expenditure: 10,928,934 Mitigation: 0% Adaptation: 100%
+
+[E.2. Co-financing] FAM Grants USD Committed Amount: 500,000 Disbursed Amount: 0 Expenditure (reporting year): 0 Cumulative Expenditure: 0 Mitigation: 0% Adaptation: 100%
+
+[E.2. Co-financing] Total USD Committed Amount: 30,000,000 Disbursed Amount: 0 Expenditure (reporting year): 10,640,656 Cumulative Expenditure: 10,928,934 N/A N/A
+
+E.3. Additional Finance Mobilised Beyond Approved Co-financing
+
+Report the realised (cumulative value) and/or expected volume (Final Target) of private/public finance leveraged as a
+result of GCF involvement in the investment, in addition to and beyond any co-financing originally committed at approval.
+This datapoint shall be reported separately from official co-financing figures and is intended to capture the catalytic effect
+of GCF investments and support institutional learning.
+
+GCF Policy: https://www.greenclimate.fund/sites/default/files/document/policy-cofinancing.pdf
+
+No additional finance mobilized information provided.
+
+File Name: APR2025 - FP202 - Grant - Financial Progress Detail-RECEM VALLES-BOLIVIAFinal.AR10.4.26-OCB0327
+
+NO ETL.xlsx
+
+
+     ENVIRONMENTAL             &  SOCIAL       SAFEGUARDS,           GENDER,        and    INDIGENOUS           PEOPLES
+
+This section provides an update against the ESS standards agreed as part of the Environmental and Social Action Plan
+(ESAP) and Environmental and Social Management Framework (ESMF), as well as Environmental and Social
+Management System (ESMS), Environmental and Social Impact Assessment (ESIA), Environmental and Social
+Management Plan (ESMP), Indigenous Peoples Plan (IPP), Indigenous Peoples Plan Framework (IPPF), Resettlement
+Action Plan (RAP), Resettlement Policy Framework (RPF) when applicable.
+

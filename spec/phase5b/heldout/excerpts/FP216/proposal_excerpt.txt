@@ -1,0 +1,188 @@
+FINANCING         INFORMATION
+
+ C.1. Total financing
+
+[C.1. Total financing] (a) Requested GCF funding (i + ii + iii + iv + v + vi + vii) Total amount 14.4 million Currency million USD ($)
+
+   GCF financial
+                               Amount                       Tenor                 Grace period                   Pricing
+     instrument
+
+ (i) Senior loans           Enter amount                 Enter years                Enter years                  Enter %
+
+ (ii) Subordinated
+                            Enter amount                 Enter years                Enter years                  Enter %
+ loans
+
+                                                                                                             Enter % equity
+ (iii) Equity               Enter amount
+                                                                                                                  return
+
+ (iv) Guarantees            Enter amount                 Enter years
+
+ (v)
+ Reimbursable               Enter amount
+ grants
+
+ (vi) Grants                      14.4
+
+ (vii) Results-
+                            Enter amount
+ based payments
+
+ (b) Co-                                  Total amount                                            Currency
+
+[C.1. Total financing > (b) Co-] financing information Total amount: 58.288 million USD ($)
+
+      Name of             Financial                                              Tenor &
+                                             Amount           Currency                             Pricing          Seniority
+     institution         instrument                                               grace
+
+     Ministry of                                                                                    Enter%           Options
+
+     Agriculture,
+
+[C.1. Total financing] Forestry and Water Management of Republika Srpska (MAFWM RS)- EiB Loan Ministry of Senior Loans Amount: 21.11 Amount: 46 million USD ($) Enter years Enter years Enter% Options
+
+     Agriculture,
+    Forestry and
+
+[C.1. Total financing] Water Management of Grant Amount: 3.89 Amount: 47 million USD ($) Enter years Enter years
+
+      Republika
+       Srpska
+   (MAFWM      RS)
+
+   Water Agency                                                                                     Enter%           Options
+
+[C.1. Total financing] for Sava River Basin, Sarajevo Grant Amount: 16 million USD ($) Enter years Enter years
+
+     (WA Sava)
+   Water Agency                                                                                     Enter%           Options
+
+[C.1. Total financing] for Adriatic River Basin, Mostar Grant Amount: 5 million USD ($) Enter years Enter years
+
+      (WA AB)
+
+46 EIB loan is EUR 19 mil; exchange rate 1USD=0.9 EUR
+47 Co-financing provided EUR 3.5 mil; exchange rate 1USD=0.9 EUR
+
+                                                                                                                             D
+
+      Ministry of
+   Foreign Trade
+   and Economic
+      Relations             Grant               5.5648         million USD
+     (GCF Focal
+        point)
+     (MOFTER)
+  Power Company
+    of Republic of
+   Srpska, Hydro            Grant                 5.0          million USD
+     Power Plant
+        (HPP)
+    Re-insurance
+  company Bosna             Grant               0.3349         million USD
+   RE (Bosna RE)
+   Association of
+      Insurance
+                            Grant                 0.3          million USD
+     Companies
+    FB&H (AOIC)
+      Ministry of
+  Spatial Planning,
+  Civil Engineering
+   and Ecology of
+      Republika             Grant                0.30          million USD
+        Srpska
+  (UNFCCC Focal
+        point)
+     (MSPCEE)
+        UNDP                Grant                 0.8          million USD
+      (c)  Total                              Amount                                                 Currency
+      financing
+[C.1. Total financing] (c) = (a)+(b) Amount: 72.69 UNDP projects in B&H are exempted from VAT payment in line with conditions stipulated million USD ($)
+  (d) Other              in the Standard Basic Assistance Agreement (SBAA). For activities related to
+  financing              procurement of goods and services through UNDP, according to the SBAA taxes are not
+  arrangements           applicable. Section 7 of the Convention on the Privileges and Immunities of the United
+  and                    Nations provides, inter alia, that the United Nations, including its subsidiary organs, is
+  contributions          exempt from all direct taxes, except charges for utilities services, and is exempt from
+  (max. 250              customs duties and charges of a similar nature in respect of articles imported or exported
+  words,                 for its official use.
+  approximately
+  0.5 page)
+
+  C.2. Financing by component
+[C.2. Financing by component] risk  management approaches, 168. The Government of the B&H is requesting GCF funds to cover the additional costs (required due to the impacts of climate change) of technical assistance and capacity building for knowledge, monitoring, forecasting and warnings, for scaling up ecosystem-based and other non-structural investments (Activities 1.1, 1.2, 1.3, 1.4, 2.1, 2.2, 2.3, 2.4, 3.1, 3.2). The Governments of FB&H and RS will co-finance from the Entity budget funds the upgrading and maintenance of the hydrometeorological observation network, implementation of FFEWS, regulatory improvements, resilience and investment planning and implementation of non-structural flood risk reduction measures (Activities 1.1, 1.2, 1.3, 1.4, 2.1, 2.2, 2.3, 2.4, 3.1, 3.2). Implementation of climate-proof structural risk reduction measures (Activity 3.3.) will be co-financed through loan resources (EIB). Private sector (HPPs) will co-finance enhanced and for  facilitating  climate enhanced flood risk risk-informed flood  protection
+
+48 Co-financing provided EUR 5 mil; exchange rate 1USD=0.9 EUR
+49 Co-financing provided EUR 0.3 mil; exchange rate 1USD=0.9 EUR
+
+
+                                                                                                                              D
+
+    flood risk monitoring, forecasting and warning and structural risk reduction investments (Activities 1.1,
+    1.2.1.3, 1.4, 2.2).
+
+Compone       Output/Activity                          Indicative         GCF financing                     Co-financing
+nt                                                     cost
+                                                                        Amount       Financial    Amount       Financial      Name
+                                                       Options          Options                   Options      Instrument       of
+                                                                                     Instrument                              Institutions
+                                                                                                                                   
+
+              1.1 Upgrade and expand the
+[1.1 Upgrade and expand the] coverage of the hydrometric network for enhanced monitoring of climate variables in Category I catchments and torrential streams 4,405,946 1,535,980 Grants 2,869,966 Grants MAFWM RS WA Sava WA AB HPP
+
+              1.2 Enhance climate-induced
+[1.2 Enhance climate-induced] flood hazard, risk and vulnerability information for strategic risk management and sound decision making for climate induced flood management 5,596,589 1,067,833 Grants 4,528,756 Grants WA Sava WA AB MOFTER HPP
+
+              1.3 Develop an integrated                                                                                      MAFWM
+[1.3 Develop an integrated MAFWM] impact-based centralized and community-based flood forecasting and early warning system (FFEWS) 4,111,478 2,156,040 Grants 1,955,438 Grants RS WA Sava WA AB HPP
+
+              1.4 Develop and implement
+[1.4 Develop and implement] Component 1 protocols and SoPs on data generation, data management and communication for effective impact based FFEWS and flood risk management 536,000 336,000 Grants 200,000 Grants WA AB
+
+              2.1 Mainstream climate induced
+[2.1 Mainstream climate induced] flood risk reduction into sectoral planning (agriculture, hydropower, critical infrastructure) and spatial planning 456,000 366,000 Grants 90,000 Grants MSPCEE RS
+
+              2.2 Implement and mainstream                                                                                   MAFWM
+[2.2 Implement and mainstream MAFWM] new ecosystem-based flood risk reduction and climate change adaptation methods 26,116,175 5,868,747 Grants 20,247,428 Grants RS WA Sava WA AB HPP
+
+              2.3 Codify and mainstream EbA
+[2.3 Codify and mainstream EbA] solutions into policies and regulations and promote non-structural measures among decision makers and communities 298,680 208,680 Grants 90,000 Grants MSPCEE RS
+
+              2.4 Review and strengthen
+[2.4 Review and strengthen] institutional capacity and develop long-term institutional capacity development plans for climate resilient FRM 800,000 300,000 Grants 500,000 Grants MAFWM RS WA Sava WA AB
+
+
+                                                                                                                              D
+
+                3.1 Develop investment
+[3.1 Develop investment] framework for climate induced flood risk reduction and management 1,083,614 480,440 Grants 603,174 Grants BOSNA RE AOIC
+                3.2 Formulate multi-year climate
+[3.2 Formulate multi-year climate] resilient municipal investment plans and gender responsive community preparedness plans in selected municipalities (10-12) and in one canton in Vrbas, Una- Sana and Bosna, Drina, Neretva and Trebišnjica basins 3,622,884 525,000 Grants 3,097,884 Grants UNDP MOFTER
+                3.3 Implement climate-proof
+                                                                                                                             MAFWM
+                structural flood risk reduction
+                                                                                                                             RS-EIB
+                and anti-erosion interventions in                                                              Senior        Loan
+                Vrbas, Una-Sana, Bosna and                                                       20,939,15     Loans         MAFWM
+                Drina river basins                     21,814,433      875,280       Grants      3             Grants        RS
+                                                                                                                             UNDP
+                                                                                                                             (TRAC)
+                                                                                                                             MOFTE
+                                                                                                                             R
+                                                                                                                             MAFWM
+                                                                                                                             RS
+                                                                                                                             WA
+                                                                                                                             Sava
+                                                                                                                             WA AB
+                                                                                                                             BOSNA
+                                                                                                                             RE
+                                                                                                                             AOIC
+                                                                                                                             HPP
+                                                                                                                             MSPCE
+                4.1 Project Management                 3,847,090       680,000       Grants      3,167,090     Grants        E
+  Indicative total cost (USD)
+                                                       72,688,889      14,400,000                58,288,889

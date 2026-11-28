@@ -1,0 +1,32 @@
+=== PROPOSAL EXCERPT ===
+B.2. Project Financing Information
+                                                                                                                                          C
+
+
+
+                    Financial Instrument            Amount          Currency                   Tenor                        Pricing
+
+(a) Total
+project             (a) = (b) + (c)                    $158         million USD ($)
+financing
+
+[B.2. Project Financing Information > (a) Total project financing] (i) Senior Loans (ii) Equity $5.4 $11 (8-12) years (7 -14) years 4.5-5 % 7-10 % IRR
+[B.2. Project Financing Information] (b) GCF financing to recipient (iii) Guarantees (iv) Grants Total requested (i+ii+iii+iv) Financial Instrument $20 Amount $1.5 $2.1 million USD ($) Currency million USD ($) Name of Institution (15) years (3) years Tenor Pricing 3-5 % N/A Seniority
+
+[B.2. Project Financing Information] (c) Co-financing to recipients Grant Equity Guarantee Loans Co-financing Lead financing institution: IDB Group $1.1 $3 $1.5 $4.4 $128 million USD ($) IDBG IDBG IDBG IDBG FIs, Corp., Private Investors 3-4 11-14 Tenor: 15 8-12 8-14 yrs yrs yrs yrs yrs N/A 7-10% 3-5 % 4.5 % N/A pari passu pari passu pari passu pari passu pari passu
+
+                    Proceeds from the GCF will be passed directly to the selected Financial Intermediaries selected to act
+                    as Executing Entities (EEs) for individual sub-projects. As part of the preparation of each sub-project,
+(d) Financial
+                    each EE will undergo IDB financial management and regulatory compliance due diligence in before
+terms between
+                    being deemed eligible to receive IDB and / or GCF financing. Financial conditions of each specific
+GCF and AE
+                    financial instrument offered by the Facility at sub-project level will be determined on a case-by-case
+(if applicable)
+                    basis at the time of the sub-project structuring, in line with the GCF interim risk policy for private sector
+                    operations and with the principle of minimum concessionality.
+
+=== ANNUAL PERFORMANCE REPORT EXCERPT ===
+(not available for this project)
+

@@ -1,0 +1,95 @@
+=== PROPOSAL EXCERPT ===
+B.2. Project Financing Information
+
+                   Financial Instrument             Amount            Currency                Tenor                   Pricing
+
+[B.2. Project Financing Information] (a) Total project financing (a) = (b) + (c) Amount: 143.4 million euro (€)
+
+[B.2. Project Financing Information] (b) GCF co-financing Grants Amount: 102.7 million euro (€)
+
+                     Financial                                                Name of           Tenor    Pricing
+                                       Amount           Currency                                                       Seniority
+                    Instrument                                               Institution                     
+
+[B.2. Project Financing Information] Grant Amount: 26.1 million euro (€) KfW (Germany)
+[B.2. Project Financing Information] (c) Co-financing to recipient* Grant Budget Cash & In Kind Amount: 0,6 Amount: 12.5 Amount: 1.5 million euro (€) million euro (€) million euro (€) GoT Water Basket GoT Local User Groups pari passu upfront pari passu upfront
+
+                  Lead financing institution: KfW
+
+=== ANNUAL PERFORMANCE REPORT EXCERPT ===
+FINANCIAL           INFORMATION
+
+E.1. GCF financing
+
+In addition to the financial report in the annex, update the table with relevant GCF financial data for each country and
+instrument, including amounts and allocation percentages.
+
+                                Currenc                                          Expenditur
+                                                                                                    Cumulative
+              Instrument            y          Committed         Disbursed              e                              Mitigatio       Adaptation
+Country                                                                                             Expenditur
+                                 (as per         Amount             Amount         (reporting                               n                
+                                                                                                           e
+                                  FAA)                                                year)
+
+[E.1. GCF financing] Tanzania Grants EUR Committed Amount: 102,700,000 Disbursed Amount: 41,400,000 Expenditure (reporting year): 16,208,130. Expenditure (reporting year): 3 Cumulative Expenditure: 36,925,289. Cumulative Expenditure: 3 Mitigation: 0% Adaptation: 100%
+
+[E.1. GCF financing] Total EUR Committed Amount: 102,700,000 Disbursed Amount: 41,400,000 Expenditure (reporting year): 16,208,130. Expenditure (reporting year): 3 Cumulative Expenditure: 36,925,289. Cumulative Expenditure: 3 N/A N/A
+
+E.2. Co-financing
+
+Please populate the table with relevant Co-financing data for each Co-financier and instrument, including amounts and
+allocation percentages.
+
+                                  Currenc                                           Expenditur
+                                                 Committed                                            Cumulative
+     Co-           Instrument          y                         Disbursed                e                              Mitigatio      Adaptation
+                                                                                                       Expenditur
+  financier                         (as per                        Amount             (reporting                              n               
+                                                 Amount                                                      e
+                                     FAA)                                               year)
+
+     BMZ
+  (German
+
+ Ministry of
+
+[E.2. Co-financing] Economic Cooperation Grants EUR Committed Amount: 25,000,000 Disbursed Amount: 25,000,000 Expenditure (reporting year): 5,317,026.84 Cumulative Expenditure: 14,326,005.81 Mitigation: 0% Adaptation: 100%
+
+     and
+
+ Development
+
+        )
+
+Government
+
+[E.2. Co-financing] of Tanzania Grants EUR Committed Amount: 40,700,000 Disbursed Amount: 21,568,810.63 Expenditure (reporting year): 11,292,427.81 Cumulative Expenditure: 21,568,810.63 Mitigation: 0% Adaptation: 100%
+
+    (GoT)
+
+[E.2. Co-financing] Total EUR Committed Amount: 65,700,000 Disbursed Amount: 46,568,810.63 Expenditure (reporting year): 16,609,454.65 Cumulative Expenditure: 35,894,816.44 N/A N/A
+
+E.3. Additional Finance Mobilised Beyond Approved Co-financing
+
+Report the realised (cumulative value) and/or expected volume (Final Target) of private/public finance leveraged as a
+result of GCF involvement in the investment, in addition to and beyond any co-financing originally committed at approval.
+This datapoint shall be reported separately from official co-financing figures and is intended to capture the catalytic effect
+of GCF investments and support institutional learning.
+
+GCF Policy: https://www.greenclimate.fund/sites/default/files/document/policy-cofinancing.pdf
+
+No additional finance mobilized information provided.
+
+File Name: grant-financial-progress-detail-2025.xlsx
+
+
+
+     ENVIRONMENTAL             &   SOCIAL      SAFEGUARDS,            GENDER,       and     INDIGENOUS          PEOPLES
+
+This section provides an update against the ESS standards agreed as part of the Environmental and Social Action Plan
+(ESAP) and Environmental and Social Management Framework (ESMF), as well as Environmental and Social
+Management System (ESMS), Environmental and Social Impact Assessment (ESIA), Environmental and Social
+Management Plan (ESMP), Indigenous Peoples Plan (IPP), Indigenous Peoples Plan Framework (IPPF), Resettlement
+Action Plan (RAP), Resettlement Policy Framework (RPF) when applicable.
+

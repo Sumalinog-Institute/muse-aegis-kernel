@@ -1,0 +1,27 @@
+{
+ "identifier": "XM-DAC-41317-FP067",
+ "title": "Building climate resilience of vulnerable and food insecure communities through capacity strengthening and livelihood diversification in mountainous regions of Tajikistan",
+ "currency": "USD",
+ "amount_awarded": 9273585.99,
+ "award_date": "2018-03-01",
+ "funding_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "Green Climate Fund"
+ },
+ "recipient_org": {
+  "identifier": "XM-DAC-41317",
+  "name": "World Food Programme"
+ },
+ "planned_dates": {
+  "start": "2018-03-01",
+  "end": "2025-03-07"
+ },
+ "documentation_policy": {
+  "cure_days": 30,
+  "excluded_categories": [
+   "iati_disbursement",
+   "iati_commitment"
+  ],
+  "required_documents": {}
+ }
+}

@@ -1,0 +1,75 @@
+C.   FINANCING          INFORMATION
+
+C.1. Total financing
+
+[C.1. Total financing] (a) Requested GCF funding (i + ii + iii + iv + v + vi) Total Amount: 14.75 Currency: million USD ($)
+
+  GCF Financial Instrument               Amount                     Currency                        Tenor & grace                   Pricing
+
+                             Senior
+           (i)                               NA                       Options
+                             loans
+                            Subordi-
+           (ii)              nated           NA                       Options
+                             loans
+
+          (iii)              Equity          NA                       Options
+
+                            Guarantees-
+          (iv)                               NA                       Options
+                                  
+                             Reim-
+           (v)              bursable         NA                       Options
+                             grants
+
+[C.1. Total financing > (a) Requested GCF funding] (vi) Grants Amount: 14.5 million USD ($)
+
+                                                          Total amount                                               Currency
+    (b) Co-financing infor-
+
+[C.1. Total financing] mation23 Total amount: 1.9639 million USD ($)
+
+                                          Finan-
+                                          cial in-                                   Cur-        Tenor &                                   Senior-
+      Name of institution                                     Amount                                                  Pricing
+                                           stru-                                     rency        Grace                                       ity
+                                           ment
+
+[C.1. Total financing] Ministry of Finance Economic Development and the Youth Economy (MoF) Grant Amount: 1.656 million USD ($) Enter years En- ter years Enter % Options
+
+[C.1. Total financing] Ministry of Agriculture, Fisher- ies, Food Security and Rural Development (MoA) In kind Amount: 0.307 million USD ($) Enter years En- ter years Enter % Options
+
+     (c)  Total investment                                                  Amount                                   Currency
+
+[C.1. Total financing] (c) = (a)+(b) Amount: 16.713 million USD ($)
+
+                   (d) Co-financing ratio
+                                                                     0.133
+                          (d) = (b)/(a)
+
+   (e) Other financing arrangements for the pro-                     N/A
+             ject/programme (max ½ page)
+
+C.2. Financing by component
+
+  Component             Output           Indicative          GCF financing                                   Co-financing
+                                         cost
+                                                           Amount         Finan-          Amount            Financial In-       Name of Institu-
+                                         million USD     million USD      cial In-    million USD ($)         strument                 tions
+                                         ($)                  ($)          stru-
+                                                                           ment
+
+[C.2. Financing by component] Output 1.1 0.217 0.192 Grants 0.025 In kind MoA
+
+[C.2. Financing by component] Component 1 Output 1.2 5.329 4.585 Grants 0.743 Grants MoF
+
+[C.2. Financing by component] Output 1.3 2.660 2.258 Grants 0.402 Grants MoF
+
+[C.2. Financing by component] Component 2 Output 2.1 1.895 1.675 Grants 0.125 0.095 Grants In kind MoF MoA
+
+    23 If the co-financing is provided in different currency other than the GCF requested, please provide detailed financing infor-
+     mation and a converted figure in the GCF requested currency in the comment box. Please refer to the date when the currency
+     conversion was performed and the reference source.
+
+
+[C.2. Financing by component] Output 3.1 Component 3 Output 3.2 Component 4 Project Manage- PMC ment Monitoring and M&E Evaluation Contingency Indicative total cost (USD) Output 4.1 Contingency 1.117 2.762 0.819 0.795 0.699 0.420 16.713 1.079 2.394 0.773 0.675 0.699 0.420 14.75 Grants Grants Grants Grants Grants 0.038 0.349 0.020 0.046 0.121 0 1.964 Grants Grants In kind In kind In kind N/A MoF MoF MoA MoA MoA N/A

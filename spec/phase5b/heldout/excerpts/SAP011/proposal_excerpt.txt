@@ -1,0 +1,35 @@
+C.   FINANCING         INFORMATION
+C.1. Total financing
+[C.1. Total financing] (a) Requested GCF funding (i + ii + iii + iv + v + vi) GCF Financial Instrument (i) (ii) (iii)  Equity Senior loans Subordinated loans Amount Enter amount Enter amount Enter amount 9.25 Currency Options Options Options million USD ($) Tenor Enter years Enter years Enter % equity return Pricing Enter % Enter %
+
+[C.1. Total financing > (a) Requested GCF funding] (iv) (v) (vi) Guarantees Reimbursable grants Grants Enter amount Enter amount 9.25 Total amount Options Options million USD ($) Enter years 5 years Currency Enter %
+[C.1. Total financing] (b) Co-financing information 0.75 million USD ($)
+
+
+[C.1. Total financing] Name of institution Cartier Foundation Government of Flanders Click here to enter text. Click here to enter text. Financial instrument Grant Grant Options Options Amount 0.15 0.60 Enter amount Enter amount Currency million USD ($) million USD ($) Options Options Tenor 1 year 1 year Enter years Enter years Pricing Enter% Enter% Enter% Enter% Seniority Options Options Options Options
+     (c)  Total investment                                     Amount                                              Currency
+[C.1. Total financing] (c) = (a)+(b) Amount: 10 million USD ($)
+(d) Co-financing ratio
+                                         0.75/9.25 = 0.076 = 7.6 %
+(d) = (b)/(a)
+(e) Other financing
+arrangements for the                     Not applicable
+project/programme (max ½
+page)
+C.2. Financing by component
+                                              Indicative             GCF financing                             Co-financing
+   Component                Output            cost               Amount         Financial         Amount          Financial        Name of
+                                              (USD)               (USD)        Instrument          (USD)         Instrument      Institutions
+  Component 1        Output 1                 3,467,300       3,167,300        Grants          300,000          Grants           Government
+                                                                                                                                 of Flanders
+  Component 2        Output 2 - Activities    3,051,194       2,882,194        Grants          169,000          Grants           Government
+                     2.1.1-2.1.4                                                                                                 of Flanders
+  Component 2        Output 2 - Activities    835,800         685,800          Grants          150,000          Grants           Cartier
+                     2.1.5-2.1.6                                                                                                 Foundation
+  Component 3        Output 3                 2,099,630       2,006,130        Grants          93,500           Grants           Government
+                                                                                                                                 of Flanders
+  Evaluation         Project Evaluation       110,000         110,000          Grants          0                Grants
+  Component 4        PMC                      440,476         402,976          Grants          37,500           Grants           Government
+                                                                                                                                 of Flanders
+       Indicative total cost (USD)             $ 10 million           $ 9.25 million                            $ 0.75 million
+More detailed information on the costs of the activities is provided in annex 3 (budget).

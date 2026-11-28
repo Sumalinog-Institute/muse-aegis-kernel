@@ -1,0 +1,103 @@
+FINANCING         INFORMATION
+ C.1. Total financing
+
+  (a) Requested GCF funding                               Total amount                                          Currency
+  (i + ii + iii + iv + v + vi + vii)                           $19.01                                        million USD ($)
+
+   GCF financial instrument                       Amount                      Tenor                Grace period                Pricing
+
+ (i)    Senior loans                           Enter amount                Enter years               Enter years               Enter %
+
+ (ii)   Subordinated loans                     Enter amount                Enter years               Enter years               Enter %
+                                                                                                                           Enter % equity
+ (iii)  Equity                                 Enter amount                                                                     return
+
+ (iv)   Guarantees                             Enter amount                Enter years
+
+ (v)    Reimbursable grants                    Enter amount
+
+ (vi)   Grants                                 $19,007,353
+
+ (vii)  Results-based payments                 Enter amount
+
+                                                          Total amount                                          Currency
+ (b) Co-financing information
+                                                               $ 4.61                                        million USD ($)
+                                           Financial                                              Tenor &
+       Name of institution                                      Amount          Currency                          Pricing       Seniority
+                                          instrument                                               grace
+                                                                                  million       Enter years       Enter%          Options
+               UNHCR                        In kind               4.61
+                                                                                 USD ($)        Enter years
+                                                                                                Enter years       Enter%          Options
+      Click here to enter text.            Options           Enter amount         Options
+                                                                                                Enter years
+                                                                                                Enter years       Enter%          Options
+      Click here to enter text.            Options           Enter amount         Options
+                                                                                                Enter years
+                                                                                                Enter years       Enter%          Options
+      Click here to enter text.            Options           Enter amount         Options
+                                                                                                Enter years
+                                                              Amount                                            Currency
+      (c)  Total financing
+[C.1. Total financing > (b) Co-financing information] (c) = (a)+(b) $ 23.62 million USD ($)
+
+                                         In addition to the projects and financing described in this funding proposal under
+                                         Table 2, which lists over US$ 48 million in parallel financing, the ‘Overview of other
+                                         relevant projects in the region’ in the Feasibility Study (Annex 2.1) includes other
+ (d) Other financing                     climate change and development projects operating in the project area, whose
+ arrangements and                        activities complement those of the proposed project. The funding for these projects
+ contributions (max. 250                 stems from GIZ (Deutsche Gesellschaft für Internationale Zusammenarbeit –
+ words, approximately 0.5                German Development Agency), DFID (UK Department for International
+ page)                                   Development), BPRM (US Bureau of Population, Refugees, and Migration), GAC
+                                         (Global Affairs Canada), KOICA (Korea International Cooperation Agency) and
+                                         various UN agencies.
+
+ C.2. Financing by component
+
+[C.2. Financing by component] Component Component 1 Increased resilience of ecosystems and people Output Output 1: Participatory Climate-resilient Land Use Planning (C-LUP) to support ecosystem- based adaptation Indicative cost Options $1,062,805 GCF financing Amount Options $ $1,062,805 Financial Instrument Grants Amount Options 0 Co-financing Financial Instrument Name of Institution
+
+
+                                                                                                                                        C
+
+to climate        Output 2: Degraded
+
+change            ecosystems restored to
+
+[C.2. Financing by component] threats support climate change adaptation in host and refugee communities $ 13,038,743 $ 9,978,657 Grants $3,060,086 In-kind UNHCR
+
+[C.2. Financing by component] Output 3. Climate- resilient livelihoods practised to increase the capacity of host communities and refugees to better adapt $ 7,094,532 478,767 $ 5,687,324 Grants $1,407,207 In-kind UNHCR
+
+                  in changing climatic
+
+                  conditions
+
+                  Output 4. Information on
+Component 2
+                  climate change
+Strengthened
+                  adaptation disseminated
+policies for
+                  and mainstreamed into                                 $469,554
+climate                                            $ 469,554                                 Grants
+                  policies, plans and                                                                                  0
+responsive
+                  strategies in Tanzania
+planning and
+                  and in humanitarian
+development
+                  programmes
+
+[C.2. Financing by component] Monitoring & Evaluation $ 1,421,283 $1,421,283 Grants 0
+
+Project
+
+[C.2. Financing by component] Management Cost $531,730 $ 387,730 Grants $144,000 In-kind UNHCR
+
+Indicative total cost (USD)                        $23,618,646                        $19,007,353                                        $4,611,293
+
+                                                                                                                                  D
+
+D.EXPECTED            PERFORMANCE            AGAINST         INVESTMENT           CRITERIA
+This section refers to the performance of the project/programme against the investment criteria as set out in the
+GCF’s Initial Investment Framework.

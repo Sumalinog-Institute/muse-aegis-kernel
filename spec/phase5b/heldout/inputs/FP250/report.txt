@@ -1,0 +1,193 @@
+=== PROPOSAL EXCERPT ===
+FINANCING         INFORMATION
+                                                                                                                               C
+C.1. Total financing
+
+[C.1. Total financing] (a) Requested GCF funding (i + ii + iii + iv + v + vi + vii) Total amount 35 Currency million USD ($)
+
+  GCF financial
+                              Amount                       Tenor                  Grace period                      Pricing
+   instrument
+
+(i) Senior loans       Enter amount                Enter years                Enter years                 Enter %
+
+(ii) Subordinated
+                       Enter amount                Enter years                Enter years                 Enter %
+loans
+
+(iii) Equity           Enter amount                                                                       Enter % equity return
+
+(iv) Guarantees        Enter amount                Enter years
+
+(v)
+Reimbursable           Enter amount
+grants
+
+(vi) Grants            35
+
+(vii) Results-
+                       Enter amount
+based payments
+
+(b) Co-                                  Total amount                                               Currency
+
+[C.1. Total financing > (b) Co-] financing information Total amount: 61.076 million USD ($)
+
+     Name of             Financial                                               Tenor &
+                                            Amount            Currency                              Pricing            Seniority
+    institution         instrument                                                grace
+
+[C.1. Total financing] IFAD Senior Loans Amount: 32.434 Options 25 years 5 years Variable% pari passu
+
+[C.1. Total financing] GoV In kind Amount: 28.642 Options Enter years Enter years Enter% Options
+
+   Click here to                              Enter                           Enter years           Enter%              Options
+                         Options                               Options
+    enter text.                              amount                           Enter years
+
+   Click here to                              Enter                           Enter years           Enter%              Options
+                         Options                               Options
+    enter text.                              amount                           Enter years
+
+[C.1. Total financing] (c)Total financing (c) = (a)+(b) Amount Amount: 96.076 Currency million USD ($)
+
+[C.1. Total financing] (d) Other financing arrangements and contributions (max. 250 partners will contribute with It is expected that USD 35 million GCF grant financing, together with USD 32.434 million IFAD loan, and USD 28.642 million Government in-kind and in-cash co-financing, will unlock USD 6.452 million from project beneficiaries, mainly through infrastructure investments (2.2) and agroforestry investments (2.1 and 2.3) and about 7 million from direct private sector co-investment in activities initiated by the 4P platforms and SMEs. Project beneficiaries and private sector parallel  financing to activities  in  which they
+
+words,                 participate, for an estimated total amount of USD 13.452 million (UDS 6.452 million + USD 7
+approximately          million).
+0.5 page)
+
+    C.2. Financing by component
+
+  Component              Output       Indicative             GCF financing                             Co-financing
+                                      cost USD
+                                                         Amount          Financial       Amount         Financial        Name of
+                                      Options            Options        Instrument       Options       Instrument      Institutions
+
+[C.2. Financing by component] Outcome 1 Outputs 1.1. and Output: 1.2 Indicative cost USD Options: 15,423,426 GCF financing Amount Options: 14,941,356 Grant Amount Options: 482,070 Public budget* GoV
+
+                                                                                                                                                 C
+
+[C.2. Financing by component] Outcome 2 Outputs 2.1, 2.2, and 2.3 GCF financing Amount Options: 75,393,414 GCF financing Amount Options: 18,575,844 Grant Co-financing Financial Instrument: 24,383,570 Co-financing Financial Instrument: 32,434,000 Public budget* Loan GoV IFAD C
+
+                                  PMC            5,259,160        1,482,800           Grant             3,776,360           Public         GoV
+        Project
+                                                                                                                            budget*
+        Management Cost
+        (PMC)
+        Indicative total cost (USD)              96,076,000        35,000,000                            61,076,000 (of which 28.642,000 USD Gov co-
+                                                                                                        financing; and 32,434,000 IFAD co-financing)
+           * in-kind
+     88. More than 50% of the project cost will be allocated for activities that will directly benefit agriculture and forest-
+           dependent people, particularly ethnic minorities and women (estimated to be 420,000 direct beneficiaries), the
+           rest of the activities will indirectly benefit project beneficiaries (estimated to be 1,000,000 indirect beneficiaries)
+           living in and around the target provinces, primarily through peer-to-peer knowledge exchange and system-wide
+           improvements in value chains and policy and institutional environments. An assumption is that RECAF will
+           attract private sector partners that are interested to invest in deforestation-free supply chains.35 Both will be
+           contributing to Outcome 2. Finally, it is also expected that additional resources will be leveraged as REDD+
+           RBPs from different sources36, including the FCPF or the LEAF coalition. For instance, in the letter of intent
+           signed between Viet Nam and the LEAF coalition37, the expected volumes of ERs will be 5,570,282 tCO2-eq
+           for the period 2022-26.
+
+         Figure 5 Diagram Illustrating Flow of Expected Investments and REDD+ Result Based Payments to Beneficiaries
+
+                                                          National REDD+ Strategy / NDC
+
+                        REDD+ Result Base payments                                      Green/climate Investments in AFOLU sector
+                                                                                                                               Public sector
+                                                                                                                               and gvt
+                                                                                                                               contribution
+
+                                Environmental
+                                Protection Fund
+                                                                                                             RECAF
+                                                                               Will facilitate, collaborate, leverage through 4Ps plateforms
+
+                                                         Project beneficiaries: CIGS, Cooperative, SMES,
+                                                             private sector, villages and communities
+
+     89. Meetings were conducted with the Ministry of Finance (MoF) and VDB to discuss the potential of utilizing a
+           GCF loan through IFAD as the Accredited Entity (AE) for low-interest wholesale lending aimed at promoting
+           green credit products. However, the MoF did not favored developing a GCF loan component into RECAF.
+           Additionally, the VDB showed limited interest in acting as an Executing Entity (EE) under RECAF.
+
+35 While international pressure for private sector action to halt deforestation is certainly increasing, and companies selling into certain markets will need to demonstrate
+that their products have not been obtained through deforestation (e.g., under EU FLEGT and EUDR), other companies will not be interested. But if REDD+ is effectively
+mainstreamed in provincial and national AFOLU policies, all companies in Viet Nam will be subject to policies that incentivize them to ensure they do not contribute to
+deforestation. In addition, all companies will be interested in increasing their resilience to climate change, and RECAF activities will be able to assist them with this
+and attract their participation.
+36 That may have to be updated, depending on the national regulations which evolve periodically, and also to ensure consistency with future decisions from the GCF
+Board related to treatment of ERs generated thanks to GCF investment and REDD+ RBP
+37 https://live-leaf-coalition.pantheonsite.io/wp-content/uploads/2021/12/Vietnam_LEAF-Proposal.pdf
+
+                                                                                                                                C
+
+90. Instead, it has been agreed that IFAD will collaborate with the VDB through RECAF where appropriate. IFAD's
+     role will include providing support to the VDB as Viet Nam's first GCF DAE in terms of capacity development.C
+     This support will encompass generating project ideas and designing a GCF project that builds upon RECAF's
+     framework. The objective is to ensure the sustainability of RECAF's outcomes and enhance the VDB's capacity
+     to strategically access GCF resources. This collaboration aims to further assist the Government of Viet Nam
+     in fulfilling its NDC commitments and National Adaptation Plan (NAP) goals. The flow of investments are
+     summarized in Figure 5.
+
+=== ANNUAL PERFORMANCE REPORT EXCERPT ===
+FINANCIAL           INFORMATION
+
+E.1. GCF financing
+
+In addition to the financial report in the annex, update the table with relevant GCF financial data for each country and
+instrument, including amounts and allocation percentages.
+
+                                Currenc                                           Expenditur
+                                                                                                     Cumulative
+ Country      Instrumen              y          Committe         Disburse               e                               Mitigatio        Adaptatio
+                                                                                                     Expenditur
+                    t             (as per      d   Amount        d  Amount          (reporting                               n                n
+                                                                                                            e
+                                   FAA)                                               year)
+
+[E.1. GCF financing] Viet Nam Grants USD Committed: 35 Disbursed Amount: 0 Expenditure (reporting year): 0 Cumulative Expenditure: 0 Mitigation: 100% Adaptation: 0%
+
+[E.1. GCF financing] Total USD Committed: 35 Disbursed Amount: 0 Expenditure (reporting year): 0 Cumulative Expenditure: 0 N/A N/A
+
+E.2. Co-financing
+
+Please populate the table with relevant Co-financing data for each Co-financier and instrument, including amounts and
+allocation percentages.
+
+                                    Currenc                                         Expenditur
+                                                                    Disburse                          Cumulative
+     Co-           Instrumen             y         Committe                                e                             Mitigatio       Adaptatio
+                                                                         d                             Expenditur
+  financier              t            (as per      d  Amount                          (reporting                              n               n
+                                                                     Amount                                  e
+                                       FAA)                                              year)
+
+[E.2. Co-financing] International Fund for Agricultural Development (IFAD) Loans USD Committed Amount: 32.43 Disbursed Amount: 0 Expenditure (reporting year): 0 Cumulative Expenditure: 0 Mitigation: 100% Adaptation: 0%
+
+[E.2. Co-financing] Vietnam Grants USD Committed Amount: 28.64 Disbursed Amount: 0 Expenditure (reporting year): 0 Cumulative Expenditure: 0 Mitigation: 100% Adaptation: 0%
+
+[E.2. Co-financing] Total USD Committed Amount: 61.08 Disbursed Amount: 0 Expenditure (reporting year): 0 Cumulative Expenditure: 0 N/A N/A
+
+E.3. Additional Finance Mobilised Beyond Approved Co-financing
+
+Report the realised (cumulative value) and/or expected volume (Final Target) of private/public finance leveraged as a
+result of GCF involvement in the investment, in addition to and beyond any co-financing originally committed at approval.
+This datapoint shall be reported separately from official co-financing figures and is intended to capture the catalytic effect
+of GCF investments and support institutional learning.
+
+GCF Policy: https://www.greenclimate.fund/sites/default/files/document/policy-cofinancing.pdf
+
+No additional finance mobilized information provided.
+
+No annual financial report provided.
+
+
+     ENVIRONMENTAL              &  SOCIAL        SAFEGUARDS,           GENDER,         and    INDIGENOUS           PEOPLES
+
+This section provides an update against the ESS standards agreed as part of the Environmental and Social Action Plan
+(ESAP) and Environmental and Social Management Framework (ESMF), as well as Environmental and Social
+Management System (ESMS), Environmental and Social Impact Assessment (ESIA), Environmental and Social
+Management Plan (ESMP), Indigenous Peoples Plan (IPP), Indigenous Peoples Plan Framework (IPPF), Resettlement
+Action Plan (RAP), Resettlement Policy Framework (RPF) when applicable.
+

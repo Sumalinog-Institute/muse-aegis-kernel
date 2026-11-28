@@ -1,0 +1,97 @@
+=== PROPOSAL EXCERPT ===
+C.   FINANCING         INFORMATION
+C.1. Total financing
+[C.1. Total financing] (a) Requested GCF funding (i + ii + iii + iv + v + vi) GCF Financial Instrument (i) (ii) (iii)  Equity Senior loans Subordinated loans Amount Enter amount Enter amount Enter amount 9.25 Currency Options Options Options million USD ($) Tenor Enter years Enter years Enter % equity return Pricing Enter % Enter %
+
+[C.1. Total financing > (a) Requested GCF funding] (iv) (v) (vi) Guarantees Reimbursable grants Grants Enter amount Enter amount 9.25 Total amount Options Options million USD ($) Enter years 5 years Currency Enter %
+[C.1. Total financing] (b) Co-financing information 0.75 million USD ($)
+
+
+[C.1. Total financing] Name of institution Cartier Foundation Government of Flanders Click here to enter text. Click here to enter text. Financial instrument Grant Grant Options Options Amount 0.15 0.60 Enter amount Enter amount Currency million USD ($) million USD ($) Options Options Tenor 1 year 1 year Enter years Enter years Pricing Enter% Enter% Enter% Enter% Seniority Options Options Options Options
+     (c)  Total investment                                     Amount                                              Currency
+[C.1. Total financing] (c) = (a)+(b) Amount: 10 million USD ($)
+(d) Co-financing ratio
+                                         0.75/9.25 = 0.076 = 7.6 %
+(d) = (b)/(a)
+(e) Other financing
+arrangements for the                     Not applicable
+project/programme (max ½
+page)
+C.2. Financing by component
+                                              Indicative             GCF financing                             Co-financing
+   Component                Output            cost               Amount         Financial         Amount          Financial        Name of
+                                              (USD)               (USD)        Instrument          (USD)         Instrument      Institutions
+  Component 1        Output 1                 3,467,300       3,167,300        Grants          300,000          Grants           Government
+                                                                                                                                 of Flanders
+  Component 2        Output 2 - Activities    3,051,194       2,882,194        Grants          169,000          Grants           Government
+                     2.1.1-2.1.4                                                                                                 of Flanders
+  Component 2        Output 2 - Activities    835,800         685,800          Grants          150,000          Grants           Cartier
+                     2.1.5-2.1.6                                                                                                 Foundation
+  Component 3        Output 3                 2,099,630       2,006,130        Grants          93,500           Grants           Government
+                                                                                                                                 of Flanders
+  Evaluation         Project Evaluation       110,000         110,000          Grants          0                Grants
+  Component 4        PMC                      440,476         402,976          Grants          37,500           Grants           Government
+                                                                                                                                 of Flanders
+       Indicative total cost (USD)             $ 10 million           $ 9.25 million                            $ 0.75 million
+More detailed information on the costs of the activities is provided in annex 3 (budget).
+
+=== ANNUAL PERFORMANCE REPORT EXCERPT ===
+FINANCIAL           INFORMATION
+
+E.1. GCF financing
+
+In addition to the financial report in the annex, update the table with relevant GCF financial data for each country and
+instrument, including amounts and allocation percentages.
+
+                                    Currenc                                        Expenditur
+                                                                    Disburse                          Cumulative
+                  Instrumen             y          Committe                               e                              Mitigatio      Adaptatio
+  Country                                                                d                            Expenditur
+                         t           (as per      d   Amount                          (reporting                              n               n
+                                                                    Amount                                  e
+                                      FAA)                                              year)
+
+[E.1. GCF financing] Mozambique Grants USD Committed: 9,250,000 Disbursed Amount: 9,250,000 Expenditure (reporting year): 1,978,242 Cumulative Expenditure: 7,498,623 Mitigation: 0% Adaptation: 100%
+        
+
+[E.1. GCF financing] Total USD Committed: 9,250,000 Disbursed Amount: 9,250,000 Expenditure (reporting year): 1,978,242 Cumulative Expenditure: 7,498,623 N/A N/A
+
+E.2. Co-financing
+
+Please populate the table with relevant Co-financing data for each Co-financier and instrument, including amounts and
+allocation percentages.
+
+                                   Currenc                                         Expenditur
+                                                                   Disburse                           Cumulative
+     Co-          Instrumen             y         Committe                                e                             Mitigatio       Adaptatio
+                                                                        d                             Expenditur
+  financier             t            (as per      d  Amount                          (reporting                              n                n
+                                                                    Amount                                  e
+                                      FAA)                                              year)
+
+[E.2. Co-financing] Government of Flanders Grants USD Committed Amount: 750,000 Disbursed Amount: 750,000 Expenditure (reporting year): 0 Cumulative Expenditure: 750,000 Mitigation: 0% Adaptation: 100%
+
+[E.2. Co-financing] Total USD Committed Amount: 750,000 Disbursed Amount: 750,000 Expenditure (reporting year): 0 Cumulative Expenditure: 750,000 N/A N/A
+
+E.3. Additional Finance Mobilised Beyond Approved Co-financing
+
+Report the realised (cumulative value) and/or expected volume (Final Target) of private/public finance leveraged as a
+result of GCF involvement in the investment, in addition to and beyond any co-financing originally committed at approval.
+This datapoint shall be reported separately from official co-financing figures and is intended to capture the catalytic effect
+of GCF investments and support institutional learning.
+
+GCF Policy: https://www.greenclimate.fund/sites/default/files/document/policy-cofinancing.pdf
+
+No additional finance mobilized information provided.
+
+File Name: grant-financial-progress-detail 2025 - SAP011.xlsx
+
+
+     ENVIRONMENTAL             &   SOCIAL       SAFEGUARDS,            GENDER,        and     INDIGENOUS          PEOPLES
+
+This section provides an update against the ESS standards agreed as part of the Environmental and Social Action Plan
+(ESAP) and Environmental and Social Management Framework (ESMF), as well as Environmental and Social
+Management System (ESMS), Environmental and Social Impact Assessment (ESIA), Environmental and Social
+Management Plan (ESMP), Indigenous Peoples Plan (IPP), Indigenous Peoples Plan Framework (IPPF), Resettlement
+Action Plan (RAP), Resettlement Policy Framework (RPF) when applicable.
+
